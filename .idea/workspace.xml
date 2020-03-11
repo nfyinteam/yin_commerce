@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5e28548b-8be0-4555-97ff-f97a2e9198d0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="c6c2d946-3511-4620-b74c-03a51daca3a3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/36cc0e89-50c1-496d-8ac1-194554fb459d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/36cc0e89-50c1-496d-8ac1-194554fb459d.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +55,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1YkjpQo68oSP2QYCmt9wJE57S1e" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -84,17 +86,7 @@
       <list>
         <serviceView>
           <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:@www.88k88.cn" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:@www.88k88.cn" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@543516d6" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </treeState>
         </serviceView>
@@ -129,6 +121,17 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="write entity shoppingcart" />
     <option name="LAST_COMMIT_MESSAGE" value="write entity shoppingcart" />
@@ -146,6 +149,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="488" y="57" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1583895144658" />
+    <state x="811" y="412" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1583945976435">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="811" y="412" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583945976435" />
     <state x="347" y="0" width="697" height="728" key="CommitChangelistDialog2" timestamp="1583938018590">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -158,13 +165,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="278" height="477" key="HiddenNamespacesPopup/0.0.1366.728@0.0.1366.728" timestamp="1583724483547" />
+    <state x="540" y="257" key="IDE.errors.dialog" timestamp="1583945308059">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="540" y="257" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583945308059" />
     <state x="275" y="88" key="Vcs.Push.Dialog.v2" timestamp="1583938443262">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="88" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1583938443262" />
-    <state x="371" y="166" key="git4idea.merge.GitPullDialog" timestamp="1583938416324">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="521" y="237" key="git4idea.merge.GitPullDialog" timestamp="1583945054324">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="371" y="166" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1583938416324" />
+    <state x="521" y="237" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583945054324" />
   </component>
 </project>

@@ -1,4 +1,4 @@
-package edu.nf.shopping.goods.dao;
+package edu.nf.shopping.warehouse.dao;
 
 import com.sun.org.apache.xpath.internal.operations.Bool;
 import edu.nf.shopping.warehouse.entity.CargoInfo;
