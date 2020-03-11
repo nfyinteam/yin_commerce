@@ -25,11 +25,11 @@ public class GoodsType {
         this.gtName = gtName;
     }
 
-    public String getpId() {
+    public String getPId() {
         return pId;
     }
 
-    public void setpId(String pId) {
+    public void setPId(String pId) {
         this.pId = pId;
     }
 }
