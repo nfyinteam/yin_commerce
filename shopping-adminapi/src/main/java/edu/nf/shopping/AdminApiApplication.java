@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2020/3/4
  */
 @SpringBootApplication
-@MapperScan({"edu.nf.shopping.goods.dao"})
+@MapperScan(basePackages = {"edu.nf.shopping.goods.dao"})
 public class AdminApiApplication {
     public static void main(String[] args) {
         SpringApplication.run(AdminApiApplication.class, args);

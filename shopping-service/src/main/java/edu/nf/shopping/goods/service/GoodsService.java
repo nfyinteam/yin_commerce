@@ -1,4 +1,4 @@
-package edu.nf.shopping.goods.dao;
+package edu.nf.shopping.goods.service;
 
 import edu.nf.shopping.goods.entity.GoodsInfo;
 
@@ -6,10 +6,9 @@ import java.util.List;
 
 /**
  * @author Achine
- * @date 2020/3/5
+ * @date 2020/3/9
  */
-public interface GoodsDao {
-
+public interface GoodsService {
     /**
      * 查询所有商品
      * @return
@@ -33,22 +32,4 @@ public interface GoodsDao {
      * @return
      */
     GoodsInfo listGoodsById(String id);
-
-    /**
-     * 添加商品
-     * @param goodsInfo
-     */
-    void addGoods(GoodsInfo goodsInfo);
-
-    /**
-     * 批量修改商品
-     * @param list
-     */
-    void updateGoods(List<GoodsInfo> list);
-
-    /**
-     * 批量删除商品
-     * @param goodsId
-     */
-    void deleteGoods(String ... goodsId);
 }
