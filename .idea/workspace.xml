@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e28548b-8be0-4555-97ff-f97a2e9198d0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/shopcart/entity/ShoppingCart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +66,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../二学期压缩包/design" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -114,14 +114,30 @@
       <workItem from="1583493673177" duration="641000" />
       <workItem from="1583723585657" duration="5783000" />
       <workItem from="1583894926308" duration="916000" />
-      <workItem from="1583936276025" duration="1342000" />
+      <workItem from="1583936276025" duration="2370000" />
     </task>
+    <task id="LOCAL-00001" summary="write entity shoppingcart">
+      <created>1583938021337</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1583938021337</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="write entity shoppingcart" />
+    <option name="LAST_COMMIT_MESSAGE" value="write entity shoppingcart" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="275" y="25" key="#Notifications" timestamp="1583938246865">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="25" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1583938246865" />
     <state x="506" y="71" width="816" height="646" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583724468469">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -130,13 +146,25 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="488" y="57" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1583895144658" />
-    <state x="463" y="122" key="FileChooserDialogImpl" timestamp="1583754948954">
+    <state x="347" y="0" width="697" height="728" key="CommitChangelistDialog2" timestamp="1583938018590">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="122" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1583754948954" />
+    <state x="347" y="0" width="697" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1583938018590" />
+    <state x="463" y="122" key="FileChooserDialogImpl" timestamp="1583938633477">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="122" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1583938633477" />
     <state width="278" height="477" key="HiddenNamespacesPopup" timestamp="1583724483547">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="278" height="477" key="HiddenNamespacesPopup/0.0.1366.728@0.0.1366.728" timestamp="1583724483547" />
+    <state x="275" y="88" key="Vcs.Push.Dialog.v2" timestamp="1583938443262">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="88" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1583938443262" />
+    <state x="371" y="166" key="git4idea.merge.GitPullDialog" timestamp="1583938416324">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="371" y="166" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1583938416324" />
   </component>
 </project>
