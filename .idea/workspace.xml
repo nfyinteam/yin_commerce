@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c6c2d946-3511-4620-b74c-03a51daca3a3" name="Default Changelist" comment="">
+    <list default="true" id="34ea5314-6c8f-4ac5-9e4c-215f84be2b1b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/36cc0e89-50c1-496d-8ac1-194554fb459d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/36cc0e89-50c1-496d-8ac1-194554fb459d.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +55,14 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="d:/apache-maven-3.6.1" />
+        <option name="userSettingsFile" value="D:\apache-maven-3.6.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="1YkjpQo68oSP2QYCmt9wJE57S1e" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -77,6 +86,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RebelAgentSelection">
     <selection>jr</selection>
@@ -175,7 +185,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -202,14 +214,16 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="811" y="412" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583945976435" />
-    <state x="347" y="0" width="697" height="728" key="CommitChangelistDialog2" timestamp="1583938018590">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="488" y="0" width="697" height="728" key="CommitChangelistDialog2" timestamp="1583948731779">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="347" y="0" width="697" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1583938018590" />
-    <state x="463" y="122" key="FileChooserDialogImpl" timestamp="1583938633477">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="488" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583948731779" />
+    <state x="651" y="174" key="FileChooserDialogImpl" timestamp="1583948472924">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="463" y="122" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1583938633477" />
+    <state x="651" y="174" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1583948472924" />
     <state width="278" height="477" key="HiddenNamespacesPopup" timestamp="1583724483547">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -218,6 +232,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="540" y="257" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583945308059" />
+    <state x="463" y="165" key="SettingsEditor" timestamp="1583948509437">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="463" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1583948509437" />
     <state x="275" y="88" key="Vcs.Push.Dialog.v2" timestamp="1583938443262">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
