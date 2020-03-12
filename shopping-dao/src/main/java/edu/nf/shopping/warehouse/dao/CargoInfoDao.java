@@ -30,15 +30,13 @@ public interface CargoInfoDao {
      * @return
      */
     CargoInfo getCargoInfoById(String id);
-<<<<<<< HEAD
+
 
     /**
      * 修改货物是否出货
      * @param id
      * @param isOut
      */
-=======
->>>>>>> f65dbfe0523f4b82c994deaa51d9c7a2b718bae3
     void updateCargoIsOutById(String id,Boolean isOut);
 
 }
