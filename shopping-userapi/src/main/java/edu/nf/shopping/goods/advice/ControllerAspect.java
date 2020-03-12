@@ -11,9 +11,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @author Achine
  * @date 2019/11/14
  */
-@ControllerAdvice({"edu.nf.shopping.goods.controller"})
+/*@ControllerAdvice({"edu.nf.shopping.goods.controller"})*/
 public class ControllerAspect {
-
     @ExceptionHandler(GoodsException.class)
     @ResponseBody
     public ResponseVO loginException(GoodsException e){
