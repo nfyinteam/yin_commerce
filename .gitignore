@@ -110,3 +110,16 @@ local.properties
 #.gitignore
 .checkstyle
 test-output
+shopping-adminapi/src/main/java/edu/nf/shopping/goods/controller/
+shopping-adminapi/src/main/resources/static/
+shopping-adminapi/src/test/
+shopping-dao/src/main/resources/mapper/order/
+shopping-entity/src/main/java/edu/nf/shopping/goods/dao/
+shopping-entity/src/main/resources/
+shopping-entity/src/test/
+shopping-userapi/src/main/java/edu/nf/shopping/goods/controller/
+shopping-userapi/src/main/resources/static/
+shopping-util/src/main/java/edu/nf/shopping/goods/
+shopping-util/src/main/resources/
+shopping-util/src/test/
+!/pom.xml
