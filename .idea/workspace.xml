@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="526d3e9c-dff7-4ee1-9e0d-ae85a8206b4f" name="Default Changelist" comment="" />
+    <list default="true" id="526d3e9c-dff7-4ee1-9e0d-ae85a8206b4f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -219,7 +221,21 @@
       <option name="project" value="LOCAL" />
       <updated>1584024096006</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="还原版本">
+      <created>1584024216829</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1584024216829</updated>
+    </task>
+    <task id="LOCAL-00006" summary="还原版本">
+      <created>1584024375393</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1584024375393</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,11 +276,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="811" y="412" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584023638240" />
-    <state x="488" y="0" width="697" height="728" key="CommitChangelistDialog2" timestamp="1584024213089">
+    <state x="488" y="0" width="697" height="728" key="CommitChangelistDialog2" timestamp="1584024371282">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="347" y="0" width="697" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1583938018590" />
-    <state x="488" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584024213089" />
+    <state x="488" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584024371282" />
     <state x="651" y="174" key="FileChooserDialogImpl" timestamp="1583948472924">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -294,10 +310,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="540" y="257" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583945308059" />
-    <state x="669" y="236" key="MultipleFileMergeDialog" timestamp="1584024141812">
+    <state x="669" y="236" key="MultipleFileMergeDialog" timestamp="1584024429986">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="669" y="236" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584024141812" />
+    <state x="669" y="236" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584024429986" />
     <state x="653" y="233" key="RollbackChangesDialog" timestamp="1584024308148">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -310,16 +326,16 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="678" y="227" key="VCS.ChangeListViewerDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584024267676" />
-    <state x="387" y="126" key="Vcs.Push.Dialog.v2" timestamp="1584024319262">
+    <state x="387" y="126" key="Vcs.Push.Dialog.v2" timestamp="1584024377630">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="275" y="88" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1583938443262" />
-    <state x="387" y="126" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584024319262" />
-    <state x="521" y="237" key="git4idea.merge.GitPullDialog" timestamp="1584024126242">
+    <state x="387" y="126" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584024377630" />
+    <state x="521" y="237" key="git4idea.merge.GitPullDialog" timestamp="1584024410011">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="371" y="166" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1583938416324" />
-    <state x="521" y="237" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584024126242" />
+    <state x="521" y="237" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584024410011" />
     <state x="764" y="426" key="git4idea.ui.GitResetDialog" timestamp="1584024268709">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
