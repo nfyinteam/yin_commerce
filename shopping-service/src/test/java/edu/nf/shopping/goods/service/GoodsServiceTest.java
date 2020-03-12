@@ -3,7 +3,6 @@ package edu.nf.shopping.goods.service;
 import edu.nf.shopping.goods.entity.GoodsInfo;
 import edu.nf.shopping.goods.entity.GoodsType;
 import edu.nf.shopping.goods.entity.SpuInfo;
-import edu.nf.shopping.goods.service.GoodsService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
