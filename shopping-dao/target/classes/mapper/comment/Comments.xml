@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.nf.shopping.comment.dao.CommentDao">
+    <resultMap id="commentMap" type="edu.nf.shopping.comment.entity.Comment">
+        <id  property="comId" column="com_id"/>
+        <result property="goodsId" column="goods_id"/>
+        <result property="userId" column="u_id"/>
+        <result property="byId" column="by_id"/>
+        <result property="content" column="com_content"/>
+        <result property="time" column="com_time"/>
+        <result property="state" column="com_state"/>
+        <result property="grade" column="com_grade"/>
+    </resultMap>
+    <select id="listComment" resultMap="commentMap">
+        select * from comments
+    </select>
+</mapper>
