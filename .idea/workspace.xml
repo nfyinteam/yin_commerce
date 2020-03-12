@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="34ea5314-6c8f-4ac5-9e4c-215f84be2b1b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/36cc0e89-50c1-496d-8ac1-194554fb459d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/36cc0e89-50c1-496d-8ac1-194554fb459d.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="526d3e9c-dff7-4ee1-9e0d-ae85a8206b4f" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -90,6 +87,11 @@
   </component>
   <component name="RebelAgentSelection">
     <selection>jr</selection>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="edu.nf.shopping.config" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
@@ -236,14 +238,15 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="463" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1583948509437" />
-    <state x="275" y="88" key="Vcs.Push.Dialog.v2" timestamp="1583938443262">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="387" y="126" key="Vcs.Push.Dialog.v2" timestamp="1583998092141">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="275" y="88" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1583938443262" />
-    <state x="521" y="237" key="git4idea.merge.GitPullDialog" timestamp="1583948216850">
+    <state x="387" y="126" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583998092141" />
+    <state x="521" y="237" key="git4idea.merge.GitPullDialog" timestamp="1583998016180">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="371" y="166" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1583938416324" />
-    <state x="521" y="237" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583948216850" />
+    <state x="521" y="237" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583998016180" />
   </component>
 </project>
