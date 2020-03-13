@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 /*@ControllerAdvice({"edu.nf.shopping.goods.controller"})*/
 public class ControllerAspect {
+
     @ExceptionHandler(GoodsException.class)
     @ResponseBody
     public ResponseVO loginException(GoodsException e){
