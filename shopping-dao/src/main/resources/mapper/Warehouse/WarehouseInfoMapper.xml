@@ -2,6 +2,20 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="edu.nf.shopping.warehouse.dao.WarehouseInfoDao">
+    <resultMap id="marehouseMap" type="edu.nf.shopping.warehouse.entity.WarehouseInfo">
+        <id property="wid" column="w_id"/>
+        <result property="warehouseName" column="w_name"/>
+        <result property="warehouseAddress" column="w_address"/>
+        <result property="warehouseRegion" column="w_region"/>
+        <result property="warehouseAdmin" column="w_admin"/>
+        <association property="city" resultMap="cityMap"/>
+    </resultMap>
+    <resultMap id="cityMap" type="edu.nf.shopping.warehouse.entity.City">
+        <id column="c_id" property="cid"/>
+        <result property="cname" column="c_name"/>
+        <result property="pid" column="p_id"/>
+        <result property="type" column="type"/>
+    </resultMap>
     <update id="updateWarehouseByCityName"></update>
 
     <select id="listWarehouse" resultType="edu.nf.shopping.warehouse.entity.WarehouseInfo"></select>
