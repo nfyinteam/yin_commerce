@@ -15,11 +15,7 @@ public interface WarehouseInfoDao {
      */
     List<WarehouseInfo> listWarehouse();
 
-    /**
-     * 查询所有仓库所在城市
-     * @return
-     */
-    List<String> listWarehouseCity();
+
 
     /**
      * 按照城市查找仓库
@@ -30,10 +26,14 @@ public interface WarehouseInfoDao {
 
     /**
      * 修改仓库信息
-     * @param cityName
+     * @param warehouseInfo
      */
-    void updateWarehouseByCityName(String cityName);
-
+    void updateWarehouseByCityName(WarehouseInfo warehouseInfo);
+    /**
+     * 修改仓库信息
+     * @param warehouseInfo
+     */
+    void updateWarehouseById(WarehouseInfo warehouseInfo);
     /**
      * 用ID查找仓库
      * @param warehouseId
@@ -41,5 +41,10 @@ public interface WarehouseInfoDao {
      */
     WarehouseInfo getWarehouseById(String warehouseId);
 
+    /**
+     * 添加仓库
+     * @param warehouseInfo
+     */
+    void insertWarehouse(WarehouseInfo warehouseInfo);
 
 }
