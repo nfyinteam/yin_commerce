@@ -2,27 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="526d3e9c-dff7-4ee1-9e0d-ae85a8206b4f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/shopping-adminapi/src/main/java/edu/nf/shopping/config/RestConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-adminapi/src/main/java/edu/nf/shopping/config/SwaggerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-adminapi/src/main/java/edu/nf/shopping/vo/BaseController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/config/RestConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/config/SwaggerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-util/src/main/java/edu/nf/shopping/util/FIleNameUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-util/src/main/java/edu/nf/shopping/util/PageBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-util/src/main/java/edu/nf/shopping/util/UUIDUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-util/src/main/java/edu/nf/shopping/util/UploadAddressUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-adminapi/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-adminapi/shopping-adminapi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/shopping-adminapi.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-adminapi/src/main/java/edu/nf/shopping/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/src/main/java/edu/nf/shopping/config/CorsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-adminapi/src/main/java/edu/nf/shopping/goods/advice/ControllerAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/src/main/java/edu/nf/shopping/goods/advice/ControllerAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-adminapi/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/shopping-userapi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/shopping-userapi.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/goods/advice/ControllerAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/goods/advice/ControllerAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/goods/controller/ImgeUploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/goods/controller/ImgeUploadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-util/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-util/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,23 +95,23 @@
     <selection>jr</selection>
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\ideaprojects\addiction-shopping\shopping-adminapi\src\main\java\edu\nf\shopping\vo" />
-      <recent name="D:\ideaprojects\addiction-shopping\shopping-userapi\src\main\java\edu\nf\shopping\goods\controller" />
-      <recent name="D:\ideaprojects\addiction-shopping\shopping-userapi\src\main\java\edu\nf\shopping\config" />
-      <recent name="D:\ideaprojects\addiction-shopping\shopping-util\src\main\java\edu\nf\shopping\util" />
-      <recent name="D:\ideaprojects\addiction-shopping\shopping-adminapi\src\test\java" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="edu.nf.shopping.goods.controller" />
-      <recent name="edu.nf.shopping.config" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\ideaprojects\addiction-shopping\shopping-dao\src\main\resources\mapper\goods" />
       <recent name="D:\ideaprojects\addiction-shopping\shopping-dao\src\main\resources\mapper" />
       <recent name="D:\ideaprojects\addiction-shopping\shopping-dao\src\main\resources" />
       <recent name="D:\ideaprojects\addiction-shopping\shopping-dao\src\main\]" />
       <recent name="D:\ideaprojects\addiction-shopping\shopping-dao\src\main\resources\mapper\goods\comment" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="edu.nf.shopping.goods.controller" />
+      <recent name="edu.nf.shopping.config" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ideaprojects\addiction-shopping\shopping-adminapi\src\main\java\edu\nf\shopping\vo" />
+      <recent name="D:\ideaprojects\addiction-shopping\shopping-userapi\src\main\java\edu\nf\shopping\goods\controller" />
+      <recent name="D:\ideaprojects\addiction-shopping\shopping-userapi\src\main\java\edu\nf\shopping\config" />
+      <recent name="D:\ideaprojects\addiction-shopping\shopping-util\src\main\java\edu\nf\shopping\util" />
+      <recent name="D:\ideaprojects\addiction-shopping\shopping-adminapi\src\test\java" />
     </key>
   </component>
   <component name="RunManager" selected="JUnit.CommentServiceTest.listComment">
@@ -308,7 +288,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="write entity shoppingcart" />
     <MESSAGE value="稳定版本" />
-    <option name="LAST_COMMIT_MESSAGE" value="稳定版本" />
+    <MESSAGE value="配置了文件上传、配置了Rest、swagger" />
+    <option name="LAST_COMMIT_MESSAGE" value="配置了文件上传、配置了Rest、swagger" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="25" key="#Notifications" timestamp="1583938246865">
@@ -331,11 +312,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="269" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584102584854" />
-    <state x="488" y="0" width="697" height="728" key="CommitChangelistDialog2" timestamp="1584088137038">
+    <state x="488" y="0" width="697" height="728" key="CommitChangelistDialog2" timestamp="1584102863543">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="347" y="0" width="697" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1583938018590" />
-    <state x="488" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584088137038" />
+    <state x="488" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584102863543" />
     <state x="651" y="174" key="FileChooserDialogImpl" timestamp="1584088301012">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -377,11 +358,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="463" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1584025090509" />
-    <state x="387" y="126" key="Vcs.Push.Dialog.v2" timestamp="1584088142729">
+    <state x="387" y="126" key="Vcs.Push.Dialog.v2" timestamp="1584102889466">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="275" y="88" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1583938443262" />
-    <state x="387" y="126" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584088142729" />
+    <state x="387" y="126" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584102889466" />
     <state x="521" y="237" key="git4idea.merge.GitPullDialog" timestamp="1583998016180">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
