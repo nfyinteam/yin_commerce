@@ -325,11 +325,12 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="811" y="412" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583945976435" />
-    <state x="488" y="0" width="697" height="728" key="CommitChangelistDialog2" timestamp="1584025137538">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="427" y="23" width="697" height="728" key="CommitChangelistDialog2" timestamp="1584103230164">
+      <screen x="0" y="23" width="1680" height="982" />
     </state>
     <state x="347" y="0" width="697" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1583938018590" />
     <state x="488" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584025137538" />
+    <state x="427" y="23" key="CommitChangelistDialog2/0.23.1680.982@0.23.1680.982" timestamp="1584103230164" />
     <state x="651" y="174" key="FileChooserDialogImpl" timestamp="1584024977639">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -396,15 +397,17 @@
     </state>
     <state x="463" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1584025090509" />
     <state x="405" y="170" key="SettingsEditor/0.23.1680.981@0.23.1680.981" timestamp="1584103158695" />
-    <state x="387" y="126" key="Vcs.Push.Dialog.v2" timestamp="1584025144400">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="339" y="142" key="Vcs.Push.Dialog.v2" timestamp="1584103232799">
+      <screen x="0" y="23" width="1680" height="982" />
     </state>
     <state x="275" y="88" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1583938443262" />
     <state x="387" y="126" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584025144400" />
-    <state x="586" y="235" key="git4idea.branch.GitSmartOperationDialog" timestamp="1584102215866">
-      <screen x="0" y="23" width="1680" height="981" />
+    <state x="339" y="142" key="Vcs.Push.Dialog.v2/0.23.1680.982@0.23.1680.982" timestamp="1584103232799" />
+    <state x="586" y="235" key="git4idea.branch.GitSmartOperationDialog" timestamp="1584103272359">
+      <screen x="0" y="23" width="1680" height="982" />
     </state>
     <state x="586" y="235" key="git4idea.branch.GitSmartOperationDialog/0.23.1680.981@0.23.1680.981" timestamp="1584102215866" />
+    <state x="586" y="235" key="git4idea.branch.GitSmartOperationDialog/0.23.1680.982@0.23.1680.982" timestamp="1584103272359" />
     <state x="456" y="247" key="git4idea.merge.GitPullDialog" timestamp="1584102203555">
       <screen x="0" y="23" width="1680" height="981" />
     </state>
