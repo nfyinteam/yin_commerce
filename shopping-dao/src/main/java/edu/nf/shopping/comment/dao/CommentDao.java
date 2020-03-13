@@ -1,6 +1,7 @@
 package edu.nf.shopping.comment.dao;
 
 import edu.nf.shopping.comment.entity.Comment;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -11,7 +12,11 @@ import java.util.List;
 public interface CommentDao {
 
     /**
-     * 查询所有评论
+     * 查询某个商品的买家秀
     **/
-    List<Comment> listComment();
+    List<Comment> listBuyShow(@Param("pageNum")Integer pageNum,@Param("pageSize")Integer pageSie,String goodsId,String order);
+    /**
+     * 查询某个商品的回复评论
+     **/
+    List<Comment> listByComment(@Param("pageNum")Integer pageNum,@Param("pageSize")Integer pageSie,List<Comment> list,String comId);
 }

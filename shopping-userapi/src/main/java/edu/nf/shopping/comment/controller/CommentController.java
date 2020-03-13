@@ -1,5 +1,6 @@
 package edu.nf.shopping.comment.controller;
 
+import com.github.pagehelper.PageInfo;
 import edu.nf.shopping.comment.entity.Comment;
 import edu.nf.shopping.comment.service.CommentService;
 import edu.nf.shopping.vo.BaseController;
@@ -20,9 +21,9 @@ public class CommentController extends BaseController {
     @Autowired
     private CommentService commentService;
 
-    @RequestMapping("/list_comment")
-    private ResponseVO listComment(){
-        List<Comment> list=commentService.listComment();
-        return success(list);
+    @RequestMapping("/list_buyShow")
+    private ResponseVO<PageInfo<Comment>> listComment(Integer pageNum,Integer pageSize,String goodsId,String order){
+        PageInfo<Comment> pageInfo=commentService.listBuyShow(pageNum,pageSize,goodsId,order);
+        return success(pageInfo);
     }
 }

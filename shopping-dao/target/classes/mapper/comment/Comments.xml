@@ -6,17 +6,35 @@
         <id  property="comId" column="com_id"/>
         <result property="goodsId" column="goods_id"/>
         <result property="userId" column="u_id"/>
-        <result property="byId" column="by_id"/>
+        <result property="bycId" column="by_cid"/>
         <result property="content" column="com_content"/>
         <result property="time" column="com_time"/>
         <result property="state" column="com_state"/>
         <result property="grade" column="com_grade"/>
     </resultMap>
-    <select id="listComment" resultMap="commentMap">
-        select c.com_id,c.goods_id,c.u_id,c.by_cid,c.com_content,
-        c.com_time,c.com_state,c.com_grade,u.u_name,uf.face_id
-        from comments c
-        INNER JOIN user_info u LEFT JOIN user_face uf on c.u_id=u.u_id
-        and u.u_id=uf.u_id 
+    <select id="listBuyShow" resultMap="commentMap" parameterType="String">
+        select c.com_id,c.goods_id,c.u_id,c.by_cid,c.com_content,c.com_time,
+        c.com_state,c.com_grade,u.u_name,uf.face_id from comments c
+        INNER JOIN user_info u LEFT JOIN user_face uf
+        on c.u_id=u.u_id and u.u_id=uf.u_id where c.goods_id=#{param3}
+        <if test="param4!='' and param4!=null and param4!='null'">
+            and order by c.com_time
+        </if>
     </select>
+    <select id="listByComment" resultMap="commentMap" parameterType="String">
+    select c.com_id,c.goods_id,c.u_id,c.by_cid,c.com_content,
+    c.com_time,c.com_state,c.com_grade,u.u_name,uf.face_id
+    from comments c
+    INNER JOIN user_info u LEFT JOIN user_face uf on c.u_id=u.u_id
+    and u.u_id=uf.u_id where c.by_cid in
+    <if test="list.size() > 0">
+        <foreach collection="list" item="id" open="(" close=")" separator=",">
+            #{id.comId}
+        </foreach>
+    </if>
+    <if test="param4!=null and param4!=''">
+        (#{param4})
+    </if>
+</select>
+
 </mapper>
