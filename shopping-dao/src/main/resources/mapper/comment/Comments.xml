@@ -13,6 +13,10 @@
         <result property="grade" column="com_grade"/>
     </resultMap>
     <select id="listComment" resultMap="commentMap">
-        select * from comments
+        select c.com_id,c.goods_id,c.u_id,c.by_cid,c.com_content,
+        c.com_time,c.com_state,c.com_grade,u.u_name,uf.face_id
+        from comments c
+        INNER JOIN user_info u LEFT JOIN user_face uf on c.u_id=u.u_id
+        and u.u_id=uf.u_id 
     </select>
 </mapper>
