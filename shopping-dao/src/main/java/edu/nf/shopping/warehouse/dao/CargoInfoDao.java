@@ -11,32 +11,24 @@ import java.util.List;
  */
 public interface CargoInfoDao {
     /**
-<<<<<<< HEAD
-     * 返回所有货物信息表
-=======
-     * 搜索所有
->>>>>>> f65dbfe0523f4b82c994deaa51d9c7a2b718bae3
+     *查询所有货物信息
      * @return
      */
     List<CargoInfo> listCargoInfo();
 
     /**
-<<<<<<< HEAD
-     * 返回单个
-=======
-     *
->>>>>>> f65dbfe0523f4b82c994deaa51d9c7a2b718bae3
-     * @param id
-     * @return
+     * 添加货物信息
      */
-    CargoInfo getCargoInfoById(String id);
-
+    void insertCargoInfo();
 
     /**
-     * 修改货物是否出货
-     * @param id
-     * @param isOut
+     * 删除货物信息
      */
-    void updateCargoIsOutById(String id,Boolean isOut);
+    void deleteCargoInfo();
+
+    /**
+     * 修改货物信息
+     */
+    void updateCargoInfo();
 
 }

@@ -18,21 +18,20 @@
     </resultMap>
     <insert id="insertWarehouse" parameterType="edu.nf.shopping.warehouse.entity.WarehouseInfo">
         INSERT INTO warehouse_info(w_id,w_name,w_region,w_address,w_admin)
-        VALUES(#{wid},#{warehouseName},#{warehouseRegion},#{warehouseAddress},#{warehouseAdmin}),
+        VALUES(#{wid},#{warehouseName},#{warehouseRegion},#{warehouseAddress},#{warehouseAdmin})
     </insert>
-    <update id="updateWarehouseByCityName" parameterType="edu.nf.shopping.warehouse.entity.WarehouseInfo">
-        UPDATE warehouse_info SET w_name =#{warehouseName} , w_region = #{warehouseRegion} , w_address = #{warehouseAddress} , w_admin = #{warehouseAdmin}  WHERE  w_name = #{warehouseName}
-    </update>
+
     <update id="updateWarehouseById" parameterType="edu.nf.shopping.warehouse.entity.WarehouseInfo">
-        UPDATE warehouse_info SET w_name =#{warehouseName} , w_region = #{warehouseRegion} , w_address = #{warehouseAddress} , w_admin = #{warehouseAdmin}  WHERE  w_id = #{wid}
+            UPDATE warehouse_info SET w_name =#{warehouseName} , w_region = #{warehouseRegion} , w_address = #{warehouseAddress} , w_admin = #{warehouseAdmin}  WHERE  w_id = #{wid}
     </update>
+
     <select id="listWarehouse" resultMap="marehouseMap">
-        SELECT * FROM warehouse_info w  LEFT JOIN City c ON w.w_region = c.c_id
+        SELECT * FROM warehouse_info w  LEFT JOIN City c ON w.w_region = c.c_id;
     </select>
     <select id="getWarehouseById" resultType="edu.nf.shopping.warehouse.entity.WarehouseInfo">
-         SELECT * FROM warehouse_info w  LEFT JOIN City c ON w.w_region = c.c_id where w_id = #{warehouseId}
+         SELECT * FROM warehouse_info w  LEFT JOIN City c ON w.w_region = c.c_id where w_id = #{warehouseId};
     </select>
-    <select id="getWarehouseByCitys" resultType="edu.nf.shopping.warehouse.entity.WarehouseInfo" parameterType="java.lang.String">
-        SELECT * FROM warehouse_info w  LEFT JOIN City c ON w.w_region = c.c_id where w_name LIKE '#{cityName}%'
+    <select id="getWarehouseByCitys" resultMap="marehouseMap" parameterType="java.lang.String">
+        SELECT * FROM warehouse_info w  LEFT JOIN City c ON w.w_region = c.c_id where w_name LIKE #{cityName};
     </select>
 </mapper>

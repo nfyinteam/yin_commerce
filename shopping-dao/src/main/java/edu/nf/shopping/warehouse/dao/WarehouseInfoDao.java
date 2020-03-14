@@ -24,15 +24,6 @@ public interface WarehouseInfoDao {
      */
     List<WarehouseInfo> getWarehouseByCitys(String cityName);
 
-    /**
-     * 修改仓库信息
-     * @param warehouseInfo
-     */
-    void updateWarehouseByCityName(WarehouseInfo warehouseInfo);
-    /**
-     * 修改仓库信息
-     * @param warehouseInfo
-     */
     void updateWarehouseById(WarehouseInfo warehouseInfo);
     /**
      * 用ID查找仓库
