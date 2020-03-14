@@ -6,6 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="shopping-util" />
+        <module name="shopping-dao" />
+        <module name="shopping-userapi" />
+        <module name="shopping-service" />
+        <module name="shopping-entity" />
+        <module name="shopping-adminapi" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

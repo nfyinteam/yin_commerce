@@ -16,14 +16,5 @@ import java.util.List;
 @SpringBootApplication(scanBasePackages = {"edu.nf.shopping"})
 public class CommentServiceTest {
 
-    @Autowired
-    private CommentService commentService;
 
-    @Test
-    void listComment(){
-        List<Comment> list=commentService.listComment();
-        for (Comment comments : list) {
-            System.out.println(comments);
-        }
-    }
 }
