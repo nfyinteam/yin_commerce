@@ -2,12 +2,9 @@ package edu.nf.shopping.comment.service;
 
 import com.github.pagehelper.PageInfo;
 import edu.nf.shopping.comment.entity.Comment;
-import edu.nf.shopping.comment.server.ProducerServer;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import java.util.List;
 
 /**
  * @author Bull fighters
@@ -31,6 +28,6 @@ public class CommentServiceTest {
     @Test
     void rabbitTest(){
         PageInfo<Comment> list=commentService.listBuyShow(1,1,"1578412684903","");
-        producerServer.sendMessage(list);
+        producerServer.sendMessage(list,10000);
     }
 }

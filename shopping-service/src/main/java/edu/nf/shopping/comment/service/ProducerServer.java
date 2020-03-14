@@ -1,4 +1,4 @@
-package edu.nf.shopping.comment.server;
+package edu.nf.shopping.comment.service;
 
 import edu.nf.shopping.config.RabbitConfig;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
@@ -20,14 +20,18 @@ public class ProducerServer {
 
     /**
      * 发送文本消息
-     * @param message
+     * @param aaa
      */
-    public void sendMessage(Object message){
+    public void sendMessage(Object aaa,Integer delayTime){
         //创建消息的唯一ID
         CorrelationData correlationData = new CorrelationData();
         //消息的ID
         correlationData.setId(UUID.randomUUID().toString());
         //发送消息
-        rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME, "order.message", message, correlationData);
+        rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME, "order.message", aaa, message -> {
+            //设置延迟时间
+            message.getMessageProperties().setDelay(delayTime);
+            return message;
+        }, correlationData);
     }
 }
