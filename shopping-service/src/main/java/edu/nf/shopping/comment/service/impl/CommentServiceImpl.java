@@ -31,9 +31,6 @@ public class CommentServiceImpl implements CommentService {
                 List<Comment> ComList=commentDao.listByComment(1,3,byShowList,"");
                 byShowList.addAll(ComList);
             }
-            for (Comment comment : byShowList) {
-                System.out.println(comment);
-            }
             PageInfo<Comment> pageInfo=new PageInfo(byShowList);
             return pageInfo;
         }catch (RuntimeException e){

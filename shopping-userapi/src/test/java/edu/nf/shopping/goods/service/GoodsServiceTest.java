@@ -1,5 +1,9 @@
 package edu.nf.shopping.goods.service;
 
+import com.rabbitmq.client.BuiltinExchangeType;
+import com.rabbitmq.client.Channel;
+import com.rabbitmq.client.Connection;
+import com.rabbitmq.client.ConnectionFactory;
 import edu.nf.shopping.goods.entity.GoodsInfo;
 import edu.nf.shopping.goods.entity.GoodsType;
 import edu.nf.shopping.goods.entity.SpuInfo;
@@ -40,4 +44,6 @@ public class GoodsServiceTest {
             System.out.println("----------------------------");
         }
     }
+
+
 }
