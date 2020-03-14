@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.nf.shopping.warehouse.dao.SupplierInfoDao">
+    <resultMap id="SupplierInfoMap" type="edu.nf.shopping.warehouse.entity.SupplierInfo">
+        <id property="supplierId" column="supplier_id"/>
+        <result property="supplierName" column="supplier_name"/>
+        <result property="supplierTel" column="supplier_tel"/>
+        <result property="supplierAddress" column="supplier_address"/>
+    </resultMap>
+    <insert id="insertSupplierInfo" parameterType="edu.nf.shopping.warehouse.entity.SupplierInfo">
+        INSERT INTO supplier_info (supplier_name,supplier_tel,supplier_address) VALUES (#{supplierName},#{supplierTel},#{supplierAddress});
+    </insert>
+    <update id="updateSupplierInfoByid" parameterType="edu.nf.shopping.warehouse.entity.SupplierInfo">
+        UPDATE supplier_info SET supplier_name = #{supplierName} ,supplier_tel = #{supplierTel} , supplier_address = #{supplierAddress}  WHERE supplier_id = #{supplier_id}
+    </update>
+    <delete id="deleteSupplierInfo" parameterType="java.lang.Integer">
+        DELETE FROM supplier_info WHERE supplier_id =  #{id};
+    </delete>
+
+    <select id="listSupplierInfo" resultMap="SupplierInfoMap">
+        select * FROM supplier_info
+    </select>
+
+</mapper>
