@@ -36,8 +36,8 @@ spring:
     # 连接端口,默认5672
     port: 5672
     # 设置登陆认证的账号密码，默认为guest
-    username: guest
-    password: guest
+    username: crab
+    password: 123456
     # 虚拟主机地址，默认为"/"
     virtual-host: /
     # 设置连接诶超时时间

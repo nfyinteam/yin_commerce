@@ -20,6 +20,13 @@ spring:
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
+  # 配置上传
+  multipart:
+    enabled: true
+    # 每个文件限制为10M
+    max-file-size: 50MB
+    # 单词请求所有文件容量不能大于100MB
+    max-request-size: 2000MB
   # 包含dao的yml配置文件,对应的是application-xxx.yml文件的xxx名称
   profiles:
     include: dao, service
@@ -29,8 +36,8 @@ spring:
     # 连接端口,默认5672
     port: 5672
     # 设置登陆认证的账号密码，默认为guest
-    username: guest
-    password: guest
+    username: crab
+    password: 123456
     # 虚拟主机地址，默认为"/"
     virtual-host: /
     # 设置连接诶超时时间

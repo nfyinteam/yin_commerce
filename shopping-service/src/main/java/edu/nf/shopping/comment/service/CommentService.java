@@ -15,5 +15,8 @@ public interface CommentService {
      * 查询某个商品的买家秀
      **/
     PageInfo<Comment> listBuyShow(Integer pageNum, Integer pageSize, String goodsId, String order);
-
+    /**
+     * 添加评论
+     **/
+    void addComment(Comment comment);
 }

@@ -5,9 +5,11 @@ import edu.nf.shopping.comment.dao.CommentDao;
 import edu.nf.shopping.comment.entity.Comment;
 import edu.nf.shopping.comment.exception.CommentException;
 import edu.nf.shopping.comment.service.CommentService;
+import edu.nf.shopping.util.UUIDUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -37,7 +39,20 @@ public class CommentServiceImpl implements CommentService {
             e.printStackTrace();
             throw new CommentException("数据库出错");
         }
-
     }
 
+    @Override
+    public void addComment(Comment comment) {
+        try{
+            comment.setComId(UUIDUtils.createUUID());
+            comment.setGrade(comment.getBycId().equals(null)?"3":"2");
+            comment.setState("1");
+            comment.setTime(new Date());
+            System.out.println(comment);
+            commentDao.addComment(comment);
+        }catch (RuntimeException e){
+            e.printStackTrace();
+            throw new CommentException("数据库出错");
+        }
+    }
 }

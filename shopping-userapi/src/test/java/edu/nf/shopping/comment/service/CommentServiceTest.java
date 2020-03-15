@@ -28,6 +28,6 @@ public class CommentServiceTest {
     @Test
     void rabbitTest(){
         PageInfo<Comment> list=commentService.listBuyShow(1,1,"1578412684903","");
-        producerServer.sendMessage(list,10000);
+        producerServer.sendMessage(list,1);
     }
 }
