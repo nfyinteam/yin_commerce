@@ -25,6 +25,8 @@ public class CommentController extends BaseController {
     private CommentService commentService;
 
     @RequestMapping("/list_buyShow")
+    @ApiOperation(value = "查询买家秀", notes = "查询单个商品的买家秀和子评论",
+            httpMethod = "get")
     private ResponseVO<PageInfo<Comment>> listComment(Integer pageNum,Integer pageSize,String goodsId,String order){
         PageInfo<Comment> pageInfo=commentService.listBuyShow(pageNum,pageSize,goodsId,order);
         return success(pageInfo);
