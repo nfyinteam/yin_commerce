@@ -1,57 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="526d3e9c-dff7-4ee1-9e0d-ae85a8206b4f" name="Default Changelist" comment="">
+    <list default="true" id="62b8ac9c-86a9-4199-8f79-2819b827666b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/goods/Comments.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/comment/Comments.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/goods/Comments.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/UserApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/UserApiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/goods/advice/ControllerAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/goods/advice/ControllerAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/src/test/java/edu/nf/shopping/goods/service/GoodsServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/src/test/java/edu/nf/shopping/goods/service/GoodsServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-adminapi/shopping-adminapi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/shopping-adminapi.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/shopping-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/shopping-service.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-userapi/shopping-userapi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/shopping-userapi.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/comment/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/comment/controller/CommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-userapi/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/comment/controller/CommentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/comment/controller/CommentController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/goods/advice/ControllerAspect.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/goods/advice/ControllerAspect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/target/test-classes/edu/nf/shopping/goods/service/GoodsServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/target/test-classes/edu/nf/shopping/goods/service/GoodsServiceTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@www.88k88.cn" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@www.88k88.cn" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@www.88k88.cn" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="yin_commerce: schema" type="76f4a085:MysqlImplModel$Schema" />
-      </path>
-    </expand>
-    <select />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -64,34 +31,36 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="d:/apache-maven-3.6.1" />
-        <option name="userSettingsFile" value="D:\apache-maven-3.6.1\conf\settings.xml" />
+        <option name="mavenHome" value="C:/apache-maven-3.6.1" />
+        <option name="userSettingsFile" value="C:\apache-maven-3.6.1\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
-  <component name="ProjectId" id="1YkjpQo68oSP2QYCmt9wJE57S1e" />
+  <component name="ProjectId" id="1Z7Y3KQDPghD3mVU43RlKx3kXI6" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
+    <option name="abbreviatePackageNames" value="true" />
+    <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/shopping-util" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../addiction-shopping-web" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -100,20 +69,8 @@
   <component name="RebelAgentSelection">
     <selection>jr</selection>
   </component>
-  <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="edu.nf.shopping.config" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\ideaprojects\addiction-shopping\shopping-dao\src\main\resources\mapper\goods" />
-      <recent name="D:\ideaprojects\addiction-shopping\shopping-dao\src\main\resources\mapper" />
-      <recent name="D:\ideaprojects\addiction-shopping\shopping-dao\src\main\resources" />
-      <recent name="D:\ideaprojects\addiction-shopping\shopping-dao\src\main\]" />
-      <recent name="D:\ideaprojects\addiction-shopping\shopping-dao\src\main\resources\mapper\goods\comment" />
-    </key>
-  </component>
-  <component name="RunManager" selected="JUnit.CommentServiceTest.listComment">
-    <configuration name="CommentServiceTest.listComment" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.CommentServiceTest.rabbitTest">
+    <configuration name="CommentServiceTest.rabbitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shopping-userapi" />
       <extension name="coverage">
         <pattern>
@@ -123,79 +80,29 @@
       </extension>
       <option name="PACKAGE_NAME" value="edu.nf.shopping.comment.service" />
       <option name="MAIN_CLASS_NAME" value="edu.nf.shopping.comment.service.CommentServiceTest" />
-      <option name="METHOD_NAME" value="listComment" />
+      <option name="METHOD_NAME" value="rabbitTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GoodsServiceTest.listGoodsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="shopping-userapi" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.nf.shopping.goods.service.*" />
+          <option name="PATTERN" value="edu.nf.shopping.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.nf.shopping.goods.service" />
-      <option name="MAIN_CLASS_NAME" value="edu.nf.shopping.goods.service.GoodsServiceTest" />
-      <option name="METHOD_NAME" value="listGoodsTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <module name="shopping-entity" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
-      <module name="shopping-entity" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="edu.nf.shopping.UserApiApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CommentServiceTest.listComment" />
-        <item itemvalue="JUnit.GoodsServiceTest.listGoodsTest" />
+        <item itemvalue="JUnit.CommentServiceTest.rabbitTest" />
+        <item itemvalue="Spring Boot.UserApiApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -216,31 +123,15 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5e28548b-8be0-4555-97ff-f97a2e9198d0" name="Default Changelist" comment="" />
-      <created>1583493668656</created>
+      <changelist id="62b8ac9c-86a9-4199-8f79-2819b827666b" name="Default Changelist" comment="" />
+      <created>1584191399535</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1583493668656</updated>
-      <workItem from="1583493673177" duration="641000" />
-      <workItem from="1583723585657" duration="5783000" />
-      <workItem from="1583894926308" duration="916000" />
-      <workItem from="1583936276025" duration="2370000" />
+      <updated>1584191399535</updated>
+      <workItem from="1584191403200" duration="478000" />
+      <workItem from="1584193091377" duration="565000" />
+      <workItem from="1584194791368" duration="20000" />
     </task>
-    <task id="LOCAL-00001" summary="write entity shoppingcart">
-      <created>1583938021337</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1583938021337</updated>
-    </task>
-    <task id="LOCAL-00002" summary="write entity shoppingcart">
-      <created>1584025141002</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1584025141002</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,99 +140,83 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
-        <entry key="MAIN">
+        <entry key="1">
           <value>
             <State>
-              <option name="COLUMN_ORDER" />
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
             </State>
           </value>
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="write entity shoppingcart" />
-    <option name="LAST_COMMIT_MESSAGE" value="write entity shoppingcart" />
+    <option name="OPEN_TABS">
+      <set>
+        <option value="1" />
+      </set>
+    </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="275" y="25" key="#Notifications" timestamp="1583938246865">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="431" y="126" key="FileChooserDialogImpl" timestamp="1584194809583">
+      <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="275" y="25" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1583938246865" />
-    <state x="506" y="71" width="816" height="646" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583724468469">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="431" y="126" key="FileChooserDialogImpl/0.0.1304.768@0.0.1304.768" timestamp="1584194809583" />
+    <state width="1261" height="171" key="GridCell.Tab.0.bottom" timestamp="1584193656581">
+      <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="506" y="71" width="816" height="646" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1583724468469" />
-    <state x="488" y="57" key="#com.intellij.ide.util.MemberChooser" timestamp="1583895144658">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1261" height="171" key="GridCell.Tab.0.bottom/0.0.1304.768@0.0.1304.768" timestamp="1584193656581" />
+    <state width="1261" height="171" key="GridCell.Tab.0.center" timestamp="1584193656581">
+      <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="488" y="57" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1583895144658" />
-    <state x="811" y="412" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1583945976435">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1261" height="171" key="GridCell.Tab.0.center/0.0.1304.768@0.0.1304.768" timestamp="1584193656581" />
+    <state width="1261" height="171" key="GridCell.Tab.0.left" timestamp="1584193656581">
+      <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="811" y="412" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583945976435" />
-    <state x="488" y="0" width="697" height="728" key="CommitChangelistDialog2" timestamp="1584025137538">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1261" height="171" key="GridCell.Tab.0.left/0.0.1304.768@0.0.1304.768" timestamp="1584193656581" />
+    <state width="1261" height="171" key="GridCell.Tab.0.right" timestamp="1584193656581">
+      <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="347" y="0" width="697" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1583938018590" />
-    <state x="488" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584025137538" />
-    <state x="651" y="174" key="FileChooserDialogImpl" timestamp="1584024977639">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1261" height="171" key="GridCell.Tab.0.right/0.0.1304.768@0.0.1304.768" timestamp="1584193656581" />
+    <state width="1261" height="171" key="GridCell.Tab.1.bottom" timestamp="1584193656577">
+      <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="463" y="122" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1583938633477" />
-    <state x="651" y="174" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1584024977639" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1584026563057">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1261" height="171" key="GridCell.Tab.1.bottom/0.0.1304.768@0.0.1304.768" timestamp="1584193656577" />
+    <state width="1261" height="171" key="GridCell.Tab.1.center" timestamp="1584193656576">
+      <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584026563057" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1584026563056">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1261" height="171" key="GridCell.Tab.1.center/0.0.1304.768@0.0.1304.768" timestamp="1584193656576" />
+    <state width="1261" height="171" key="GridCell.Tab.1.left" timestamp="1584193656576">
+      <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584026563056" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1584026563056">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1261" height="171" key="GridCell.Tab.1.left/0.0.1304.768@0.0.1304.768" timestamp="1584193656576" />
+    <state width="1261" height="171" key="GridCell.Tab.1.right" timestamp="1584193656577">
+      <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584026563056" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1584026563057">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1261" height="171" key="GridCell.Tab.1.right/0.0.1304.768@0.0.1304.768" timestamp="1584193656577" />
+    <state x="153" y="0" key="SettingsEditor" timestamp="1584193163717">
+      <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584026563057" />
-    <state width="278" height="477" key="HiddenNamespacesPopup" timestamp="1583724483547">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="153" y="0" key="SettingsEditor/0.0.1304.768@0.0.1304.768" timestamp="1584193163717" />
+    <state x="244" y="117" key="Vcs.Push.Dialog.v2" timestamp="1584193420822">
+      <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="278" height="477" key="HiddenNamespacesPopup/0.0.1366.728@0.0.1366.728" timestamp="1583724483547" />
-    <state x="540" y="257" key="IDE.errors.dialog" timestamp="1583945308059">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="540" y="257" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583945308059" />
-    <state x="623" y="291" key="NewModule_or_Project.wizard" timestamp="1584024978717">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="623" y="291" key="NewModule_or_Project.wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1584024978717" />
-    <state x="463" y="165" key="SettingsEditor" timestamp="1584025090509">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="463" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1584025090509" />
-    <state x="387" y="126" key="Vcs.Push.Dialog.v2" timestamp="1584025144400">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="275" y="88" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1583938443262" />
-    <state x="387" y="126" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584025144400" />
-    <state x="521" y="237" key="git4idea.merge.GitPullDialog" timestamp="1583998016180">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="371" y="166" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1583938416324" />
-    <state x="521" y="237" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583998016180" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/comment/service/impl/CommentServiceImpl.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="244" y="117" key="Vcs.Push.Dialog.v2/0.0.1304.768@0.0.1304.768" timestamp="1584193420822" />
   </component>
 </project>
