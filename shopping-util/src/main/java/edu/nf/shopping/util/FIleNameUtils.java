@@ -23,6 +23,10 @@ public class FIleNameUtils {
 	}
 	
 	public static String fileNameNotHaveSuffix(String fileName) {
-		return fileName= fileName.substring(0,fileName.lastIndexOf("."));
+		return fileName= fileName.substring(0, fileName.lastIndexOf("."));
+	}
+
+	public static void main(String[] args) {
+		System.out.println(newFileName("oop面向对象.jpg"));
 	}
 }

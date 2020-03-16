@@ -1,6 +1,7 @@
 package edu.nf.shopping.goods.advice;
 
 import edu.nf.shopping.goods.exception.GoodsException;
+import edu.nf.shopping.vo.ResponseVO;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -15,8 +16,8 @@ public class ControllerAspect {
 
     @ExceptionHandler(GoodsException.class)
     @ResponseBody
-    public ResultVO loginException(GoodsException e){
-        ResultVO vo = new ResultVO();
+    public ResponseVO loginException(GoodsException e){
+        ResponseVO vo = new ResponseVO();
         vo.setCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
         vo.setMessage(e.getMessage());
         return vo;
