@@ -2,6 +2,7 @@ package edu.nf.shopping.comment.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 import java.util.List;
@@ -18,8 +19,12 @@ public class Comment {
     private String parentId;
     private String bycId;
     private String content;
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    @JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date time;
     private String state;
     private String grade;
+    private String byUserName;
+    private String total;
+    private List<Comment> commentList;
 }

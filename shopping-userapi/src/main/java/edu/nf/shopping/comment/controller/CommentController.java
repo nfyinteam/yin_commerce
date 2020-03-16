@@ -25,10 +25,18 @@ public class CommentController extends BaseController {
     private CommentService commentService;
 
     @RequestMapping("/list_buyShow")
-    @ApiOperation(value = "查询买家秀", notes = "查询单个商品的买家秀和子评论",
+    @ApiOperation(value = "查询买家秀", notes = "查询单个商品的买家秀",
             httpMethod = "get")
-    private ResponseVO<PageInfo<Comment>> listComment(Integer pageNum,Integer pageSize,String goodsId,String order){
-        PageInfo<Comment> pageInfo=commentService.listBuyShow(pageNum,pageSize,goodsId,order);
+    private ResponseVO<PageInfo<Comment>> listBuyShow(Integer pageNum,Integer pageSize,Integer replySize,String goodsId,String order){
+        PageInfo<Comment> pageInfo=commentService.listBuyShow(pageNum,pageSize,replySize,goodsId,order);
+        return success(pageInfo);
+    }
+
+    @RequestMapping("/list_comment")
+    @ApiOperation(value = "查询回复评论", notes = "查询买家秀的回复评论",
+            httpMethod = "post")
+    private ResponseVO<PageInfo<Comment>> ListComment(Integer pageNum,Integer pageSize,String commentId){
+        PageInfo<Comment> pageInfo=commentService.listComment(pageNum,pageSize,commentId);
         return success(pageInfo);
     }
 

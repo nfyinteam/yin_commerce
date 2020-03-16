@@ -12,36 +12,43 @@
         <result property="time" column="com_time"/>
         <result property="state" column="com_state"/>
         <result property="grade" column="com_grade"/>
+        <result property="byUserName" column="by_uName"/>
+        <result property="total" column="total"/>
     </resultMap>
     <select id="listBuyShow" resultMap="commentMap" parameterType="String">
         select c.com_id,c.goods_id,c.u_id,c.parent_cid,c.by_cid,c.com_content,c.com_time,
-        c.com_state,c.com_grade,u.u_name,uf.face_id from comments c
-        INNER JOIN user_info u LEFT JOIN user_face uf
+        c.com_state,c.com_grade,u.u_name,uf.face_id
+        from comments c INNER JOIN user_info u inner JOIN user_face uf
         on c.u_id=u.u_id and u.u_id=uf.u_id where c.goods_id=#{param3}
-        and c.com_grade='1'
+        and c.com_grade='1' and c.com_state='1'
         <if test="param4!='' and param4!=null and param4!='null'">
             and order by c.com_time
         </if>
     </select>
     <select id="listByComment" resultMap="commentMap" parameterType="String">
         select c.com_id,c.goods_id,c.u_id,c.parent_cid,c.by_cid,c.com_content,
-        c.com_time,c.com_state,c.com_grade,u.u_name,uf.face_id
+        c.com_time,c.com_state,c.com_grade,u.u_name,uf.face_id,
+        (select bu.u_name from user_info bu INNER JOIN comments bc on
+        bu.u_id=bc.u_id where bc.com_id=c.by_cid) as by_uName,
+        (select COUNT(1) from comments where parent_cid =#{param3} and com_state='1')
+        as total
         from comments c
-        INNER JOIN user_info u LEFT JOIN user_face uf on c.u_id=u.u_id
-        and u.u_id=uf.u_id where c.parent_cid in
-        <if test="list.size() > 0">
-            <foreach collection="list" item="id" open="(" close=")" separator=",">
-                #{id.comId}
-            </foreach>
-        </if>
-        <if test="param4!=null and param4!=''">
-            (#{param4})
+        INNER JOIN user_info u inner JOIN user_face uf on c.u_id=u.u_id
+        and u.u_id=uf.u_id
+        where c.com_grade!='1' and c.com_state='1'
+        <if test="param3!=null and param3!=''">
+            and c.parent_cid =#{param3}
         </if>
     </select>
     <insert id="addComment" parameterType="edu.nf.shopping.comment.entity.Comment">
         insert comments(com_id,goods_id,u_id,parent_cid,by_cid,com_content,
-        com_time,com_state,com_grade) value
-        (#{comId},#{goodsId},#{userId},#{parentId},
+        com_time,com_state,com_grade) value(#{comId},#{goodsId},#{userId},#{parentId},
         #{bycId},#{content},#{time},#{state},#{grade})
     </insert>
+    <update id="updateComment" parameterType="edu.nf.shopping.comment.entity.Comment">
+
+    </update>
+    <delete id="deleteComment" parameterType="edu.nf.shopping.comment.entity.Comment">
+
+    </delete>
 </mapper>

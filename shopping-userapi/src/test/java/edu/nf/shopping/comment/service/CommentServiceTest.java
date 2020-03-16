@@ -21,13 +21,15 @@ public class CommentServiceTest {
 
     @Test
     void listComment(){
-        PageInfo<Comment> list=commentService.listBuyShow(1,1,"1578412684903","");
-        System.out.println(list);
+        PageInfo<Comment> list=commentService.listComment(2,6,"1001");
+        for (Comment comment : list.getList()) {
+            System.out.println(comment);
+        }
     }
 
     @Test
     void rabbitTest(){
-        PageInfo<Comment> list=commentService.listBuyShow(1,1,"1578412684903","");
+        PageInfo<Comment> list=commentService.listBuyShow(1,1,3,"1578412684903","");
         producerServer.sendMessage(list,1);
     }
 }

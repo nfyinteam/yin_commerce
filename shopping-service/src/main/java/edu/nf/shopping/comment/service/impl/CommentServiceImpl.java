@@ -23,17 +23,29 @@ public class CommentServiceImpl implements CommentService {
     private CommentDao commentDao;
 
     @Override
-    public PageInfo<Comment> listBuyShow(Integer pageNum,Integer pageSize,String goodsId,String order) {
+    public PageInfo<Comment> listBuyShow(Integer pageNum,Integer pageSize,Integer replySize,String goodsId,String order) {
         try{
             List<Comment> byShowList=commentDao.listBuyShow(pageNum,pageSize,goodsId,order);
-            //查询买家秀的图片
-
             //查询买家秀的子评论
             if(byShowList.size()>0){
-                List<Comment> ComList=commentDao.listByComment(1,3,byShowList,"");
-                byShowList.addAll(ComList);
+                for (Comment comment : byShowList) {
+                    //comment.setCommentList(commentDao.listByComment(0,replySize,comment.getComId()));
+                }
             }
             PageInfo<Comment> pageInfo=new PageInfo(byShowList);
+            return pageInfo;
+        }catch (RuntimeException e){
+            e.printStackTrace();
+            throw new CommentException("数据库出错");
+        }
+    }
+
+    @Override
+    public PageInfo<Comment> listComment(Integer pageNum, Integer pageSize, String comId) {
+        try{
+            System.out.println(pageNum+"/"+pageSize+"/"+comId);
+            List<Comment> list=commentDao.listByComment(pageNum,pageSize,comId);
+            PageInfo<Comment> pageInfo=new PageInfo(list);
             return pageInfo;
         }catch (RuntimeException e){
             e.printStackTrace();
@@ -45,7 +57,6 @@ public class CommentServiceImpl implements CommentService {
     public void addComment(Comment comment) {
         try{
             comment.setComId(UUIDUtils.createUUID());
-            comment.setGrade(comment.getBycId().equals(null)?"3":"2");
             comment.setState("1");
             comment.setTime(new Date());
             System.out.println(comment);
@@ -54,5 +65,16 @@ public class CommentServiceImpl implements CommentService {
             e.printStackTrace();
             throw new CommentException("数据库出错");
         }
+    }
+
+
+    @Override
+    public void updateComment(Comment comment) {
+
+    }
+
+    @Override
+    public void deleteComment(Comment comment) {
+
     }
 }

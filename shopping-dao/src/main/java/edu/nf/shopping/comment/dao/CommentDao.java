@@ -18,10 +18,13 @@ public interface CommentDao {
     /**
      * 查询某个商品的回复评论
      **/
-    List<Comment> listByComment(@Param("pageNum")Integer pageNum,@Param("pageSize")Integer pageSie,List<Comment> list,String comId);
+    List<Comment> listByComment(@Param("pageNum")Integer pageNum,@Param("pageSize")Integer pageSie,String comId);
     /**
      * 添加评论
      **/
     void addComment(Comment comment);
 
+    void updateComment(Comment comment);
+
+    void deleteComment(Comment comment);
 }
