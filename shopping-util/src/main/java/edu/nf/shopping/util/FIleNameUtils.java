@@ -25,4 +25,5 @@ public class FIleNameUtils {
 	public static String fileNameNotHaveSuffix(String fileName) {
 		return fileName= fileName.substring(0,fileName.lastIndexOf("."));
 	}
+
 }

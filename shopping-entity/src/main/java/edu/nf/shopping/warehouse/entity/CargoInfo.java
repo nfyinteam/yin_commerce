@@ -1,5 +1,9 @@
 package edu.nf.shopping.warehouse.entity;
 
+import edu.nf.shopping.goods.entity.GoodsInfo;
+import edu.nf.shopping.goods.entity.SkuInfo;
+import edu.nf.shopping.goods.entity.SkuRelation;
+
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
@@ -52,9 +56,12 @@ public class CargoInfo {
      */
     private String itemNo;
 
-    private List<RegionInfo> regionInfos;
 
-    public CargoInfo(String cargoId, String skuId, Integer rid, Integer pid, Integer supplierId, BigDecimal putPrice, Date putTime, String putAdmin, Boolean isOut, String itemNo, List<RegionInfo> regionInfos) {
+    List<GoodsInfo> goodsInfos;
+    SkuRelation skuRelation;
+    SkuInfo skuInfo;
+
+    public CargoInfo(String cargoId, String skuId, Integer rid, Integer pid, Integer supplierId, BigDecimal putPrice, Date putTime, String putAdmin, Boolean isOut, String itemNo, List<GoodsInfo> goodsInfos, SkuRelation skuRelation, SkuInfo skuInfo) {
         this.cargoId = cargoId;
         this.skuId = skuId;
         this.rid = rid;
@@ -65,7 +72,9 @@ public class CargoInfo {
         this.putAdmin = putAdmin;
         this.isOut = isOut;
         this.itemNo = itemNo;
-        this.regionInfos = regionInfos;
+        this.goodsInfos = goodsInfos;
+        this.skuRelation = skuRelation;
+        this.skuInfo = skuInfo;
     }
 
     public String getCargoId() {
@@ -148,12 +157,28 @@ public class CargoInfo {
         this.itemNo = itemNo;
     }
 
-    public List<RegionInfo> getRegionInfos() {
-        return regionInfos;
+    public List<GoodsInfo> getGoodsInfos() {
+        return goodsInfos;
     }
 
-    public void setRegionInfos(List<RegionInfo> regionInfos) {
-        this.regionInfos = regionInfos;
+    public void setGoodsInfos(List<GoodsInfo> goodsInfos) {
+        this.goodsInfos = goodsInfos;
+    }
+
+    public SkuRelation getSkuRelation() {
+        return skuRelation;
+    }
+
+    public void setSkuRelation(SkuRelation skuRelation) {
+        this.skuRelation = skuRelation;
+    }
+
+    public SkuInfo getSkuInfo() {
+        return skuInfo;
+    }
+
+    public void setSkuInfo(SkuInfo skuInfo) {
+        this.skuInfo = skuInfo;
     }
 
     public CargoInfo() {

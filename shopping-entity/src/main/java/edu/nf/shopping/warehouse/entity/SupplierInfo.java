@@ -23,6 +23,7 @@ public class SupplierInfo {
      */
     private String supplierAddress;
 
+
     public SupplierInfo(Integer supplierId, String supplierName, String supplierTel, String supplierAddress) {
         this.supplierId = supplierId;
         this.supplierName = supplierName;

@@ -18,8 +18,9 @@ public interface CargoInfoDao {
 
     /**
      * 添加货物信息
+     * @param cargoInfo
      */
-    void insertCargoInfo();
+    void insertCargoInfo(CargoInfo cargoInfo);
 
     /**
      * 删除货物信息
