@@ -23,13 +23,13 @@ public class CommentServiceImpl implements CommentService {
     private CommentDao commentDao;
 
     @Override
-    public PageInfo<Comment> listBuyShow(Integer pageNum,Integer pageSize,Integer replySize,String goodsId,String order) {
+    public PageInfo<Comment> listBuyShow(Integer pageNum,Integer pageSize,Integer replySize,String goodsId,String userId,Date dataTime,String order) {
         try{
-            List<Comment> byShowList=commentDao.listBuyShow(pageNum,pageSize,goodsId,order);
+            List<Comment> byShowList=commentDao.listBuyShow(pageNum,pageSize,goodsId,userId,dataTime,order);
             //查询买家秀的子评论
             if(byShowList.size()>0){
                 for (Comment comment : byShowList) {
-                    //comment.setCommentList(commentDao.listByComment(0,replySize,comment.getComId()));
+                    comment.setCommentList(commentDao.listByComment(0,replySize,comment.getComId(),userId,dataTime,order));
                 }
             }
             PageInfo<Comment> pageInfo=new PageInfo(byShowList);
@@ -41,10 +41,9 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public PageInfo<Comment> listComment(Integer pageNum, Integer pageSize, String comId) {
+    public PageInfo<Comment> listComment(Integer pageNum, Integer pageSize, String comId,String userId,Date dataTime,String order) {
         try{
-            System.out.println(pageNum+"/"+pageSize+"/"+comId);
-            List<Comment> list=commentDao.listByComment(pageNum,pageSize,comId);
+            List<Comment> list=commentDao.listByComment(pageNum,pageSize,comId,userId,dataTime,order);
             PageInfo<Comment> pageInfo=new PageInfo(list);
             return pageInfo;
         }catch (RuntimeException e){
@@ -54,14 +53,28 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
+    public Comment findComment(String comId, String goodsId) {
+        return null;
+    }
+
+    @Override
     public void addComment(Comment comment) {
         try{
-            comment.setComId(UUIDUtils.createUUID());
-            comment.setState("1");
-            comment.setTime(new Date());
-            System.out.println(comment);
-            commentDao.addComment(comment);
-        }catch (RuntimeException e){
+            //判断被回复的评论是否存在
+            if(comment.getBycId()!=null && "".equals(comment.getBycId()) && comment.getGoodsId()!=null && comment.getGoodsId()!=""){
+                if(commentDao.findComment(comment.getBycId(),comment.getGoodsId())!=null){
+                    comment.setComId(UUIDUtils.createUUID());
+                    comment.setState("1");
+                    comment.setTime(new Date());
+                    commentDao.addComment(comment);
+                }else {
+                    throw new CommentException("出错了");
+                }
+            }
+        }catch (CommentException e){
+            throw e;
+        }
+        catch (RuntimeException e){
             e.printStackTrace();
             throw new CommentException("数据库出错");
         }

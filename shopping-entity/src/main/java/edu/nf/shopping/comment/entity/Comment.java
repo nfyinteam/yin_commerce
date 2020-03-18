@@ -26,5 +26,7 @@ public class Comment {
     private String grade;
     private String byUserName;
     private String total;
+    private String praiseNum;
+    private String theUser;
     private List<Comment> commentList;
 }

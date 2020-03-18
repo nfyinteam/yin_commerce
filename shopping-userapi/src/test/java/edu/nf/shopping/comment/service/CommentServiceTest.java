@@ -5,6 +5,9 @@ import edu.nf.shopping.comment.entity.Comment;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.StringRedisTemplate;
+
+import java.util.Date;
 
 /**
  * @author Bull fighters
@@ -19,17 +22,25 @@ public class CommentServiceTest {
     @Autowired
     private ProducerServer producerServer;
 
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
+
     @Test
-    void listComment(){
-        PageInfo<Comment> list=commentService.listComment(2,6,"1001");
+    void rabbitTest(){
+        PageInfo<Comment> list=commentService.listComment(1,10,"1001","1578412684666",new Date(),"1");
         for (Comment comment : list.getList()) {
             System.out.println(comment);
         }
     }
 
     @Test
-    void rabbitTest(){
-        PageInfo<Comment> list=commentService.listBuyShow(1,1,3,"1578412684903","");
-        producerServer.sendMessage(list,1);
+    void testForValue() {
+        //添加
+        stringRedisTemplate.opsForValue().set("user:1001", "user1");
+        //依据key获取value
+        String name = stringRedisTemplate.opsForValue().get("user:1001");
+        System.out.println(name);
+        //删除
+        stringRedisTemplate.delete("user:1001");
     }
 }
