@@ -29,12 +29,14 @@
         and c.com_grade='1' and c.com_state='1'
         <choose>
             <when test="param6!=1">
-                order by (SELECT COUNT(1) from praise p where p.com_id=c.com_id) desc
+                ORDER BY
+                IF(c.com_time > #{param6}, 0, 1) desc,
+                (SELECT COUNT(1) from praise p where p.com_id=c.com_id)  desc,
+                c.com_time asc
             </when>
             <otherwise>
-                ORDER BY com_time &gt; #{param6},
-                IF(com_time &lt; #{param6}, 0, com_time),
-                com_time DESC
+                ORDER BY
+                IF(c.com_time &lt; #{param6}, 0, 1), c.com_time asc
             </otherwise>
         </choose>
     </select>
@@ -56,12 +58,14 @@
         </if>
         <choose>
             <when test="param6!=1">
-                order by (SELECT COUNT(1) from praise p where p.com_id=c.com_id) desc
+                ORDER BY
+                IF(c.com_time > #{param6}, 0, 1) desc,
+                (SELECT COUNT(1) from praise p where p.com_id=c.com_id)  desc,
+                c.com_time asc
             </when>
             <otherwise>
-                ORDER BY com_time &gt; #{param6},
-                IF(com_time &lt; #{param6}, 0, com_time),
-                com_time DESC
+                ORDER BY
+                IF(c.com_time &lt; #{param6}, 0, 1), c.com_time asc
             </otherwise>
         </choose>
     </select>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.nf.shopping.comment.dao.ReportDao">
+    <resultMap id="reportMap" type="edu.nf.shopping.comment.entity.Report">
+        <result property="reportId" column="report_id"/>
+        <result property="wtbId" column="wtb_id"/>
+        <result property="comId" column="com_id"/>
+        <result property="reason" column="report_reason"/>
+        <result property="time" column="report_time"/>
+        <result property="state" column="report_state"/>
+    </resultMap>
+    
+</mapper>

@@ -6,6 +6,7 @@ import edu.nf.shopping.comment.entity.Comment;
 import edu.nf.shopping.comment.exception.CommentException;
 import edu.nf.shopping.comment.service.CommentService;
 import edu.nf.shopping.util.UUIDUtils;
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -61,7 +62,7 @@ public class CommentServiceImpl implements CommentService {
     public void addComment(Comment comment) {
         try{
             //判断被回复的评论是否存在
-            if(comment.getBycId()!=null && "".equals(comment.getBycId()) && comment.getGoodsId()!=null && comment.getGoodsId()!=""){
+            if(comment.getBycId()!=null && !"".equals(comment.getBycId()) && comment.getGoodsId()!=null && !"".equals(comment.getGoodsId())){
                 if(commentDao.findComment(comment.getBycId(),comment.getGoodsId())!=null){
                     comment.setComId(UUIDUtils.createUUID());
                     comment.setState("1");
