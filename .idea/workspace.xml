@@ -2,16 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="526d3e9c-dff7-4ee1-9e0d-ae85a8206b4f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/goods/dao/GoodsImgsDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/goods/dao/ImgsTypeDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/goods/GoodsImgsMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/goods/ImgsTypeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/goods/dao/IntroduceInfoDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/goods/dao/SkuRelationDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/goods/IntroduceInfoMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/goods/SkuRelationMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-adminapi/src/main/java/edu/nf/shopping/goods/advice/ControllerAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/src/main/java/edu/nf/shopping/goods/advice/ControllerAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-adminapi/src/main/java/edu/nf/shopping/goods/controller/ImgeUploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/src/main/java/edu/nf/shopping/goods/controller/ImgeUploadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/goods/entity/GoodsImgs.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/goods/entity/GoodsImgs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/goods/entity/ImgsInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/goods/entity/ImgsInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-util/src/main/java/edu/nf/shopping/util/FIleNameUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-util/src/main/java/edu/nf/shopping/util/FIleNameUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/goods/dao/GoodsImgsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/goods/dao/GoodsImgsDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/goods/GoodsImgsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/goods/GoodsImgsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/goods/entity/SkuInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/goods/entity/SkuInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/goods/entity/SkuRelation.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/goods/entity/SkuRelation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,7 +269,9 @@
       <workItem from="1583723585657" duration="5783000" />
       <workItem from="1583894926308" duration="916000" />
       <workItem from="1583936276025" duration="2370000" />
-      <workItem from="1584187835121" duration="10013000" />
+      <workItem from="1584187835121" duration="11281000" />
+      <workItem from="1584431400440" duration="13251000" />
+      <workItem from="1584620487984" duration="8016000" />
     </task>
     <task id="LOCAL-00001" summary="write entity shoppingcart">
       <created>1583938021337</created>
@@ -293,7 +294,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584088139873</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="修改了GoodsImgs、ImgsInfo对象，实现了图片包">
+      <created>1584382165948</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1584382165948</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -316,7 +324,8 @@
     <MESSAGE value="write entity shoppingcart" />
     <MESSAGE value="稳定版本" />
     <MESSAGE value="配置了文件上传、配置了Rest、swagger" />
-    <option name="LAST_COMMIT_MESSAGE" value="配置了文件上传、配置了Rest、swagger" />
+    <MESSAGE value="修改了GoodsImgs、ImgsInfo对象，实现了图片包" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改了GoodsImgs、ImgsInfo对象，实现了图片包" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="25" key="#Notifications" timestamp="1583938246865">
@@ -327,11 +336,11 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="506" y="71" width="816" height="646" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1583724468469" />
-    <state x="686" y="81" key="#com.intellij.ide.util.MemberChooser" timestamp="1584380873181">
+    <state x="686" y="81" key="#com.intellij.ide.util.MemberChooser" timestamp="1584625027176">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="488" y="57" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1583895144658" />
-    <state x="686" y="81" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1584380873181" />
+    <state x="686" y="81" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1584625027176" />
     <state x="811" y="412" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1583945976435">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -344,32 +353,32 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="269" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584102584854" />
-    <state x="488" y="0" width="697" height="728" key="CommitChangelistDialog2" timestamp="1584102863543">
+    <state x="488" y="0" width="697" height="728" key="CommitChangelistDialog2" timestamp="1584382162075">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="347" y="0" width="697" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1583938018590" />
-    <state x="488" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584102863543" />
-    <state x="651" y="174" key="FileChooserDialogImpl" timestamp="1584088301012">
+    <state x="488" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584382162075" />
+    <state x="651" y="174" key="FileChooserDialogImpl" timestamp="1584688770400">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="463" y="122" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1583938633477" />
-    <state x="651" y="174" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1584088301012" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1584373650437">
+    <state x="651" y="174" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1584688770400" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1584431367644">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584373650437" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1584373650437">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584431367644" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1584431367644">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584373650437" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1584373650437">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584431367644" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1584431367644">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584373650437" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1584373650437">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584431367644" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1584431367644">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584373650437" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584431367644" />
     <state width="278" height="477" key="HiddenNamespacesPopup" timestamp="1583724483547">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -390,11 +399,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="463" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1584025090509" />
-    <state x="387" y="126" key="Vcs.Push.Dialog.v2" timestamp="1584180963009">
+    <state x="387" y="126" key="Vcs.Push.Dialog.v2" timestamp="1584382169055">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="275" y="88" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1583938443262" />
-    <state x="387" y="126" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584180963009" />
+    <state x="387" y="126" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584382169055" />
     <state x="521" y="237" key="git4idea.merge.GitPullDialog" timestamp="1583998016180">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
