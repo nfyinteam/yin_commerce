@@ -25,5 +25,21 @@ public interface SkuRelationDao {
      */
     List<KeyInfo> listKeyInfoByGoodsId(String goodsId);
 
+    /**
+     * 添加Sku关联信息
+     * @param skuRelation
+     */
+    void addSkuRelation(SkuRelation skuRelation);
 
+    /**
+     * 修改Sku关联信息
+     * @param skuRelation
+     */
+    void updetaSkuRelation(SkuRelation skuRelation);
+
+    /**
+     * 删除Sku关联信息
+     * @param skuRelation
+     */
+    void deleteSkuRelation(SkuRelation skuRelation);
 }
