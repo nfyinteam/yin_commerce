@@ -4,7 +4,6 @@
     <list default="true" id="526d3e9c-dff7-4ee1-9e0d-ae85a8206b4f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/goods/dao/SkuRelationDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/goods/dao/SkuRelationDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/goods/GoodsImgsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/goods/GoodsImgsMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/goods/SkuRelationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/goods/SkuRelationMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -296,7 +295,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584382165948</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="完善了SkuRelationDao 修改了GoodsImgsMapper里面错误的代码">
+      <created>1584722258604</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1584722258604</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -320,7 +326,8 @@
     <MESSAGE value="稳定版本" />
     <MESSAGE value="配置了文件上传、配置了Rest、swagger" />
     <MESSAGE value="修改了GoodsImgs、ImgsInfo对象，实现了图片包" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改了GoodsImgs、ImgsInfo对象，实现了图片包" />
+    <MESSAGE value="完善了SkuRelationDao 修改了GoodsImgsMapper里面错误的代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="完善了SkuRelationDao 修改了GoodsImgsMapper里面错误的代码" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="25" key="#Notifications" timestamp="1583938246865">
@@ -348,11 +355,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="269" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584102584854" />
-    <state x="488" y="0" width="697" height="728" key="CommitChangelistDialog2" timestamp="1584382162075">
+    <state x="488" y="0" width="697" height="728" key="CommitChangelistDialog2" timestamp="1584722255717">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="347" y="0" width="697" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1583938018590" />
-    <state x="488" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584382162075" />
+    <state x="488" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584722255717" />
     <state x="651" y="174" key="FileChooserDialogImpl" timestamp="1584688770400">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -394,11 +401,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="463" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1584025090509" />
-    <state x="387" y="126" key="Vcs.Push.Dialog.v2" timestamp="1584382169055">
+    <state x="387" y="126" key="Vcs.Push.Dialog.v2" timestamp="1584722261817">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="275" y="88" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1583938443262" />
-    <state x="387" y="126" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584382169055" />
+    <state x="387" y="126" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584722261817" />
     <state x="521" y="237" key="git4idea.merge.GitPullDialog" timestamp="1583998016180">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

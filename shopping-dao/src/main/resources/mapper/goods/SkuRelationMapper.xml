@@ -67,6 +67,12 @@
         on v.value_id = sr.value_id left join sku_info si on si.sku_id = sr.sku_id left join goods_info g
         on g.goods_id = si.goods_id where g.goods_id = #{goodsId} group by k.key_id)
     </select>
+    <select id="listValueInfoByGoodsIdAndKeyId" resultMap="valueMap">
+        select value_id, value_name, key_id from value_info where value_id in(select v.value_id
+        from sku_relation sr left join key_info k on k.key_id = sr.key_id left join
+        value_info v on v.value_id = sr.value_id left join sku_info si on si.sku_id = sr.sku_id
+        left join goods_info g on g.goods_id = si.goods_id where g.goods_id = #{param1} and k.key_id = #{param2});
+    </select>
     <insert id="addSkuRelation" parameterType="edu.nf.shopping.goods.entity.SkuRelation">
         insert sku_relation(key_id, value_id, sku_id) value(#{skuRelation.key.keyId},
         #{skuRelation.value.valueId}, #{skuRelation.skuInfo.skuId});
