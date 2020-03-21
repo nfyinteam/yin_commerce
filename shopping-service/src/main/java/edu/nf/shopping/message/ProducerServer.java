@@ -1,4 +1,4 @@
-package edu.nf.shopping.comment.service;
+package edu.nf.shopping.message;
 
 import edu.nf.shopping.config.RabbitConfig;
 import org.springframework.amqp.rabbit.connection.CorrelationData;

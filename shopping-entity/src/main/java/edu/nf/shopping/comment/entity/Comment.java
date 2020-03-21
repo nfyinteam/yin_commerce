@@ -19,6 +19,7 @@ public class Comment {
     private String parentId;
     private String bycId;
     private String content;
+    private String comScore;
     @JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date time;

@@ -1,14 +1,14 @@
-package edu.nf.shopping.comment.dao;
+package edu.nf.shopping.comment.service;
 
 import edu.nf.shopping.comment.entity.Report;
 
 /**
  * @author Bull fighters
- * @date 2020/3/19
+ * @date 2020/3/20
  */
-public interface ReportDao {
+public interface ReportService {
     Report findReport(String reportId);
-    void addReport(Report report);
+    void addReport(String comId,String reason,String userId);
     void updateReport(Report report);
     void deleteReport(Report report);
 }

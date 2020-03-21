@@ -9,6 +9,7 @@
         <result property="parentId" column="parent_cid"/>
         <result property="bycId" column="by_cid"/>
         <result property="content" column="com_content"/>
+        <result property="comScore" column="com_score"/>
         <result property="time" column="com_time"/>
         <result property="state" column="com_state"/>
         <result property="grade" column="com_grade"/>
@@ -18,8 +19,8 @@
         <result property="theUser" column="the_user"/>
     </resultMap>
     <select id="listBuyShow" resultMap="commentMap" parameterType="String">
-        select c.com_id,c.goods_id,c.u_id,c.parent_cid,c.by_cid,c.com_content,c.com_time,
-        c.com_state,c.com_grade,u.u_name,uf.face_id,
+        select c.com_id,c.goods_id,c.u_id,c.parent_cid,c.by_cid,c.com_content,
+        c.com_score,c.com_time,c.com_state,c.com_grade,u.u_name,uf.face_id,
         (SELECT COUNT(1) from praise p where p.com_id=c.com_id) as praise_num
         <if test="param4!=null and param4!=''">
             ,(SELECT 1 from praise p where p.com_id=c.com_id and p.u_id=#{param4}) as the_user
@@ -71,7 +72,7 @@
     </select>
     <select id="findComment" parameterType="edu.nf.shopping.comment.entity.Comment" resultMap="commentMap">
         select c.com_id,c.goods_id,c.u_id,c.parent_cid,c.by_cid,c.com_content,
-        c.com_time,c.com_state,c.com_grade from comments c
+        c.com_score,c.com_time,c.com_state,c.com_grade from comments c
         where 1=1
         <if test="param1!=null and param1!=''">
             and c.com_id=#{param1}
@@ -81,9 +82,9 @@
         </if>
     </select>
     <insert id="addComment" parameterType="edu.nf.shopping.comment.entity.Comment">
-        insert comments(com_id,goods_id,u_id,parent_cid,by_cid,com_content,
+        insert comments(com_id,goods_id,u_id,parent_cid,by_cid,com_content,com_score,
         com_time,com_state,com_grade) value(#{comId},#{goodsId},#{userId},#{parentId},
-        #{bycId},#{content},#{time},#{state},#{grade})
+        #{bycId},#{content},#{comScore},#{time},#{state},#{grade})
     </insert>
     <update id="updateComment" parameterType="edu.nf.shopping.comment.entity.Comment">
 
