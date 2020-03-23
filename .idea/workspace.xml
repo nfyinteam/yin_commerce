@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="526d3e9c-dff7-4ee1-9e0d-ae85a8206b4f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/target/classes/application-dao.yml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/target/classes/application-dao.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/goods/entity/GoodsImgs.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/goods/entity/GoodsImgs.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/goods/entity/ImgsInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/goods/entity/ImgsInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/goods/entity/SkuInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/goods/entity/SkuInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/goods/entity/SkuRelation.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/goods/entity/SkuRelation.class" afterDir="false" />
-    </list>
+    <list default="true" id="526d3e9c-dff7-4ee1-9e0d-ae85a8206b4f" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -447,13 +440,13 @@
     </state>
     <state x="586" y="235" key="git4idea.branch.GitSmartOperationDialog/0.23.1680.984@0.23.1680.984" timestamp="1584944809378" />
     <state x="586" y="235" key="git4idea.branch.GitSmartOperationDialog/0.23.1680.985@0.23.1680.985" timestamp="1584942852879" />
-    <state x="456" y="248" key="git4idea.merge.GitPullDialog" timestamp="1584974693635">
+    <state x="456" y="248" key="git4idea.merge.GitPullDialog" timestamp="1584974922691">
       <screen x="0" y="23" width="1680" height="982" />
     </state>
     <state x="371" y="166" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1583938416324" />
     <state x="521" y="237" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583998016180" />
     <state x="456" y="247" key="git4idea.merge.GitPullDialog/0.23.1680.981@0.23.1680.981" timestamp="1584424852649" />
-    <state x="456" y="248" key="git4idea.merge.GitPullDialog/0.23.1680.982@0.23.1680.982" timestamp="1584974693635" />
+    <state x="456" y="248" key="git4idea.merge.GitPullDialog/0.23.1680.982@0.23.1680.982" timestamp="1584974922691" />
     <state x="456" y="248" key="git4idea.merge.GitPullDialog/0.23.1680.984@0.23.1680.984" timestamp="1584944199131" />
     <state x="456" y="248" key="git4idea.merge.GitPullDialog/0.23.1680.985@0.23.1680.985" timestamp="1584943351239" />
     <state x="505" y="239" key="search.everywhere.popup" timestamp="1584445346150">
