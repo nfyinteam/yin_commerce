@@ -1,7 +1,5 @@
 package edu.nf.shopping.warehouse.entity;
 
-import edu.nf.shopping.goods.entity.SkuRelation;
-
 /**
  * @author lishun
  * @date 2020/3/11
@@ -32,7 +30,15 @@ public class RegionInfo {
      * 一对一关系
      */
     private RegionInfo regionInfo;
-    private SkuRelation skuRelation;
+
+    public RegionInfo(Integer rid, String regionName, Integer rtId, Integer pid, Integer warehouseId, RegionInfo regionInfo) {
+        this.rid = rid;
+        this.regionName = regionName;
+        this.rtId = rtId;
+        this.pid = pid;
+        this.warehouseId = warehouseId;
+        this.regionInfo = regionInfo;
+    }
 
     public Integer getRid() {
         return rid;
@@ -80,24 +86,6 @@ public class RegionInfo {
 
     public void setRegionInfo(RegionInfo regionInfo) {
         this.regionInfo = regionInfo;
-    }
-
-    public SkuRelation getSkuRelation() {
-        return skuRelation;
-    }
-
-    public void setSkuRelation(SkuRelation skuRelation) {
-        this.skuRelation = skuRelation;
-    }
-
-    public RegionInfo(Integer rid, String regionName, Integer rtId, Integer pid, Integer warehouseId, RegionInfo regionInfo, SkuRelation skuRelation) {
-        this.rid = rid;
-        this.regionName = regionName;
-        this.rtId = rtId;
-        this.pid = pid;
-        this.warehouseId = warehouseId;
-        this.regionInfo = regionInfo;
-        this.skuRelation = skuRelation;
     }
 
     public RegionInfo() {

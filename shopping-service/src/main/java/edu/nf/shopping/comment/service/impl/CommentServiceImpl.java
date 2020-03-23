@@ -76,7 +76,7 @@ public class CommentServiceImpl implements CommentService {
     public void addBuyShow(MultipartFile[] files,Comment comment) throws IOException{
         try{
             if(files.length>5){
-                throw new CommentException("出错了喔");
+                throw new CommentException("出错了啊！");
             }
             comment.setComId(UUIDUtils.createUUID());
             comment.setState("2");

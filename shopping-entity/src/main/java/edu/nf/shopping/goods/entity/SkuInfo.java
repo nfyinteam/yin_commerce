@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 public class SkuInfo {
     private String skuId;
     private BigDecimal skuPrice;
-    private Integer skuStock;
+    private Integer sku_stock;
     private Integer skuSales;
     private GoodsInfo good;
 
@@ -29,12 +29,12 @@ public class SkuInfo {
         this.skuPrice = skuPrice;
     }
 
-    public Integer getSkuStock() {
-        return skuStock;
+    public Integer getSku_stock() {
+        return sku_stock;
     }
 
-    public void setSkuStock(Integer skuStock) {
-        this.skuStock = skuStock;
+    public void setSku_stock(Integer sku_stock) {
+        this.sku_stock = sku_stock;
     }
 
     public Integer getSkuSales() {
