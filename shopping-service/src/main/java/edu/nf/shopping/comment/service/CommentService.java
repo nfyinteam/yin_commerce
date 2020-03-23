@@ -2,7 +2,9 @@ package edu.nf.shopping.comment.service;
 
 import com.github.pagehelper.PageInfo;
 import edu.nf.shopping.comment.entity.Comment;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
@@ -25,7 +27,10 @@ public interface CommentService {
      **/
     Comment findComment(String comId,String goodsId);
 
-    void addBuyShow(Comment comment);
+    /**
+     * 添加买家秀
+    **/
+    void addBuyShow(MultipartFile[] files,Comment comment) throws IOException;
 
     /**
      * 添加评论
