@@ -24,9 +24,9 @@ public class CommentServiceImpl implements CommentService {
     private CommentDao commentDao;
 
     @Override
-    public PageInfo<Comment> listBuyShow(Integer pageNum,Integer pageSize,Integer replySize,String goodsId,String userId,Date dataTime,String order) {
+    public PageInfo<Comment> listBuyShow(Integer pageNum,Integer pageSize,Integer replySize,String goodsId,String userId,Date dataTime,String order,String commentType) {
         try{
-            List<Comment> byShowList=commentDao.listBuyShow(pageNum,pageSize,goodsId,userId,dataTime,order);
+            List<Comment> byShowList=commentDao.listBuyShow(pageNum,pageSize,goodsId,userId,dataTime,order,commentType);
             //查询买家秀的子评论
             if(byShowList.size()>0){
                 for (Comment comment : byShowList) {
@@ -59,6 +59,27 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
+    public void addBuyShow(Comment comment) {
+        try{
+            //判断根据用户订单是否存在
+            if(comment.getBycId()!=null && !"".equals(comment.getBycId()) && comment.getGoodsId()!=null && !"".equals(comment.getGoodsId())){
+                comment.setComId(UUIDUtils.createUUID());
+                comment.setState("1");
+                comment.setTime(new Date());
+                comment.setGrade("1");
+                commentDao.addComment(comment);
+
+            }
+        }catch (CommentException e){
+            throw e;
+        }
+        catch (RuntimeException e){
+            e.printStackTrace();
+            throw new CommentException("数据库出错");
+        }
+    }
+
+    @Override
     public void addComment(Comment comment) {
         try{
             //判断被回复的评论是否存在
@@ -67,6 +88,8 @@ public class CommentServiceImpl implements CommentService {
                     comment.setComId(UUIDUtils.createUUID());
                     comment.setState("1");
                     comment.setTime(new Date());
+                    comment.setGrade(comment.getBycId().equals(comment.getParentId())?"2":"3");
+                    comment.setComScore("NULL");
                     commentDao.addComment(comment);
                 }else {
                     throw new CommentException("出错了");

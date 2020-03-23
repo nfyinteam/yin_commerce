@@ -2,26 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62b8ac9c-86a9-4199-8f79-2819b827666b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/comment/dao/ReportReasonDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/comment/ReportReasonMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/comment/entity/ReportReason.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/comment/service/ReportReasonService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/comment/service/ReportService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/comment/service/impl/ReportReasonServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/comment/service/impl/ReportServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/comment/controller/ReportController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/comment/controller/ReportReasonController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/comment/dao/ReportDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/comment/dao/ReportDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-adminapi/shopping-adminapi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/shopping-adminapi.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/comment/dao/CommentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/comment/dao/CommentDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/comment/CommentsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/comment/CommentsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/comment/reportMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/comment/ReportMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-dao/target/classes/edu/nf/shopping/comment/dao/CommentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/target/classes/edu/nf/shopping/comment/dao/CommentDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/comment/entity/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/comment/entity/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/comment/entity/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/comment/entity/Report.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/comment/entity/Comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/comment/entity/Comment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/comment/service/ConsumerServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/message/ConsumerServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/comment/service/ProducerServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/message/ProducerServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/src/test/java/edu/nf/shopping/comment/service/CommentServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/src/test/java/edu/nf/shopping/comment/service/CommentServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/target/test-classes/edu/nf/shopping/comment/service/CommentServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/target/test-classes/edu/nf/shopping/comment/service/CommentServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/shopping-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/shopping-service.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/comment/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/comment/service/CommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/comment/service/impl/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/comment/service/impl/CommentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/comment/service/CommentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/comment/service/CommentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/comment/service/impl/CommentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/comment/service/impl/CommentServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-userapi/shopping-userapi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/shopping-userapi.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/comment/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/comment/controller/CommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/comment/controller/PraiseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/comment/controller/PraiseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/comment/controller/ReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/comment/controller/ReportController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/comment/controller/ReportReasonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/comment/controller/ReportReasonController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/comment/controller/CommentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/comment/controller/CommentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-util/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-util/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-util/shopping-util.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-util/shopping-util.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-util/src/main/java/edu/nf/shopping/util/FIleNameUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-util/src/main/java/edu/nf/shopping/util/FileNameUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +225,24 @@
       <workItem from="1584696309889" duration="1829000" />
       <workItem from="1584700252714" duration="1310000" />
       <workItem from="1584703978366" duration="3493000" />
+      <workItem from="1584768512122" duration="3404000" />
+      <workItem from="1584779369984" duration="1536000" />
+      <workItem from="1584785021860" duration="667000" />
+      <workItem from="1584840956635" duration="819000" />
+      <workItem from="1584854898883" duration="2136000" />
+      <workItem from="1584859509570" duration="10334000" />
+      <workItem from="1584875877926" duration="802000" />
+      <workItem from="1584880148650" duration="8150000" />
+      <workItem from="1584941332878" duration="1539000" />
     </task>
+    <task id="LOCAL-00001" summary="评论界面的剩余功能">
+      <created>1584768589639</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1584768589639</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -258,6 +276,13 @@
             </State>
           </value>
         </entry>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
       </map>
     </option>
     <option name="OPEN_TABS">
@@ -268,57 +293,62 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="修改评论分页数据重复bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改评论分页数据重复bug" />
+    <MESSAGE value="评论界面的剩余功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="评论界面的剩余功能" />
   </component>
   <component name="WindowStateProjectService">
     <state x="306" y="187" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584442518016">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="306" y="187" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1304.768@0.0.1304.768" timestamp="1584442518016" />
-    <state x="457" y="94" key="#com.intellij.ide.util.MemberChooser" timestamp="1584691302627">
+    <state x="457" y="94" key="#com.intellij.ide.util.MemberChooser" timestamp="1584866803980">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="457" y="94" key="#com.intellij.ide.util.MemberChooser/0.0.1304.768@0.0.1304.768" timestamp="1584691302627" />
+    <state x="457" y="94" key="#com.intellij.ide.util.MemberChooser/0.0.1304.768@0.0.1304.768" timestamp="1584866803980" />
+    <state x="236" y="0" key="CommitChangelistDialog2" timestamp="1584768585351">
+      <screen x="0" y="0" width="1304" height="768" />
+    </state>
+    <state x="236" y="0" key="CommitChangelistDialog2/0.0.1304.768@0.0.1304.768" timestamp="1584768585351" />
     <state x="92" y="92" width="1120" height="584" key="DiffContextDialog" timestamp="1584433974098">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="92" y="92" width="1120" height="584" key="DiffContextDialog/0.0.1304.768@0.0.1304.768" timestamp="1584433974098" />
-    <state x="431" y="126" key="FileChooserDialogImpl" timestamp="1584194809583">
+    <state x="431" y="126" key="FileChooserDialogImpl" timestamp="1584841258047">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="431" y="126" key="FileChooserDialogImpl/0.0.1304.768@0.0.1304.768" timestamp="1584194809583" />
-    <state width="1261" height="247" key="GridCell.Tab.0.bottom" timestamp="1584710894240">
+    <state x="431" y="126" key="FileChooserDialogImpl/0.0.1304.768@0.0.1304.768" timestamp="1584841258047" />
+    <state width="1261" height="228" key="GridCell.Tab.0.bottom" timestamp="1584942860143">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="247" key="GridCell.Tab.0.bottom/0.0.1304.768@0.0.1304.768" timestamp="1584710894240" />
-    <state width="1261" height="247" key="GridCell.Tab.0.center" timestamp="1584710894240">
+    <state width="1261" height="228" key="GridCell.Tab.0.bottom/0.0.1304.768@0.0.1304.768" timestamp="1584942860143" />
+    <state width="1261" height="228" key="GridCell.Tab.0.center" timestamp="1584942860143">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="247" key="GridCell.Tab.0.center/0.0.1304.768@0.0.1304.768" timestamp="1584710894240" />
-    <state width="1261" height="247" key="GridCell.Tab.0.left" timestamp="1584710894239">
+    <state width="1261" height="228" key="GridCell.Tab.0.center/0.0.1304.768@0.0.1304.768" timestamp="1584942860143" />
+    <state width="1261" height="228" key="GridCell.Tab.0.left" timestamp="1584942860143">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="247" key="GridCell.Tab.0.left/0.0.1304.768@0.0.1304.768" timestamp="1584710894239" />
-    <state width="1261" height="247" key="GridCell.Tab.0.right" timestamp="1584710894240">
+    <state width="1261" height="228" key="GridCell.Tab.0.left/0.0.1304.768@0.0.1304.768" timestamp="1584942860143" />
+    <state width="1261" height="228" key="GridCell.Tab.0.right" timestamp="1584942860143">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="247" key="GridCell.Tab.0.right/0.0.1304.768@0.0.1304.768" timestamp="1584710894240" />
-    <state width="1261" height="247" key="GridCell.Tab.1.bottom" timestamp="1584710894240">
+    <state width="1261" height="228" key="GridCell.Tab.0.right/0.0.1304.768@0.0.1304.768" timestamp="1584942860143" />
+    <state width="1261" height="228" key="GridCell.Tab.1.bottom" timestamp="1584942860143">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="247" key="GridCell.Tab.1.bottom/0.0.1304.768@0.0.1304.768" timestamp="1584710894240" />
-    <state width="1261" height="247" key="GridCell.Tab.1.center" timestamp="1584710894240">
+    <state width="1261" height="228" key="GridCell.Tab.1.bottom/0.0.1304.768@0.0.1304.768" timestamp="1584942860143" />
+    <state width="1261" height="228" key="GridCell.Tab.1.center" timestamp="1584942860143">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="247" key="GridCell.Tab.1.center/0.0.1304.768@0.0.1304.768" timestamp="1584710894240" />
-    <state width="1261" height="247" key="GridCell.Tab.1.left" timestamp="1584710894240">
+    <state width="1261" height="228" key="GridCell.Tab.1.center/0.0.1304.768@0.0.1304.768" timestamp="1584942860143" />
+    <state width="1261" height="228" key="GridCell.Tab.1.left" timestamp="1584942860143">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="247" key="GridCell.Tab.1.left/0.0.1304.768@0.0.1304.768" timestamp="1584710894240" />
-    <state width="1261" height="247" key="GridCell.Tab.1.right" timestamp="1584710894240">
+    <state width="1261" height="228" key="GridCell.Tab.1.left/0.0.1304.768@0.0.1304.768" timestamp="1584942860143" />
+    <state width="1261" height="228" key="GridCell.Tab.1.right" timestamp="1584942860143">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="247" key="GridCell.Tab.1.right/0.0.1304.768@0.0.1304.768" timestamp="1584710894240" />
+    <state width="1261" height="228" key="GridCell.Tab.1.right/0.0.1304.768@0.0.1304.768" timestamp="1584942860143" />
     <state x="361" y="100" key="MultipleFileMergeDialog" timestamp="1584283065745">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
@@ -327,10 +357,10 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="153" y="0" key="SettingsEditor/0.0.1304.768@0.0.1304.768" timestamp="1584193163717" />
-    <state x="244" y="117" key="Vcs.Push.Dialog.v2" timestamp="1584284454140">
+    <state x="244" y="117" key="Vcs.Push.Dialog.v2" timestamp="1584768593446">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="244" y="117" key="Vcs.Push.Dialog.v2/0.0.1304.768@0.0.1304.768" timestamp="1584284454140" />
+    <state x="244" y="117" key="Vcs.Push.Dialog.v2/0.0.1304.768@0.0.1304.768" timestamp="1584768593446" />
     <state x="306" y="232" key="git4idea.ui.GitUnstashDialog" timestamp="1584283072939">
       <screen x="0" y="0" width="1304" height="768" />
     </state>

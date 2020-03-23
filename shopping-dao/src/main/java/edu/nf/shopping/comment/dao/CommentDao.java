@@ -15,7 +15,7 @@ public interface CommentDao {
     /**
      * 查询某个商品的买家秀
     **/
-    List<Comment> listBuyShow(@Param("pageNum")Integer pageNum, @Param("pageSize")Integer pageSie, String goodsId, String userId, Date dataTime, String order);
+    List<Comment> listBuyShow(@Param("pageNum")Integer pageNum, @Param("pageSize")Integer pageSie, String goodsId, String userId, Date dataTime, String order,String commentType);
     /**
      * 查询某个商品的回复评论
      **/

@@ -15,7 +15,7 @@ public interface CommentService {
     /**
      * 查询某个商品的买家秀
      **/
-    PageInfo<Comment> listBuyShow(Integer pageNum, Integer pageSize, Integer replySize, String goodsId, String userId, Date dataTime, String order);
+    PageInfo<Comment> listBuyShow(Integer pageNum, Integer pageSize, Integer replySize, String goodsId, String userId, Date dataTime, String order,String commentType);
     /**
      * 查询某个买家秀的回评
      **/
@@ -24,6 +24,9 @@ public interface CommentService {
      * 查找某条评论
      **/
     Comment findComment(String comId,String goodsId);
+
+    void addBuyShow(Comment comment);
+
     /**
      * 添加评论
      **/

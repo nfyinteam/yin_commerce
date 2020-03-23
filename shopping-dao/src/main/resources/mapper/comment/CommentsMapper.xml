@@ -17,11 +17,13 @@
         <result property="total" column="total"/>
         <result property="praiseNum" column="praise_num"/>
         <result property="theUser" column="the_user"/>
+        <result property="totalScore" column="total_score"/>
     </resultMap>
     <select id="listBuyShow" resultMap="commentMap" parameterType="String">
         select c.com_id,c.goods_id,c.u_id,c.parent_cid,c.by_cid,c.com_content,
         c.com_score,c.com_time,c.com_state,c.com_grade,u.u_name,uf.face_id,
-        (SELECT COUNT(1) from praise p where p.com_id=c.com_id) as praise_num
+        (SELECT COUNT(1) from praise p where p.com_id=c.com_id) as praise_num,
+        (select AVG(com_score) from comments where com_grade="1" ) as total_score
         <if test="param4!=null and param4!=''">
             ,(SELECT 1 from praise p where p.com_id=c.com_id and p.u_id=#{param4}) as the_user
         </if>
@@ -38,6 +40,14 @@
             <otherwise>
                 ORDER BY
                 IF(c.com_time &lt; #{param6}, 0, 1), c.com_time asc
+            </otherwise>
+        </choose>
+        <choose>
+            <when test="param7!=1">
+
+            </when>
+            <otherwise>
+
             </otherwise>
         </choose>
     </select>
