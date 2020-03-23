@@ -30,5 +30,6 @@ public class Comment {
     private String praiseNum;
     private String theUser;
     private String totalScore;
+    private List<ImgInfo> imgInfoList;
     private List<Comment> commentList;
 }

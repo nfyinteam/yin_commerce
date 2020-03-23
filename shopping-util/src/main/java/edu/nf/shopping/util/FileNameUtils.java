@@ -8,12 +8,10 @@ import org.apache.http.entity.mime.HttpMultipartMode;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
-import org.springframework.util.Base64Utils;
-import sun.misc.BASE64Decoder;
+
 
 import java.io.BufferedInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.FileOutputStream;
 import java.io.InputStream;
 
 public class FileNameUtils {
@@ -61,6 +59,4 @@ public class FileNameUtils {
 			throw new RuntimeException(e);
 		}
 	}
-
-
 }
