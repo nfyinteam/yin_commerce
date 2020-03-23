@@ -2,21 +2,54 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62b8ac9c-86a9-4199-8f79-2819b827666b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/shopping-adminapi/target/classes/edu/nf/shopping/AdminApiApplication.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-adminapi/target/classes/edu/nf/shopping/config/CorsConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-adminapi/target/classes/edu/nf/shopping/config/RestConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-adminapi/target/classes/edu/nf/shopping/config/SwaggerConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-adminapi/target/classes/edu/nf/shopping/goods/advice/ControllerAspect.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-adminapi/target/classes/edu/nf/shopping/goods/controller/ImgeUploadController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-adminapi/target/classes/edu/nf/shopping/vo/BaseController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-adminapi/target/classes/edu/nf/shopping/vo/ResponseVO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/comment/controller/CommentController.class~c9fb8d0ccfa189c7c417f7f515b3079e3caa4e14" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/config/RestConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/config/SwaggerConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/goods/advice/ControllerAspect.class~c9fb8d0ccfa189c7c417f7f515b3079e3caa4e14" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/goods/controller/ImgeUploadController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-userapi/target/test-classes/edu/nf/shopping/comment/service/CommentServiceTest.class~c9fb8d0ccfa189c7c417f7f515b3079e3caa4e14" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-userapi/target/test-classes/edu/nf/shopping/warehouse/dao/WarehouseDaoTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-adminapi/target/test-classes/edu/nf/shopping/comment/service/CommentServiceTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-adminapi/target/test-classes/edu/nf/shopping/goods/service/GoodsServiceTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/comment/dao/ComImageDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/comment/dao/ImgInfoDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/warehouse/dao/CargoInfoDao.java~Updated upstream" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/comment/ComImageDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/comment/ImgInfoMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-dao/target/classes/META-INF/shopping-dao.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-dao/target/classes/edu/nf/shopping/comment/dao/ComImageDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-dao/target/classes/edu/nf/shopping/comment/dao/ImgInfoDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-dao/target/classes/edu/nf/shopping/comment/dao/PraiseDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-dao/target/classes/edu/nf/shopping/comment/dao/ReportDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-dao/target/classes/edu/nf/shopping/comment/dao/ReportReasonDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/comment/ComImageDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/comment/CommentsMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/comment/ImgInfoMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/comment/PraiseMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/comment/ReportMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/comment/ReportReasonMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/comment/entity/CommentImage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/comment/entity/ImgInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-entity/target/classes/META-INF/shopping-entity.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/comment/entity/CommentImage.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/comment/entity/ImgInfo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/comment/entity/Praise.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/comment/entity/Report.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/comment/entity/ReportReason.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-service/target/classes/META-INF/shopping-service.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/comment/service/PraiseService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/comment/service/ReportReasonService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/comment/service/ReportService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/comment/service/impl/PraiseServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/comment/service/impl/ReportReasonServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/comment/service/impl/ReportServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/message/ConsumerServer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/message/ProducerServer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/UserApiApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/comment/advice/ControllerAspect.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/comment/controller/PraiseController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/comment/controller/ReportController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/comment/controller/ReportReasonController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/config/CorsConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/vo/BaseController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/vo/ResponseVO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-userapi/target/test-classes/edu/nf/shopping/goods/service/GoodsServiceTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-util/src/main/java/edu/nf/shopping/util/FileNameUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-util/target/classes/META-INF/shopping-util.kotlin_module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,12 +68,13 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="WarehouseManagement" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/comment/service/impl/PraiseServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/comment/service/impl/CommentServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MavenImportPreferences">
@@ -276,6 +310,31 @@
             </State>
           </value>
         </entry>
+        <entry key="2">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State>
@@ -288,6 +347,7 @@
     <option name="OPEN_TABS">
       <set>
         <option value="1" />
+        <option value="2" />
       </set>
     </option>
   </component>
@@ -316,11 +376,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="269" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584943812751" />
-    <state x="347" y="0" key="CommitChangelistDialog2" timestamp="1584943778239">
+    <state x="347" y="0" key="CommitChangelistDialog2" timestamp="1584981783024">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="236" y="0" key="CommitChangelistDialog2/0.0.1304.768@0.0.1304.768" timestamp="1584768585351" />
-    <state x="347" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584943778239" />
+    <state x="347" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584981783024" />
     <state x="92" y="92" width="1120" height="584" key="DiffContextDialog" timestamp="1584433974098">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
@@ -374,10 +434,14 @@
     </state>
     <state x="244" y="117" key="Vcs.Push.Dialog.v2/0.0.1304.768@0.0.1304.768" timestamp="1584768593446" />
     <state x="359" y="158" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584944645852" />
-    <state x="654" y="322" key="git4idea.merge.GitPullDialog" timestamp="1584944670491">
+    <state x="722" y="235" key="git4idea.branch.GitSmartOperationDialog" timestamp="1584982504228">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="654" y="322" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584944670491" />
+    <state x="722" y="235" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584982504228" />
+    <state x="654" y="322" key="git4idea.merge.GitPullDialog" timestamp="1584981827864">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="654" y="322" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584981827864" />
     <state x="306" y="232" key="git4idea.ui.GitUnstashDialog" timestamp="1584283072939">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
