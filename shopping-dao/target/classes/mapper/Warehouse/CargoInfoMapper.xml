@@ -45,11 +45,18 @@
     </resultMap>
     <resultMap id="skuRelationMap" type="edu.nf.shopping.goods.entity.SkuRelation">
         <id property="keyId" column="key_id"/>
-        <result property="valueId" column="<value_id"/>
-     </resultMap>
-    <insert id="insertCargoInfo"></insert>
-    <update id="updateCargoInfo"></update>
-    <delete id="deleteCargoInfo"></delete>
+        <result property="valueId" column="value_id"/>
+    </resultMap>
+    <insert id="insertCargoInfo" parameterType="edu.nf.shopping.warehouse.entity.CargoInfo">
+        INSERT INTO cargo_info(cargo_id,sku_id,r_id,p_id,supplier_id,put_price,put_time,put_admin,is_out,item_no)
+        VALUES(#{cargoId},#{skuId},#{rid},#pid},#{supplierId},#{putPrice},#{putTime},#{putAdmin},#{isOut},#{itemNo});
+    </insert>
+    <update id="updateCargoInfo" parameterType="java.lang.String">
+        UPDATE cargo_info SET put_price = #{putPrice} ,put_admin =#{putAdmin} , WHERE cargo_id = #{cargoId} ;
+    </update>
+    <delete id="deleteCargoInfo" parameterType="java.lang.String">
+        DELETE FROM cargo_info WHERE cargo_id  = #{cargoId}
+    </delete>
     <select id="listCargoInfo" resultMap="cargoInfoMap">
         SELECT supplier_name,supplier_tel,supplier_address,value_name,goods_name ,g.goods_id,
         g.shelf_time, g.is_shelf, si.spu_id, si.spu_name,si.spu_remark, si.list_time, si.spu_num, gt.gt_id, gt.gt_name, gt.p_id

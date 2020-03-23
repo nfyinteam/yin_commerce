@@ -29,7 +29,7 @@ public class CargoInfo {
     /**
      *父级区域编号
      */
-    private Integer pid;
+    private String pid;
     /**
      * 供应商编号
      */
@@ -61,7 +61,7 @@ public class CargoInfo {
     SkuRelation skuRelation;
     SkuInfo skuInfo;
 
-    public CargoInfo(String cargoId, String skuId, Integer rid, Integer pid, Integer supplierId, BigDecimal putPrice, Date putTime, String putAdmin, Boolean isOut, String itemNo, List<GoodsInfo> goodsInfos, SkuRelation skuRelation, SkuInfo skuInfo) {
+    public CargoInfo(String cargoId, String skuId, Integer rid, String pid, Integer supplierId, BigDecimal putPrice, Date putTime, String putAdmin, Boolean isOut, String itemNo, List<GoodsInfo> goodsInfos, SkuRelation skuRelation, SkuInfo skuInfo) {
         this.cargoId = cargoId;
         this.skuId = skuId;
         this.rid = rid;
@@ -101,11 +101,11 @@ public class CargoInfo {
         this.rid = rid;
     }
 
-    public Integer getPid() {
+    public String getPid() {
         return pid;
     }
 
-    public void setPid(Integer pid) {
+    public void setPid(String pid) {
         this.pid = pid;
     }
 

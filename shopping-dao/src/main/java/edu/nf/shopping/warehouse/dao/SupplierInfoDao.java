@@ -29,4 +29,10 @@ public interface SupplierInfoDao {
      * 删除供应商
      */
     void deleteSupplierInfo(Integer id);
+
+    /**
+     * 查询供应商商品
+     * @return
+     */
+    List<SupplierInfo> listSupplierGoodsById();
 }

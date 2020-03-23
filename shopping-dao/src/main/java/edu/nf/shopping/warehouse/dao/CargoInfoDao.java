@@ -23,9 +23,10 @@ public interface CargoInfoDao {
     void insertCargoInfo(CargoInfo cargoInfo);
 
     /**
-     * 删除货物信息
+     * 删除货物
+     * @param cargoId
      */
-    void deleteCargoInfo();
+    void deleteCargoInfo(String cargoId);
 
     /**
      * 修改货物信息
