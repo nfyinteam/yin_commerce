@@ -1,11 +1,14 @@
 package edu.nf.shopping.goods.service;
 
+import com.rabbitmq.client.BuiltinExchangeType;
+import com.rabbitmq.client.Channel;
+import com.rabbitmq.client.Connection;
+import com.rabbitmq.client.ConnectionFactory;
 import edu.nf.shopping.goods.entity.GoodsInfo;
 import edu.nf.shopping.goods.entity.GoodsType;
 import edu.nf.shopping.goods.entity.SpuInfo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
@@ -41,4 +44,6 @@ public class GoodsServiceTest {
             System.out.println("----------------------------");
         }
     }
+
+
 }

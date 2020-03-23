@@ -1,5 +1,6 @@
 package edu.nf.shopping.comment.service;
 
+import com.github.pagehelper.PageInfo;
 import edu.nf.shopping.comment.entity.Comment;
 
 import java.util.List;
@@ -11,7 +12,8 @@ import java.util.List;
 public interface CommentService {
 
     /**
-     * 查询所有评论
+     * 查询某个商品的买家秀
      **/
-    List<Comment> listComment();
+    PageInfo<Comment> listBuyShow(Integer pageNum, Integer pageSize, String goodsId, String order);
+
 }
