@@ -2,14 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="526d3e9c-dff7-4ee1-9e0d-ae85a8206b4f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_rabbitmq_amqp_client_5_7_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_amqp_spring_amqp_2_2_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_amqp_spring_rabbit_2_2_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_amqp_2_2_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_retry_spring_retry_1_2_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_messaging_5_2_4_RELEASE.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/goods/Comments.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/comment/Comments.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/goods/Comments.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/UserApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/UserApiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/goods/advice/ControllerAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/goods/advice/ControllerAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/src/test/java/edu/nf/shopping/goods/service/GoodsServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/src/test/java/edu/nf/shopping/goods/service/GoodsServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/goods/advice/ControllerAspect.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/goods/advice/ControllerAspect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/target/test-classes/edu/nf/shopping/goods/service/GoodsServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/target/test-classes/edu/nf/shopping/goods/service/GoodsServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-adminapi/shopping-adminapi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/shopping-adminapi.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-adminapi/src/main/java/edu/nf/shopping/goods/advice/ControllerAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/src/main/java/edu/nf/shopping/goods/advice/ControllerAspect.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,9 +65,14 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="d:/apache-maven-3.6.1" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../apache-maven-3.6.1" />
         <option name="userSettingsFile" value="D:\apache-maven-3.6.1\conf\settings.xml" />
       </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
     </option>
   </component>
   <component name="ProjectId" id="1YkjpQo68oSP2QYCmt9wJE57S1e" />
@@ -216,7 +222,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5e28548b-8be0-4555-97ff-f97a2e9198d0" name="Default Changelist" comment="" />
+      <changelist id="526d3e9c-dff7-4ee1-9e0d-ae85a8206b4f" name="Default Changelist" comment="" />
       <created>1583493668656</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -225,6 +231,7 @@
       <workItem from="1583723585657" duration="5783000" />
       <workItem from="1583894926308" duration="916000" />
       <workItem from="1583936276025" duration="2370000" />
+      <workItem from="1584936948397" duration="5301000" />
     </task>
     <task id="LOCAL-00001" summary="write entity shoppingcart">
       <created>1583938021337</created>
@@ -318,19 +325,21 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="291" key="NewModule_or_Project.wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1584024978717" />
-    <state x="463" y="165" key="SettingsEditor" timestamp="1584025090509">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="329" y="52" key="SettingsEditor" timestamp="1584936963083">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
+    <state x="329" y="52" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1584936963083" />
     <state x="463" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1584025090509" />
     <state x="387" y="126" key="Vcs.Push.Dialog.v2" timestamp="1584025144400">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="275" y="88" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1583938443262" />
     <state x="387" y="126" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584025144400" />
-    <state x="521" y="237" key="git4idea.merge.GitPullDialog" timestamp="1583998016180">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="371" y="168" key="git4idea.merge.GitPullDialog" timestamp="1584945332198">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="371" y="166" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1583938416324" />
+    <state x="371" y="168" key="git4idea.merge.GitPullDialog/0.0.1366.738@0.0.1366.738" timestamp="1584945332198" />
     <state x="521" y="237" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583998016180" />
   </component>
   <component name="XDebuggerManager">
