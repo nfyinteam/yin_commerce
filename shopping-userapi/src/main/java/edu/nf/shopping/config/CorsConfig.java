@@ -26,4 +26,5 @@ public class CorsConfig {
         source.registerCorsConfiguration("/**", buildConfig()); //注册
         return new CorsFilter(source);
     }
+
 }

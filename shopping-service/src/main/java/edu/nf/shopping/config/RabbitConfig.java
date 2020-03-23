@@ -18,10 +18,10 @@ public class RabbitConfig {
 
     public static final String EXCHANGE_NAME = "delay.exchange";
     public static final String QUEUE_NAME = "delay.queue";
-    public static final String ROUTER_KEY = "order.message";
+    public static final String ROUTER_KEY = "delay.message";
 
     /**
-     * 自定义Exchange，设置延迟交换机类型为direct，也可以设置为topic等其他类型
+     * 自定义Exchange，设置延迟交换机类型
      */
     @Bean
     public CustomExchange delayExchange() {
