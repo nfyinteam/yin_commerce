@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.nf.shopping.goods.dao.GoodsImgsDao">
+    <resultMap id="goodsImgsMap" type="edu.nf.shopping.goods.entity.GoodsImgs">
+        <result property="imgIndex" column="img_index"/>
+        <association property="good" resultMap="goodsMap"/>
+        <association property="img" resultMap="imgsMap"/>
+    </resultMap>
+    <resultMap id="goodsMap" type="edu.nf.shopping.goods.entity.GoodsInfo">
+        <id property="goodsId" column="goods_id"/>
+        <result property="goodsName" column="goods_name"/>
+        <result property="shelfTime" column="shelf_time"/>
+        <result property="isShelf" column="is_shelf"/>
+        <association property="spuInfo" resultMap="spuInfoMap"/>
+        <association property="goodsType" resultMap="goodsTypeMap"/>
+    </resultMap>
+    <resultMap id="imgsMap" type="edu.nf.shopping.goods.entity.ImgsInfo">
+        <id property="imgId" column="img_id"/>
+        <result property="imgName" column="img_name"/>
+        <result property="imgFile" column="img_fille"/>
+        <association property="imgType" resultMap="imgsTypeMap"/>
+    </resultMap>
+    <resultMap id="spuInfoMap" type="edu.nf.shopping.goods.entity.SpuInfo">
+        <id property="spuId" column="spu_id"/>
+        <result property="spuName" column="spu_name"/>
+        <result property="spuNum" column="spu_num"/>
+        <result property="listTime" column="list_time"/>
+        <result property="spuRemark" column="spu_remark"/>
+    </resultMap>
+    <resultMap id="goodsTypeMap" type="edu.nf.shopping.goods.entity.GoodsType">
+        <id property="gtId" column="gt_id"/>
+        <result property="gtName" column="gt_name"/>
+        <result property="pId" column="p_id"/>
+    </resultMap>
+    <resultMap id="imgsTypeMap" type="edu.nf.shopping.goods.entity.ImgsType">
+        <id column="it_id" property="itId"/>
+        <result column="it_name" property="itName"/>
+    </resultMap>
+
+    <select id="listGoodsImgs" resultMap="imgsMap">
+        select img_id, img_name, img_file, img_type from imgs_info where img_id in(select img_id
+        from goods_imgs GROUP BY img_id)
+    </select>
+
+    <select id="listGoodsImgsByGoodsId" resultMap="imgsMap">
+        select ii.img_id, ii.img_name, ii.img_file, ii.img_type from goods_imgs gi left join imgs_info ii
+        on ii.img_id = gi.img_id where gi.goods_id = #{goodsId} order by gi.img_index asc
+    </select>
+
+    <select id="listFirstGoodsImgsByGoodsId" resultMap="imgsMap">
+        select img_id, img_name, img_file, img_type from imgs_info where img_id in(select img_id from goods_imgs
+        where goods_id in
+        <foreach collection="array" item="goodsId" open="(" close=")" separator=",">
+            #{goodsId}
+        </foreach>
+        and img_index = 1 GROUP BY img_id)
+    </select>
+
+    <select id="listGoodsImgsByImgId" resultMap="goodsImgsMap">
+        select gi.img_id, gi.img_index, goods.goods_name, ii.img_id, ii.img_file from goods_imgs gi left join goods_info goods on
+        goods.goods_id = gi.goods_id left join imgs_info ii on ii.img_id = gi.img_id where gi.img_id = #{imgId}
+    </select>
+
+    <insert id="addGoodsImgs" parameterType="edu.nf.shopping.goods.entity.GoodsImgs">
+        insert goods_imgs(img_id, goods_id, img_index) value(#{goodsImg.img.imgId}, #{goodsImg.good.goodsId}, #{goodsImg.imgIndex})
+    </insert>
+
+    <update id="updateGoodsImgs" parameterType="edu.nf.shopping.goods.entity.GoodsImgs">
+        update goods_imgs set img_index = #{goodsImg.imgIndex}, img_id = #{goodsImg.img.imgId} where img_id = #{goodsImg.img.imgId}
+        and goods_id = #{goodsImg.good.goodsId} and img_index = #{goodsImg.imgIndex}
+    </update>
+
+    <delete id="deleteGoodsImgs" parameterType="edu.nf.shopping.goods.entity.GoodsImgs">
+        delete goods_imgs where img_id = #{goodsImg.img.imgId} and goods_id = #{goodsImg.good.goodsId}
+        and img_index = #{goodsImg.imgIndex}
+    </delete>
+
+</mapper>
