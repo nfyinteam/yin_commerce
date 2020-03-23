@@ -7,7 +7,7 @@ package edu.nf.shopping.goods.entity;
 public class GoodsImgs {
     private ImgsInfo img;
     private GoodsInfo good;
-    private Integer imgIndex;
+    private Integer img_index;
 
     public ImgsInfo getImg() {
         return img;
@@ -25,11 +25,11 @@ public class GoodsImgs {
         this.good = good;
     }
 
-    public Integer getImgIndex() {
-        return imgIndex;
+    public Integer getImg_index() {
+        return img_index;
     }
 
-    public void setImgIndex(Integer imgIndex) {
-        this.imgIndex = imgIndex;
+    public void setImg_index(Integer img_index) {
+        this.img_index = img_index;
     }
 }
