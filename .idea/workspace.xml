@@ -442,11 +442,11 @@
       <screen x="0" y="23" width="1680" height="981" />
     </state>
     <state x="690" y="437" key="VCS.ChangelistChooser/0.23.1680.981@0.23.1680.981" timestamp="1584428592191" />
-    <state x="339" y="143" key="Vcs.Push.Dialog.v2" timestamp="1584942831208">
-      <screen x="0" y="23" width="1680" height="985" />
+    <state x="387" y="126" key="Vcs.Push.Dialog.v2" timestamp="1584944477507">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="275" y="88" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1583938443262" />
-    <state x="387" y="126" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584025144400" />
+    <state x="387" y="126" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584944477507" />
     <state x="339" y="142" key="Vcs.Push.Dialog.v2/0.23.1680.981@0.23.1680.981" timestamp="1584427178873" />
     <state x="339" y="143" key="Vcs.Push.Dialog.v2/0.23.1680.985@0.23.1680.985" timestamp="1584942831208" />
     <state x="339" y="143" key="Vcs.Push.Dialog.v2/0.23.1680.986@0.23.1680.986" timestamp="1584942715573" />
@@ -454,11 +454,11 @@
       <screen x="0" y="23" width="1680" height="985" />
     </state>
     <state x="586" y="235" key="git4idea.branch.GitSmartOperationDialog/0.23.1680.985@0.23.1680.985" timestamp="1584942852879" />
-    <state x="456" y="247" key="git4idea.merge.GitPullDialog" timestamp="1584424852649">
-      <screen x="0" y="23" width="1680" height="981" />
+    <state x="521" y="237" key="git4idea.merge.GitPullDialog" timestamp="1584944416762">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="371" y="166" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1583938416324" />
-    <state x="521" y="237" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583998016180" />
+    <state x="521" y="237" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584944416762" />
     <state x="456" y="247" key="git4idea.merge.GitPullDialog/0.23.1680.981@0.23.1680.981" timestamp="1584424852649" />
     <state x="505" y="239" key="search.everywhere.popup" timestamp="1584445346150">
       <screen x="0" y="23" width="1680" height="981" />
