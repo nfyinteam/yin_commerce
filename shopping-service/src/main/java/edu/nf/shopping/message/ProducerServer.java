@@ -1,4 +1,4 @@
-package edu.nf.shopping.comment.service;
+package edu.nf.shopping.message;
 
 import edu.nf.shopping.config.RabbitConfig;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
@@ -28,7 +28,7 @@ public class ProducerServer {
         //消息的ID
         correlationData.setId(UUID.randomUUID().toString());
         //发送消息
-        rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME, "order.message", aaa, message -> {
+        rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME, "delay.message", aaa, message -> {
             //设置延迟时间
             message.getMessageProperties().setDelay(delayTime);
             return message;

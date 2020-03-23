@@ -1,4 +1,4 @@
-package edu.nf.shopping.comment.service;
+package edu.nf.shopping.message;
 
 import com.rabbitmq.client.Channel;
 import edu.nf.shopping.config.RabbitConfig;
