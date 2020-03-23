@@ -5,11 +5,15 @@ import edu.nf.shopping.comment.dao.CommentDao;
 import edu.nf.shopping.comment.entity.Comment;
 import edu.nf.shopping.comment.exception.CommentException;
 import edu.nf.shopping.comment.service.CommentService;
+import edu.nf.shopping.util.FileNameUtils;
 import edu.nf.shopping.util.UUIDUtils;
+import edu.nf.shopping.util.UploadAddressUtils;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
@@ -59,16 +63,16 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public void addBuyShow(Comment comment) {
+    public void addBuyShow(MultipartFile[] files,Comment comment) throws IOException{
         try{
-            //判断根据用户订单是否存在
-            if(comment.getBycId()!=null && !"".equals(comment.getBycId()) && comment.getGoodsId()!=null && !"".equals(comment.getGoodsId())){
-                comment.setComId(UUIDUtils.createUUID());
-                comment.setState("1");
-                comment.setTime(new Date());
-                comment.setGrade("1");
-                commentDao.addComment(comment);
+            comment.setComId(UUIDUtils.createUUID());
+            comment.setState("1");
+            comment.setTime(new Date());
+            comment.setGrade("1");
+            commentDao.addComment(comment);
 
+            for (MultipartFile file : files) {
+                FileNameUtils.upload(UploadAddressUtils.COMMENT_IMAGES,file.getInputStream(),UUIDUtils.createUUID()+".png");
             }
         }catch (CommentException e){
             throw e;

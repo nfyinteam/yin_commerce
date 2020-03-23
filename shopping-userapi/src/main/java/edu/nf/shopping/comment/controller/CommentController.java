@@ -3,7 +3,9 @@ package edu.nf.shopping.comment.controller;
 import com.github.pagehelper.PageInfo;
 import edu.nf.shopping.comment.entity.Comment;
 import edu.nf.shopping.comment.service.CommentService;
+import edu.nf.shopping.util.Base64MultipartFile;
 import edu.nf.shopping.util.FileNameUtils;
+import edu.nf.shopping.util.UUIDUtils;
 import edu.nf.shopping.util.UploadAddressUtils;
 import edu.nf.shopping.vo.BaseController;
 import edu.nf.shopping.vo.ResponseVO;
@@ -12,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
+import sun.misc.BASE64Decoder;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
@@ -61,12 +64,19 @@ public class CommentController extends BaseController {
     @RequestMapping(value="add_buyShow",headers = "content-type=multipart/*")
     @ApiOperation(value = "提交商品评价", notes = "用户提交买家秀",
             httpMethod = "post")
-    private ResponseVO addBuyShow(@RequestParam("file") MultipartFile[] files, HttpServletRequest request) throws IOException {
-        for (MultipartFile imageFile : files) {
-            String name=FileNameUtils.newFileName(imageFile.getOriginalFilename());
-            System.out.println(name);
-            //FileNameUtils.upload(UploadAddressUtils.COMMENT_IMAGES,imageFile.getInputStream(),name);
-        }
+    private ResponseVO addBuyShow(@RequestParam("imageFile")MultipartFile[] files,Comment comment,HttpServletRequest request) {
+//        String imageName="",fileBase="";
+//        for (int i=0;i<files.length;i++) {
+//            if(i%2==0){
+//                imageName= files[i];
+//            }else {
+//                fileBase=files[i];
+//                MultipartFile imageFile=Base64MultipartFile.base64ToMultipart(imageName,fileBase);
+//                FileNameUtils.upload(UploadAddressUtils.COMMENT_IMAGES,imageFile.getInputStream(),imageFile.getOriginalFilename());
+//            }
+//        }
+        comment.setUserId("1578412684666");
+        commentService.addBuyShow(files,comment);
         return success(200,"提交评价成功");
     }
 }
