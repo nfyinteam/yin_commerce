@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="526d3e9c-dff7-4ee1-9e0d-ae85a8206b4f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/goods/dao/SkuRelationDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/goods/dao/SkuRelationDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/goods/SkuRelationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/goods/SkuRelationMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/shopcart/entity/ShoppingCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/shopcart/entity/ShoppingCart.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -302,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584722258604</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="修改了SkuRelationDao">
+      <created>1584722758470</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1584722758470</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -327,22 +333,27 @@
     <MESSAGE value="配置了文件上传、配置了Rest、swagger" />
     <MESSAGE value="修改了GoodsImgs、ImgsInfo对象，实现了图片包" />
     <MESSAGE value="完善了SkuRelationDao 修改了GoodsImgsMapper里面错误的代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="完善了SkuRelationDao 修改了GoodsImgsMapper里面错误的代码" />
+    <MESSAGE value="修改了SkuRelationDao" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改了SkuRelationDao" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="25" key="#Notifications" timestamp="1583938246865">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="25" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1583938246865" />
+    <state x="552" y="181" key="#Project_Structure" timestamp="1584802027751">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="181" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1584802027751" />
     <state x="506" y="71" width="816" height="646" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583724468469">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="506" y="71" width="816" height="646" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1583724468469" />
-    <state x="686" y="81" key="#com.intellij.ide.util.MemberChooser" timestamp="1584625027176">
+    <state x="686" y="81" key="#com.intellij.ide.util.MemberChooser" timestamp="1584942585007">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="488" y="57" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1583895144658" />
-    <state x="686" y="81" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1584625027176" />
+    <state x="686" y="81" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1584942585007" />
     <state x="811" y="412" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1583945976435">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -355,11 +366,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="269" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584102584854" />
-    <state x="488" y="0" width="697" height="728" key="CommitChangelistDialog2" timestamp="1584722255717">
+    <state x="488" y="0" width="697" height="728" key="CommitChangelistDialog2" timestamp="1584722755456">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="347" y="0" width="697" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1583938018590" />
-    <state x="488" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584722255717" />
+    <state x="488" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584722755456" />
     <state x="651" y="174" key="FileChooserDialogImpl" timestamp="1584688770400">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -401,11 +412,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="463" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1584025090509" />
-    <state x="387" y="126" key="Vcs.Push.Dialog.v2" timestamp="1584722261817">
+    <state x="387" y="126" key="Vcs.Push.Dialog.v2" timestamp="1584722759827">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="275" y="88" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1583938443262" />
-    <state x="387" y="126" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584722261817" />
+    <state x="387" y="126" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584722759827" />
     <state x="521" y="237" key="git4idea.merge.GitPullDialog" timestamp="1583998016180">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
