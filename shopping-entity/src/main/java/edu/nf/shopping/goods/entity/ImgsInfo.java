@@ -5,40 +5,40 @@ package edu.nf.shopping.goods.entity;
  * @date 2020/2/26
  */
 public class ImgsInfo {
-    private String img_id;
-    private String img_name;
-    private String img_file;
-    private ImgsType img_type;
+    private String imgId;
+    private String imgName;
+    private String imgFile;
+    private ImgsType imgType;
 
-    public String getImg_id() {
-        return img_id;
+    public String getImgId() {
+        return imgId;
     }
 
-    public void setImg_id(String img_id) {
-        this.img_id = img_id;
+    public void setImgId(String imgId) {
+        this.imgId = imgId;
     }
 
-    public String getImg_name() {
-        return img_name;
+    public String getImgName() {
+        return imgName;
     }
 
-    public void setImg_name(String img_name) {
-        this.img_name = img_name;
+    public void setImgName(String imgName) {
+        this.imgName = imgName;
     }
 
-    public String getImg_file() {
-        return img_file;
+    public String getImgFile() {
+        return imgFile;
     }
 
-    public void setImg_file(String img_file) {
-        this.img_file = img_file;
+    public void setImgFile(String imgFile) {
+        this.imgFile = imgFile;
     }
 
-    public ImgsType getImg_type() {
-        return img_type;
+    public ImgsType getImgType() {
+        return imgType;
     }
 
-    public void setImg_type(ImgsType img_type) {
-        this.img_type = img_type;
+    public void setImgType(ImgsType imgType) {
+        this.imgType = imgType;
     }
 }
