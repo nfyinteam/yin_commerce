@@ -2,7 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62b8ac9c-86a9-4199-8f79-2819b827666b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-adminapi/target/classes/edu/nf/shopping/AdminApiApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-adminapi/target/classes/edu/nf/shopping/config/CorsConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-adminapi/target/classes/edu/nf/shopping/config/RestConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-adminapi/target/classes/edu/nf/shopping/config/SwaggerConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-adminapi/target/classes/edu/nf/shopping/goods/advice/ControllerAspect.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-adminapi/target/classes/edu/nf/shopping/goods/controller/ImgeUploadController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-adminapi/target/classes/edu/nf/shopping/vo/BaseController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-adminapi/target/classes/edu/nf/shopping/vo/ResponseVO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/comment/controller/CommentController.class~c9fb8d0ccfa189c7c417f7f515b3079e3caa4e14" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/config/RestConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/config/SwaggerConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/goods/advice/ControllerAspect.class~c9fb8d0ccfa189c7c417f7f515b3079e3caa4e14" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/goods/controller/ImgeUploadController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-userapi/target/test-classes/edu/nf/shopping/comment/service/CommentServiceTest.class~c9fb8d0ccfa189c7c417f7f515b3079e3caa4e14" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-userapi/target/test-classes/edu/nf/shopping/warehouse/dao/WarehouseDaoTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,13 +35,12 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="WarehouseManagement" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/comment/service/impl/PraiseServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/comment/service/impl/CommentServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MavenImportPreferences">
@@ -356,15 +369,15 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="153" y="0" key="SettingsEditor/0.0.1304.768@0.0.1304.768" timestamp="1584193163717" />
-    <state x="359" y="158" key="Vcs.Push.Dialog.v2" timestamp="1584943529992">
+    <state x="359" y="158" key="Vcs.Push.Dialog.v2" timestamp="1584944645852">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="244" y="117" key="Vcs.Push.Dialog.v2/0.0.1304.768@0.0.1304.768" timestamp="1584768593446" />
-    <state x="359" y="158" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584943529992" />
-    <state x="654" y="322" key="git4idea.merge.GitPullDialog" timestamp="1584944047489">
+    <state x="359" y="158" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584944645852" />
+    <state x="654" y="322" key="git4idea.merge.GitPullDialog" timestamp="1584944670491">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="654" y="322" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584944047489" />
+    <state x="654" y="322" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584944670491" />
     <state x="306" y="232" key="git4idea.ui.GitUnstashDialog" timestamp="1584283072939">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
