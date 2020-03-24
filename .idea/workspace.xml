@@ -2,29 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62b8ac9c-86a9-4199-8f79-2819b827666b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/shopping-dao/target/classes/edu/nf/shopping/pay/dao/GetUsersBuyDataDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/warehouse/WarehouseInfoService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/warehouse/impl/WarehouseInfoServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-util/target/classes/edu/nf/shopping/util/FileNameUilts.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-util/target/classes/edu/nf/shopping/util/FileNameUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-util/target/classes/edu/nf/shopping/util/PageBean.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-util/target/classes/edu/nf/shopping/util/UUIDUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-util/target/classes/edu/nf/shopping/util/UploadAddressUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-adminapi/shopping-adminapi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/shopping-adminapi.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/target/classes/edu/nf/shopping/goods/dao/SkuRelationDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/target/classes/edu/nf/shopping/goods/dao/SkuRelationDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/target/classes/edu/nf/shopping/warehouse/dao/SupplierInfoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/target/classes/edu/nf/shopping/warehouse/dao/SupplierInfoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/Warehouse/CargoInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/Warehouse/CargoInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/Warehouse/SupplierInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/Warehouse/SupplierInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/Warehouse/WarehouseInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/Warehouse/WarehouseInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/goods/GoodsImgsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/goods/GoodsImgsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/goods/SkuRelationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/goods/SkuRelationMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/shopcart/entity/ShoppingCart.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/shopcart/entity/ShoppingCart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/warehouse/entity/RegionInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/warehouse/entity/RegionInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-adminapi/src/main/java/edu/nf/shopping/goods/advice/ControllerAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/src/main/java/edu/nf/shopping/goods/advice/ControllerAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-adminapi/src/main/java/edu/nf/shopping/goods/controller/ImgeUploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/src/main/java/edu/nf/shopping/goods/controller/ImgeUploadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-adminapi/src/test/java/edu/nf/shopping/comment/service/CommentServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/src/test/java/edu/nf/shopping/comment/service/CommentServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-adminapi/src/test/java/edu/nf/shopping/warehouse/dao/test/CargoInfoDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/src/test/java/edu/nf/shopping/warehouse/dao/test/CargoInfoDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/warehouse/dao/CargoInfoDao.java~Updated upstream" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-service/shopping-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/shopping-service.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/comment/service/impl/CommentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/comment/service/impl/CommentServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/config/RabbitConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/config/RabbitConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-userapi/shopping-userapi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/shopping-userapi.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/comment/controller/CommentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/comment/controller/CommentController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-util/shopping-util.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-util/shopping-util.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +33,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="crab" />
+        <entry key="$PROJECT_DIR$" value="WarehouseManagement" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -339,6 +325,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="合并test" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="552" y="181" key="#Project_Structure" timestamp="1585075697098">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="181" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1585075697098" />
     <state x="306" y="187" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584442518016">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
