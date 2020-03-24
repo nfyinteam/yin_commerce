@@ -375,10 +375,11 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="414" y="96" key="git4idea.branch.GitSmartOperationDialog/0.0.1304.768@0.0.1304.768" timestamp="1584978503921" />
-    <state x="327" y="175" key="git4idea.merge.GitPullDialog" timestamp="1584978237876">
-      <screen x="0" y="0" width="1304" height="768" />
+    <state x="481" y="237" key="git4idea.merge.GitPullDialog" timestamp="1585075984044">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="327" y="175" key="git4idea.merge.GitPullDialog/0.0.1304.768@0.0.1304.768" timestamp="1584978237876" />
+    <state x="481" y="237" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585075984044" />
     <state x="306" y="232" key="git4idea.ui.GitUnstashDialog" timestamp="1584283072939">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
