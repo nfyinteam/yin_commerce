@@ -13,6 +13,7 @@ import edu.nf.shopping.util.FileNameUtils;
 import edu.nf.shopping.util.UUIDUtils;
 import edu.nf.shopping.util.UploadAddressUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -68,7 +69,7 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public Comment findComment(String comId, String goodsId) {
+    public Comment findComment(String comId, String goodsId,String userId) {
         return null;
     }
 
@@ -115,7 +116,7 @@ public class CommentServiceImpl implements CommentService {
         try{
             //判断被回复的评论是否存在
             if(comment.getBycId()!=null && !"".equals(comment.getBycId()) && comment.getGoodsId()!=null && !"".equals(comment.getGoodsId())){
-                if(commentDao.findComment(comment.getBycId(),comment.getGoodsId())!=null){
+                if(commentDao.findComment(comment.getBycId(),null,null)!=null){
                     comment.setComId(UUIDUtils.createUUID());
                     comment.setState("1");
                     comment.setTime(new Date());
@@ -137,8 +138,24 @@ public class CommentServiceImpl implements CommentService {
 
 
     @Override
-    public void updateComment(Comment comment) {
-
+    public void updateComment(String comId,String state,String userId) {
+        try{
+            if(comId!=""&&comId!=null){
+                //判断是否为本人
+                if(commentDao.findComment(comId,null,userId)!=null){
+                    commentDao.updateComment(comId,state);
+                }else {
+                    throw new CommentException("出错了！");
+                }
+            }else {
+                throw new CommentException("出错了！");
+            }
+        }catch (CommentException e){
+            throw e;
+        }catch (RuntimeException e){
+            e.printStackTrace();
+            throw new CommentException("数据库出错");
+        }
     }
 
     @Override

@@ -1,6 +1,7 @@
 package edu.nf.shopping.comment.service.impl;
 
 import com.github.pagehelper.PageInfo;
+import edu.nf.shopping.comment.dao.CommentDao;
 import edu.nf.shopping.comment.dao.PraiseDao;
 import edu.nf.shopping.comment.entity.Comment;
 import edu.nf.shopping.comment.entity.Praise;
@@ -23,6 +24,9 @@ public class PraiseServiceImpl implements PraiseService {
     @Autowired
     private PraiseDao praiseDao;
 
+    @Autowired
+    private CommentDao commentDao;
+
     @Override
     public Praise findPraise(String userId, String comId) {
         try{
@@ -37,6 +41,9 @@ public class PraiseServiceImpl implements PraiseService {
     @Override
     public Boolean spotPraise(String userId, String comId) {
         try{
+            if(commentDao.findComment(comId,null,null)==null){
+                throw new CommentException("出错了！");
+            }
             if(praiseDao.findPraise(userId,comId)==null){
                 Praise praise=new Praise();
                 praise.setPraId(UUIDUtils.createUUID());
@@ -49,6 +56,8 @@ public class PraiseServiceImpl implements PraiseService {
                 praiseDao.deletePraise(userId,comId);
                 return false;
             }
+        }catch (CommentException e){
+            throw e;
         }catch (RuntimeException e){
             e.printStackTrace();
             throw new CommentException("数据库出错");
@@ -58,7 +67,12 @@ public class PraiseServiceImpl implements PraiseService {
     @Override
     public void deletePraise(String userId, String comId) {
         try{
+            if(commentDao.findComment(comId,null,null)==null){
+                throw new CommentException("出错了！");
+            }
             praiseDao.deletePraise(userId,comId);
+        }catch (CommentException e){
+            throw e;
         }catch (RuntimeException e){
             e.printStackTrace();
             throw new CommentException("数据库出错");
