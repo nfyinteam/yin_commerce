@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62b8ac9c-86a9-4199-8f79-2819b827666b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-adminapi/shopping-adminapi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/shopping-adminapi.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-adminapi/src/main/java/edu/nf/shopping/goods/advice/ControllerAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/src/main/java/edu/nf/shopping/goods/advice/ControllerAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-adminapi/src/main/java/edu/nf/shopping/goods/controller/ImgeUploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/src/main/java/edu/nf/shopping/goods/controller/ImgeUploadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-adminapi/src/test/java/edu/nf/shopping/comment/service/CommentServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/src/test/java/edu/nf/shopping/comment/service/CommentServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-adminapi/src/test/java/edu/nf/shopping/warehouse/dao/test/CargoInfoDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/src/test/java/edu/nf/shopping/warehouse/dao/test/CargoInfoDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/warehouse/dao/CargoInfoDao.java~Updated upstream" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/shopping-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/shopping-service.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/shopping-userapi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/shopping-userapi.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-util/shopping-util.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-util/shopping-util.iml" afterDir="false" />
-    </list>
+    <list default="true" id="62b8ac9c-86a9-4199-8f79-2819b827666b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,7 +22,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="WarehouseManagement" />
+        <entry key="$PROJECT_DIR$" value="goods" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -341,11 +330,11 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="242" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1304.768@0.0.1304.768" timestamp="1584956561929" />
-    <state x="347" y="0" key="CommitChangelistDialog2" timestamp="1585071653483">
+    <state x="347" y="0" key="CommitChangelistDialog2" timestamp="1585118829696">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="236" y="0" key="CommitChangelistDialog2/0.0.1304.768@0.0.1304.768" timestamp="1584978281617" />
-    <state x="347" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585071653483" />
+    <state x="347" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585118829696" />
     <state x="92" y="92" width="1120" height="584" key="DiffContextDialog" timestamp="1584433974098">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
