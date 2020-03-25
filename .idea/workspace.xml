@@ -26,6 +26,7 @@
     <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/comment/service/impl/PraiseServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/comment/service/impl/CommentServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MavenImportPreferences">
