@@ -30,9 +30,6 @@
         from comments c INNER JOIN user_info u inner JOIN user_face uf
         on c.u_id=u.u_id and u.u_id=uf.u_id where c.goods_id=#{param3}
         and c.com_grade='1' and c.com_state='1'
-        <if test="param7==1">
-            and (select COUNT(1) from buy_show_imgs where com_id=c.com_id)
-        </if>
         <choose>
             <when test="param6!=1">
                 ORDER BY
@@ -42,10 +39,17 @@
             </when>
             <otherwise>
                 ORDER BY
-                IF(c.com_time &lt; #{param6}, 0, 1), c.com_time desc
+                IF(c.com_time &lt; #{param6}, 0, 1), c.com_time asc
             </otherwise>
         </choose>
+        <choose>
+            <when test="param7!=1">
 
+            </when>
+            <otherwise>
+
+            </otherwise>
+        </choose>
     </select>
     <select id="listByComment" resultMap="commentMap" parameterType="String">
         select c.com_id,c.goods_id,c.u_id,c.parent_cid,c.by_cid,c.com_content,
