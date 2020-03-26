@@ -1,0 +1,10 @@
+package edu.nf.shopping.user.dao;
+
+/**
+ * @author re
+ * @date 2020/3/23
+ */
+@Repository("userenabledao")
+public class UserenableDao {
+
+}

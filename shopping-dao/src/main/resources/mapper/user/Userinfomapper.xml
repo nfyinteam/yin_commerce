@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.nf.shopping.user.dao.UserinfoDao">
+
+    <resultMap id="userMap" type="edu.nf.shopping.user.entity.Userinfo">
+        <id property="uid" column="u_id"/>
+        <id property="uanme" column="u_name"/>
+        <id property="uemail" column="u_email"/>
+        <id property="utel" column="u_tel"/>
+        <id property="upassword" column="u_password"/>
+        <id property="usex" column="u_sex"/>
+        <id property="realname" column="real_name"/>
+        <id property="carnumber" column="car_number"/>
+        <id property="factid" column="fact_id"/>
+    </resultMap>
+
+    <select id="selectUser" resultMap="userMap">
+        select u_id,u_name,u_email,u_tel,u_password,u_sex,real_name,car_number,
+        fact_id from user_info where u_id= #{uid}
+    </select>
+    <select id="login" resultMap="">
+        select u_tel,u_password from user_info where u_id = #{uid} and u_tel = #{utel}
+    </select>
+</mapper>
