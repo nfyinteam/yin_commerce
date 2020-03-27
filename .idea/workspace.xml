@@ -3,18 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="62b8ac9c-86a9-4199-8f79-2819b827666b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/user/dao/UseraddressDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/user/dao/UseraddressDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/user/dao/UserenableDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/user/dao/UserenableDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/user/dao/UserinfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/user/dao/UserInfoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/user/Userfacemapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/user/UserFacemapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/user/Userinfomapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/user/UserInfoDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/user/Userinfomapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/user/Userinfomapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/user/entity/Useraddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/user/entity/UserAddress.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/user/entity/Userenable.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/user/entity/UserEnable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/user/entity/Userface.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/user/entity/UserFace.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/user/service/UserinfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/user/service/UserInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/user/service/impl/UserinfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/user/service/impl/UserInfoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/user/controller/UserinfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/user/controller/UserinfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/user/controller/UserinfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/user/controller/UserInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-util/target/classes/edu/nf/shopping/GetUUIDUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-util/target/classes/edu/nf/shopping/util/FIleNameUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-util/target/classes/edu/nf/shopping/util/FileNameUilts.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-util/target/classes/edu/nf/shopping/util/PageBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-util/target/classes/edu/nf/shopping/util/UUIDUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-util/target/classes/edu/nf/shopping/util/UploadAddressUtils.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
