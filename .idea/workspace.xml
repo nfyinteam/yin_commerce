@@ -2,7 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62b8ac9c-86a9-4199-8f79-2819b827666b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-adminapi/src/test/java/edu/nf/shopping/warehouse/dao/test/CargoInfoDaoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-adminapi/src/test/java/edu/nf/shopping/warehouse/dao/test/SupplierInfoDaoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-adminapi/src/test/java/edu/nf/shopping/warehouse/dao/test/WarehouseInfoDaoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-adminapi/target/test-classes/edu/nf/shopping/warehouse/dao/test/SupplierInfoDaoTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-adminapi/target/test-classes/edu/nf/shopping/warehouse/dao/test/WarehouseInfoDaoTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/pay/dao/GetUsersBuyDataDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/comment/Comments.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-dao/target/classes/edu/nf/shopping/pay/dao/GetUsersBuyDataDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/comment/Comments.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/comment/entity/CommentImage.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/comment/entity/ImgInfo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/comment/entity/Praise.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/comment/entity/Report.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/comment/entity/ReportReason.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/comment/service/ConsumerServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/comment/service/ProducerServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/warehouse/WarehouseInfoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/warehouse/impl/WarehouseInfoServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-util/target/classes/edu/nf/shopping/util/FileNameUtils.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -422,11 +441,11 @@
     </state>
     <state x="414" y="96" key="git4idea.branch.GitSmartOperationDialog/0.0.1304.768@0.0.1304.768" timestamp="1584978503921" />
     <state x="610" y="130" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585118923646" />
-    <state x="481" y="237" key="git4idea.merge.GitPullDialog" timestamp="1585199959137">
+    <state x="481" y="237" key="git4idea.merge.GitPullDialog" timestamp="1585314071081">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="327" y="175" key="git4idea.merge.GitPullDialog/0.0.1304.768@0.0.1304.768" timestamp="1584978237876" />
-    <state x="481" y="237" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585199959137" />
+    <state x="481" y="237" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585314071081" />
     <state x="306" y="232" key="git4idea.ui.GitUnstashDialog" timestamp="1584283072939">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
