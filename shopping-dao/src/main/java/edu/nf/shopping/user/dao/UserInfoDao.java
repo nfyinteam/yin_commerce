@@ -1,8 +1,6 @@
 package edu.nf.shopping.user.dao;
 
 import edu.nf.shopping.user.entity.UserInfo;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -11,8 +9,7 @@ import java.util.List;
  * @date 2020/3/22
  */
 
-@Repository("userinfodao")
-public interface UserinfoDao {
+public interface UserInfoDao {
     /**
      * 全部用户信息
      */

@@ -6,7 +6,7 @@ import java.util.Date;
  * @author re
  * @date 2020/3/23
  */
-public class Userface {
+public class UserFace {
     /**
      * 用户头像编号
      */

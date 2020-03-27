@@ -8,7 +8,7 @@ import java.util.List;
  * @author re
  * @date 2020/3/22
  */
-public interface UserinfoService {
+public interface UserInfoService {
     List<UserInfo> listUser() throws Exception;
     UserInfo selectUser(UserInfo userinfo) throws LoginException;
 }

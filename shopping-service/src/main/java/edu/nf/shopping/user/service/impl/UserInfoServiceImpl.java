@@ -1,8 +1,8 @@
 package edu.nf.shopping.user.service.impl;
 
-import edu.nf.shopping.user.dao.UserinfoDao;
+import edu.nf.shopping.user.dao.UserInfoDao;
 import edu.nf.shopping.user.entity.UserInfo;
-import edu.nf.shopping.user.service.UserinfoService;
+import edu.nf.shopping.user.service.UserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,9 +14,9 @@ import java.util.List;
  * @date 2020/3/22
  */
 @Service("userinfoService")
-public class UserinfoServiceImpl implements UserinfoService {
+public class UserInfoServiceImpl implements UserInfoService {
     @Autowired
-    private UserinfoDao dao;
+    private UserInfoDao dao;
     @Override
     public List<UserInfo> listUser() throws Exception {
         try{  List<UserInfo> list=dao.listUser();

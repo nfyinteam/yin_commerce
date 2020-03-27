@@ -3,7 +3,7 @@ package edu.nf.shopping.user.controller;
 import com.example.project.controller.vo.ResponseVO;
 import com.example.project.servise.UserService;
 import edu.nf.shopping.user.entity.UserInfo;
-import edu.nf.shopping.user.service.UserinfoService;
+import edu.nf.shopping.user.service.UserInfoService;
 import edu.nf.shopping.vo.BaseController;
 import edu.nf.shopping.vo.ResponseVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +20,7 @@ import javax.validation.Valid;
 @RestController
 public class UserinfoController extends BaseController {
     @Autowired
-    private UserinfoService service;
+    private UserInfoService service;
 
     @PostMapping("user_login")
     public ResponseVO userlogin(@Valid UserInfo user) throws LoginException {

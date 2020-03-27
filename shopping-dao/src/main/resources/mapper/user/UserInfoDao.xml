@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="edu.nf.shopping.user.dao.UserinfoDao">
+<mapper namespace="edu.nf.shopping.user.dao.UserInfoDao">
 
-    <resultMap id="userMap" type="edu.nf.shopping.user.entity.Userinfo">
+    <resultMap id="userMap" type="edu.nf.shopping.user.entity.UserInfo">
         <id property="uid" column="u_id"/>
-        <id property="uanme" column="u_name"/>
+        <id property="uname" column="u_name"/>
         <id property="uemail" column="u_email"/>
         <id property="utel" column="u_tel"/>
         <id property="upassword" column="u_password"/>

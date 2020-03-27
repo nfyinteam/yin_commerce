@@ -6,7 +6,7 @@ import java.util.Date;
  * @author re
  * @date 2020/3/23
  */
-public class Userenable {
+public class UserEnable {
     /**
      * 封禁编号
      */
