@@ -1,6 +1,6 @@
 package edu.nf.shopping.user.dao;
 
-import edu.nf.shopping.user.entity.Userinfo;
+import edu.nf.shopping.user.entity.UserInfo;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Repository;
 
@@ -16,13 +16,13 @@ public interface UserinfoDao {
     /**
      * 全部用户信息
      */
-    List<Userinfo> listUser();
+    List<UserInfo> listUser();
     /**
      * 用户登录
      */
-    Userinfo login(Userinfo user);
+    UserInfo login(UserInfo user);
     /**
      * 查看个人信息
      */
-    Userinfo selectUser(String uid);
+    UserInfo selectUser(String uid);
 }

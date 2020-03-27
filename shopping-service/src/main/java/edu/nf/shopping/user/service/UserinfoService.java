@@ -1,8 +1,6 @@
 package edu.nf.shopping.user.service;
 
-import edu.nf.shopping.user.entity.Userinfo;
-import org.springframework.security.core.userdetails.User;
-
+import edu.nf.shopping.user.entity.UserInfo;
 import javax.security.auth.login.LoginException;
 import java.util.List;
 
@@ -11,6 +9,6 @@ import java.util.List;
  * @date 2020/3/22
  */
 public interface UserinfoService {
-    List<Userinfo> listUser() throws Exception;
-    Userinfo selectUser(Userinfo userinfo) throws LoginException;
+    List<UserInfo> listUser() throws Exception;
+    UserInfo selectUser(UserInfo userinfo) throws LoginException;
 }

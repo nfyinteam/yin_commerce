@@ -6,7 +6,7 @@ package edu.nf.shopping.user.entity;
  * @author re
  * @date 2020/3/22
  */
-public class Userinfo {
+public class UserInfo {
     /**
      * 用户编号
      */
