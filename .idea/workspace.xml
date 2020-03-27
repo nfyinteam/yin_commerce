@@ -1,25 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="46f89799-8bb1-4819-8ad3-e22a248a7c09" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/shopping-dao/target/classes/edu/nf/shopping/goods/dao/GoodsDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-dao/target/classes/edu/nf/shopping/warehouse/dao/CargoInfoDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-dao/target/classes/edu/nf/shopping/warehouse/dao/SupplierInfoDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/Warehouse/CargoInfoMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/Warehouse/SupplierInfoMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/Warehouse/WarehouseInfoMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/comment/entity/Comment.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/goods/entity/GoodsAllInfo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/goods/entity/GoodsImgs.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/goods/entity/ImgsInfo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/goods/entity/SkuInfo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/goods/entity/SkuRelation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/warehouse/entity/CargoInfo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/warehouse/entity/SupplierInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml~be1c8fb7b83c403b7bba7540671212462fa7a69c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml~be1c8fb7b83c403b7bba7540671212462fa7a69c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml~be1c8fb7b83c403b7bba7540671212462fa7a69c" beforeDir="false" />
+    <list default="true" id="62b8ac9c-86a9-4199-8f79-2819b827666b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/goods/entity/GoodsAllInfo.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -357,15 +340,16 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="242" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1304.768@0.0.1304.768" timestamp="1584956561929" />
-    <state x="347" y="0" key="CommitChangelistDialog2" timestamp="1585312429501">
+    <state x="347" y="0" key="CommitChangelistDialog2" timestamp="1585314978272">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="236" y="0" key="CommitChangelistDialog2/0.0.1304.768@0.0.1304.768" timestamp="1584978281617" />
-    <state x="347" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585312429501" />
-    <state x="92" y="92" width="1120" height="584" key="DiffContextDialog" timestamp="1584433974098">
-      <screen x="0" y="0" width="1304" height="768" />
+    <state x="347" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585314978272" />
+    <state x="135" y="125" width="1120" height="584" key="DiffContextDialog" timestamp="1585314946471">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1120" height="584" key="DiffContextDialog/0.0.1304.768@0.0.1304.768" timestamp="1584433974098" />
+    <state x="135" y="125" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585314946471" />
     <state x="431" y="126" key="FileChooserDialogImpl" timestamp="1584841258047">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
@@ -426,11 +410,11 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="414" y="96" key="git4idea.branch.GitSmartOperationDialog/0.0.1304.768@0.0.1304.768" timestamp="1584978503921" />
-    <state x="481" y="237" key="git4idea.merge.GitPullDialog" timestamp="1585201525098">
+    <state x="481" y="237" key="git4idea.merge.GitPullDialog" timestamp="1585314913422">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="327" y="175" key="git4idea.merge.GitPullDialog/0.0.1304.768@0.0.1304.768" timestamp="1584978237876" />
-    <state x="481" y="237" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585201525098" />
+    <state x="481" y="237" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585314913422" />
     <state x="306" y="232" key="git4idea.ui.GitUnstashDialog" timestamp="1584283072939">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
