@@ -1,5 +1,6 @@
 package edu.nf.shopping.goods.controller;
 
+import edu.nf.shopping.util.FIleNameUtils;
 import edu.nf.shopping.util.UploadAddressUtils;
 import edu.nf.shopping.vo.BaseController;
 import edu.nf.shopping.vo.ResponseVO;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -31,11 +33,12 @@ public class ImgeUploadController extends BaseController {
     @ApiOperation(value = "上传图片", notes = "上传单张照片到文件服务器",
             httpMethod = "post")
     public ResponseVO uploadImage(MultipartFile file) throws IOException{
-        FileSystemResource resource = new FileSystemResource(file.getResource().getFile());
+        File newFile = file.getResource().getFile();
+        FileSystemResource resource = new FileSystemResource(newFile);
         MultiValueMap<String, Object> param = new LinkedMultiValueMap<>();
         param.add("file", resource);
         HttpEntity<MultiValueMap<String, Object>> httpEntity = new HttpEntity<MultiValueMap<String, Object>>(param);
-        ResponseEntity<String> responseEntity = rest.exchange(UploadAddressUtils.GOODS_IMAGES, HttpMethod.POST, httpEntity, String.class);
+        ResponseEntity<String> responseEntity = rest.exchange(UploadAddressUtils.GOODS_IMGES, HttpMethod.POST, httpEntity, String.class);
         return success(200);
     }
 }

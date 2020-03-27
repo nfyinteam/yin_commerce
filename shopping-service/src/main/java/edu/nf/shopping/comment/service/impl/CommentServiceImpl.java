@@ -1,22 +1,15 @@
 package edu.nf.shopping.comment.service.impl;
 
 import com.github.pagehelper.PageInfo;
-import edu.nf.shopping.comment.dao.ComImageDao;
 import edu.nf.shopping.comment.dao.CommentDao;
-import edu.nf.shopping.comment.dao.ImgInfoDao;
 import edu.nf.shopping.comment.entity.Comment;
-import edu.nf.shopping.comment.entity.CommentImage;
-import edu.nf.shopping.comment.entity.ImgInfo;
 import edu.nf.shopping.comment.exception.CommentException;
 import edu.nf.shopping.comment.service.CommentService;
-import edu.nf.shopping.util.FileNameUtils;
 import edu.nf.shopping.util.UUIDUtils;
-import edu.nf.shopping.util.UploadAddressUtils;
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
@@ -30,20 +23,13 @@ public class CommentServiceImpl implements CommentService {
     @Autowired
     private CommentDao commentDao;
 
-    @Autowired
-    private ComImageDao comImageDao;
-
-    @Autowired
-    private ImgInfoDao imgInfoDao;
-
     @Override
     public PageInfo<Comment> listBuyShow(Integer pageNum,Integer pageSize,Integer replySize,String goodsId,String userId,Date dataTime,String order,String commentType) {
         try{
             List<Comment> byShowList=commentDao.listBuyShow(pageNum,pageSize,goodsId,userId,dataTime,order,commentType);
-            //查询买家秀的子评论和图片
+            //查询买家秀的子评论
             if(byShowList.size()>0){
                 for (Comment comment : byShowList) {
-                    comment.setImgInfoList(imgInfoDao.listImgInfo(comment.getComId()));
                     comment.setCommentList(commentDao.listByComment(0,replySize,comment.getComId(),userId,dataTime,order));
                 }
             }
@@ -73,33 +59,16 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public void addBuyShow(MultipartFile[] files,Comment comment) throws IOException{
+    public void addBuyShow(Comment comment) {
         try{
-            if(files.length>5){
-                throw new CommentException("出错了啊！");
-            }
-            comment.setComId(UUIDUtils.createUUID());
-            comment.setState("2");
-            comment.setTime(new Date());
-            comment.setGrade("1");
-            comment.setParentId("NULL");
-            comment.setBycId("NULL");
-            commentDao.addComment(comment);
-            for (int i=0;i<files.length;i++) {
-                //图片信息
-                ImgInfo imgInfo=new ImgInfo();
-                imgInfo.setImgId(UUIDUtils.createUUID());
-                imgInfo.setImgName(UUIDUtils.createUUID()+".png");
-                imgInfo.setImgFile("NULL");
-                imgInfo.setImgType(2);
-                imgInfoDao.addImgInfo(imgInfo);
-                //图片与评论关联
-                CommentImage commentImage=new CommentImage();
-                commentImage.setImageId(imgInfo.getImgId());
-                commentImage.setComId(comment.getComId());
-                commentImage.setIndex(i);
-                comImageDao.addCommentImage(commentImage);
-                FileNameUtils.upload(UploadAddressUtils.COMMENT_IMAGES,files[i].getInputStream(),imgInfo.getImgName());
+            //判断根据用户订单是否存在
+            if(comment.getBycId()!=null && !"".equals(comment.getBycId()) && comment.getGoodsId()!=null && !"".equals(comment.getGoodsId())){
+                comment.setComId(UUIDUtils.createUUID());
+                comment.setState("1");
+                comment.setTime(new Date());
+                comment.setGrade("1");
+                commentDao.addComment(comment);
+
             }
         }catch (CommentException e){
             throw e;
