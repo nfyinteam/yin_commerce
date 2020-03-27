@@ -1,6 +1,5 @@
 package edu.nf.shopping.user.advice;
-
-import edu.nf.project.controller.vo.ResponseVO;
+import edu.nf.shopping.vo.ResponseVO;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindException;
 import org.springframework.validation.FieldError;
