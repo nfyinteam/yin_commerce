@@ -2,15 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="526d3e9c-dff7-4ee1-9e0d-ae85a8206b4f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_rabbitmq_amqp_client_5_7_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_amqp_spring_amqp_2_2_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_amqp_spring_rabbit_2_2_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_amqp_2_2_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_retry_spring_retry_1_2_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_messaging_5_2_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/goods_search/dao/GoodsSearchDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/goods_search/dao/UsersDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/goods_search/Goods_searchMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-dao/src/test/java/edu/nf/shopping/goods_search/dao/Goods_SearchDaoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-dao/target/classes/edu/nf/shopping/goods_search/dao/GoodsSearchDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-dao/target/classes/edu/nf/shopping/goods_search/dao/UsersDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/goods_search/Goods_searchMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-dao/target/test-classes/edu/nf/shopping/goods_search/dao/Goods_SearchDaoTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/goods_search/entity/GoodsImgs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/goods_search/entity/GoodsInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/goods_search/entity/GoodsType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/goods_search/entity/Users.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/goods_search/entity/GoodsImgs.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/goods_search/entity/GoodsInfo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/goods_search/entity/GoodsType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/goods_search/entity/Users.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/goods_search/exception/GoodsSearchException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/goods_search/service/GoodsSearchService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/goods_search/service/impl/GoodsSearchServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-service/src/test/java/edu/nf/shopping/goods_search/service/GoodsSearchServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/comment/service/ConsumerServer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/comment/service/ProducerServer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/config/RabbitConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/goods_search/exception/GoodsSearchException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/goods_search/service/GoodsSearchService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/goods_search/service/impl/GoodsSearchServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-service/target/test-classes/edu/nf/shopping/goods_search/service/GoodsSearchServiceTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-util/target/classes/edu/nf/shopping/util/FIleNameUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-util/target/classes/edu/nf/shopping/util/PageBean.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-util/target/classes/edu/nf/shopping/util/UUIDUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-util/target/classes/edu/nf/shopping/util/UploadAddressUtils.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-adminapi/shopping-adminapi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/shopping-adminapi.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-adminapi/src/main/java/edu/nf/shopping/goods/advice/ControllerAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/src/main/java/edu/nf/shopping/goods/advice/ControllerAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-adminapi/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-dao/shopping-dao.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/shopping-dao.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-entity/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-entity/shopping-entity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/shopping-entity.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,28 +56,14 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@www.88k88.cn" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@www.88k88.cn" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@www.88k88.cn" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="yin_commerce: schema" type="76f4a085:MysqlImplModel$Schema" />
-      </path>
-    </expand>
+    <expand />
     <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="mybatis-mapper" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -89,7 +103,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/shopping-util" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SpingBoot-es2" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -118,7 +132,7 @@
       <recent name="D:\ideaprojects\addiction-shopping\shopping-dao\src\main\resources\mapper\goods\comment" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CommentServiceTest.listComment">
+  <component name="RunManager" selected="JUnit.Goods_SearchDaoTest.listGoodsSearchByNameTest">
     <configuration name="CommentServiceTest.listComment" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shopping-userapi" />
       <extension name="coverage">
@@ -135,6 +149,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GoodsSearchServiceTest.listGoodsSearchByNameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="shopping-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.nf.shopping.goods_search.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.nf.shopping.goods_search.service" />
+      <option name="MAIN_CLASS_NAME" value="edu.nf.shopping.goods_search.service.GoodsSearchServiceTest" />
+      <option name="METHOD_NAME" value="listGoodsSearchByNameTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GoodsServiceTest.listGoodsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shopping-userapi" />
       <extension name="coverage">
@@ -146,6 +176,38 @@
       <option name="PACKAGE_NAME" value="edu.nf.shopping.goods.service" />
       <option name="MAIN_CLASS_NAME" value="edu.nf.shopping.goods.service.GoodsServiceTest" />
       <option name="METHOD_NAME" value="listGoodsTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Goods_SearchDaoTest.AddUsersTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="shopping-dao" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.nf.shopping.goods_search.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.nf.shopping.goods_search.dao" />
+      <option name="MAIN_CLASS_NAME" value="edu.nf.shopping.goods_search.dao.Goods_SearchDaoTest" />
+      <option name="METHOD_NAME" value="AddUsersTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Goods_SearchDaoTest.listGoodsSearchByNameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="shopping-dao" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.nf.shopping.goods_search.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.nf.shopping.goods_search.dao" />
+      <option name="MAIN_CLASS_NAME" value="edu.nf.shopping.goods_search.dao.Goods_SearchDaoTest" />
+      <option name="METHOD_NAME" value="listGoodsSearchByNameTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -200,6 +262,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Goods_SearchDaoTest.listGoodsSearchByNameTest" />
+        <item itemvalue="JUnit.GoodsSearchServiceTest.listGoodsSearchByNameTest" />
+        <item itemvalue="JUnit.Goods_SearchDaoTest.AddUsersTest" />
         <item itemvalue="JUnit.CommentServiceTest.listComment" />
         <item itemvalue="JUnit.GoodsServiceTest.listGoodsTest" />
       </list>
@@ -231,7 +296,13 @@
       <workItem from="1583723585657" duration="5783000" />
       <workItem from="1583894926308" duration="916000" />
       <workItem from="1583936276025" duration="2370000" />
-      <workItem from="1584936948397" duration="5301000" />
+      <workItem from="1584936948397" duration="17072000" />
+      <workItem from="1585034789160" duration="4411000" />
+      <workItem from="1585051454965" duration="446000" />
+      <workItem from="1585052252339" duration="604000" />
+      <workItem from="1585119582661" duration="635000" />
+      <workItem from="1585377077330" duration="3558000" />
+      <workItem from="1585381464290" duration="12051000" />
     </task>
     <task id="LOCAL-00001" summary="write entity shoppingcart">
       <created>1583938021337</created>
@@ -247,7 +318,21 @@
       <option name="project" value="LOCAL" />
       <updated>1584025141002</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="write entity shoppingcart">
+      <created>1584945450420</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1584945450420</updated>
+    </task>
+    <task id="LOCAL-00004" summary="write entity shoppingcart">
+      <created>1584945600536</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1584945600536</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,40 +364,46 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="506" y="71" width="816" height="646" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1583724468469" />
-    <state x="488" y="57" key="#com.intellij.ide.util.MemberChooser" timestamp="1583895144658">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="488" y="58" key="#com.intellij.ide.util.MemberChooser" timestamp="1585400408156">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="488" y="57" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1583895144658" />
+    <state x="488" y="58" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1585400408156" />
     <state x="811" y="412" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1583945976435">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="811" y="412" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583945976435" />
-    <state x="422" y="92" width="697" height="728" key="CommitChangelistDialog2" timestamp="1584945448538">
+    <state x="419" y="0" width="697" height="728" key="CommitChangelistDialog2" timestamp="1585405527654">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="347" y="0" width="697" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1583938018590" />
-    <state x="422" y="92" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1584945448538" />
+    <state x="419" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1585405527654" />
     <state x="488" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584025137538" />
-    <state x="651" y="174" key="FileChooserDialogImpl" timestamp="1584024977639">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="463" y="123" key="FileChooserDialogImpl" timestamp="1584965970128">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="463" y="122" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1583938633477" />
+    <state x="463" y="123" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1584965970128" />
     <state x="651" y="174" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1584024977639" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1584026563057">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1323" height="296" key="GridCell.Tab.0.bottom" timestamp="1585403895123">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
+    <state width="1323" height="296" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1585403895123" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584026563057" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1584026563056">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1323" height="296" key="GridCell.Tab.0.center" timestamp="1585403895123">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
+    <state width="1323" height="296" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1585403895123" />
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584026563056" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1584026563056">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1323" height="296" key="GridCell.Tab.0.left" timestamp="1585403895123">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
+    <state width="1323" height="296" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1585403895123" />
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584026563056" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1584026563057">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1323" height="296" key="GridCell.Tab.0.right" timestamp="1585403895123">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
+    <state width="1323" height="296" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1585403895123" />
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584026563057" />
     <state width="278" height="477" key="HiddenNamespacesPopup" timestamp="1583724483547">
       <screen x="0" y="0" width="1366" height="728" />
@@ -331,27 +422,17 @@
     </state>
     <state x="329" y="52" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1584936963083" />
     <state x="463" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1584025090509" />
-    <state x="387" y="126" key="Vcs.Push.Dialog.v2" timestamp="1584025144400">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="275" y="89" key="Vcs.Push.Dialog.v2" timestamp="1584945624355">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="275" y="88" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1583938443262" />
+    <state x="275" y="89" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1584945624355" />
     <state x="387" y="126" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584025144400" />
-    <state x="371" y="168" key="git4idea.merge.GitPullDialog" timestamp="1584945332198">
+    <state x="371" y="168" key="git4idea.merge.GitPullDialog" timestamp="1585405133014">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="371" y="166" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1583938416324" />
-    <state x="371" y="168" key="git4idea.merge.GitPullDialog/0.0.1366.738@0.0.1366.738" timestamp="1584945332198" />
+    <state x="371" y="168" key="git4idea.merge.GitPullDialog/0.0.1366.738@0.0.1366.738" timestamp="1585405133014" />
     <state x="521" y="237" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583998016180" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/comment/service/impl/CommentServiceImpl.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
