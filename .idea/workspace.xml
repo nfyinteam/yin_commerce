@@ -75,23 +75,7 @@
       <recent name="edu.nf.shopping.comment.entity" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GoodsServiceTest.listGoodsTest">
-    <configuration name="CommentServiceTest.listComment" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="shopping-userapi" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.nf.shopping.message.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.nf.shopping.comment.service" />
-      <option name="MAIN_CLASS_NAME" value="edu.nf.shopping.comment.service.CommentServiceTest" />
-      <option name="METHOD_NAME" value="listComment" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.GoodsServiceTest.listGoodsTest (1)">
     <configuration name="CommentServiceTest.rabbitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shopping-userapi" />
       <extension name="coverage">
@@ -119,6 +103,22 @@
       <option name="PACKAGE_NAME" value="edu.nf.shopping.comment.service" />
       <option name="MAIN_CLASS_NAME" value="edu.nf.shopping.comment.service.CommentServiceTest" />
       <option name="METHOD_NAME" value="testForValue" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GoodsServiceTest.listGoodsTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="shopping-adminapi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.nf.shopping.goods.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.nf.shopping.goods.service" />
+      <option name="MAIN_CLASS_NAME" value="edu.nf.shopping.goods.service.GoodsServiceTest" />
+      <option name="METHOD_NAME" value="listGoodsTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -155,11 +155,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GoodsServiceTest.listGoodsTest (1)" />
         <item itemvalue="JUnit.GoodsServiceTest.listGoodsTest" />
         <item itemvalue="JUnit.CommentServiceTest.rabbitTest" />
         <item itemvalue="Spring Boot.UserApiApplication" />
         <item itemvalue="JUnit.CommentServiceTest.testForValue" />
-        <item itemvalue="JUnit.CommentServiceTest.listComment" />
       </list>
     </recent_temporary>
   </component>
@@ -268,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585502039739</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="合并test">
+      <created>1585502508272</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1585502508272</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -337,11 +344,11 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="242" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1304.768@0.0.1304.768" timestamp="1584956561929" />
-    <state x="347" y="0" key="CommitChangelistDialog2" timestamp="1585502037737">
+    <state x="347" y="0" key="CommitChangelistDialog2" timestamp="1585502506053">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="236" y="0" key="CommitChangelistDialog2/0.0.1304.768@0.0.1304.768" timestamp="1584978281617" />
-    <state x="347" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585502037737" />
+    <state x="347" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585502506053" />
     <state x="92" y="92" width="1120" height="584" key="DiffContextDialog" timestamp="1584433974098">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
@@ -350,26 +357,26 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="431" y="126" key="FileChooserDialogImpl/0.0.1304.768@0.0.1304.768" timestamp="1584841258047" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1585502437509">
+    <state width="938" height="282" key="GridCell.Tab.0.bottom" timestamp="1585502714337">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1261" height="228" key="GridCell.Tab.0.bottom/0.0.1304.768@0.0.1304.768" timestamp="1584965452632" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585502437509" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1585502437509">
+    <state width="938" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585502714337" />
+    <state width="938" height="282" key="GridCell.Tab.0.center" timestamp="1585502714337">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1261" height="228" key="GridCell.Tab.0.center/0.0.1304.768@0.0.1304.768" timestamp="1584965452631" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585502437509" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1585502437508">
+    <state width="938" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585502714337" />
+    <state width="938" height="282" key="GridCell.Tab.0.left" timestamp="1585502714337">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1261" height="228" key="GridCell.Tab.0.left/0.0.1304.768@0.0.1304.768" timestamp="1584965452629" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585502437508" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1585502437509">
+    <state width="938" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585502714337" />
+    <state width="938" height="282" key="GridCell.Tab.0.right" timestamp="1585502714337">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1261" height="228" key="GridCell.Tab.0.right/0.0.1304.768@0.0.1304.768" timestamp="1584965452632" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585502437509" />
+    <state width="938" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585502714337" />
     <state width="1261" height="228" key="GridCell.Tab.1.bottom" timestamp="1584965452632">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
@@ -386,10 +393,15 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state width="1261" height="228" key="GridCell.Tab.1.right/0.0.1304.768@0.0.1304.768" timestamp="1584965452632" />
-    <state x="361" y="100" key="MultipleFileMergeDialog" timestamp="1584967118956">
-      <screen x="0" y="0" width="1304" height="768" />
+    <state x="47" y="0" key="MergeDialog" timestamp="1585502653923">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="47" y="0" key="MergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585502653923" />
+    <state x="532" y="135" key="MultipleFileMergeDialog" timestamp="1585502653942">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="361" y="100" key="MultipleFileMergeDialog/0.0.1304.768@0.0.1304.768" timestamp="1584967118956" />
+    <state x="532" y="135" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585502653942" />
     <state x="153" y="0" key="SettingsEditor" timestamp="1584193163717">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
@@ -402,11 +414,11 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="414" y="96" key="git4idea.branch.GitSmartOperationDialog/0.0.1304.768@0.0.1304.768" timestamp="1584978503921" />
-    <state x="481" y="237" key="git4idea.merge.GitPullDialog" timestamp="1585502417528">
+    <state x="481" y="237" key="git4idea.merge.GitPullDialog" timestamp="1585502681185">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="327" y="175" key="git4idea.merge.GitPullDialog/0.0.1304.768@0.0.1304.768" timestamp="1584978237876" />
-    <state x="481" y="237" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585502417528" />
+    <state x="481" y="237" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585502681185" />
     <state x="306" y="232" key="git4idea.ui.GitUnstashDialog" timestamp="1584283072939">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
