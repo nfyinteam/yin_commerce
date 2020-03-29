@@ -5,24 +5,24 @@ package edu.nf.shopping.goods.entity;
  * @date 2020/2/27
  */
 public class SkuRelation {
-    private Integer keyId;
-    private Integer valueId;
+    private KeyInfo key;
+    private ValueInfo value;
     private SkuInfo skuInfo;
 
-    public Integer getKeyId() {
-        return keyId;
+    public KeyInfo getKey() {
+        return key;
     }
 
-    public void setKeyId(Integer keyId) {
-        this.keyId = keyId;
+    public void setKey(KeyInfo key) {
+        this.key = key;
     }
 
-    public Integer getValueId() {
-        return valueId;
+    public ValueInfo getValue() {
+        return value;
     }
 
-    public void setValueId(Integer valueId) {
-        this.valueId = valueId;
+    public void setValue(ValueInfo value) {
+        this.value = value;
     }
 
     public SkuInfo getSkuInfo() {
