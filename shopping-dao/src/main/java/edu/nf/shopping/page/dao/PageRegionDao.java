@@ -9,7 +9,8 @@ import java.util.List;
  * @date 2020/3/27
  */
 public interface PageRegionDao {
-    List<PageRegion> listPageRegion(String[] state);
+
+    List<PageRegion> listPageRegion(String[] states);
 
     void addPageRegion(PageRegion pageRegion);
 

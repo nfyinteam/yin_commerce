@@ -3,11 +3,11 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="edu.nf.shopping.shopcart.dao.ShoppingCartDao">
 
-    <resultMap id="ShopingCartMap" type="edu.nf.shopping.shopcart.entity.ShoppingCart">
+    <resultMap id="ShoppingCartMap" type="edu.nf.shopping.shopcart.entity.ShoppingCart">
         <id property="scId" column="sc_id"/>
-        <result property="skuId" column="sku_id"/>
         <result property="joinTime" column="join_time"/>
         <result property="uid" column="u_id"/>
+        <association property="relation" resultMap="skuRelationMap"/>
     </resultMap>
 
     <resultMap id="ShopCartGoodsMap" type="edu.nf.shopping.shopcart.entity.ShopCartGoods">
@@ -27,11 +27,58 @@
         <result property="valueName" column="value_name"/>
     </resultMap>
 
-    <resultMap id="ValueInfoMap" type="edu.nf.shopping.goods.entity.ValueInfo">
+    <resultMap id="skuRelationMap" type="edu.nf.shopping.goods.entity.SkuRelation">
+        <association property="key" resultMap="keyMap"/>
+        <association property="value" resultMap="valueMap"/>
+        <association property="skuInfo" resultMap="skuInfoMap"/>
+    </resultMap>
+    <resultMap id="valueMap" type="edu.nf.shopping.goods.entity.ValueInfo">
         <id property="valueId" column="value_id"/>
         <result property="valueName" column="value_name"/>
+        <association property="keyInfo" resultMap="keyMap"/>
     </resultMap>
-
+    <resultMap id="keyMap" type="edu.nf.shopping.goods.entity.KeyInfo">
+        <id property="keyId" column="key_id"/>
+        <result property="keyName" column="key_name"/>
+        <association property="goodsType" resultMap="goodTypeMap"/>
+        <association property="keyType" resultMap="keyTypeMap"/>
+    </resultMap>
+    <resultMap id="goodTypeMap" type="edu.nf.shopping.goods.entity.GoodsType">
+        <id property="gtId" column="gt_id"/>
+        <result property="gtName" column="gt_name"/>
+        <result property="pId" column="p_id"/>
+    </resultMap>
+    <resultMap id="keyTypeMap" type="edu.nf.shopping.goods.entity.KeyType">
+        <id property="ktId" column="kt_id"/>
+        <result property="ktName" column="kt_name"/>
+    </resultMap>
+    <resultMap id="skuInfoMap" type="edu.nf.shopping.goods.entity.SkuInfo">
+        <id property="skuId" column="sku_id"/>
+        <result property="skuPrice" column="sku_price"/>
+        <result property="skuSales" column="sku_sales"/>
+        <result property="skuStock" column="sku_stock"/>
+        <association property="good" resultMap="goodsMap"/>
+    </resultMap>
+    <resultMap id="goodsMap" type="edu.nf.shopping.goods.entity.GoodsInfo">
+        <id property="goodsId" column="goods_id"/>
+        <result property="goodsName" column="goods_name"/>
+        <result property="shelfTime" column="shelf_time"/>
+        <result property="isShelf" column="is_shelf"/>
+        <association property="spuInfo" resultMap="spuInfoMap"/>
+        <association property="goodsType" resultMap="goodsTypeMap"/>
+    </resultMap>
+    <resultMap id="spuInfoMap" type="edu.nf.shopping.goods.entity.SpuInfo">
+        <id property="spuId" column="spu_id"/>
+        <result property="spuName" column="spu_name"/>
+        <result property="spuNum" column="spu_num"/>
+        <result property="listTime" column="list_time"/>
+        <result property="spuRemark" column="spu_remark"/>
+    </resultMap>
+    <resultMap id="goodsTypeMap" type="edu.nf.shopping.goods.entity.GoodsType">
+        <id property="gtId" column="gt_id"/>
+        <result property="gtName" column="gt_name"/>
+        <result property="pId" column="p_id"/>
+    </resultMap>
 
 
     <select id="listShoppingCart" resultMap="ShopCartGoodsMap" parameterType="String">
@@ -45,9 +92,9 @@
         left join imgs_info ii on g.img_id = ii.img_id
         where si.sku_id in (select si.sku_id from sku_info si
         left join shopping_cart sc on si.sku_id = sc.sku_id
-        where u_id=#{uid} )
+        where u_id = #{uid} )
         and img_index=1
-        order by join_time desc;
+        order by join_time desc
     </select>
 
     <delete id="deleteShoppingCart" parameterType="java.lang.String">
@@ -58,8 +105,8 @@
     <delete id="deleteShoppingCartList" parameterType="list">
         delete from shopping_cart
         where sc_id in
-        <foreach collection="array" item="scid" open="(" close=")" separator=",">
-            #{scid}
+        <foreach collection="array" item="scId" open="(" close=")" separator=",">
+            #{scId}
         </foreach>
     </delete>
 
@@ -77,20 +124,20 @@
       left join sku_relation sr on si.sku_id=sr.sku_id
       where u_id=#{param1} and sr.value_id=#{param2})
       and img_index=1
-      order by join_time desc;
+      order by join_time desc
     </select>
 
     <insert id="addShoppingCart" parameterType="edu.nf.shopping.shopcart.entity.ShoppingCart">
         insert into shopping_cart(sc_id,sku_id,u_id,join_time)
-        values(#{scId},#{skuId},#{uid},curtime());
+        values(#{shoppingCart.scId},#{shoppingCart.relation.skuInfo.skuId},#{shoppingCart.uid},curtime())
     </insert>
 
-    <select id="listValueInfo" resultMap="ValueInfoMap">
+    <select id="listValueInfo" resultMap="valueMap">
         select value_id,value_name from value_info
         where key_id=1
     </select>
 
-    <select id="findShopCartGoods" resultMap="ShopCartGoodsMap" parameterType="java.lang.String">
+    <select id="findShopCartGoods" resultMap="ShopCartGoodsMap">
         select distinct sc_id,img_file,goods_name, si.sku_id,sku_price,sku_stock,ki.key_name,vi.value_name,join_time from sku_info si
         left join sku_relation sr on si.sku_id=sr.sku_id
         left join value_info vi on vi.value_id=sr.value_id
