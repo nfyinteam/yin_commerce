@@ -106,8 +106,7 @@ public class CommentServiceImpl implements CommentService {
             }
         }catch (CommentException e){
             throw e;
-        }
-        catch (RuntimeException e){
+        }catch (RuntimeException e){
             e.printStackTrace();
             throw new CommentException("数据库出错");
         }
