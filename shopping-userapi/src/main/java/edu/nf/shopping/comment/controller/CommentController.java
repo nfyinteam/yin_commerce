@@ -26,15 +26,13 @@ public class CommentController extends BaseController {
     @Autowired
     private CommentService commentService;
 
-    @Autowired
-    private RestTemplate rest;
-
     private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     @RequestMapping("/list_buyShow")
     @ApiOperation(value = "查询买家秀", notes = "查询单个商品的买家秀",
             httpMethod = "get")
     private ResponseVO<PageInfo<Comment>> listBuyShow(Integer pageNum, Integer pageSize, Integer replySize, String goodsId, String dateTime, String order,String commentType,HttpServletRequest request) throws ParseException {
+        System.out.println(dateTime);
         PageInfo<Comment> pageInfo=commentService.listBuyShow(pageNum,pageSize,replySize,goodsId,"1578412684666",sdf.parse(dateTime),order,commentType);
         return success(pageInfo);
     }
@@ -63,5 +61,13 @@ public class CommentController extends BaseController {
         comment.setUserId("1578412684666");
         commentService.addBuyShow(files,comment);
         return success(200,"提交评价成功");
+    }
+
+    @RequestMapping("/delete_comment")
+    @ApiOperation(value = "删除评论", notes = "用户删除自己的评论",
+            httpMethod = "post")
+    private ResponseVO addComment(String comId, HttpServletRequest request){
+        commentService.updateComment(comId,"2","1578412684666");
+        return success(200,"删除成功");
     }
 }

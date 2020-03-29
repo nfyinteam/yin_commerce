@@ -25,7 +25,7 @@ public interface CommentService {
     /**
      * 查找某条评论
      **/
-    Comment findComment(String comId,String goodsId);
+    Comment findComment(String comId,String goodsId,String userId);
 
     /**
      * 添加买家秀
@@ -39,7 +39,7 @@ public interface CommentService {
     /**
      *
      **/
-    void updateComment(Comment comment);
+    void updateComment(String comId,String state,String userId);
 
     void deleteComment(Comment comment);
 }
