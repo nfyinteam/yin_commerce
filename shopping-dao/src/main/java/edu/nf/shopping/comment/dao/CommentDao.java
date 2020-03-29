@@ -23,13 +23,13 @@ public interface CommentDao {
     /**
      * 查找某条评论
      **/
-    Comment findComment(String comId,String goodsId);
+    Comment findComment(String comId,String goodsId,String userId);
     /**
      * 添加评论
      **/
     void addComment(Comment comment);
 
-    void updateComment(Comment comment);
+    void updateComment(String comId,String state);
 
     void deleteComment(Comment comment);
 }

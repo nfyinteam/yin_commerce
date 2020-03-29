@@ -15,7 +15,7 @@ import java.util.List;
  * @author Vera
  * @date 2020/3/24
  */
-@Service
+@Service("shopCartService")
 public class ShopCartServiceImpl implements ShopCartService {
 
     @Autowired

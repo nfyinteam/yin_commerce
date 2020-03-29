@@ -13,7 +13,7 @@ import java.util.List;
  * @author re
  * @date 2020/3/22
  */
-@Service("userinfoService")
+@Service("userInfoService")
 public class UserInfoServiceImpl implements UserInfoService {
     @Autowired
     private UserInfoDao dao;

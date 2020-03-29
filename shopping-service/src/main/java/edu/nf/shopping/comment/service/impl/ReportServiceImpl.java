@@ -8,6 +8,7 @@ import edu.nf.shopping.comment.service.ReportService;
 import edu.nf.shopping.util.UUIDUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 
@@ -16,6 +17,7 @@ import java.util.Date;
  * @date 2020/3/20
  */
 @Service("reportService")
+@Transactional(rollbackFor = RuntimeException.class)
 public class ReportServiceImpl implements ReportService {
 
     @Autowired
@@ -32,16 +34,19 @@ public class ReportServiceImpl implements ReportService {
     @Override
     public void addReport(String comId,String reason,String userId){
         try{
-            if(commentDao.findComment(comId,null)!=null){
-                Report report=new Report();
-                report.setReportId(UUIDUtils.createUUID());
-                report.setWtbId(userId);
-                report.setComId(comId);
-                report.setReason(reason);
-                report.setState("1");
-                report.setTime(new Date());
-                reportDao.addReport(report);
+            if(commentDao.findComment(comId,null,null)==null){
+                throw new CommentException("出错了！");
             }
+            Report report=new Report();
+            report.setReportId(UUIDUtils.createUUID());
+            report.setWtbId(userId);
+            report.setComId(comId);
+            report.setReason(reason);
+            report.setState("1");
+            report.setTime(new Date());
+            reportDao.addReport(report);
+        }catch (CommentException e){
+            throw e;
         }catch (RuntimeException e){
             e.printStackTrace();
             throw new CommentException("数据库出错了");

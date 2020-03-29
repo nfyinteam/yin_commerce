@@ -4,7 +4,6 @@ import edu.nf.shopping.goods.entity.ValueInfo;
 import edu.nf.shopping.shopcart.entity.ShopCartGoods;
 import edu.nf.shopping.shopcart.entity.ShoppingCart;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -12,7 +11,6 @@ import java.util.List;
  * @author Vera
  * @date 2020/3/17
  */
-@Repository
 public interface ShoppingCartDao {
     /**
      * 根据用户id查询该用户购物车所有商品
