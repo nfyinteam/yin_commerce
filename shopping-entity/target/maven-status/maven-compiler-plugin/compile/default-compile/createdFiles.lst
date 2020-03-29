@@ -24,6 +24,7 @@ edu\nf\shopping\shopcart\entity\ShopCartGoods.class
 edu\nf\shopping\goods\entity\SpuInfo.class
 edu\nf\shopping\goods\entity\ValueInfo.class
 edu\nf\shopping\comment\entity\Comment.class
+edu\nf\shopping\page\entity\PageRegion.class
 edu\nf\shopping\comment\entity\Report.class
 edu\nf\shopping\warehouse\entity\SupplierInfo.class
 edu\nf\shopping\goods\entity\IntroduceInfo.class
@@ -40,3 +41,4 @@ edu\nf\shopping\goods\entity\ImgsInfo.class
 edu\nf\shopping\goods\entity\KeyInfo.class
 edu\nf\shopping\search\entity\GoodsType.class
 edu\nf\shopping\warehouse\entity\OutCargo.class
+edu\nf\shopping\page\entity\RegionContent.class

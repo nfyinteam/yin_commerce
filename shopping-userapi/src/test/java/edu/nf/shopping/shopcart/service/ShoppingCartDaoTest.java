@@ -16,7 +16,7 @@ import java.util.UUID;
 @SpringBootTest
 class ShoppingCartDaoTest {
 
-    @Autowired
+    /*@Autowired
     private ShopCartService service;
 
     @Test
@@ -82,7 +82,7 @@ class ShoppingCartDaoTest {
         sc.setUid("1578412684666");
         String uuid=UUID.randomUUID().toString().replace("-", "").toLowerCase();
         sc.setScId(2);
-        /*sc.setSkuId("1577706998213");*/
+        *//*sc.setSkuId("1577706998213");*//*
         service.addShoppingCart(sc);
     }
 
@@ -100,5 +100,5 @@ class ShoppingCartDaoTest {
     void findShopCartGoods(){
         ShopCartGoods sg=service.findeShopCartGoods("1578412684666","1577706998213","36.5");
         System.out.println(sg);
-    }
+    }*/
 }
