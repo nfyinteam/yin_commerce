@@ -20,9 +20,6 @@ public class CommentServiceTest {
 
     @Test
     void listComment(){
-        /*List<Comment> list=commentService.listComment();
-        for (Comment comments : list) {
-            System.out.println(comments);
-        }*/
+
     }
 }

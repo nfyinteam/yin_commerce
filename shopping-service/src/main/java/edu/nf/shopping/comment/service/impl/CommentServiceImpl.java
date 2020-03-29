@@ -15,6 +15,7 @@ import edu.nf.shopping.util.UploadAddressUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -26,6 +27,7 @@ import java.util.List;
  * @date 2020/3/12
  */
 @Service("commentService")
+@Transactional(rollbackFor = RuntimeException.class)
 public class CommentServiceImpl implements CommentService {
 
     @Autowired

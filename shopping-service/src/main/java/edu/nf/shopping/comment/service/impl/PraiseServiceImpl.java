@@ -10,6 +10,7 @@ import edu.nf.shopping.comment.service.PraiseService;
 import edu.nf.shopping.util.UUIDUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 import java.util.List;
@@ -19,6 +20,7 @@ import java.util.List;
  * @date 2020/3/19
  */
 @Service("praiseService")
+@Transactional(rollbackFor = RuntimeException.class)
 public class PraiseServiceImpl implements PraiseService {
 
     @Autowired

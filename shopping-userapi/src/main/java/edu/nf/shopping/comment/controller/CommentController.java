@@ -27,9 +27,6 @@ public class CommentController extends BaseController {
     @Autowired
     private CommentService commentService;
 
-    @Autowired
-    private RestTemplate rest;
-
     private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     @RequestMapping("/list_buyShow")

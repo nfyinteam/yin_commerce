@@ -35,7 +35,7 @@ public class ImgeUploadController extends BaseController {
         MultiValueMap<String, Object> param = new LinkedMultiValueMap<>();
         param.add("file", resource);
         HttpEntity<MultiValueMap<String, Object>> httpEntity = new HttpEntity<MultiValueMap<String, Object>>(param);
-        ResponseEntity<String> responseEntity = rest.exchange(UploadAddressUtils.GOODS_IMGES, HttpMethod.POST, httpEntity, String.class);
+        ResponseEntity<String> responseEntity = rest.exchange(UploadAddressUtils.GOODS_IMAGES, HttpMethod.POST, httpEntity, String.class);
         return success(200);
     }
 }

@@ -8,6 +8,7 @@ import edu.nf.shopping.comment.service.ReportService;
 import edu.nf.shopping.util.UUIDUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 
@@ -16,6 +17,7 @@ import java.util.Date;
  * @date 2020/3/20
  */
 @Service("reportService")
+@Transactional(rollbackFor = RuntimeException.class)
 public class ReportServiceImpl implements ReportService {
 
     @Autowired

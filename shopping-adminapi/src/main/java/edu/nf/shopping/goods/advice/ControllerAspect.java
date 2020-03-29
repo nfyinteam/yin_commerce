@@ -16,8 +16,8 @@ public class ControllerAspect {
 
     @ExceptionHandler(GoodsException.class)
     @ResponseBody
-    public ResultVO loginException(GoodsException e){
-        ResultVO vo = new ResultVO();
+    public ResponseVO loginException(GoodsException e){
+        ResponseVO vo = new ResponseVO();
         vo.setCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
         vo.setMessage(e.getMessage());
         return vo;
