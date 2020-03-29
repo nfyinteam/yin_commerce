@@ -81,8 +81,8 @@ class ShoppingCartDaoTest {
         ShoppingCart sc=new ShoppingCart();
         sc.setUid("1578412684666");
         String uuid=UUID.randomUUID().toString().replace("-", "").toLowerCase();
-        sc.setScId("2");
-        sc.setSkuId("1577706998213");
+        sc.setScId(2);
+        /*sc.setSkuId("1577706998213");*/
         service.addShoppingCart(sc);
     }
 

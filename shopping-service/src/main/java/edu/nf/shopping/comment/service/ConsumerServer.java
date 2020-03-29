@@ -15,7 +15,7 @@ import java.util.Map;
  * @author Bull fighters
  * @date 2020/3/14
  */
-@Service
+@Service("consumerServer")
 public class ConsumerServer {
     /**
      * 使用自定义消息转换器

@@ -14,5 +14,5 @@ public interface GoodsAllInfoService {
      * @param goodId 商品编号
      * @return
      */
-    List<GoodsAllInfo> getGoodsInfoById(String goodId);
+    GoodsAllInfo getGoodsInfoById(String goodId);
 }

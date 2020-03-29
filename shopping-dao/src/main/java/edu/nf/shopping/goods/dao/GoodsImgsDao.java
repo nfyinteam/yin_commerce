@@ -22,7 +22,7 @@ public interface GoodsImgsDao {
      * @param goodsId 商品编号
      * @return
      */
-    List<ImgsInfo> listGoodsImgsByGoodsId(String goodsId);
+    List<GoodsImgs> listGoodsImgsByGoodsId(String goodsId);
 
     /**
      * 根据商品编号查询下标为1的商品图片

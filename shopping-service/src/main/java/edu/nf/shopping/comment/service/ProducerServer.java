@@ -12,7 +12,7 @@ import java.util.UUID;
  * @author Bull fighters
  * @date 2020/3/14
  */
-@Service
+@Service("producerServer")
 public class ProducerServer {
 
     @Autowired

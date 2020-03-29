@@ -11,7 +11,7 @@ import java.util.Date;
 public class ShoppingCart {
     private Integer scId;
     private SkuRelation relation;
-    private Integer uid;
+    private String uid;
     private Date joinTime;
 
     public Integer getScId() {
@@ -30,11 +30,11 @@ public class ShoppingCart {
         this.relation = relation;
     }
 
-    public Integer getUid() {
+    public String getUid() {
         return uid;
     }
 
-    public void setUid(Integer uid) {
+    public void setUid(String uid) {
         this.uid = uid;
     }
 

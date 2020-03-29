@@ -56,10 +56,10 @@
     </resultMap>
 
     <select id="listSkuRelationByGoodsId" resultMap="skuRelationMap">
-        select g.goods_id, g.goods_name, k.key_id, k.key_name, v.value_id, v.value_name, si.sku_id
-        from sku_relation sr left join key_info k on k.key_id = sr.key_id left join value_info v
-        on v.value_id = sr.value_id left join sku_info si on si.sku_id = sr.sku_id left join goods_info g
-        on g.goods_id = si.goods_id where g.goods_id = #{goodsId}
+        select g.goods_id, g.goods_name, g.shelf_time, g.is_shelf, g.spu_id, g.gt_id, k.key_id, k.key_name,
+        v.value_id, v.value_name, si.sku_id from sku_relation sr left join key_info k on k.key_id = sr.key_id
+        left join value_info v on v.value_id = sr.value_id left join sku_info si on si.sku_id = sr.sku_id left join
+        goods_info g on g.goods_id = si.goods_id where g.goods_id = #{goodsId}
     </select>
     <select id="listKeyInfoByGoodsId" resultMap="keyMap">
         select key_id, key_name, gt_id, kt_id from key_info where key_id in(select k.key_id

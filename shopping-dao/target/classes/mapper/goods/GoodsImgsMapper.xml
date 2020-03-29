@@ -43,9 +43,10 @@
         from goods_imgs GROUP BY img_id)
     </select>
 
-    <select id="listGoodsImgsByGoodsId" resultMap="imgsMap">
-        select ii.img_id, ii.img_name, ii.img_file, ii.img_type from goods_imgs gi left join imgs_info ii
-        on ii.img_id = gi.img_id where gi.goods_id = #{goodsId} order by gi.img_index asc
+    <select id="listGoodsImgsByGoodsId" resultMap="goodsImgsMap">
+        select ii.img_id, ii.img_name, ii.img_file, ii.img_type, good.goods_id, good.goods_name, good.shelf_time,
+        good.is_shelf, good.spu_id, good.gt_id from goods_imgs gi left join imgs_info ii on ii.img_id = gi.img_id
+        left join goods_info good on good.goods_id = gi.goods_id where gi.goods_id = #{goodsId} order by gi.img_index asc;
     </select>
 
     <select id="listFirstGoodsImgsByGoodsId" resultMap="imgsMap">
