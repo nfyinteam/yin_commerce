@@ -32,16 +32,19 @@ public class ReportServiceImpl implements ReportService {
     @Override
     public void addReport(String comId,String reason,String userId){
         try{
-            if(commentDao.findComment(comId,null)!=null){
-                Report report=new Report();
-                report.setReportId(UUIDUtils.createUUID());
-                report.setWtbId(userId);
-                report.setComId(comId);
-                report.setReason(reason);
-                report.setState("1");
-                report.setTime(new Date());
-                reportDao.addReport(report);
+            if(commentDao.findComment(comId,null,null)==null){
+                throw new CommentException("出错了！");
             }
+            Report report=new Report();
+            report.setReportId(UUIDUtils.createUUID());
+            report.setWtbId(userId);
+            report.setComId(comId);
+            report.setReason(reason);
+            report.setState("1");
+            report.setTime(new Date());
+            reportDao.addReport(report);
+        }catch (CommentException e){
+            throw e;
         }catch (RuntimeException e){
             e.printStackTrace();
             throw new CommentException("数据库出错了");
