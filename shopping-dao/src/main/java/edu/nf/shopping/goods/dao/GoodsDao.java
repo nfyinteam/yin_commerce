@@ -4,6 +4,7 @@ import edu.nf.shopping.goods.entity.GoodsInfo;
 
 import java.util.List;
 
+
 /**
  * @author Achine
  * @date 2020/3/5
@@ -32,7 +33,7 @@ public interface GoodsDao {
      * 根据编号查询商品
      * @return
      */
-    GoodsInfo listGoodsById(String id);
+    GoodsInfo getGoodsById(String id);
 
     /**
      * 添加商品
