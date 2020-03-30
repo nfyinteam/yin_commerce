@@ -5,8 +5,6 @@ import edu.nf.shopping.goods.dao.GoodsImgsDao;
 import edu.nf.shopping.goods.dao.IntroduceInfoDao;
 import edu.nf.shopping.goods.dao.SkuRelationDao;
 import edu.nf.shopping.goods.entity.GoodsAllInfo;
-import edu.nf.shopping.goods.entity.GoodsImgs;
-import edu.nf.shopping.goods.entity.GoodsInfo;
 import edu.nf.shopping.goods.exception.GoodsException;
 import edu.nf.shopping.goods.service.GoodsAllInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +38,9 @@ public class GoodsAllInfoServiceImpl implements GoodsAllInfoService {
         try {
             GoodsAllInfo allInfo = new GoodsAllInfo();
             allInfo.setGoodsInfo(goodsDao.getGoodsById(goodId));
+            if(allInfo.getGoodsInfo() == null){
+                throw new GoodsException("商品不存在");
+            }
             allInfo.setGoodsImgs(goodsImgsDao.listGoodsImgsByGoodsId(goodId));
             allInfo.setIntroduceInfos(introduceInfoDao.listIntroduceInfoByGoodsId(goodId));
             allInfo.setSkuRelations(skuRelationDao.listSkuRelationByGoodsId(goodId));

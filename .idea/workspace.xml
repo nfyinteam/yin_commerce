@@ -3,8 +3,45 @@
   <component name="ChangeListManager">
     <list default="true" id="62b8ac9c-86a9-4199-8f79-2819b827666b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-adminapi/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-adminapi/target/shopping-adminapi-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/target/shopping-adminapi-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-adminapi/target/shopping-adminapi-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/target/shopping-adminapi-1.0-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-adminapi/target/surefire-reports/TEST-edu.nf.shopping.comment.service.CommentServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/target/surefire-reports/TEST-edu.nf.shopping.comment.service.CommentServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-adminapi/target/surefire-reports/TEST-edu.nf.shopping.goods.service.GoodsServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/target/surefire-reports/TEST-edu.nf.shopping.goods.service.GoodsServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-adminapi/target/surefire-reports/TEST-edu.nf.shopping.warehouse.dao.test.CargoInfoDaoTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/target/surefire-reports/TEST-edu.nf.shopping.warehouse.dao.test.CargoInfoDaoTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-adminapi/target/surefire-reports/TEST-edu.nf.shopping.warehouse.dao.test.WarehouseInfoDaoTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/target/surefire-reports/TEST-edu.nf.shopping.warehouse.dao.test.WarehouseInfoDaoTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-adminapi/target/surefire-reports/edu.nf.shopping.comment.service.CommentServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/target/surefire-reports/edu.nf.shopping.comment.service.CommentServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-adminapi/target/surefire-reports/edu.nf.shopping.goods.service.GoodsServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/target/surefire-reports/edu.nf.shopping.goods.service.GoodsServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-adminapi/target/surefire-reports/edu.nf.shopping.warehouse.dao.test.CargoInfoDaoTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/target/surefire-reports/edu.nf.shopping.warehouse.dao.test.CargoInfoDaoTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-adminapi/target/surefire-reports/edu.nf.shopping.warehouse.dao.test.WarehouseInfoDaoTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/target/surefire-reports/edu.nf.shopping.warehouse.dao.test.WarehouseInfoDaoTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/goods/SkuRelationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/goods/SkuRelationMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/goods/SkuRelationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/goods/SkuRelationMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-dao/target/shopping-dao-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/target/shopping-dao-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/goods/entity/GoodsInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/goods/entity/GoodsInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/goods/entity/SpuInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/goods/entity/SpuInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/goods/entity/GoodsInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/goods/entity/GoodsInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/goods/entity/SkuInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/goods/entity/SkuInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/goods/entity/SpuInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/goods/entity/SpuInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-entity/target/shopping-entity-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/target/shopping-entity-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/config/RabbitConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/config/RabbitConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/goods/service/impl/GoodsAllInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/goods/service/impl/GoodsAllInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/message/ConsumerServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/message/ConsumerServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/message/ProducerServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/message/ProducerServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/config/RabbitConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/config/RabbitConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/goods/service/impl/GoodsAllInfoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/goods/service/impl/GoodsAllInfoServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/message/ConsumerServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/message/ConsumerServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/message/ProducerServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/message/ProducerServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/target/shopping-service-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/target/shopping-service-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-userapi/src/test/java/edu/nf/shopping/goods/service/GoodsServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/src/test/java/edu/nf/shopping/goods/service/GoodsServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-userapi/target/shopping-userapi-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/target/shopping-userapi-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-userapi/target/shopping-userapi-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/target/shopping-userapi-1.0-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-userapi/target/surefire-reports/TEST-edu.nf.shopping.comment.service.CommentServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/target/surefire-reports/TEST-edu.nf.shopping.comment.service.CommentServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-userapi/target/surefire-reports/TEST-edu.nf.shopping.goods.service.GoodsServiceTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-userapi/target/surefire-reports/TEST-edu.nf.shopping.warehouse.dao.WarehouseDaoTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/target/surefire-reports/TEST-edu.nf.shopping.warehouse.dao.WarehouseDaoTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-userapi/target/surefire-reports/edu.nf.shopping.comment.service.CommentServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/target/surefire-reports/edu.nf.shopping.comment.service.CommentServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-userapi/target/surefire-reports/edu.nf.shopping.goods.service.GoodsServiceTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-userapi/target/surefire-reports/edu.nf.shopping.warehouse.dao.WarehouseDaoTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/target/surefire-reports/edu.nf.shopping.warehouse.dao.WarehouseDaoTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-userapi/target/test-classes/edu/nf/shopping/goods/service/GoodsServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/target/test-classes/edu/nf/shopping/goods/service/GoodsServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-util/target/shopping-util-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-util/target/shopping-util-1.0-SNAPSHOT.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,12 +70,13 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/comment/service/impl/PraiseServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/comment/service/impl/CommentServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/goods/service/impl/GoodsAllInfoServiceImpl.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="C:/apache-maven-3.6.1" />
-        <option name="userSettingsFile" value="C:\apache-maven-3.6.1\conf\settings.xml" />
+        <option name="mavenHome" value="d:/apache-maven-3.6.1" />
+        <option name="userSettingsFile" value="D:\apache-maven-3.6.1\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
     <option name="importingSettings">
@@ -67,7 +105,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/goods/controller/GoodsAllInfoController.java" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/shopping-dao/src/test/resources" />
+    <property name="last_opened_file_path" value="D:/学习案例/总项目/big_dog" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -77,24 +115,39 @@
     <selection>jr</selection>
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\ideaprojects\addiction-shopping\shopping-dao\src\test\resources" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\ideaprojects\addiction-shopping\shopping-dao\src\main\resources\mapper\shoppingCart" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="edu.nf.shopping" />
       <recent name="edu.nf.shopping.comment.entity" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\ideaprojects\addiction-shopping\shopping-dao\src\main\resources\mapper\shoppingCart" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ideaprojects\addiction-shopping\shopping-dao\src\test\resources" />
     </key>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn clean package" />
       <command value="mvn install" />
+      <command value="mvn clean" />
+      <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SupplierInfoDaoTest.listSupplierInfo">
+  <component name="RunManager" selected="JUnit.GoodsServiceTest.getGoodsAllInfo">
+    <configuration name="SkuInfo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.nf.shopping.goods.entity.SkuInfo" />
+      <module name="shopping-entity" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.nf.shopping.goods.entity.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GoodsServiceTest.getGoodsAllInfo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shopping-userapi" />
       <extension name="coverage">
@@ -166,14 +219,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="UserApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="shopping-userapi" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.nf.shopping.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="edu.nf.shopping.UserApiApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -181,11 +228,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GoodsServiceTest.getGoodsAllInfo" />
+        <item itemvalue="Application.SkuInfo" />
         <item itemvalue="JUnit.SupplierInfoDaoTest.listSupplierInfo" />
         <item itemvalue="JUnit.SupplierInfoDaoTest.insertSupplierInfo" />
         <item itemvalue="JUnit.SupplierInfoDaoTest.deleteSupplier" />
-        <item itemvalue="Spring Boot.UserApiApplication" />
-        <item itemvalue="JUnit.GoodsServiceTest.getGoodsAllInfo" />
       </list>
     </recent_temporary>
   </component>
@@ -251,6 +298,7 @@
       <workItem from="1584948627601" duration="3469000" />
       <workItem from="1584952290615" duration="1380000" />
       <workItem from="1584977672145" duration="997000" />
+      <workItem from="1585582110653" duration="7343000" />
     </task>
     <task id="LOCAL-00001" summary="评论界面的剩余功能">
       <created>1584768589639</created>
@@ -336,7 +384,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585513529321</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="打成jar包">
+      <created>1585514383128</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1585514383128</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -394,6 +449,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="打成jar包" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="552" y="181" key="#Project_Structure" timestamp="1585582114207">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="181" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1585582114207" />
     <state x="414" y="178" width="1165" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585512406103">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -406,11 +465,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="590" y="263" key="#com.intellij.ide.util.ExportDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585503821647" />
-    <state x="673" y="127" key="#com.intellij.ide.util.MemberChooser" timestamp="1585503198665">
+    <state x="673" y="127" key="#com.intellij.ide.util.MemberChooser" timestamp="1585594360727">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="457" y="94" key="#com.intellij.ide.util.MemberChooser/0.0.1304.768@0.0.1304.768" timestamp="1584947131503" />
-    <state x="673" y="127" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585503198665" />
+    <state x="673" y="127" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585594360727" />
     <state x="588" y="181" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable" timestamp="1585512404698">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -419,59 +478,60 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="242" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1304.768@0.0.1304.768" timestamp="1584956561929" />
-    <state x="347" y="0" key="CommitChangelistDialog2" timestamp="1585514356892">
+    <state x="347" y="0" key="CommitChangelistDialog2" timestamp="1585514379952">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="236" y="0" key="CommitChangelistDialog2/0.0.1304.768@0.0.1304.768" timestamp="1584978281617" />
-    <state x="347" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585514356892" />
+    <state x="347" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585514379952" />
     <state x="92" y="92" width="1120" height="584" key="DiffContextDialog" timestamp="1584433974098">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="92" y="92" width="1120" height="584" key="DiffContextDialog/0.0.1304.768@0.0.1304.768" timestamp="1584433974098" />
-    <state x="431" y="126" key="FileChooserDialogImpl" timestamp="1584841258047">
-      <screen x="0" y="0" width="1304" height="768" />
+    <state x="635" y="171" key="FileChooserDialogImpl" timestamp="1585594191620">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="431" y="126" key="FileChooserDialogImpl/0.0.1304.768@0.0.1304.768" timestamp="1584841258047" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1585514176011">
+    <state x="635" y="171" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585594191620" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1585594449995">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1261" height="228" key="GridCell.Tab.0.bottom/0.0.1304.768@0.0.1304.768" timestamp="1584965452632" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585514176011" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1585514176011">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585594449995" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1585594449995">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1261" height="228" key="GridCell.Tab.0.center/0.0.1304.768@0.0.1304.768" timestamp="1584965452631" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585514176011" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1585514176011">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585594449995" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1585594449995">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1261" height="228" key="GridCell.Tab.0.left/0.0.1304.768@0.0.1304.768" timestamp="1584965452629" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585514176011" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1585514176011">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585594449995" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1585594449995">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1261" height="228" key="GridCell.Tab.0.right/0.0.1304.768@0.0.1304.768" timestamp="1584965452632" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585514176011" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1585512982956">
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585594449995" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1585580679004">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1261" height="228" key="GridCell.Tab.1.bottom/0.0.1304.768@0.0.1304.768" timestamp="1584965452632" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585512982956" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1585512982956">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585580679004" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1585580679004">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1261" height="228" key="GridCell.Tab.1.center/0.0.1304.768@0.0.1304.768" timestamp="1584965452632" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585512982956" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1585512982956">
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585580679004" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1585580679004">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1261" height="228" key="GridCell.Tab.1.left/0.0.1304.768@0.0.1304.768" timestamp="1584965452632" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585512982956" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1585512982956">
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585580679004" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1585580679004">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1261" height="228" key="GridCell.Tab.1.right/0.0.1304.768@0.0.1304.768" timestamp="1584965452632" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585512982956" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585580679004" />
     <state x="47" y="0" key="MergeDialog" timestamp="1585503147837">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -481,16 +541,20 @@
     </state>
     <state x="361" y="100" key="MultipleFileMergeDialog/0.0.1304.768@0.0.1304.768" timestamp="1584967118956" />
     <state x="532" y="135" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585503147868" />
-    <state x="225" y="0" key="SettingsEditor" timestamp="1585512367252">
+    <state x="225" y="0" key="SettingsEditor" timestamp="1585582322298">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="153" y="0" key="SettingsEditor/0.0.1304.768@0.0.1304.768" timestamp="1584193163717" />
-    <state x="225" y="0" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1585512367252" />
-    <state x="359" y="158" key="Vcs.Push.Dialog.v2" timestamp="1585513530981">
+    <state x="225" y="0" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1585582322298" />
+    <state x="359" y="158" key="Vcs.Push.Dialog.v2" timestamp="1585594573728">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="244" y="117" key="Vcs.Push.Dialog.v2/0.0.1304.768@0.0.1304.768" timestamp="1584978450874" />
-    <state x="359" y="158" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585513530981" />
+    <state x="359" y="158" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585594573728" />
+    <state x="725" y="238" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1585594351946">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="725" y="238" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585594351946" />
     <state x="414" y="96" key="git4idea.branch.GitSmartOperationDialog" timestamp="1584978503921">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
@@ -504,10 +568,10 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="306" y="232" key="git4idea.ui.GitUnstashDialog/0.0.1304.768@0.0.1304.768" timestamp="1584283072939" />
-    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1585514176030">
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1585594450022">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585514176030" />
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585594450022" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1585506281246">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
