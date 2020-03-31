@@ -19,7 +19,7 @@
     <resultMap id="imgsMap" type="edu.nf.shopping.goods.entity.ImgsInfo">
         <id property="imgId" column="img_id"/>
         <result property="imgName" column="img_name"/>
-        <result property="imgFile" column="img_fille"/>
+        <result property="imgFile" column="img_file"/>
         <association property="imgType" resultMap="imgsTypeMap"/>
     </resultMap>
     <resultMap id="imgsTypeMap" type="edu.nf.shopping.goods.entity.ImgsType">

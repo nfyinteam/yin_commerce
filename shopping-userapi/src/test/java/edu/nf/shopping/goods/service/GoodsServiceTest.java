@@ -10,7 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import springfox.documentation.spring.web.json.Json;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author Achine
@@ -35,9 +38,29 @@ public class GoodsServiceTest {
         System.out.println("spuNum:" + spuInfo.getSpuNum());
         System.out.println("spuRemark:" + spuInfo.getSpuRemark());
         System.out.println("listTime:" + spuInfo.getListTime());
+        Map<String, List<ValueInfo>> map = new HashMap<>();
         for (SkuRelation relation : goodsAllInfo.getSkuRelations()){
-            System.out.println(relation.getSkuInfo().getSkuId());
-            System.out.println(relation.getSkuInfo().getSkuPrice());;
+            List<ValueInfo> list = map.get(relation.getKey().getKeyName());
+            if(list == null){
+                list = new ArrayList<>();
+                map.put(relation.getKey().getKeyName(), list);
+            }
+            ValueInfo valueInfo = relation.getValue();
+            SkuInfo skuInfo = relation.getSkuInfo();
+            valueInfo.setSkuInfo(skuInfo);
+            list.add(valueInfo);
+            map.put(relation.getKey().getKeyName(), list);
+        }
+        for (String key : map.keySet()){
+            System.out.println("key:" + key);
+            List<ValueInfo> list = map.get(key);
+            for (ValueInfo info : list){
+                System.out.println("valueID:" + info.getValueId());
+                System.out.println("value:" + info.getValueName());
+                System.out.println("skuId:" + info.getSkuInfo().getSkuId());
+                System.out.println("skuStock:" + info.getSkuInfo().getSkuStock());
+            }
+            System.out.println("----------------------");
         }
     }
 }

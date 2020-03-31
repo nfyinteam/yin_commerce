@@ -1,6 +1,7 @@
 package edu.nf.shopping.goods.entity;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author Achine
@@ -11,6 +12,7 @@ public class GoodsAllInfo {
     private List<GoodsImgs> goodsImgs;
     private List<SkuRelation> skuRelations;
     private List<IntroduceInfo> introduceInfos;
+    private Map<String, List<ValueInfo>> skuMap;
 
     public GoodsInfo getGoodsInfo() {
         return goodsInfo;
@@ -42,5 +44,13 @@ public class GoodsAllInfo {
 
     public void setIntroduceInfos(List<IntroduceInfo> introduceInfos) {
         this.introduceInfos = introduceInfos;
+    }
+
+    public Map<String, List<ValueInfo>> getSkuMap() {
+        return skuMap;
+    }
+
+    public void setSkuMap(Map<String, List<ValueInfo>> skuMap) {
+        this.skuMap = skuMap;
     }
 }

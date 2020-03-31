@@ -5,13 +5,19 @@ import edu.nf.shopping.goods.dao.GoodsImgsDao;
 import edu.nf.shopping.goods.dao.IntroduceInfoDao;
 import edu.nf.shopping.goods.dao.SkuRelationDao;
 import edu.nf.shopping.goods.entity.GoodsAllInfo;
+import edu.nf.shopping.goods.entity.SkuInfo;
+import edu.nf.shopping.goods.entity.SkuRelation;
+import edu.nf.shopping.goods.entity.ValueInfo;
 import edu.nf.shopping.goods.exception.GoodsException;
 import edu.nf.shopping.goods.service.GoodsAllInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author Achine
@@ -43,7 +49,23 @@ public class GoodsAllInfoServiceImpl implements GoodsAllInfoService {
             }
             allInfo.setGoodsImgs(goodsImgsDao.listGoodsImgsByGoodsId(goodId));
             allInfo.setIntroduceInfos(introduceInfoDao.listIntroduceInfoByGoodsId(goodId));
-            allInfo.setSkuRelations(skuRelationDao.listSkuRelationByGoodsId(goodId));
+            List<SkuRelation> relations = skuRelationDao.listSkuRelationByGoodsId(goodId);
+            allInfo.setSkuRelations(relations);
+            //插入key与value
+            Map<String, List<ValueInfo>> map = new HashMap<>();
+            for (SkuRelation relation : relations){
+                List<ValueInfo> list = map.get(relation.getKey().getKeyName());
+                if(list == null){
+                    list = new ArrayList<>();
+                    map.put(relation.getKey().getKeyName(), list);
+                }
+                ValueInfo valueInfo = relation.getValue();
+                SkuInfo skuInfo = relation.getSkuInfo();
+                valueInfo.setSkuInfo(skuInfo);
+                list.add(valueInfo);
+                map.put(relation.getKey().getKeyName(), list);
+            }
+            allInfo.setSkuMap(map);
             return allInfo;
         }catch (Exception e){
             throw new GoodsException("服务器维护中。。");
