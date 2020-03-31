@@ -26,7 +26,7 @@ public class GoodsServiceTest {
 
     @Test
     public void getGoodsAllInfo(){
-        GoodsAllInfo goodsAllInfo = goodsAllInfoService.getGoodsInfoById("1578412684904");
+        GoodsAllInfo goodsAllInfo = goodsAllInfoService.getGoodsInfoById("1578412684905");
         GoodsInfo goodsInfo = goodsAllInfo.getGoodsInfo();
         System.out.println("goodId:" + goodsInfo.getGoodsId());
         System.out.println("goodName:" + goodsInfo.getGoodsName());

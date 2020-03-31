@@ -5,6 +5,7 @@ edu\nf\shopping\goods\dao\GoodsImgsDao.class
 edu\nf\shopping\goods\dao\ImgsTypeDao.class
 edu\nf\shopping\comment\dao\CommentDao.class
 edu\nf\shopping\user\dao\UserFacedao.class
+edu\nf\shopping\goods\dao\IntroduceTypeDao.class
 edu\nf\shopping\page\dao\PageRegionDao.class
 edu\nf\shopping\warehouse\dao\CargoInfoDao.class
 edu\nf\shopping\warehouse\dao\SupplierInfoDao.class
@@ -14,6 +15,7 @@ edu\nf\shopping\comment\dao\ReportDao.class
 edu\nf\shopping\page\dao\RegionContentDao.class
 edu\nf\shopping\goods\dao\GoodsDao.class
 edu\nf\shopping\user\dao\UserInfoDao.class
+edu\nf\shopping\goods\dao\KeyRelationDao.class
 edu\nf\shopping\goods\dao\SkuRelationDao.class
 edu\nf\shopping\comment\dao\ReportReasonDao.class
 edu\nf\shopping\warehouse\dao\OutCargoDao.class

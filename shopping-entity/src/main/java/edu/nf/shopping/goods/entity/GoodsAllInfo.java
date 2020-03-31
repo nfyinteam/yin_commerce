@@ -12,7 +12,10 @@ public class GoodsAllInfo {
     private List<GoodsImgs> goodsImgs;
     private List<SkuRelation> skuRelations;
     private List<IntroduceInfo> introduceInfos;
+    private List<IntroduceType> introduceTypes;
     private Map<String, List<ValueInfo>> skuMap;
+    private Map<String, List<IntroduceInfo>> introduceMap;
+    private Map<String, List<KeyRelation>> keyRelationMap;
 
     public GoodsInfo getGoodsInfo() {
         return goodsInfo;
@@ -52,5 +55,29 @@ public class GoodsAllInfo {
 
     public void setSkuMap(Map<String, List<ValueInfo>> skuMap) {
         this.skuMap = skuMap;
+    }
+
+    public List<IntroduceType> getIntroduceTypes() {
+        return introduceTypes;
+    }
+
+    public void setIntroduceTypes(List<IntroduceType> introduceTypes) {
+        this.introduceTypes = introduceTypes;
+    }
+
+    public Map<String, List<IntroduceInfo>> getIntroduceMap() {
+        return introduceMap;
+    }
+
+    public void setIntroduceMap(Map<String, List<IntroduceInfo>> introduceMap) {
+        this.introduceMap = introduceMap;
+    }
+
+    public Map<String, List<KeyRelation>> getKeyRelationMap() {
+        return keyRelationMap;
+    }
+
+    public void setKeyRelationMap(Map<String, List<KeyRelation>> keyRelationMap) {
+        this.keyRelationMap = keyRelationMap;
     }
 }
