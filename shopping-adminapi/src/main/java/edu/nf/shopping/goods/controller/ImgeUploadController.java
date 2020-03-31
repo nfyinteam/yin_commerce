@@ -1,6 +1,5 @@
 package edu.nf.shopping.goods.controller;
 
-import edu.nf.shopping.util.FIleNameUtils;
 import edu.nf.shopping.util.UploadAddressUtils;
 import edu.nf.shopping.vo.BaseController;
 import edu.nf.shopping.vo.ResponseVO;
