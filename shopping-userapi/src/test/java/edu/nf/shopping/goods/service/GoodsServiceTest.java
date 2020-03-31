@@ -62,5 +62,8 @@ public class GoodsServiceTest {
             }
             System.out.println("----------------------");
         }
+        for (GoodsImgs img : goodsAllInfo.getGoodsImgs()){
+            System.out.println(img.getImgIndex());
+        }
     }
 }

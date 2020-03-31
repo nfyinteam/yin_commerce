@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62b8ac9c-86a9-4199-8f79-2819b827666b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/shopping-userapi/target/surefire-reports/2020-03-31T21-46-08_604-jvmRun1.dump" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-adminapi/target/shopping-adminapi-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/target/shopping-adminapi-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-adminapi/target/shopping-adminapi-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/target/shopping-adminapi-1.0-SNAPSHOT.jar.original" afterDir="false" />
@@ -15,21 +14,14 @@
       <change beforePath="$PROJECT_DIR$/shopping-adminapi/target/surefire-reports/edu.nf.shopping.warehouse.dao.test.CargoInfoDaoTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/target/surefire-reports/edu.nf.shopping.warehouse.dao.test.CargoInfoDaoTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-adminapi/target/surefire-reports/edu.nf.shopping.warehouse.dao.test.WarehouseInfoDaoTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/target/surefire-reports/edu.nf.shopping.warehouse.dao.test.WarehouseInfoDaoTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/goods/GoodsImgsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/goods/GoodsImgsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/goods/IntroduceInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/goods/IntroduceInfoMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/goods/GoodsImgsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/goods/GoodsImgsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/goods/IntroduceInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/goods/IntroduceInfoMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-dao/target/shopping-dao-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/target/shopping-dao-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/goods/entity/GoodsAllInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/goods/entity/GoodsAllInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/goods/entity/ValueInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/goods/entity/ValueInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/goods/entity/GoodsAllInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/goods/entity/GoodsAllInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/goods/entity/ValueInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/goods/entity/ValueInfo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-entity/target/shopping-entity-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/target/shopping-entity-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/goods/service/impl/GoodsAllInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/goods/service/impl/GoodsAllInfoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/goods/service/impl/GoodsAllInfoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/goods/service/impl/GoodsAllInfoServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-service/target/shopping-service-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/target/shopping-service-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-userapi/src/test/java/edu/nf/shopping/goods/service/GoodsServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/src/test/java/edu/nf/shopping/goods/service/GoodsServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-userapi/target/shopping-userapi-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/target/shopping-userapi-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-userapi/target/shopping-userapi-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/target/shopping-userapi-1.0-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-userapi/target/surefire-reports/2020-03-31T21-46-08_604-jvmRun1.dump" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-userapi/target/surefire-reports/TEST-edu.nf.shopping.comment.service.CommentServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/target/surefire-reports/TEST-edu.nf.shopping.comment.service.CommentServiceTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-userapi/target/surefire-reports/TEST-edu.nf.shopping.goods.service.GoodsServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/target/surefire-reports/TEST-edu.nf.shopping.goods.service.GoodsServiceTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-userapi/target/surefire-reports/TEST-edu.nf.shopping.warehouse.dao.WarehouseDaoTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/target/surefire-reports/TEST-edu.nf.shopping.warehouse.dao.WarehouseDaoTest.xml" afterDir="false" />
@@ -295,7 +287,7 @@
       <workItem from="1584952290615" duration="1380000" />
       <workItem from="1584977672145" duration="997000" />
       <workItem from="1585582110653" duration="9712000" />
-      <workItem from="1585620135757" duration="8714000" />
+      <workItem from="1585620135757" duration="10196000" />
     </task>
     <task id="LOCAL-00001" summary="评论界面的剩余功能">
       <created>1584768589639</created>
@@ -395,7 +387,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585594603357</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="打成jar包,修改了goods">
+      <created>1585662591731</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1585662591731</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,7 +449,8 @@
     <MESSAGE value="发布评价" />
     <MESSAGE value="合并test" />
     <MESSAGE value="打成jar包" />
-    <option name="LAST_COMMIT_MESSAGE" value="打成jar包" />
+    <MESSAGE value="打成jar包,修改了goods" />
+    <option name="LAST_COMMIT_MESSAGE" value="打成jar包,修改了goods" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="181" key="#Project_Structure" timestamp="1585582114207">
@@ -482,11 +482,11 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="242" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1304.768@0.0.1304.768" timestamp="1584956561929" />
-    <state x="347" y="0" key="CommitChangelistDialog2" timestamp="1585594590603">
+    <state x="347" y="0" key="CommitChangelistDialog2" timestamp="1585662583647">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="236" y="0" key="CommitChangelistDialog2/0.0.1304.768@0.0.1304.768" timestamp="1584978281617" />
-    <state x="347" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585594590603" />
+    <state x="347" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585662583647" />
     <state x="92" y="92" width="1120" height="584" key="DiffContextDialog" timestamp="1584433974098">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
@@ -496,26 +496,26 @@
     </state>
     <state x="431" y="126" key="FileChooserDialogImpl/0.0.1304.768@0.0.1304.768" timestamp="1584841258047" />
     <state x="635" y="171" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585651110039" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1585662358043">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1585663525409">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1261" height="228" key="GridCell.Tab.0.bottom/0.0.1304.768@0.0.1304.768" timestamp="1584965452632" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585662358043" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1585662358043">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585663525409" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1585663525408">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1261" height="228" key="GridCell.Tab.0.center/0.0.1304.768@0.0.1304.768" timestamp="1584965452631" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585662358043" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1585662358043">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585663525408" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1585663525408">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1261" height="228" key="GridCell.Tab.0.left/0.0.1304.768@0.0.1304.768" timestamp="1584965452629" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585662358043" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1585662358043">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585663525408" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1585663525409">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1261" height="228" key="GridCell.Tab.0.right/0.0.1304.768@0.0.1304.768" timestamp="1584965452632" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585662358043" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585663525409" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1585580679004">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -550,11 +550,11 @@
     </state>
     <state x="153" y="0" key="SettingsEditor/0.0.1304.768@0.0.1304.768" timestamp="1584193163717" />
     <state x="225" y="0" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1585582322298" />
-    <state x="359" y="158" key="Vcs.Push.Dialog.v2" timestamp="1585594605384">
+    <state x="359" y="158" key="Vcs.Push.Dialog.v2" timestamp="1585662594115">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="244" y="117" key="Vcs.Push.Dialog.v2/0.0.1304.768@0.0.1304.768" timestamp="1584978450874" />
-    <state x="359" y="158" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585594605384" />
+    <state x="359" y="158" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585662594115" />
     <state x="725" y="238" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1585594351946">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -572,10 +572,10 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="306" y="232" key="git4idea.ui.GitUnstashDialog/0.0.1304.768@0.0.1304.768" timestamp="1584283072939" />
-    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1585662358071">
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1585663116591">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585662358071" />
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585663116591" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1585506281246">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
