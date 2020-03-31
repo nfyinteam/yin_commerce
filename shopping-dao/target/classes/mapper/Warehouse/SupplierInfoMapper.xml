@@ -7,7 +7,7 @@
         <result property="supplierName" column="supplier_name"/>
         <result property="supplierTel" column="supplier_tel"/>
         <result property="supplierAddress" column="supplier_address"/>
-        <association property=""
+        <association property="cargoInfos" resultMap="cargoInfoMap"/>
     </resultMap>
     <resultMap id="cargoInfoMap" type="edu.nf.shopping.warehouse.entity.CargoInfo">
         <id property="cargoId" column="cargo_id"/>

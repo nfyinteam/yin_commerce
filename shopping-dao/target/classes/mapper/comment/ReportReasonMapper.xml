@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.nf.shopping.comment.dao.ReportReasonDao">
+    <resultMap id="reportReasonMap" type="edu.nf.shopping.comment.entity.ReportReason">
+        <result property="reaId" column="rea_id"/>
+        <result property="reaInfo" column="rea_info"/>
+        <result property="index" column="rea_index"/>
+    </resultMap>
+    <select id="listReportReason" resultMap="reportReasonMap">
+        select rea_id,rea_info,rea_index from report_reason order by rea_index
+    </select>
+    <insert id="addReportReason" parameterType="edu.nf.shopping.comment.entity.ReportReason">
+
+    </insert>
+    <update id="updateReportReason" parameterType="edu.nf.shopping.comment.entity.ReportReason">
+
+    </update>
+    <delete id="deleteReportReason" parameterType="edu.nf.shopping.comment.entity.ReportReason">
+
+    </delete>
+</mapper>

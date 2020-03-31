@@ -1,0 +1,4 @@
+edu\nf\shopping\warehouse\dao\WarehouseDaoTest.class
+edu\nf\shopping\goods\service\GoodsServiceTest.class
+edu\nf\shopping\shopcart\service\ShoppingCartDaoTest.class
+edu\nf\shopping\comment\service\CommentServiceTest.class

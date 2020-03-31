@@ -13,7 +13,7 @@ import java.util.Map;
  * @author Bull fighters
  * @date 2020/3/14
  */
-@Configuration
+/*@Configuration*/
 public class RabbitConfig {
 
     public static final String EXCHANGE_NAME = "delay.exchange";

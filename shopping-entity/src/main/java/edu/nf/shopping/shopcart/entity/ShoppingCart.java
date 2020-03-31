@@ -1,5 +1,7 @@
 package edu.nf.shopping.shopcart.entity;
 
+import edu.nf.shopping.goods.entity.SkuRelation;
+
 import java.util.Date;
 
 /**
@@ -8,8 +10,8 @@ import java.util.Date;
  */
 public class ShoppingCart {
     private Integer scId;
-    private Integer skuId;
-    private Integer uid;
+    private SkuRelation relation;
+    private String uid;
     private Date joinTime;
 
     public Integer getScId() {
@@ -20,19 +22,19 @@ public class ShoppingCart {
         this.scId = scId;
     }
 
-    public Integer getSkuId() {
-        return skuId;
+    public SkuRelation getRelation() {
+        return relation;
     }
 
-    public void setSkuId(Integer skuId) {
-        this.skuId = skuId;
+    public void setRelation(SkuRelation relation) {
+        this.relation = relation;
     }
 
-    public Integer getUid() {
+    public String getUid() {
         return uid;
     }
 
-    public void setUid(Integer uid) {
+    public void setUid(String uid) {
         this.uid = uid;
     }
 

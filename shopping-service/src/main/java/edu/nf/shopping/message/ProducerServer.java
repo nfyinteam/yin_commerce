@@ -15,13 +15,13 @@ import java.util.UUID;
 @Service
 public class ProducerServer {
 
-    @Autowired
+    /*@Autowired
     private RabbitTemplate rabbitTemplate;
 
-    /**
+    *//**
      * 发送文本消息
      * @param aaa
-     */
+     *//*
     public void sendMessage(Object aaa,Integer delayTime){
         //创建消息的唯一ID
         CorrelationData correlationData = new CorrelationData();
@@ -33,5 +33,5 @@ public class ProducerServer {
             message.getMessageProperties().setDelay(delayTime);
             return message;
         }, correlationData);
-    }
+    }*/
 }
