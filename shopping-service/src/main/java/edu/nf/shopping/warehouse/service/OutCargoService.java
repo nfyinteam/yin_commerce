@@ -28,4 +28,9 @@ public interface OutCargoService {
      * @param cargoInfo
      */
     void updateOutCargo(CargoInfo cargoInfo);
+    /**
+     * 添加出库信息
+     * @param outCargo
+     */
+    void insertOutCargo(OutCargo outCargo);
 }
