@@ -3,13 +3,15 @@ package edu.nf.shopping;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
  * @author Achine
  * @date 2020/3/4
  */
 @SpringBootApplication
-@MapperScan(basePackages = {"edu.nf.shopping.goods.dao", "edu.nf.shopping.comment.dao"})
+@EnableScheduling
+@MapperScan(basePackages = {"edu.nf.shopping.goods.dao", "edu.nf.shopping.comment.dao","edu.nf.shopping.page.dao"})
 public class AdminApiApplication {
     public static void main(String[] args) {
         SpringApplication.run(AdminApiApplication.class, args);

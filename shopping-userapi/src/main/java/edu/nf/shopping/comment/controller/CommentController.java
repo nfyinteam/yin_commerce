@@ -26,8 +26,6 @@ public class CommentController extends BaseController {
     @Autowired
     private CommentService commentService;
 
-    @Autowired
-    private RestTemplate rest;
 
     private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
@@ -63,5 +61,13 @@ public class CommentController extends BaseController {
         comment.setUserId("1578412684666");
         commentService.addBuyShow(files,comment);
         return success(200,"提交评价成功");
+    }
+
+    @RequestMapping("/delete_comment")
+    @ApiOperation(value = "删除评论", notes = "用户删除自己的评论",
+            httpMethod = "post")
+    private ResponseVO addComment(String comId, HttpServletRequest request){
+        commentService.updateComment(comId,"2","1578412684666");
+        return success(200,"删除成功");
     }
 }
