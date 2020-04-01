@@ -1,30 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62b8ac9c-86a9-4199-8f79-2819b827666b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_10_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_10_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_10_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_validation_jakarta_validation_api_2_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_31.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_9_0_31.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_31.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_18_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_4_1_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_2_5_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_2_5_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_validation_2_2_5_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_2_5_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_2_4_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_2_4_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-adminapi/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-adminapi/shopping-adminapi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/shopping-adminapi.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/config/RabbitConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/config/RabbitConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/config/RabbitConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/config/RabbitConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/shopping-userapi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/shopping-userapi.iml" afterDir="false" />
-    </list>
+    <list default="true" id="62b8ac9c-86a9-4199-8f79-2819b827666b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,6 +29,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/comment/service/impl/PraiseServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/comment/service/impl/CommentServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/goods/service/impl/GoodsAllInfoServiceImpl.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -108,66 +86,70 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.UserApiApplication">
-    <configuration name="DemoApplication.contextLoad" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="shopping-dao" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.nf.shopping.goods.dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.nf.shopping.goods.dao" />
-      <option name="MAIN_CLASS_NAME" value="edu.nf.shopping.goods.dao.DemoApplication" />
-      <option name="METHOD_NAME" value="contextLoad" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DemoApplication.listGoods" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="shopping-dao" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.nf.shopping.goods.dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.nf.shopping.goods.dao" />
-      <option name="MAIN_CLASS_NAME" value="edu.nf.shopping.goods.dao.DemoApplication" />
-      <option name="METHOD_NAME" value="listGoods" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GoodsDaoTest.listGoods" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="shopping-dao" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.nf.shopping.goods.dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.nf.shopping.goods.dao" />
-      <option name="MAIN_CLASS_NAME" value="edu.nf.shopping.goods.dao.GoodsDaoTest" />
-      <option name="METHOD_NAME" value="listGoods" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GoodsServiceTest.getGoodsAllInfo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ConsumerB" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.nf.shopping.comment.service.ConsumerB" />
       <module name="shopping-userapi" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.nf.shopping.goods.service.*" />
+          <option name="PATTERN" value="edu.nf.shopping.message.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.nf.shopping.goods.service" />
-      <option name="MAIN_CLASS_NAME" value="edu.nf.shopping.goods.service.GoodsServiceTest" />
-      <option name="METHOD_NAME" value="getGoodsAllInfo" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommentServiceTest.listComment" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="shopping-userapi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.nf.shopping.message.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.nf.shopping.comment.service" />
+      <option name="MAIN_CLASS_NAME" value="edu.nf.shopping.comment.service.CommentServiceTest" />
+      <option name="METHOD_NAME" value="listComment" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommentServiceTest.rabbitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="shopping-userapi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.nf.shopping.message.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.nf.shopping.comment.service" />
+      <option name="MAIN_CLASS_NAME" value="edu.nf.shopping.comment.service.CommentServiceTest" />
+      <option name="METHOD_NAME" value="rabbitTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommentServiceTest.testForValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="shopping-userapi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.nf.shopping.message.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.nf.shopping.comment.service" />
+      <option name="MAIN_CLASS_NAME" value="edu.nf.shopping.comment.service.CommentServiceTest" />
+      <option name="METHOD_NAME" value="testForValue" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AdminApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="shopping-adminapi" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="edu.nf.shopping.AdminApiApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -188,10 +170,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.UserApiApplication" />
-        <item itemvalue="JUnit.GoodsServiceTest.getGoodsAllInfo" />
-        <item itemvalue="JUnit.GoodsDaoTest.listGoods" />
-        <item itemvalue="JUnit.DemoApplication.listGoods" />
-        <item itemvalue="JUnit.DemoApplication.contextLoad" />
+        <item itemvalue="JUnit.CommentServiceTest.testForValue" />
+        <item itemvalue="JUnit.CommentServiceTest.rabbitTest" />
+        <item itemvalue="JUnit.CommentServiceTest.listComment" />
+        <item itemvalue="Application.ConsumerB" />
       </list>
     </recent_temporary>
   </component>

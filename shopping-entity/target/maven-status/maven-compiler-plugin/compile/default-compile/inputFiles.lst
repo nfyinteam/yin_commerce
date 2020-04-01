@@ -1,3 +1,4 @@
+D:\ideaprojects\addiction-shopping\shopping-entity\src\main\java\edu\nf\shopping\page\entity\RegionContent.java
 D:\ideaprojects\addiction-shopping\shopping-entity\src\main\java\edu\nf\shopping\order\entity\OrderInfo.java
 D:\ideaprojects\addiction-shopping\shopping-entity\src\main\java\edu\nf\shopping\user\entity\UserAddress.java
 D:\ideaprojects\addiction-shopping\shopping-entity\src\main\java\edu\nf\shopping\comment\entity\Praise.java
@@ -19,6 +20,7 @@ D:\ideaprojects\addiction-shopping\shopping-entity\src\main\java\edu\nf\shopping
 D:\ideaprojects\addiction-shopping\shopping-entity\src\main\java\edu\nf\shopping\goods\entity\GoodsType.java
 D:\ideaprojects\addiction-shopping\shopping-entity\src\main\java\edu\nf\shopping\goods\entity\KeyInfo.java
 D:\ideaprojects\addiction-shopping\shopping-entity\src\main\java\edu\nf\shopping\user\entity\UserEnable.java
+D:\ideaprojects\addiction-shopping\shopping-entity\src\main\java\edu\nf\shopping\page\entity\PageRegion.java
 D:\ideaprojects\addiction-shopping\shopping-entity\src\main\java\edu\nf\shopping\goods\entity\GoodsAllInfo.java
 D:\ideaprojects\addiction-shopping\shopping-entity\src\main\java\edu\nf\shopping\goods\entity\GoodsImgs.java
 D:\ideaprojects\addiction-shopping\shopping-entity\src\main\java\edu\nf\shopping\warehouse\entity\RegionType.java

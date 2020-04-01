@@ -5,6 +5,7 @@ import edu.nf.shopping.warehouse.entity.SupplierInfo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -14,8 +15,9 @@ import java.util.List;
  */
 @SpringBootTest
 public class SupplierInfoDaoTest {
-    @Autowired
+    /*@Autowired
     private SupplierInfoDao dao;
+
     @Test
     public void listSupplierInfo(){
         List<SupplierInfo > supplierInfos = dao.listSupplierInfo();
@@ -24,6 +26,7 @@ public class SupplierInfoDaoTest {
         }
     }
     @Test
+    @Transactional
     public void insertSupplierInfo(){
         SupplierInfo supplierInfo = new SupplierInfo();
         supplierInfo.setSupplierName("李杰峰的童鞋厂");
@@ -32,11 +35,13 @@ public class SupplierInfoDaoTest {
         dao.insertSupplierInfo(supplierInfo);
     }
     @Test
-    public  void deleteSupplier(){
+    @Transactional
+    public void deleteSupplier(){
         Integer id = 2;
         dao.deleteSupplierInfo(id);
     }
     @Test
+    @Transactional
     public void updateSupplier(){
         SupplierInfo supplierInfo = new SupplierInfo();
         supplierInfo.setSupplierId(2);
@@ -44,5 +49,5 @@ public class SupplierInfoDaoTest {
         supplierInfo.setSupplierTel("12345678901");
         supplierInfo.setSupplierAddress("珠海市斗门区南方鞋厂");
         dao.updateSupplierInfoByid(supplierInfo);
-    }
+    }*/
 }
