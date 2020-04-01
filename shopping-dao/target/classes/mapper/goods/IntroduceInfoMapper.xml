@@ -7,7 +7,7 @@
         <id property="introduceId" column="i_id"/>
         <result property="iRemark" column="i_remark"/>
         <result property="introduceIndex" column="i_index"/>
-        <association property="img" resultMap="imgsMap"/>
+        <association property="img" resultMap="imgMap"/>
         <association property="good" resultMap="goodsMap"/>
         <association property="introduceType" resultMap="introduceTypeMap"/>
     </resultMap>
@@ -16,15 +16,10 @@
         <result property="itName" column="it_name"/>
         <result property="itIndex" column="it_index"/>
     </resultMap>
-    <resultMap id="imgsMap" type="edu.nf.shopping.goods.entity.ImgsInfo">
+    <resultMap id="imgMap" type="edu.nf.shopping.goods.entity.ImgsInfo">
         <id property="imgId" column="img_id"/>
         <result property="imgName" column="img_name"/>
-        <result property="imgFile" column="img_fille"/>
-        <association property="imgType" resultMap="imgsTypeMap"/>
-    </resultMap>
-    <resultMap id="imgsTypeMap" type="edu.nf.shopping.goods.entity.ImgsType">
-        <id column="it_id" property="itId"/>
-        <result column="it_name" property="itName"/>
+        <result property="imgFile" column="img_file"/>
     </resultMap>
     <resultMap id="goodsMap" type="edu.nf.shopping.goods.entity.GoodsInfo">
         <id property="goodsId" column="goods_id"/>
@@ -48,7 +43,7 @@
     </resultMap>
 
     <select id="listIntroduceInfoByGoodsId" resultMap="introduceInfoMap">
-        select ii.i_id, ii.i_remark, ii.i_index, it.it_name, it.it_id, it.it_index, img.img_id, img.img_file,
+        select ii.i_id, ii.i_remark, ii.i_index, it.it_id, it.it_name, it.it_index, img.img_id, img.img_file,
         img.img_name, img.img_type, good.goods_id, good.goods_name, good.shelf_time, good.is_shelf, good.spu_id,
         good.gt_id from introduce_info ii left join imgs_info img on img.img_id = ii.img_id left join introduce_type it
         on it.it_id = ii.it_id left join goods_info good on good.goods_id = ii.goods_id where ii.goods_id = #{goodsId}

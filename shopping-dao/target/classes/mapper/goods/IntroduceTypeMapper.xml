@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.nf.shopping.goods.dao.IntroduceTypeDao">
+    <resultMap id="introduceTypeMap" type="edu.nf.shopping.goods.entity.IntroduceType">
+        <id property="itId" column="it_id"/>
+        <result property="itName" column="it_name"/>
+        <result property="itIndex" column="it_index"/>
+    </resultMap>
+
+    <select id="listIntroduceType" resultMap="introduceTypeMap">
+        select it_id, it_name, it_index from introduce_type
+    </select>
+
+    <select id="listIntroduceTypeByGoodId" resultMap="introduceTypeMap">
+        select it_id, it_name, it_index from introduce_type where it_id in(select it_id
+        from introduce_info where goods_id = #{goodId}) order by it_index
+    </select>
+</mapper>

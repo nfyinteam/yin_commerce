@@ -18,7 +18,7 @@
     <resultMap id="imgsMap" type="edu.nf.shopping.goods.entity.ImgsInfo">
         <id property="imgId" column="img_id"/>
         <result property="imgName" column="img_name"/>
-        <result property="imgFile" column="img_fille"/>
+        <result property="imgFile" column="img_file"/>
         <association property="imgType" resultMap="imgsTypeMap"/>
     </resultMap>
     <resultMap id="spuInfoMap" type="edu.nf.shopping.goods.entity.SpuInfo">
@@ -45,7 +45,7 @@
 
     <select id="listGoodsImgsByGoodsId" resultMap="goodsImgsMap">
         select ii.img_id, ii.img_name, ii.img_file, ii.img_type, good.goods_id, good.goods_name, good.shelf_time,
-        good.is_shelf, good.spu_id, good.gt_id from goods_imgs gi left join imgs_info ii on ii.img_id = gi.img_id
+        good.is_shelf, good.spu_id, good.gt_id, gi.img_index from goods_imgs gi left join imgs_info ii on ii.img_id = gi.img_id
         left join goods_info good on good.goods_id = gi.goods_id where gi.goods_id = #{goodsId} order by gi.img_index asc;
     </select>
 
