@@ -26,7 +26,7 @@ public class ConsumerServer {
      * @param headers 消息头
      * @param channel 消息通道
      */
-    @RabbitListener(queues = RabbitConfig.QUEUE_NAME)
+    /*@RabbitListener(queues = RabbitConfig.QUEUE_NAME)
     public void receiveMessage(@Payload Object message,
                                @Headers Map<String, Object> headers,
                                Channel channel) throws IOException {
@@ -36,5 +36,5 @@ public class ConsumerServer {
         Long deliveryTag = (Long) headers.get(AmqpHeaders.DELIVERY_TAG);
         //确认签收，basicAck方法参入一个签收标签，第二个参数表示是否支持批量签收，false表示单个签收
         channel.basicAck(deliveryTag, false);
-    }
+    }*/
 }

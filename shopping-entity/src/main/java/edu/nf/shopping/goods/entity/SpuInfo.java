@@ -1,5 +1,8 @@
 package edu.nf.shopping.goods.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 /**
@@ -10,6 +13,8 @@ public class SpuInfo {
     private String spuId;
     private String spuName;
     private String spuRemark;
+    @JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date listTime;
     private Integer spuNum;
 

@@ -40,19 +40,54 @@
     <resultMap id="skuInfomap" type="edu.nf.shopping.goods.entity.SkuInfo">
         <id property="skuId" column="sku_id"/>
         <result property="skuPrice" column="sku_price"/>
-        <result property="sku_stock" column="sku_stock"/>
+        <result property="skuStock" column="sku_stock"/>
         <result property="skuSales" column="sku_sales"/>
     </resultMap>
     <resultMap id="skuRelationMap" type="edu.nf.shopping.goods.entity.SkuRelation">
-        <id property="keyId" column="key_id"/>
-        <result property="valueId" column="value_id"/>
+        <association property="key" resultMap="keyMap"/>
+        <association property="value" resultMap="valueMap"/>
+        <association property="skuInfo" resultMap="skuInfoMap"/>
     </resultMap>
+    <resultMap id="valueMap" type="edu.nf.shopping.goods.entity.ValueInfo">
+        <id property="valueId" column="value_id"/>
+        <result property="valueName" column="value_name"/>
+        <association property="keyInfo" resultMap="keyMap"/>
+    </resultMap>
+    <resultMap id="keyMap" type="edu.nf.shopping.goods.entity.KeyInfo">
+        <id property="keyId" column="key_id"/>
+        <result property="keyName" column="key_name"/>
+        <association property="goodsType" resultMap="goodTypeMap"/>
+        <association property="keyType" resultMap="keyTypeMap"/>
+    </resultMap>
+    <resultMap id="goodTypeMap" type="edu.nf.shopping.goods.entity.GoodsType">
+        <id property="gtId" column="gt_id"/>
+        <result property="gtName" column="gt_name"/>
+        <result property="pId" column="p_id"/>
+    </resultMap>
+    <resultMap id="keyTypeMap" type="edu.nf.shopping.goods.entity.KeyType">
+        <id property="ktId" column="kt_id"/>
+        <result property="ktName" column="kt_name"/>
+    </resultMap>
+    <resultMap id="skuInfoMap" type="edu.nf.shopping.goods.entity.SkuInfo">
+        <id property="skuId" column="sku_id"/>
+        <result property="skuPrice" column="sku_price"/>
+        <result property="skuSales" column="sku_sales"/>
+        <result property="skuStock" column="sku_stock"/>
+        <association property="good" resultMap="goodsMap"/>
+    </resultMap>
+
     <insert id="insertCargoInfo" parameterType="edu.nf.shopping.warehouse.entity.CargoInfo">
         INSERT INTO cargo_info(cargo_id,sku_id,r_id,p_id,supplier_id,put_price,put_time,put_admin,is_out,item_no)
         VALUES(#{cargoId},#{skuId},#{rid},#pid},#{supplierId},#{putPrice},#{putTime},#{putAdmin},#{isOut},#{itemNo});
     </insert>
     <update id="updateCargoInfo" parameterType="java.lang.String">
         UPDATE cargo_info SET put_price = #{putPrice} ,put_admin =#{putAdmin} , WHERE cargo_id = #{cargoId} ;
+    </update>
+    <update id="updateCargoALibrary" parameterType="java.lang.String">
+        UPDATE cargo_info SET is_out = 1 WHERE cargo_id = #{cargoId}
+    </update>
+    <update id="updateCargoWarehousing" parameterType="java.lang.String">
+        UPDATE cargo_info SET is_out = 0 WHERE cargo_id = #{cargoId}
     </update>
     <delete id="deleteCargoInfo" parameterType="java.lang.String">
         DELETE FROM cargo_info WHERE cargo_id  = #{cargoId}
@@ -70,4 +105,21 @@
         LEFT JOIN spu_info si on g.spu_id = si.spu_id
         LEFT JOIN goods_type gt on g.gt_id = gt.gt_id
     </select>
+    <select id="getCargoInfoById" resultType="edu.nf.shopping.warehouse.entity.CargoInfo">
+        SELECT supplier_name,supplier_address,supplier_tel,value_name,goods_name,gt_name
+        FROM supplier_info l
+        LEFT JOIN cargo_info c ON l.supplier_id = c.supplier_id
+        LEFT JOIN sku_relation s  ON s.sku_id = c.sku_id
+        LEFT JOIN key_info k ON s.key_id = k.key_id
+        LEFT JOIN value_info v ON s.value_id = v.value_id
+        LEFT JOIN sku_info u ON s.sku_id = u.sku_id
+        LEFT JOIN goods_info g ON u.goods_id = g.goods_id
+        LEFT JOIN spu_info si on g.spu_id = si.spu_id
+        LEFT JOIN goods_type gt on g.gt_id = gt.gt_id
+        WHERE c.cargo_id = #{cargoId}
+    </select>
+    <select id="getCargoIdBySkuId" resultType="java.lang.String">
+        SELECT  cargo_id FROM  cargo_info where sku_id = #{skuid};
+    </select>
+
 </mapper>

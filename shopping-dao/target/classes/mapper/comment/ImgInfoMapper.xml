@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.nf.shopping.comment.dao.ImgInfoDao">
+    <resultMap id="imgInfoMap" type="edu.nf.shopping.comment.entity.ImgInfo">
+        <result property="imgId" column="img_id"/>
+        <result property="imgName" column="img_name"/>
+        <result property="imgFile" column="img_file"/>
+    </resultMap>
+    <select id="listImgInfo" parameterType="String" resultMap="imgInfoMap">
+        select ii.img_id,ii.img_name,ii.img_file
+        from imgs_info ii INNER JOIN buy_show_imgs b on ii.img_id=b.img_id
+        where b.com_id=#{comId}
+    </select>
+    <insert id="addImgInfo" parameterType="edu.nf.shopping.comment.entity.ImgInfo">
+        insert imgs_info(img_id,img_name,img_file,img_type)
+        value(#{imgId},#{imgName},#{imgFile},#{imgType})
+    </insert>
+</mapper>
