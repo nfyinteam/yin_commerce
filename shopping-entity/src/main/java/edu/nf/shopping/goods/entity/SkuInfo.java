@@ -1,6 +1,7 @@
 package edu.nf.shopping.goods.entity;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 /**
  * @author Achine
@@ -9,7 +10,7 @@ import java.math.BigDecimal;
 public class SkuInfo {
     private String skuId;
     private BigDecimal skuPrice;
-    private Integer sku_stock;
+    private Integer skuStock;
     private Integer skuSales;
     private GoodsInfo good;
 
@@ -29,12 +30,12 @@ public class SkuInfo {
         this.skuPrice = skuPrice;
     }
 
-    public Integer getSku_stock() {
-        return sku_stock;
+    public Integer getSkuStock() {
+        return skuStock;
     }
 
-    public void setSku_stock(Integer sku_stock) {
-        this.sku_stock = sku_stock;
+    public void setSkuStock(Integer skuStock) {
+        this.skuStock = skuStock;
     }
 
     public Integer getSkuSales() {
@@ -52,4 +53,5 @@ public class SkuInfo {
     public void setGood(GoodsInfo good) {
         this.good = good;
     }
+
 }

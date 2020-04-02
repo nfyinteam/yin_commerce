@@ -8,7 +8,7 @@ public class UUIDUtils {
 		String uuid=UUID.randomUUID().toString();
 		
 		uuid = uuid.replace("-", "").toUpperCase();
-		return uuid.substring(0,20);
+		return uuid.substring(0,18);
 		
 	}
 	
