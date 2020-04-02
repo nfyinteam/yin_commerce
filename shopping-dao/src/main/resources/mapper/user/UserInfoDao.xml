@@ -12,7 +12,12 @@
         <id property="sex" column="u_sex"/>
         <id property="realName" column="real_name"/>
         <id property="carNumber" column="card_num"/>
+        <association property="face" resultMap="faceMap"/>
+    </resultMap>
+    <resultMap id="faceMap" type="edu.nf.shopping.user.entity.UserFace">
         <id property="faceId" column="face_id"/>
+        <result property="faceFile" column="face_file"/>
+        <result property="joinDate" column="join_date"/>
     </resultMap>
 
     <select id="listUser" resultMap="userMap">

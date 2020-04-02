@@ -11,7 +11,7 @@
         <result property="password" column="u_password"/>
         <result property="sex" column="u_sex"/>
         <result property="realName" column="real_name"/>
-        <result property="carNumber" column="car_number"/>
+        <result property="carNumber" column="card_num"/>
         <association property="face" resultMap="userFaceMap"/>
     </resultMap>
     
