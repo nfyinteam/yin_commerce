@@ -2,6 +2,7 @@ package edu.nf.shopping.warehouse.entity;
 
 import edu.nf.shopping.order.entity.OrderInfo;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -63,7 +64,7 @@ public class OutCargo {
         return outTime;
     }
 
-    public void setOutTime(Date outTime) {
+    public void setOutTime(SimpleDateFormat outTime) {
         this.outTime = outTime;
     }
 

@@ -9,6 +9,9 @@
         <result property="outTime" column="out_time"/>
         <result property="outAdmin" column="out_admin"/>
     </resultMap>
+    <insert id="insertOutCargo" parameterType="edu.nf.shopping.warehouse.entity.OutCargo">
+        INSERT INTO out_cargo(out_id,cargo_info,order_id,out_time,out_admin) VALUES(#{outId},#{cargoId},#{orderId},#{outTime},#{outAdmin})
+    </insert>
     <update id="updateOutCargo" parameterType="edu.nf.shopping.warehouse.entity.OutCargo">
 
     </update>

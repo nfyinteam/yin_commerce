@@ -1,15 +1,14 @@
-package edu.nf.shopping.warehouse.dao;
+package edu.nf.shopping.warehouse.service;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import edu.nf.shopping.warehouse.entity.CargoInfo;
 
 import java.util.List;
 
 /**
  * @author lishun
- * @date 2020/3/11
+ * @date 2020/3/31
  */
-public interface CargoInfoDao {
+public interface CargoInfoService {
     /**
      *查询所有货物信息
      * @return
@@ -27,7 +26,6 @@ public interface CargoInfoDao {
      * @param cargoId
      */
     void deleteCargoInfo(String cargoId);
-
     /**
      * 获取商品信息
      * @param cargoId
@@ -38,14 +36,12 @@ public interface CargoInfoDao {
      * 修改货物信息
      */
     void updateCargoInfo(CargoInfo cargoInfo);
-
     /**
      * 获取货物id给支付
      * @param skuid
      * @return
      */
     String getCargoIdBySkuId(String skuid);
-
     /**
      * 修改货物出库信息
      * @param cargoId

@@ -1,4 +1,4 @@
-package edu.nf.shopping.warehouse.dao;
+package edu.nf.shopping.warehouse.service;
 
 import edu.nf.shopping.warehouse.entity.CargoInfo;
 import edu.nf.shopping.warehouse.entity.OutCargo;
@@ -7,9 +7,9 @@ import java.util.List;
 
 /**
  * @author lishun
- * @date 2020/3/17
+ * @date 2020/3/31
  */
-public interface OutCargoDao {
+public interface OutCargoService {
     /**
      * 搜素所有出卖订单
      * @return
@@ -28,7 +28,6 @@ public interface OutCargoDao {
      * @param cargoInfo
      */
     void updateOutCargo(CargoInfo cargoInfo);
-
     /**
      * 添加出库信息
      * @param outCargo
