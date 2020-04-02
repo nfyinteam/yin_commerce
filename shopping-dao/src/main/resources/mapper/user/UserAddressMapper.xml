@@ -9,7 +9,7 @@
         <result property="addressUser" column="address_user"/>
         <result property="addressTel" column="address_tel"/>
         <result property="isSel" column="is_sel"/>
-        <collection property="city" resultMap="CityMap"/>
+        <association property="city" resultMap="CityMap"/>
     </resultMap>
 
     <resultMap id="CityMap" type="edu.nf.shopping.warehouse.entity.City">
