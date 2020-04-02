@@ -43,7 +43,7 @@
         where si.spu_id = #{spuId}
     </select>
 
-    <select id="listGoodsById" resultMap="goodsMap" parameterType="java.lang.String">
+    <select id="getGoodsById" resultMap="goodsMap" parameterType="java.lang.String">
         select gi.goods_id, gi.goods_name, gi.shelf_time, gi.is_shelf, si.spu_id, si.spu_name,
         si.spu_remark, si.list_time, si.spu_num, gt.gt_id, gt.gt_name, gt.p_id from goods_info gi
         LEFT JOIN spu_info si on gi.spu_id = si.spu_id left join goods_type gt on gi.gt_id = gt.gt_id

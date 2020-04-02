@@ -17,11 +17,13 @@
         <result property="total" column="total"/>
         <result property="praiseNum" column="praise_num"/>
         <result property="theUser" column="the_user"/>
+        <result property="userName" column="u_name"/>
+        <result property="userFace" column="face_file"/>
         <result property="totalScore" column="total_score"/>
     </resultMap>
     <select id="listBuyShow" resultMap="commentMap" parameterType="String">
         select c.com_id,c.goods_id,c.u_id,c.parent_cid,c.by_cid,c.com_content,
-        c.com_score,c.com_time,c.com_state,c.com_grade,u.u_name,uf.face_id,
+        c.com_score,c.com_time,c.com_state,c.com_grade,u.u_name,uf.face_file,
         (SELECT COUNT(1) from praise p where p.com_id=c.com_id) as praise_num,
         (select AVG(com_score) from comments where com_grade="1" ) as total_score
         <if test="param4!=null and param4!=''">
@@ -48,7 +50,7 @@
     </select>
     <select id="listByComment" resultMap="commentMap" parameterType="String">
         select c.com_id,c.goods_id,c.u_id,c.parent_cid,c.by_cid,c.com_content,
-        c.com_time,c.com_state,c.com_grade,u.u_name,uf.face_id,
+        c.com_time,c.com_state,c.com_grade,u.u_name,uf.face_file,
         (SELECT COUNT(1) from praise p where p.com_id=c.com_id) as praise_num,
         (select bu.u_name from user_info bu INNER JOIN comments bc on
         bu.u_id=bc.u_id where bc.com_id=c.by_cid) as by_uName,

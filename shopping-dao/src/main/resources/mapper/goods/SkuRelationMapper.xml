@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.nf.shopping.goods.dao.SkuRelationDao">
+    <resultMap id="skuRelationMap" type="edu.nf.shopping.goods.entity.SkuRelation">
+        <association property="key" resultMap="keyMap"/>
+        <association property="value" resultMap="valueMap"/>
+        <association property="skuInfo" resultMap="skuInfoMap"/>
+    </resultMap>
+    <resultMap id="valueMap" type="edu.nf.shopping.goods.entity.ValueInfo">
+        <id property="valueId" column="value_id"/>
+        <result property="valueName" column="value_name"/>
+        <association property="keyInfo" resultMap="keyMap"/>
+    </resultMap>
+    <resultMap id="keyMap" type="edu.nf.shopping.goods.entity.KeyInfo">
+        <id property="keyId" column="key_id"/>
+        <result property="keyName" column="key_name"/>
+        <association property="goodsType" resultMap="goodTypeMap"/>
+        <association property="keyType" resultMap="keyTypeMap"/>
+    </resultMap>
+    <resultMap id="goodTypeMap" type="edu.nf.shopping.goods.entity.GoodsType">
+        <id property="gtId" column="gt_id"/>
+        <result property="gtName" column="gt_name"/>
+        <result property="pId" column="p_id"/>
+    </resultMap>
+    <resultMap id="keyTypeMap" type="edu.nf.shopping.goods.entity.KeyType">
+        <id property="ktId" column="kt_id"/>
+        <result property="ktName" column="kt_name"/>
+    </resultMap>
+    <resultMap id="skuInfoMap" type="edu.nf.shopping.goods.entity.SkuInfo">
+        <id property="skuId" column="sku_id"/>
+        <result property="skuPrice" column="sku_price" jdbcType="DECIMAL"/>
+        <result property="skuSales" column="sku_sales"/>
+        <result property="skuStock" column="sku_stock"/>
+        <association property="good" resultMap="goodsMap"/>
+    </resultMap>
+    <resultMap id="goodsMap" type="edu.nf.shopping.goods.entity.GoodsInfo">
+        <id property="goodsId" column="goods_id"/>
+        <result property="goodsName" column="goods_name"/>
+        <result property="shelfTime" column="shelf_time"/>
+        <result property="isShelf" column="is_shelf"/>
+        <association property="spuInfo" resultMap="spuInfoMap"/>
+        <association property="goodsType" resultMap="goodTypeMap"/>
+    </resultMap>
+    <resultMap id="spuInfoMap" type="edu.nf.shopping.goods.entity.SpuInfo">
+        <id property="spuId" column="spu_id"/>
+        <result property="spuName" column="spu_name"/>
+        <result property="spuNum" column="spu_num"/>
+        <result property="listTime" column="list_time"/>
+        <result property="spuRemark" column="spu_remark"/>
+    </resultMap>
+
+    <select id="listSkuRelationByGoodsId" resultMap="skuRelationMap">
+        select g.goods_id, g.goods_name, g.shelf_time, g.is_shelf, g.spu_id, g.gt_id, k.key_id, k.key_name,
+        v.value_id, v.value_name, si.sku_id, si.sku_price, si.sku_stock, si.sku_sales from sku_relation sr left join key_info k on k.key_id = sr.key_id
+        left join value_info v on v.value_id = sr.value_id left join sku_info si on si.sku_id = sr.sku_id left join
+        goods_info g on g.goods_id = si.goods_id where g.goods_id = #{goodsId}
+    </select>
+    <select id="listKeyInfoByGoodsId" resultMap="keyMap">
+        select key_id, key_name, gt_id, kt_id from key_info where key_id in(select k.key_id
+        from sku_relation sr left join key_info k on k.key_id = sr.key_id left join value_info v
+        on v.value_id = sr.value_id left join sku_info si on si.sku_id = sr.sku_id left join goods_info g
+        on g.goods_id = si.goods_id where g.goods_id = #{goodsId} group by k.key_id)
+    </select>
+    <select id="listValueInfoByGoodsIdAndKeyId" resultMap="valueMap">
+        select value_id, value_name, key_id from value_info where value_id in(select v.value_id
+        from sku_relation sr left join key_info k on k.key_id = sr.key_id left join
+        value_info v on v.value_id = sr.value_id left join sku_info si on si.sku_id = sr.sku_id
+        left join goods_info g on g.goods_id = si.goods_id where g.goods_id = #{param1} and k.key_id = #{param2});
+    </select>
+    <insert id="addSkuRelation" parameterType="edu.nf.shopping.goods.entity.SkuRelation">
+        insert sku_relation(key_id, value_id, sku_id) value(#{skuRelation.key.keyId},
+        #{skuRelation.value.valueId}, #{skuRelation.skuInfo.skuId});
+    </insert>
+    <update id="updetaSkuRelation" parameterType="edu.nf.shopping.goods.entity.SkuRelation">
+        update set key_id = #{skuRelation.key.keyId}, value_id = #{skuRelation.value.valueId} where
+        sku_id = #{skuRelation.skuInfo.skuId} and key_id = #{skuRelation.key.keyId}
+        and value_id = #{skuRelation.value.valueId}
+    </update>
+    <delete id="deleteSkuRelation" parameterType="edu.nf.shopping.goods.entity.SkuRelation">
+        delete from sku_relation where sku_id = #{skuRelation.skuInfo.skuId} and
+        key_id = #{skuRelation.key.keyId} and value_id = #{skuRelation.value.valueId}
+    </delete>
+
+</mapper>

@@ -9,6 +9,7 @@ import edu.nf.shopping.util.FileNameUtils;
 import edu.nf.shopping.util.UUIDUtils;
 import edu.nf.shopping.util.UploadAddressUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -29,6 +30,7 @@ public class RegionContentServiceImpl implements RegionContentService {
     private RegionContentDao contentDao;
 
     @Override
+    @CacheEvict(value = "pageCache", key = "'pageRegion-0'",beforeInvocation=true)
     public void updateRegionContent(List<RegionContent> regionContent) {
         try{
             for (RegionContent content : regionContent) {
@@ -47,6 +49,7 @@ public class RegionContentServiceImpl implements RegionContentService {
     }
 
     @Override
+    @CacheEvict(value = "pageCache", key = "'pageRegion-0'",beforeInvocation=true)
     public void updateRegionImage(MultipartFile file,String link, String prId, String index) {
         try{
             List<RegionContent> list=new ArrayList<>();

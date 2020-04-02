@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.nf.shopping.warehouse.dao.OutCargoDao">
+    <resultMap id="outCargoMap" type="edu.nf.shopping.warehouse.entity.OutCargo">
+        <id property="outId" column="out_id"/>
+        <result property="cargoId" column="cargo_id"/>
+        <result property="orderId" column="order_id"/>
+        <result property="outTime" column="out_time"/>
+        <result property="outAdmin" column="out_admin"/>
+    </resultMap>
+    <insert id="insertOutCargo" parameterType="edu.nf.shopping.warehouse.entity.OutCargo">
+        INSERT INTO out_cargo(out_id,cargo_info,order_id,out_time,out_admin) VALUES(#{outId},#{cargoId},#{orderId},#{outTime},#{outAdmin})
+    </insert>
+    <update id="updateOutCargo" parameterType="edu.nf.shopping.warehouse.entity.OutCargo">
+
+    </update>
+
+    <select id="listOutCargo" resultMap="outCargoMap"></select>
+    <select id="getOutCargoById" resultMap="outCargoMap"></select>
+</mapper>

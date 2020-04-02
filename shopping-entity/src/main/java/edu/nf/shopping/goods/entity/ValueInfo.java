@@ -8,6 +8,10 @@ public class ValueInfo {
     private Integer valueId;
     private String valueName;
     private KeyInfo keyInfo;
+    /**
+     * 给商品页面用
+     */
+    private SkuInfo skuInfo;
 
     public Integer getValueId() {
         return valueId;
@@ -31,5 +35,13 @@ public class ValueInfo {
 
     public void setKeyInfo(KeyInfo keyInfo) {
         this.keyInfo = keyInfo;
+    }
+
+    public SkuInfo getSkuInfo() {
+        return skuInfo;
+    }
+
+    public void setSkuInfo(SkuInfo skuInfo) {
+        this.skuInfo = skuInfo;
     }
 }
