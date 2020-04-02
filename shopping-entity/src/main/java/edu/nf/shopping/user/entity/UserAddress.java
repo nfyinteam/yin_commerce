@@ -1,5 +1,7 @@
 package edu.nf.shopping.user.entity;
 
+import edu.nf.shopping.warehouse.entity.City;
+
 /**
  * @author re
  * @date 2020/3/23
