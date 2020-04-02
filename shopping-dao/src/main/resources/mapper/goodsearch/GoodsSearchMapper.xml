@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="edu.nf.shopping.goodsearch.dao.GoodsSearchDao">
-    <resultMap id="goodsMap" type="edu.nf.shopping.goodsearch.entity.GoodsInfo">
+    <resultMap id="goodsMap" type="edu.nf.shopping.search.entity.GoodsInfo">
         <id property="goodsId" column="goods_id"/>
         <result property="goodsName" column="goods_name"/>
         <result property="shelfTime" column="shelf_time"/>
@@ -10,7 +10,7 @@
         <result property="spuId" column="spu_id"/>
         <result property="gtId" column="gt_id"/>
     </resultMap>
-    <resultMap id="goodsSearchMap" type="edu.nf.shopping.goodsearch.entity.GoodsSearch">
+    <resultMap id="goodsSearchMap" type="edu.nf.shopping.search.entity.GoodsSearch">
         <result property="goodsName" column="goods_name"/>
         <result property="skuPrice" column="sku_price"/>
         <result property="imgFile" column="img_file"/>

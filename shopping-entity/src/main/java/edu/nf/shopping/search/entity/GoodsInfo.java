@@ -1,17 +1,36 @@
 package edu.nf.shopping.search.entity;
 
+
+
+
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
+
 import java.util.Date;
 
 /**
- * @author Achine
- * @date 2020/2/26
+ * @author 彭哥
+ * @date 2020/3/23
  */
+
+@Document(indexName = "users",type = "_doc")
 public class GoodsInfo {
+
+    @Id
     private String goodsId;
+    @Field(type = FieldType.Text,analyzer = "ik_max_word")
     private String goodsName;
+    @Field(type = FieldType.Date)
     private Date shelfTime;
+    @Field(type = FieldType.Byte)
     private Byte isShelf;
+    @Field(type = FieldType.Text,analyzer = "ik_max_word")
     private String spuId;
+    @Field(type = FieldType.Text,analyzer = "ik_max_word")
+    private String gtId;
 
     public String getGoodsId() {
         return goodsId;
@@ -52,5 +71,12 @@ public class GoodsInfo {
     public void setSpuId(String spuId) {
         this.spuId = spuId;
     }
-    
+
+    public String getGtId() {
+        return gtId;
+    }
+
+    public void setGtId(String gtId) {
+        this.gtId = gtId;
+    }
 }

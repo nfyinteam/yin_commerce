@@ -37,23 +37,23 @@ public class UsesrServiceTest {
 
     @Test
     void addUserByPhone(){
-        UserInfo userInfo=new UserInfo();
+        /*UserInfo userInfo=new UserInfo();
         userInfo.setUid("13763104156");
         userInfo.setUserTel("13763104156");
         userInfo.setUserPassword("123456");
         userInfo.setUserName("Vera");
-        service.addUserByPhone(userInfo);
+        service.addUserByPhone(userInfo);*/
     }
 
 
     @Test
     void addUserByEmail(){
-        UserInfo userInfo=new UserInfo();
+        /*UserInfo userInfo=new UserInfo();
         userInfo.setUid("2186710485");
         userInfo.setUserEmail("2186710485@qq.com");
         userInfo.setUserPassword("123456");
         userInfo.setUserName("Lucy");
-        service.addUserByEmail(userInfo);
+        service.addUserByEmail(userInfo);*/
     }
 
 }

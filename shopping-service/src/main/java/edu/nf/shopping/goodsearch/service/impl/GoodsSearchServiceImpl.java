@@ -1,8 +1,8 @@
 package edu.nf.shopping.goodsearch.service.impl;
 
 import edu.nf.shopping.goodsearch.dao.GoodsSearchDao;
-import edu.nf.shopping.goodsearch.entity.GoodsSearch;
 import edu.nf.shopping.goodsearch.service.GoodsSearchService;
+import edu.nf.shopping.search.entity.GoodsSearch;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

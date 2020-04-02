@@ -1,6 +1,6 @@
 package edu.nf.shopping.goodsearch.dao;
 
-import edu.nf.shopping.goodsearch.entity.GoodsSearch;
+import edu.nf.shopping.search.entity.GoodsSearch;
 
 import java.util.List;
 

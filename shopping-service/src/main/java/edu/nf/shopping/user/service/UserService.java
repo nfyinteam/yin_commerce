@@ -1,6 +1,5 @@
 package edu.nf.shopping.user.service;
 import edu.nf.shopping.user.entity.UserInfo;
-import org.springframework.security.core.userdetails.UserDetailsService;
 
 /**
  * @author Vera
