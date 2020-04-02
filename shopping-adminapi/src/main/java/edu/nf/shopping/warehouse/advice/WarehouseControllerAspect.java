@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @author lishun
  * @date 2020/3/31
  */
-@ControllerAdvice("edu.nf.shopping.warehouse.controller")
-public class ControllerAspect {
+@ControllerAdvice({"edu.nf.shopping.warehouse.controller"})
+public class WarehouseControllerAspect {
     @ExceptionHandler(WarehouseException.class)
     @ResponseBody
     public ResponseVO loginException(GoodsException e){

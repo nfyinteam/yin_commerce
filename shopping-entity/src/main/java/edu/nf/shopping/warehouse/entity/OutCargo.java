@@ -64,7 +64,7 @@ public class OutCargo {
         return outTime;
     }
 
-    public void setOutTime(SimpleDateFormat outTime) {
+    public void setOutTime(Date outTime) {
         this.outTime = outTime;
     }
 

@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @date 2019/11/14
  */
 @ControllerAdvice({"edu.nf.shopping.goods.controller"})
-public class ControllerAspect {
+public class GoodControllerAspect {
 
     @ExceptionHandler(GoodsException.class)
     @ResponseBody
-    public ResponseVO loginException(GoodsException e){
+    public ResponseVO goodsException(GoodsException e){
         ResponseVO vo = new ResponseVO();
         vo.setCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
         vo.setMessage(e.getMessage());
