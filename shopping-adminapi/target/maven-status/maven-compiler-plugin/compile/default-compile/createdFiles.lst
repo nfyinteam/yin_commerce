@@ -1,0 +1,14 @@
+edu\nf\shopping\goods\controller\ImgeUploadController.class
+edu\nf\shopping\vo\RegionVO.class
+edu\nf\shopping\config\SwaggerConfig.class
+edu\nf\shopping\config\RestConfig.class
+edu\nf\shopping\vo\ResponseVO.class
+edu\nf\shopping\warehouse\advice\WarehouseControllerAspect.class
+edu\nf\shopping\config\CorsConfig.class
+edu\nf\shopping\vo\BaseController.class
+edu\nf\shopping\warehouse\controller\OutCargoController.class
+edu\nf\shopping\AdminApiApplication.class
+edu\nf\shopping\page\RegionContentController.class
+edu\nf\shopping\page\PageRegionController.class
+edu\nf\shopping\goods\advice\GoodControllerAspect.class
+edu\nf\shopping\warehouse\controller\CargoInfoController.class

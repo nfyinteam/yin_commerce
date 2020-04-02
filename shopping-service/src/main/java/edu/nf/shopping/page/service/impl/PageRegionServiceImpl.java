@@ -8,6 +8,8 @@ import edu.nf.shopping.page.entity.PageRegion;
 import edu.nf.shopping.page.entity.RegionContent;
 import edu.nf.shopping.util.UUIDUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -29,6 +31,7 @@ public class PageRegionServiceImpl implements PageRegionService {
     private RegionContentDao regionContentDao;
 
     @Override
+    @Cacheable(value = "commentCache", key = "'pageRegion-'+#state[0]")
     public List<PageRegion> listPageRegion(String[] state) {
         try{
             List<PageRegion> list=pageRegionDao.listPageRegion(state);
@@ -43,6 +46,7 @@ public class PageRegionServiceImpl implements PageRegionService {
     }
 
     @Override
+    @CacheEvict(value = "pageCache", key = "'pageRegion-0'",beforeInvocation=true)
     public PageRegion addPageRegion(String regionSign,String index,String editNumber,String state) {
         try{
             if("".equals(regionSign)|| regionSign==null || Integer.parseInt(editNumber)<=0){
@@ -74,6 +78,7 @@ public class PageRegionServiceImpl implements PageRegionService {
     }
 
     @Override
+    @CacheEvict(value = "pageCache", key = "'pageRegion-0'",beforeInvocation=true)
     public void updatePageRegion(List<PageRegion> list) {
         try{
             pageRegionDao.updatePageRegionIndex(list);
@@ -84,6 +89,7 @@ public class PageRegionServiceImpl implements PageRegionService {
     }
 
     @Override
+    @CacheEvict(value = "pageCache", key = "'pageRegion-1'",beforeInvocation=true)
     public void submitPageRegion(List<PageRegion> list) {
         try{
             //更新区域index和状态
@@ -104,6 +110,7 @@ public class PageRegionServiceImpl implements PageRegionService {
     }
 
     @Override
+    @CacheEvict(value = "pageCache", key = "'pageRegion-0'",beforeInvocation=true)
     public void deletePageRegionByState(List<PageRegion> pageRegions,String[] state) {
         try{
             if(pageRegions.size()>0){

@@ -5,6 +5,7 @@ import edu.nf.shopping.goods.entity.*;
 import edu.nf.shopping.goods.exception.GoodsException;
 import edu.nf.shopping.goods.service.GoodsAllInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -39,7 +40,7 @@ public class GoodsAllInfoServiceImpl implements GoodsAllInfoService {
 
 
     @Override
-    @Cacheable(value = "cache1", key = "#goodId", condition = "#goodId != null or #goodId != ''"  )
+    @CacheEvict(value = "goodsCache", key = "#goodId", condition = "#goodId != null or #goodId != ''", beforeInvocation = true)
     public GoodsAllInfo getGoodsInfoById(String goodId) {
         try {
             GoodsAllInfo allInfo = new GoodsAllInfo();

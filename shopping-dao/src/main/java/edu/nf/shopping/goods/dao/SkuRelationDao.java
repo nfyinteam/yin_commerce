@@ -20,6 +20,13 @@ public interface SkuRelationDao {
     List<SkuRelation> listSkuRelationByGoodsId(String goodsId);
 
     /**
+     * 根据SKU编号查询Sku关联信息
+     * @param skuId SKU编号
+     * @return
+     */
+    List<SkuRelation> listSkuRelationBySkuId(String skuId);
+
+    /**
      * 根据商品编号查询该商品有的Key
      * @param goodsId 商品编号
      * @return
