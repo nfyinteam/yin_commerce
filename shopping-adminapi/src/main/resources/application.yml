@@ -32,5 +32,12 @@ spring:
     # 单词请求所有文件容量不能大于100MB
     max-request-size: 2000MB
   # 包含dao的yml配置文件,对应的是application-xxx.yml文件的xxx名称
+  # es配置
+  spring:
+    elasticsearch:
+      rest:
+        uris: http://127.0.0.1:9200
+        connection-timeout: 2s
+
   profiles:
     include: dao, service
