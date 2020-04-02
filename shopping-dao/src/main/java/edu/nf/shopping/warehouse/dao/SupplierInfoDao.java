@@ -34,5 +34,5 @@ public interface SupplierInfoDao {
      * 查询供应商商品
      * @return
      */
-    List<SupplierInfo> listSupplierGoodsById();
+    List<SupplierInfo> listSupplierGoodsById(Integer id);
 }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.nf.shopping.logistics.dao.CityDao">
+    <resultMap id="cityMap" type="edu.nf.shopping.logistics.entity.City">
+        <id column="c_id" property="cid"/>
+        <result column="p_id" property="pid"/>
+        <result column="c_name" property="cname"/>
+        <result property="type" column="type"/>
+    </resultMap>
+    <select id="getProvince" resultMap="cityMap">
+        SELECT * FROM city WHERE p_id = 1
+    </select>
+    <select id="getCity" resultMap="cityMap" parameterType="java.lang.Integer">
+        SELECT * FROM city WHERE p_id = #{pid}
+    </select>
+    <select id="getArea" resultMap="cityMap" parameterType="java.lang.Integer">
+        SELECT * FROM city WHERE p_id = #{pid}
+    </select>
+</mapper>

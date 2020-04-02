@@ -83,6 +83,12 @@
     <update id="updateCargoInfo" parameterType="java.lang.String">
         UPDATE cargo_info SET put_price = #{putPrice} ,put_admin =#{putAdmin} , WHERE cargo_id = #{cargoId} ;
     </update>
+    <update id="updateCargoALibrary" parameterType="java.lang.String">
+        UPDATE cargo_info SET is_out = 1 WHERE cargo_id = #{cargoId}
+    </update>
+    <update id="updateCargoWarehousing" parameterType="java.lang.String">
+        UPDATE cargo_info SET is_out = 0 WHERE cargo_id = #{cargoId}
+    </update>
     <delete id="deleteCargoInfo" parameterType="java.lang.String">
         DELETE FROM cargo_info WHERE cargo_id  = #{cargoId}
     </delete>
@@ -99,4 +105,21 @@
         LEFT JOIN spu_info si on g.spu_id = si.spu_id
         LEFT JOIN goods_type gt on g.gt_id = gt.gt_id
     </select>
+    <select id="getCargoInfoById" resultType="edu.nf.shopping.warehouse.entity.CargoInfo">
+        SELECT supplier_name,supplier_address,supplier_tel,value_name,goods_name,gt_name
+        FROM supplier_info l
+        LEFT JOIN cargo_info c ON l.supplier_id = c.supplier_id
+        LEFT JOIN sku_relation s  ON s.sku_id = c.sku_id
+        LEFT JOIN key_info k ON s.key_id = k.key_id
+        LEFT JOIN value_info v ON s.value_id = v.value_id
+        LEFT JOIN sku_info u ON s.sku_id = u.sku_id
+        LEFT JOIN goods_info g ON u.goods_id = g.goods_id
+        LEFT JOIN spu_info si on g.spu_id = si.spu_id
+        LEFT JOIN goods_type gt on g.gt_id = gt.gt_id
+        WHERE c.cargo_id = #{cargoId}
+    </select>
+    <select id="getCargoIdBySkuId" resultType="java.lang.String">
+        SELECT  cargo_id FROM  cargo_info where sku_id = #{skuid};
+    </select>
+
 </mapper>
