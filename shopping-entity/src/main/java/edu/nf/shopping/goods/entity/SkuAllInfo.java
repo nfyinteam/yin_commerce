@@ -8,7 +8,16 @@ import java.util.List;
  */
 public class SkuAllInfo {
     private SkuInfo skuInfo;
+    private ImgsInfo imgsInfo;
     private List<SkuRelation> skuRelations;
+
+    public ImgsInfo getImgsInfo() {
+        return imgsInfo;
+    }
+
+    public void setImgsInfo(ImgsInfo imgsInfo) {
+        this.imgsInfo = imgsInfo;
+    }
 
     public SkuInfo getSkuInfo() {
         return skuInfo;

@@ -27,14 +27,7 @@ public class UserEnable {
      * 到期时间
      */
     private Date endTime;
-    /**
-     * 封号理由
-     */
-    private String remarks;
-    /**
-     * 审核编号
-     */
-    private String eeId;
+
 
     public String getEid() {
         return eid;
@@ -76,19 +69,5 @@ public class UserEnable {
         this.endTime = endTime;
     }
 
-    public String getRemarks() {
-        return remarks;
-    }
 
-    public void setRemarks(String remarks) {
-        this.remarks = remarks;
-    }
-
-    public String getEeId() {
-        return eeId;
-    }
-
-    public void setEeId(String eeId) {
-        this.eeId = eeId;
-    }
 }

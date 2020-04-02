@@ -1,7 +1,6 @@
 package edu.nf.shopping.user.service;
 
 import edu.nf.shopping.user.entity.UserInfo;
-import org.elasticsearch.client.security.user.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -19,8 +18,8 @@ public class UsesrServiceTest {
     @Test
     void userLoginByPhone(){
         UserInfo userInfo=new UserInfo();
-        userInfo.setUserTel("13727074222");
-        userInfo.setUserPassword("qq520340");
+        userInfo.setTel("13727074222");
+        userInfo.setPassword("qq520340");
         UserInfo user=service.userLoginByPhone(userInfo);
         System.out.println(user);
 
@@ -30,7 +29,7 @@ public class UsesrServiceTest {
     void userLoginByEmail(){
         UserInfo userInfo=new UserInfo();
         userInfo.setUserEmail("a291774405@vip.qq.com");
-        userInfo.setUserPassword("qq520340");
+        userInfo.setPassword("qq520340");
         UserInfo user=service.userLoginByEmail(userInfo);
         System.out.println(user);
     }

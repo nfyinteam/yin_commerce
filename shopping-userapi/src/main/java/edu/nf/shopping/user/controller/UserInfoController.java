@@ -28,7 +28,7 @@ public class UserInfoController extends BaseController {
     public ResponseVO userLogin(String userId,String passWord, HttpServletRequest request) {
         UserInfo  userInfo=service.userLogin(userId,passWord);
         if(userInfo!=null){
-            request.getSession().setAttribute("userId",userInfo.getUid());
+            request.getSession().setAttribute("userId",userInfo.getUserId());
             System.out.println(request.getSession().getId());
         }
         return success(200,"登录成功！");

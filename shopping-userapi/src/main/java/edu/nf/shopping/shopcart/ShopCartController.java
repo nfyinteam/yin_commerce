@@ -29,7 +29,7 @@ public class ShopCartController extends BaseController {
     @CrossOrigin(origins = "*", methods = {RequestMethod.GET})
     public ResponseVO listAllShopCartGoods(HttpSession session){
         UserInfo user= (UserInfo) session.getAttribute("user");
-        List<ShopCartGoods> list=service.listShoppingCart(user.getUid());
+        List<ShopCartGoods> list=service.listShoppingCart(user.getUserId());
         if(list!=null){
             return success(list);
         }
@@ -75,13 +75,13 @@ public class ShopCartController extends BaseController {
         if(userInfo == null){
             return fail(500,"对不起，您购物车已有该商品！");
         }
-        ShopCartGoods shopCartGoods=service.findeShopCartGoods(userInfo.getUid(), skuId, valueName);
+        ShopCartGoods shopCartGoods=service.findeShopCartGoods(userInfo.getUserId(), skuId, valueName);
         if(shopCartGoods==null){
             String uuid=UUIDUtils.createUUID();
             ShoppingCart shoppingCart=new ShoppingCart();
             SkuRelation skuRelation=new SkuRelation();
             SkuInfo skuInfo=new SkuInfo();
-            shoppingCart.setUid(userInfo.getUid());
+            shoppingCart.setUid(userInfo.getUserId());
             shoppingCart.setScId(uuid);
             skuInfo.setSkuId(skuId);
             skuRelation.setSkuInfo(skuInfo);

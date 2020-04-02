@@ -28,7 +28,8 @@ public class SkuAllInfoController extends BaseController {
             @ApiImplicitParam(name = "SkuId", value = "sku编号", required = true)
     })
     @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})
-    public ResponseVO<List<SkuAllInfo>> getSkuAllInfo(String ... skuId){
-        return success(skuInfoService.getSkuAllInfoBySkuId(skuId));
+    public ResponseVO<List<SkuAllInfo>> getSkuAllInfo(String[] skuId){
+        List<SkuAllInfo> list = skuInfoService.getSkuAllInfoBySkuId(skuId);
+        return success(list);
     }
 }

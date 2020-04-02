@@ -1,7 +1,9 @@
 package edu.nf.shopping.goods.service.impl;
 
+import edu.nf.shopping.goods.dao.GoodsImgsDao;
 import edu.nf.shopping.goods.dao.SkuInfoDao;
 import edu.nf.shopping.goods.dao.SkuRelationDao;
+import edu.nf.shopping.goods.entity.ImgsInfo;
 import edu.nf.shopping.goods.entity.SkuAllInfo;
 import edu.nf.shopping.goods.entity.SkuInfo;
 import edu.nf.shopping.goods.exception.GoodsException;
@@ -30,14 +32,22 @@ public class SkuInfoServiceImpl implements SkuInfoService {
     @Autowired
     private SkuRelationDao skuRelationDao;
 
+    @Autowired
+    private GoodsImgsDao goodsImgsDao;
+
     @Override
     @Cacheable(value = "goodsCache", key = "#skuId", condition = "#skuId != null or #skuId != ''")
     public SkuAllInfo getSkuAllInfoBySkuId(String skuId) {
         SkuAllInfo skuAllInfo = new SkuAllInfo();
         try {
-            skuAllInfo.setSkuInfo(skuInfoDao.getSkuInfoBySkuId(skuId));
-            if(skuAllInfo.getSkuInfo() == null){
+            SkuInfo skuInfo = skuInfoDao.getSkuInfoBySkuId(skuId);
+            if(skuInfo == null){
                 throw new SkuInfoException("该SKU不存在");
+            }
+            skuAllInfo.setSkuInfo(skuInfo);
+            ImgsInfo imgsInfo = goodsImgsDao.listFirstGoodsImgsByGoodsId(skuInfo.getGood().getGoodsId()).get(0);
+            if(imgsInfo != null){
+                skuAllInfo.setImgsInfo(imgsInfo);
             }
             skuAllInfo.setSkuRelations(skuRelationDao.listSkuRelationBySkuId(skuId));
         }catch (Exception e){
@@ -48,22 +58,28 @@ public class SkuInfoServiceImpl implements SkuInfoService {
 
     @Override
     @Cacheable(value = "goodsCache", key = "#skuId", condition = "#skuId != null")
-    public List<SkuAllInfo> getSkuAllInfoBySkuId(String... skuId) {
-        List<SkuAllInfo> list = new ArrayList<>();
+    public List<SkuAllInfo> getSkuAllInfoBySkuId(String[] skuId) {
         try {
+            List<SkuAllInfo> list = new ArrayList<>();
             for (String id : skuId){
                 SkuAllInfo skuAllInfo = new SkuAllInfo();
-                skuAllInfo.setSkuInfo(skuInfoDao.getSkuInfoBySkuId(id));
-                if(skuAllInfo.getSkuInfo() == null){
+                SkuInfo skuInfo = skuInfoDao.getSkuInfoBySkuId(id);
+                if(skuInfo == null){
                     throw new SkuInfoException("该SKU不存在");
+                }
+                skuAllInfo.setSkuInfo(skuInfo);
+                ImgsInfo imgsInfo = goodsImgsDao.listFirstGoodsImgsByGoodsId(skuInfo.getGood().getGoodsId()).get(0);
+                if(imgsInfo != null){
+                    skuAllInfo.setImgsInfo(imgsInfo);
                 }
                 skuAllInfo.setSkuRelations(skuRelationDao.listSkuRelationBySkuId(id));
                 list.add(skuAllInfo);
             }
+            return list;
         }catch (Exception e){
+            e.printStackTrace();
             throw new SkuInfoException(e);
         }
-        return list;
     }
 
     @Override

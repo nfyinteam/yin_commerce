@@ -8,7 +8,6 @@
         <result property="skuStock" column="sku_stock"/>
         <result property="skuSales" column="sku_sales"/>
         <association property="good" resultMap="goodsMap"/>
-        <collection property="skuRelationList" resultMap="skuRelationMap"/>
     </resultMap>
 
     <resultMap id="goodsMap" type="edu.nf.shopping.goods.entity.GoodsInfo">

@@ -1,16 +1,18 @@
 package edu.nf.shopping.user.entity;
 
 
+import lombok.Data;
 
 /**
  * @author re
  * @date 2020/3/22
  */
+@Data
 public class UserInfo {
     /**
      * 用户编号
      */
-    private String uid;
+    private String userId;
     /**
      * 用户名称
      */
@@ -22,15 +24,15 @@ public class UserInfo {
     /**
      * 用户手机号
      */
-    private String userTel;
+    private String tel;
     /**
      * 用户密码
      */
-    private String userPassword;
+    private String password;
     /**
      * 用户性别
      */
-    private String userSex;
+    private String sex;
     /**
      * 用户真实姓名
      */
@@ -38,82 +40,11 @@ public class UserInfo {
     /**
      * 用户身份证号码
      */
-    private String cardNum;
+    private String carNumber;
     /**
      * 用户头像编号
      */
-    private UserFace userFace;
+    private UserFace face;
 
-    public String getUid() {
-        return uid;
-    }
-
-    public void setUid(String uid) {
-        this.uid = uid;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getUserEmail() {
-        return userEmail;
-    }
-
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
-    }
-
-    public String getUserTel() {
-        return userTel;
-    }
-
-    public void setUserTel(String userTel) {
-        this.userTel = userTel;
-    }
-
-    public String getUserPassword() {
-        return userPassword;
-    }
-
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
-    }
-
-    public String getUserSex() {
-        return userSex;
-    }
-
-    public void setUserSex(String userSex) {
-        this.userSex = userSex;
-    }
-
-    public String getRealName() {
-        return realName;
-    }
-
-    public void setRealName(String realName) {
-        this.realName = realName;
-    }
-
-    public String getCardNum() {
-        return cardNum;
-    }
-
-    public void setCardNum(String cardNum) {
-        this.cardNum = cardNum;
-    }
-
-    public UserFace getUserFace() {
-        return userFace;
-    }
-
-    public void setUserFace(UserFace userFace) {
-        this.userFace = userFace;
-    }
 
 }
