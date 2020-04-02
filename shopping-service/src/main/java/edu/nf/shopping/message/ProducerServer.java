@@ -12,16 +12,16 @@ import java.util.UUID;
  * @author Bull fighters
  * @date 2020/3/14
  */
-@Service
+/*@Service
 public class ProducerServer {
 
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
-    /**
+    *//**
      * 发送文本消息
      * @param aaa
-     */
+     *//*
     public void sendMessage(Object aaa,Integer delayTime){
         //创建消息的唯一ID
         CorrelationData correlationData = new CorrelationData();
@@ -34,4 +34,4 @@ public class ProducerServer {
             return message;
         }, correlationData);
     }
-}
+}*/

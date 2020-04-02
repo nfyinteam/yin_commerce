@@ -2,7 +2,7 @@ package edu.nf.shopping.comment.service;
 
 import com.github.pagehelper.PageInfo;
 import edu.nf.shopping.comment.entity.Comment;
-import edu.nf.shopping.message.ProducerServer;
+//import edu.nf.shopping.message.ProducerServer;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,8 +20,8 @@ public class CommentServiceTest {
     @Autowired
     private CommentService commentService;
 
-    @Autowired
-    private ProducerServer producerServer;
+//    @Autowired
+//    private ProducerServer producerServer;
 
     @Autowired
     private StringRedisTemplate stringRedisTemplate;

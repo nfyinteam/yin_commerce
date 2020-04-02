@@ -4,8 +4,8 @@
     <option name="languageLevel" value="ES6" />
   </component>
   <component name="MavenProjectsManager">
-    <option name="ignoredFiles">
-      <set>
+    <option name="originalFiles">
+      <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/shopping-adminapi/pom.xml" />
         <option value="$PROJECT_DIR$/shopping-dao/pom.xml" />
@@ -13,7 +13,8 @@
         <option value="$PROJECT_DIR$/shopping-service/pom.xml" />
         <option value="$PROJECT_DIR$/shopping-userapi/pom.xml" />
         <option value="$PROJECT_DIR$/shopping-util/pom.xml" />
-      </set>
+      </list>
     </option>
   </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_13" default="false" project-jdk-name="1.8 (3)" project-jdk-type="JavaSDK" />
 </project>

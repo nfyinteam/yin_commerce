@@ -1,7 +1,6 @@
 package edu.nf.shopping.page.service.impl;
 
 import edu.nf.shopping.page.dao.RegionContentDao;
-import edu.nf.shopping.page.entity.PageRegion;
 import edu.nf.shopping.page.entity.RegionContent;
 import edu.nf.shopping.page.exception.PageException;
 import edu.nf.shopping.page.service.RegionContentService;
@@ -42,7 +41,7 @@ public class RegionContentServiceImpl implements RegionContentService {
     public void updateRegionImage(MultipartFile file,String link, String prId, String index) {
         try{
             List<RegionContent> list=new ArrayList<>();
-            String imageName=UUIDUtils.createUUID()+".png";
+            String imageName= UUIDUtils.createUUID()+".png";
             RegionContent content1=new RegionContent();
             content1.setState("0");
             content1.setPrId(prId);

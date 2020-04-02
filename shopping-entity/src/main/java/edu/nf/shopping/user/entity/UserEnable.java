@@ -18,15 +18,15 @@ public class UserEnable {
     /**
      * 是否到期
      */
-    private byte isenable;
+    private Integer isEnable;
     /**
      * 封禁时间
      */
-    private Date jointime;
+    private Date joinTime;
     /**
      * 到期时间
      */
-    private Date endtime;
+    private Date endTime;
     /**
      * 封号理由
      */
@@ -34,15 +34,7 @@ public class UserEnable {
     /**
      * 审核编号
      */
-    private String eeid;
-
-    public String getEeid() {
-        return eeid;
-    }
-
-    public void setEeid(String eeid) {
-        this.eeid = eeid;
-    }
+    private String eeId;
 
     public String getEid() {
         return eid;
@@ -60,28 +52,28 @@ public class UserEnable {
         this.uid = uid;
     }
 
-    public byte getIsenable() {
-        return isenable;
+    public Integer getIsEnable() {
+        return isEnable;
     }
 
-    public void setIsenable(byte isenable) {
-        this.isenable = isenable;
+    public void setIsEnable(Integer isEnable) {
+        this.isEnable = isEnable;
     }
 
-    public Date getJointime() {
-        return jointime;
+    public Date getJoinTime() {
+        return joinTime;
     }
 
-    public void setJointime(Date jointime) {
-        this.jointime = jointime;
+    public void setJoinTime(Date joinTime) {
+        this.joinTime = joinTime;
     }
 
-    public Date getEndtime() {
-        return endtime;
+    public Date getEndTime() {
+        return endTime;
     }
 
-    public void setEndtime(Date endtime) {
-        this.endtime = endtime;
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
     }
 
     public String getRemarks() {
@@ -92,5 +84,11 @@ public class UserEnable {
         this.remarks = remarks;
     }
 
+    public String getEeId() {
+        return eeId;
+    }
 
+    public void setEeId(String eeId) {
+        this.eeId = eeId;
+    }
 }

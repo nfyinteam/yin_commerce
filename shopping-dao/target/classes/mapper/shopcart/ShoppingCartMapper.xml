@@ -32,26 +32,31 @@
         <association property="value" resultMap="valueMap"/>
         <association property="skuInfo" resultMap="skuInfoMap"/>
     </resultMap>
+
     <resultMap id="valueMap" type="edu.nf.shopping.goods.entity.ValueInfo">
         <id property="valueId" column="value_id"/>
         <result property="valueName" column="value_name"/>
         <association property="keyInfo" resultMap="keyMap"/>
     </resultMap>
+
     <resultMap id="keyMap" type="edu.nf.shopping.goods.entity.KeyInfo">
         <id property="keyId" column="key_id"/>
         <result property="keyName" column="key_name"/>
         <association property="goodsType" resultMap="goodTypeMap"/>
         <association property="keyType" resultMap="keyTypeMap"/>
     </resultMap>
+
     <resultMap id="goodTypeMap" type="edu.nf.shopping.goods.entity.GoodsType">
         <id property="gtId" column="gt_id"/>
         <result property="gtName" column="gt_name"/>
         <result property="pId" column="p_id"/>
     </resultMap>
+
     <resultMap id="keyTypeMap" type="edu.nf.shopping.goods.entity.KeyType">
         <id property="ktId" column="kt_id"/>
         <result property="ktName" column="kt_name"/>
     </resultMap>
+
     <resultMap id="skuInfoMap" type="edu.nf.shopping.goods.entity.SkuInfo">
         <id property="skuId" column="sku_id"/>
         <result property="skuPrice" column="sku_price"/>
@@ -59,6 +64,7 @@
         <result property="skuStock" column="sku_stock"/>
         <association property="good" resultMap="goodsMap"/>
     </resultMap>
+
     <resultMap id="goodsMap" type="edu.nf.shopping.goods.entity.GoodsInfo">
         <id property="goodsId" column="goods_id"/>
         <result property="goodsName" column="goods_name"/>
@@ -67,6 +73,7 @@
         <association property="spuInfo" resultMap="spuInfoMap"/>
         <association property="goodsType" resultMap="goodsTypeMap"/>
     </resultMap>
+
     <resultMap id="spuInfoMap" type="edu.nf.shopping.goods.entity.SpuInfo">
         <id property="spuId" column="spu_id"/>
         <result property="spuName" column="spu_name"/>
@@ -74,6 +81,7 @@
         <result property="listTime" column="list_time"/>
         <result property="spuRemark" column="spu_remark"/>
     </resultMap>
+
     <resultMap id="goodsTypeMap" type="edu.nf.shopping.goods.entity.GoodsType">
         <id property="gtId" column="gt_id"/>
         <result property="gtName" column="gt_name"/>

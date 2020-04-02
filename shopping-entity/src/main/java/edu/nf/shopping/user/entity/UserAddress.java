@@ -8,7 +8,7 @@ public class UserAddress {
     /**
      * 用户地址编号
      */
-    private String addressid;
+    private String addressId;
     /**
      * 用户编号
      */
@@ -16,30 +16,26 @@ public class UserAddress {
     /**
      * city表下的c_id
      */
-    private int addressregion;
+    private City city;
     /**
      * 用户详细地址
      */
-    private String addressname;
+    private String addressName;
     /**
      * 是否为首用
      */
-    private byte issel;
+    private Integer isSel;
 
-    public byte getIssel() {
-        return issel;
+    private String addressTel;
+
+    private String addressUser;
+
+    public String getAddressId() {
+        return addressId;
     }
 
-    public void setIssel(byte issel) {
-        this.issel = issel;
-    }
-
-    public String getAddressid() {
-        return addressid;
-    }
-
-    public void setAddressid(String addressid) {
-        this.addressid = addressid;
+    public void setAddressId(String addressId) {
+        this.addressId = addressId;
     }
 
     public String getUid() {
@@ -50,22 +46,43 @@ public class UserAddress {
         this.uid = uid;
     }
 
-    public int getAddressregion() {
-        return addressregion;
+    public City getCity() {
+        return city;
     }
 
-    public void setAddressregion(int addressregion) {
-        this.addressregion = addressregion;
+    public void setCity(City city) {
+        this.city = city;
     }
 
-    public String getAddressname() {
-        return addressname;
+    public String getAddressName() {
+        return addressName;
     }
 
-    public void setAddressname(String addressname) {
-        this.addressname = addressname;
+    public void setAddressName(String addressName) {
+        this.addressName = addressName;
     }
 
+    public Integer getIsSel() {
+        return isSel;
+    }
 
+    public void setIsSel(Integer isSel) {
+        this.isSel = isSel;
+    }
 
+    public String getAddressTel() {
+        return addressTel;
+    }
+
+    public void setAddressTel(String addressTel) {
+        this.addressTel = addressTel;
+    }
+
+    public String getAddressUser() {
+        return addressUser;
+    }
+
+    public void setAddressUser(String addressUser) {
+        this.addressUser = addressUser;
+    }
 }

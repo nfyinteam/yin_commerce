@@ -14,35 +14,35 @@ public class UserInfo {
     /**
      * 用户名称
      */
-    private String uname;
+    private String userName;
     /**
      * 用户邮箱
      */
-    private String uemail;
+    private String userEmail;
     /**
      * 用户手机号
      */
-    private String utel;
+    private String userTel;
     /**
      * 用户密码
      */
-    private String upassword;
+    private String userPassword;
     /**
      * 用户性别
      */
-    private String usex;
+    private String userSex;
     /**
      * 用户真实姓名
      */
-    private String realname;
+    private String realName;
     /**
      * 用户身份证号码
      */
-    private String carnumber;
+    private String cardNum;
     /**
      * 用户头像编号
      */
-    private String factid;
+    private UserFace userFace;
 
     public String getUid() {
         return uid;
@@ -52,68 +52,68 @@ public class UserInfo {
         this.uid = uid;
     }
 
-    public String getUname() {
-        return uname;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUname(String uname) {
-        this.uname = uname;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public String getUemail() {
-        return uemail;
+    public String getUserEmail() {
+        return userEmail;
     }
 
-    public void setUemail(String uemail) {
-        this.uemail = uemail;
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
     }
 
-    public String getUtel() {
-        return utel;
+    public String getUserTel() {
+        return userTel;
     }
 
-    public void setUtel(String utel) {
-        this.utel = utel;
+    public void setUserTel(String userTel) {
+        this.userTel = userTel;
     }
 
-    public String getUpassword() {
-        return upassword;
+    public String getUserPassword() {
+        return userPassword;
     }
 
-    public void setUpassword(String upassword) {
-        this.upassword = upassword;
+    public void setUserPassword(String userPassword) {
+        this.userPassword = userPassword;
     }
 
-    public String getUsex() {
-        return usex;
+    public String getUserSex() {
+        return userSex;
     }
 
-    public void setUsex(String usex) {
-        this.usex = usex;
+    public void setUserSex(String userSex) {
+        this.userSex = userSex;
     }
 
-    public String getRealname() {
-        return realname;
+    public String getRealName() {
+        return realName;
     }
 
-    public void setRealname(String realname) {
-        this.realname = realname;
+    public void setRealName(String realName) {
+        this.realName = realName;
     }
 
-    public String getCarnumber() {
-        return carnumber;
+    public String getCardNum() {
+        return cardNum;
     }
 
-    public void setCarnumber(String carnumber) {
-        this.carnumber = carnumber;
+    public void setCardNum(String cardNum) {
+        this.cardNum = cardNum;
     }
 
-    public String getFactid() {
-        return factid;
+    public UserFace getUserFace() {
+        return userFace;
     }
 
-    public void setFactid(String factid) {
-        this.factid = factid;
+    public void setUserFace(UserFace userFace) {
+        this.userFace = userFace;
     }
 
 }
