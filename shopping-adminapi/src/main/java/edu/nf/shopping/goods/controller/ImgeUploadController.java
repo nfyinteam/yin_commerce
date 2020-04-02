@@ -1,4 +1,7 @@
 package edu.nf.shopping.goods.controller;
+import edu.nf.shopping.goods.entity.GoodsImgs;
+import edu.nf.shopping.goods.entity.GoodsInfo;
+import edu.nf.shopping.goods.service.InsertGoodImgService;
 import edu.nf.shopping.util.UploadAddressUtils;
 import edu.nf.shopping.vo.BaseController;
 import edu.nf.shopping.vo.ResponseVO;
@@ -12,10 +15,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -28,16 +28,19 @@ import java.io.IOException;
  */
 @RestController
 public class ImgeUploadController extends BaseController {
-    @RequestMapping(value="update_editImage",headers = "content-type=multipart/*")
-    @ApiOperation(value = "修改内容图片", notes = "修改区域的内容图片", httpMethod = "post")
+
+    @Autowired
+    private InsertGoodImgService service;
+
+    @PutMapping(value="/upload/goodImg",headers = "content-type=multipart/*")
+    @ApiOperation(value = "修改内容图片", notes = "修改区域的内容图片", httpMethod = "put")
     @ApiImplicitParams({
-            @ApiImplicitParam( name = "prId",value = "区域编号",required = true),
-            @ApiImplicitParam( name = "index",value = "图片顺序",required = true),
-            @ApiImplicitParam( name = "link",value = "图片链接",required = true),
+            @ApiImplicitParam( name = "goodsImgs",value = "商品图片信息",required = true),
             @ApiImplicitParam( name = "file",value = "图片文件",required = true),
     })
-    private ResponseVO updateGoodsImage(String prId,String index,String link,@RequestParam("file") MultipartFile file) throws IOException {
-        /*contentService.updateRegionImage(file,link,prId,index);*/
+    @CrossOrigin(origins = "*", methods = {RequestMethod.PUT})
+    private ResponseVO updateGoodsImage(GoodsImgs goodsImgs, @RequestParam("file") MultipartFile file) throws IOException {
+        service.addGoodImg(goodsImgs, file);
         return success(200,"");
     }
 }

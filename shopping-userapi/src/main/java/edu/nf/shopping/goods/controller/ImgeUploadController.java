@@ -1,19 +1,13 @@
 package edu.nf.shopping.goods.controller;
-
-import edu.nf.shopping.util.UploadAddressUtils;
+import edu.nf.shopping.goods.entity.GoodsImgs;
+import edu.nf.shopping.goods.service.InsertGoodImgService;
 import edu.nf.shopping.vo.BaseController;
 import edu.nf.shopping.vo.ResponseVO;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.FileSystemResource;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -24,18 +18,19 @@ import java.io.IOException;
  */
 @RestController
 public class ImgeUploadController extends BaseController {
-    @Autowired
-    private RestTemplate rest;
 
-    @PostMapping("/imgeUpload")
-    @ApiOperation(value = "上传图片", notes = "上传单张照片到文件服务器",
-            httpMethod = "post")
-    public ResponseVO uploadImage(MultipartFile file) throws IOException{
-        FileSystemResource resource = new FileSystemResource(file.getResource().getFile());
-        MultiValueMap<String, Object> param = new LinkedMultiValueMap<>();
-        param.add("file", resource);
-        HttpEntity<MultiValueMap<String, Object>> httpEntity = new HttpEntity<MultiValueMap<String, Object>>(param);
-        ResponseEntity<String> responseEntity = rest.exchange(UploadAddressUtils.GOODS_IMAGES, HttpMethod.POST, httpEntity, String.class);
-        return success(200);
+    @Autowired
+    private InsertGoodImgService service;
+
+    @PutMapping(value="/upload/goodImg",headers = "content-type=multipart/*")
+    @ApiOperation(value = "修改内容图片", notes = "修改区域的内容图片", httpMethod = "put")
+    @ApiImplicitParams({
+            @ApiImplicitParam( name = "goodsImgs",value = "商品图片信息",required = true),
+            @ApiImplicitParam( name = "file",value = "图片文件",required = true),
+    })
+    @CrossOrigin(origins = "*", methods = {RequestMethod.PUT})
+    private ResponseVO updateGoodsImage(GoodsImgs goodsImgs, @RequestParam("file") MultipartFile file) throws IOException {
+        service.addGoodImg(goodsImgs, file);
+        return success(200,"");
     }
 }
