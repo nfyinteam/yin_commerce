@@ -45,6 +45,9 @@ public class PageRegionServiceImpl implements PageRegionService {
     @Override
     public PageRegion addPageRegion(String regionSign,String index,String editNumber,String state) {
         try{
+            if("".equals(regionSign)|| regionSign==null || Integer.parseInt(editNumber)<=0){
+                throw new PageException("出错了哦！");
+            }
             PageRegion pageRegion=new PageRegion();
             pageRegion.setPrId(UUIDUtils.createUUID());
             pageRegion.setIndex(index);
@@ -61,7 +64,10 @@ public class PageRegionServiceImpl implements PageRegionService {
                 regionContentDao.addRegionInfo(info);
             }
             return pageRegion;
-        }catch (RuntimeException e){
+        }catch (PageException e){
+            throw e;
+        }
+        catch (RuntimeException e){
             e.printStackTrace();
             throw new PageException(e.getMessage());
         }
@@ -82,13 +88,14 @@ public class PageRegionServiceImpl implements PageRegionService {
         try{
             //更新区域index和状态
             pageRegionDao.submitPageRegion(list);
-            //将待删除的区域删除
-            pageRegionDao.deletePageRegionByState(null,new String[]{"3"});
             //查找草稿内容并更新
             for (PageRegion pageRegion : list) {
                 List<RegionContent> contents=regionContentDao.listRegionInfo(new String[]{"0"},pageRegion.getPrId());
                 regionContentDao.submitRegionContent(contents);
-            }//将待删除的内容删除
+            }
+            //将待删除的区域删除
+            pageRegionDao.deletePageRegionByState(null,new String[]{"3"});
+            //将待删除的内容删除
             regionContentDao.delRegionContent(null,new String[]{"3"});
         }catch (RuntimeException e){
             e.printStackTrace();
