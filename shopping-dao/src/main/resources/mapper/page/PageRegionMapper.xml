@@ -35,21 +35,21 @@
 
     <update id="updatePageRegionState" parameterType="string">
         update page_region set pr_state ='3'
-        where pr_id = #{prId} and pr_state='1'
+        where pr_id = #{region.prId} and pr_state='1'
     </update>
 
     <update id="submitPageRegion" parameterType="list">
         <foreach collection="list" item="region" separator=";">
             update page_region
             <set>
-                pr_index=#{region.index}, pr_state='1'
+                pr_index=#{region.index}, pr_state='1',start_time=#{region.startTime}
             </set>
             where pr_id = #{region.prId} and pr_state in ('1','2')
         </foreach>
     </update>
 
 
-    <delete id="deletePageRegionByState">
+    <delete id="deletePageRegionByState" parameterType="String">
         delete from page_region where pr_state in
         <foreach collection="param2" item="state" open="(" close=")" separator=",">
             #{state}
@@ -57,6 +57,7 @@
         <if test="param1!=null and param1!=''">
             and pr_id=#{param1}
         </if>
+
     </delete>
     
 </mapper>

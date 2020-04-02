@@ -3,7 +3,6 @@ package edu.nf.shopping.comment.controller;
 import com.github.pagehelper.PageInfo;
 import edu.nf.shopping.comment.entity.Comment;
 import edu.nf.shopping.comment.service.CommentService;
-import edu.nf.shopping.util.FileNameUtils;
 import edu.nf.shopping.vo.BaseController;
 import edu.nf.shopping.vo.ResponseVO;
 import io.swagger.annotations.ApiOperation;
@@ -58,12 +57,9 @@ public class CommentController extends BaseController {
     @RequestMapping(value="add_buyShow",headers = "content-type=multipart/*")
     @ApiOperation(value = "提交商品评价", notes = "用户提交买家秀",
             httpMethod = "post")
-    private ResponseVO addBuyShow(@RequestParam("file") MultipartFile[] files, HttpServletRequest request) throws IOException {
-        for (MultipartFile imageFile : files) {
-            String name= FileNameUtils.newFileName(imageFile.getOriginalFilename());
-            System.out.println(name);
-            //FileNameUtils.upload(UploadAddressUtils.COMMENT_IMAGES,imageFile.getInputStream(),name);
-        }
+    private ResponseVO addBuyShow(@RequestParam("imageFile")MultipartFile[] files,Comment comment,HttpServletRequest request) throws IOException {
+        comment.setUserId("1578412684666");
+        commentService.addBuyShow(files,comment);
         return success(200,"提交评价成功");
     }
 

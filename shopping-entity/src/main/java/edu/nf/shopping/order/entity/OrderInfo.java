@@ -1,5 +1,10 @@
 package edu.nf.shopping.order.entity;
 
+import edu.nf.shopping.admin.entity.StaffInfo;
+import edu.nf.shopping.user.entity.UserInfo;
+import edu.nf.shopping.warehouse.entity.CargoInfo;
+import edu.nf.shopping.warehouse.entity.City;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -13,6 +18,10 @@ public class OrderInfo {
      * 时间戳、主键
      */
     private String orderId;
+    /**
+     * 货物编号
+     */
+    private CargoInfo cargo;
     /**
      * 购买价格
      */
@@ -30,17 +39,17 @@ public class OrderInfo {
      */
     private Date buyTime;
     /**
-     * 客服人员编号
+     * 客服人员
      */
-    private String buyAdmin;
+    private StaffInfo buyAdmin;
     /**
-     * 用户编号
+     * 用户
      */
-    private String buyUser;
+    private UserInfo buyUser;
     /**
      * 收货地区
      */
-    private String collectRegion;
+    private City collectRegion;
     /**
      * 收货详细地址
      */
@@ -54,29 +63,9 @@ public class OrderInfo {
      */
     private String orderRemark;
     /**
-     * 订单状态编号
-     */
-    private Integer osId;
-    /**
-     * 关联订单编号表
+     * 订单状态
      */
     private OrderState orderState;
-
-    public OrderInfo(String orderId, BigDecimal buyPrice, BigDecimal cheapPrice, BigDecimal transportPrice, Date buyTime, String buyAdmin, String buyUser, String collectRegion, String collectAddress, String buyRemark, String orderRemark, Integer osId, OrderState orderState) {
-        this.orderId = orderId;
-        this.buyPrice = buyPrice;
-        this.cheapPrice = cheapPrice;
-        this.transportPrice = transportPrice;
-        this.buyTime = buyTime;
-        this.buyAdmin = buyAdmin;
-        this.buyUser = buyUser;
-        this.collectRegion = collectRegion;
-        this.collectAddress = collectAddress;
-        this.buyRemark = buyRemark;
-        this.orderRemark = orderRemark;
-        this.osId = osId;
-        this.orderState = orderState;
-    }
 
     public String getOrderId() {
         return orderId;
@@ -118,27 +107,27 @@ public class OrderInfo {
         this.buyTime = buyTime;
     }
 
-    public String getBuyAdmin() {
+    public StaffInfo getBuyAdmin() {
         return buyAdmin;
     }
 
-    public void setBuyAdmin(String buyAdmin) {
+    public void setBuyAdmin(StaffInfo buyAdmin) {
         this.buyAdmin = buyAdmin;
     }
 
-    public String getBuyUser() {
+    public UserInfo getBuyUser() {
         return buyUser;
     }
 
-    public void setBuyUser(String buyUser) {
+    public void setBuyUser(UserInfo buyUser) {
         this.buyUser = buyUser;
     }
 
-    public String getCollectRegion() {
+    public City getCollectRegion() {
         return collectRegion;
     }
 
-    public void setCollectRegion(String collectRegion) {
+    public void setCollectRegion(City collectRegion) {
         this.collectRegion = collectRegion;
     }
 
@@ -166,14 +155,6 @@ public class OrderInfo {
         this.orderRemark = orderRemark;
     }
 
-    public Integer getOsId() {
-        return osId;
-    }
-
-    public void setOsId(Integer osId) {
-        this.osId = osId;
-    }
-
     public OrderState getOrderState() {
         return orderState;
     }
@@ -182,6 +163,11 @@ public class OrderInfo {
         this.orderState = orderState;
     }
 
-    public OrderInfo() {
+    public CargoInfo getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(CargoInfo cargo) {
+        this.cargo = cargo;
     }
 }

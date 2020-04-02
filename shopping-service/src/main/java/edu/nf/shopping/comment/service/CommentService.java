@@ -27,7 +27,10 @@ public interface CommentService {
      **/
     Comment findComment(String comId,String goodsId,String userId);
 
-    void addBuyShow(MultipartFile[] files, Comment comment) throws IOException;
+    /**
+     * 添加买家秀
+    **/
+    void addBuyShow(MultipartFile[] files,Comment comment) throws IOException;
 
     /**
      * 添加评论

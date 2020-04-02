@@ -12,10 +12,10 @@ import java.util.UUID;
  * @author Bull fighters
  * @date 2020/3/14
  */
-/*@Service
+@Service
 public class ProducerServer {
 
-    @Autowired
+    /*@Autowired
     private RabbitTemplate rabbitTemplate;
 
     *//**
@@ -33,5 +33,5 @@ public class ProducerServer {
             message.getMessageProperties().setDelay(delayTime);
             return message;
         }, correlationData);
-    }
-}*/
+    }*/
+}
