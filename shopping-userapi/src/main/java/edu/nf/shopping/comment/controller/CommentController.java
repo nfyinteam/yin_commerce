@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * @author Bull fighters
@@ -33,7 +34,7 @@ public class CommentController extends BaseController {
             httpMethod = "get")
     private ResponseVO<PageInfo<Comment>> listBuyShow(Integer pageNum, Integer pageSize, Integer replySize, String goodsId, String dateTime, String order,String commentType,HttpServletRequest request) throws ParseException {
         System.out.println(dateTime);
-        PageInfo<Comment> pageInfo=commentService.listBuyShow(pageNum,pageSize,replySize,goodsId,"1578412684666",sdf.parse(dateTime),order,commentType);
+        PageInfo<Comment> pageInfo=commentService.listBuyShow(pageNum,pageSize,replySize,goodsId,"1578412684666",new Date(),order,commentType);
         return success(pageInfo);
     }
 
