@@ -31,4 +31,34 @@
         select u_id,u_tel,u_password from user_info
         where u_id = #{param1} or  u_tel = #{param1} or u_email=#{param1}
     </select>
+    <update id="updateUserInfo" parameterType="edu.nf.shopping.user.entity.UserInfo">
+        update user_info
+        <set>
+            <if test="userName !=null and userName !='' ">
+                u_name=#{userName},
+            </if>
+
+            <if test="userEmail !=null and userEmail!=''">
+                u_email=#{userEmail},
+            </if>
+            <if test="userTel != null and userTel!=''">
+                u_tel=#{userTel},
+            </if>
+            <if test="userSex !=null and userSex!=''">
+                u_sex=#{userSex},
+            </if>
+            <if test="realName !=null and realName!=''">
+                real_name=#{realName},
+            </if>
+            <if test="cardNum !=null and cardNum!=''">
+                card_num=#{cardNum},
+            </if>
+            <if test="userFace != null">
+                face_id=#{userFace.faceId}
+            </if>
+        </set>
+        <where>
+            u_id=#{uid}
+        </where>
+    </update>
 </mapper>

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.security.auth.login.LoginException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 /**
@@ -42,6 +43,27 @@ public class UserInfoController extends BaseController {
         System.out.println("22"+request.getSession().getId());
         UserInfo  userInfo=service.getUserInfo(String.valueOf(request.getSession().getAttribute("userId")));
         return success(userInfo);
+    }
+
+    /**
+     * 用户信息
+     * @param session
+     * @return
+     */
+    @GetMapping("/list/userInfo")
+    @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})
+    public ResponseVO listUserInfo(HttpSession session){
+        UserInfo userInfo=(UserInfo)session.getAttribute("user");
+        if(userInfo!=null){
+            return success(userInfo);
+        }
+        return fail(309,"请登入！");
+    }
+
+    @PostMapping("/update/userInfo")
+    public ResponseVO updateUserInfo(@RequestBody UserInfo userInfo){
+        service.updateUserInfo(userInfo);
+        return success(200);
     }
 
 }

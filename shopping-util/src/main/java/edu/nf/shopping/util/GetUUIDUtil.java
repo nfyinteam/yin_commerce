@@ -1,4 +1,4 @@
-package edu.nf.shopping;
+package edu.nf.shopping.util;
 
 import java.util.UUID;
 

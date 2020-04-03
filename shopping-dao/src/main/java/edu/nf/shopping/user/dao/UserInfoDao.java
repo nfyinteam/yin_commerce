@@ -24,4 +24,10 @@ public interface UserInfoDao {
      * 查看个人信息
      */
     UserInfo getUserInfo(String uid);
+
+    /**
+     * 修改用户信息
+     * @param userInfo
+     */
+    void updateUserInfo(UserInfo userInfo);
 }

@@ -15,6 +15,9 @@
     <update id="updateOutCargo" parameterType="edu.nf.shopping.warehouse.entity.OutCargo">
 
     </update>
+    <delete id="deleteOutCargoById" parameterType="java.lang.String">
+        DELETE FROM out_cargo WHERE out_id = #{outId}
+    </delete>
 
     <select id="listOutCargo" resultMap="outCargoMap"></select>
     <select id="getOutCargoById" resultMap="outCargoMap"></select>
