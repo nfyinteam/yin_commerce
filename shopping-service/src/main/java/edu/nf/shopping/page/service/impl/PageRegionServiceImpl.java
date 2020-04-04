@@ -31,7 +31,7 @@ public class PageRegionServiceImpl implements PageRegionService {
     private RegionContentDao regionContentDao;
 
     @Override
-    @Cacheable(value = "commentCache", key = "'pageRegion-'+#state[0]")
+    @Cacheable(value = "pageCache", key = "'pageRegion-'+#state[0]")
     public List<PageRegion> listPageRegion(String[] state) {
         try{
             List<PageRegion> list=pageRegionDao.listPageRegion(state);
