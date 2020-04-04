@@ -6,7 +6,9 @@ import edu.nf.shopping.vo.BaseController;
 import edu.nf.shopping.vo.ResponseVO;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,10 +24,11 @@ public class PraiseController extends BaseController {
     private PraiseService praiseService;
 
     @RequestMapping("/spot_praise")
-    @ApiOperation(value = "举报评论", notes = "用户可以举报评论",
+    @ApiOperation(value = "点赞", notes = "用户给评论的点赞",
             httpMethod = "post")
-    private ResponseVO spotPraise(String commentId, HttpServletRequest request){
-        Boolean b=praiseService.spotPraise("1578412684666",commentId);
-        return success(b);
+    @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})
+    private ResponseVO spotPraise(String commentId,String goodsId, HttpServletRequest request){
+        praiseService.spotPraise((String)request.getSession().getAttribute("userId"),commentId,goodsId);
+        return success(200,"");
     }
 }

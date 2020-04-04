@@ -1,7 +1,7 @@
 package edu.nf.shopping.warehouse.impl;
 
-import edu.nf.shopping.warehouse.WarehouseInfoService;
 import edu.nf.shopping.warehouse.entity.WarehouseInfo;
+import edu.nf.shopping.warehouse.service.WarehouseInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;

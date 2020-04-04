@@ -4,25 +4,61 @@
 <mapper namespace="edu.nf.shopping.user.dao.UserInfoDao">
 
     <resultMap id="userMap" type="edu.nf.shopping.user.entity.UserInfo">
-        <id property="uid" column="u_id"/>
-        <id property="uname" column="u_name"/>
-        <id property="uemail" column="u_email"/>
-        <id property="utel" column="u_tel"/>
-        <id property="upassword" column="u_password"/>
-        <id property="usex" column="u_sex"/>
-        <id property="realname" column="real_name"/>
-        <id property="carnumber" column="car_number"/>
-        <id property="factid" column="fact_id"/>
+        <id property="userId" column="u_id"/>
+        <id property="userName" column="u_name"/>
+        <id property="userEmail" column="u_email"/>
+        <id property="tel" column="u_tel"/>
+        <id property="password" column="u_password"/>
+        <id property="sex" column="u_sex"/>
+        <id property="realName" column="real_name"/>
+        <id property="carNumber" column="card_num"/>
+        <association property="face" resultMap="faceMap"/>
+    </resultMap>
+    <resultMap id="faceMap" type="edu.nf.shopping.user.entity.UserFace">
+        <id property="faceId" column="face_id"/>
+        <result property="faceFile" column="face_file"/>
+        <result property="joinDate" column="join_date"/>
     </resultMap>
 
     <select id="listUser" resultMap="userMap">
 
     </select>
-    <select id="selectUser" resultMap="userMap">
-        select u_id,u_name,u_email,u_tel,u_password,u_sex,real_name,car_number,
-        fact_id from user_info where u_id= #{uid}
+    <select id="getUserInfo" resultMap="userMap" parameterType="String">
+        select u_id,u_name,u_email,u_tel,u_password,u_sex,real_name,card_num,
+        face_id from user_info where u_id=#{uid}
     </select>
-    <select id="login" resultMap="userMap">
-        select u_tel,u_password from user_info where u_id = #{uid} and u_tel = #{utel}
+    <select id="userLogin" resultMap="userMap" parameterType="String">
+        select u_id,u_tel,u_password from user_info
+        where u_id = #{param1} or  u_tel = #{param1} or u_email=#{param1}
     </select>
+    <update id="updateUserInfo" parameterType="edu.nf.shopping.user.entity.UserInfo">
+        update user_info
+        <set>
+            <if test="userName !=null and userName !='' ">
+                u_name=#{userName},
+            </if>
+
+            <if test="userEmail !=null and userEmail!=''">
+                u_email=#{userEmail},
+            </if>
+            <if test="userTel != null and userTel!=''">
+                u_tel=#{userTel},
+            </if>
+            <if test="userSex !=null and userSex!=''">
+                u_sex=#{userSex},
+            </if>
+            <if test="realName !=null and realName!=''">
+                real_name=#{realName},
+            </if>
+            <if test="cardNum !=null and cardNum!=''">
+                card_num=#{cardNum},
+            </if>
+            <if test="userFace != null">
+                face_id=#{userFace.faceId}
+            </if>
+        </set>
+        <where>
+            u_id=#{uid}
+        </where>
+    </update>
 </mapper>

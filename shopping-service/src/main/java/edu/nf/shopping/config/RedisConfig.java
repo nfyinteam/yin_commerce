@@ -30,8 +30,14 @@ public class RedisConfig {
     @Bean
     public RedisCacheManager redisCacheManager(RedisConnectionFactory redisConnectionFactory) {
         Map<String, RedisCacheConfiguration> map = new HashMap<>(2);
-        map.put("cache1", initRedisCacheConfiguration(1800L));
-        map.put("cache2", initRedisCacheConfiguration(3600L));
+        map.put("commentCache", initRedisCacheConfiguration(1800L));
+        map.put("pageCache", initRedisCacheConfiguration(1800L));
+        map.put("goodsCache", initRedisCacheConfiguration(1800L));
+        map.put("skuInfoCache", initRedisCacheConfiguration(1800L));
+        map.put("userInfoCache", initRedisCacheConfiguration(1800L));
+        map.put("shopcartInfoCache", initRedisCacheConfiguration(1800L));
+        map.put("messageInfoCache", initRedisCacheConfiguration(1800L));
+        map.put("warehouseCache", initRedisCacheConfiguration(1800L));
         RedisCacheManager cacheManager = RedisCacheManager.builder(redisConnectionFactory)
                 .withInitialCacheConfigurations(map)
                 .build();

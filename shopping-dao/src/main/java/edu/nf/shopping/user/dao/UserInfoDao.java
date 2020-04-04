@@ -10,6 +10,8 @@ import java.util.List;
  */
 
 public interface UserInfoDao {
+
+
     /**
      * 全部用户信息
      */
@@ -17,9 +19,15 @@ public interface UserInfoDao {
     /**
      * 用户登录
      */
-    UserInfo login(UserInfo user);
+    UserInfo userLogin(String userId, String passWord);
     /**
      * 查看个人信息
      */
-    UserInfo selectUser(String uid);
+    UserInfo getUserInfo(String uid);
+
+    /**
+     * 修改用户信息
+     * @param userInfo
+     */
+    void updateUserInfo(UserInfo userInfo);
 }

@@ -2,7 +2,9 @@ package edu.nf.shopping.user.service.impl;
 
 import edu.nf.shopping.user.dao.UserInfoDao;
 import edu.nf.shopping.user.entity.UserInfo;
+import edu.nf.shopping.user.exception.UserException;
 import edu.nf.shopping.user.service.UserInfoService;
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,24 +17,54 @@ import java.util.List;
  */
 @Service("userInfoService")
 public class UserInfoServiceImpl implements UserInfoService {
+
     @Autowired
-    private UserInfoDao dao;
+    private UserInfoDao userInfoDao;
+
     @Override
-    public List<UserInfo> listUser() throws Exception {
-        try{  List<UserInfo> list=dao.listUser();
+    public UserInfo getUserInfo(String userId) {
+        try{
+           UserInfo userInfo=userInfoDao.getUserInfo(userId);
+            return userInfo;
+        } catch (RuntimeException e) {
+            throw new UserException("错误");
+        }
+    }
+
+    @Override
+    public List<UserInfo> listUser()  {
+        try{  List<UserInfo> list=userInfoDao.listUser();
             return list;
-        } catch (Exception e) {
-            throw new Exception("错误");
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+            throw new UserException("错误");
         }
 
     }
 
     @Override
-    public UserInfo selectUser(UserInfo user) throws LoginException {
+    public UserInfo userLogin(String userId,String passWord) {
         try{
-            return user;
-        } catch (Exception e) {
-           throw new LoginException("账号或秘密错误");
+            UserInfo u=userInfoDao.userLogin(userId,passWord);
+            if(u==null || !passWord.equals(u.getPassword())){
+                throw new UserException("用户名或密码错误");
+            }
+            return u;
+        }catch (UserException e) {
+            throw e;
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+           throw new UserException("账号或秘密错误");
+        }
+    }
+
+    @Override
+    public void updateUserInfo(UserInfo userInfo) {
+        try{
+            userInfoDao.updateUserInfo(userInfo);
+        }catch (Exception e){
+            e.printStackTrace();
+            throw new UserException("用户信息更新失败");
         }
     }
 }

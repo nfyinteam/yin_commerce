@@ -17,8 +17,8 @@ public class PageRegion {
     private String prId ;
     private String sign;
     private String index;
-    @JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
     private Date startTime;
     private String state;
     private List<RegionContent> infoList=new ArrayList<>();

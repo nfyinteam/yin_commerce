@@ -10,49 +10,49 @@ public class UserFace {
     /**
      * 用户头像编号
      */
-    private String faceid;
+    private String faceId;
     /**
      * 用户编号
      */
-    private String uid;
+    private UserInfo user;
     /**
      * 头像文件全名
      */
-    private String facefile;
+    private String faceFile;
     /**
      * 保存头像时间
      */
-    private Date jiondate;
-    public String getFaceid() {
-        return faceid;
+    private Date joinDate;
+
+    public String getFaceId() {
+        return faceId;
     }
 
-    public void setFaceid(String faceid) {
-        this.faceid = faceid;
+    public void setFaceId(String faceId) {
+        this.faceId = faceId;
     }
 
-    public String getUid() {
-        return uid;
+    public UserInfo getUser() {
+        return user;
     }
 
-    public void setUid(String uid) {
-        this.uid = uid;
+    public void setUser(UserInfo user) {
+        this.user = user;
     }
 
-    public String getFacefile() {
-        return facefile;
+    public String getFaceFile() {
+        return faceFile;
     }
 
-    public void setFacefile(String facefile) {
-        this.facefile = facefile;
+    public void setFaceFile(String faceFile) {
+        this.faceFile = faceFile;
     }
 
-    public Date getJiondate() {
-        return jiondate;
+    public Date getJoinDate() {
+        return joinDate;
     }
 
-    public void setJiondate(Date jiondate) {
-        this.jiondate = jiondate;
+    public void setJoinDate(Date joinDate) {
+        this.joinDate = joinDate;
     }
-
 }

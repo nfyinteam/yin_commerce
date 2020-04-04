@@ -2,6 +2,7 @@ package edu.nf.shopping.warehouse.entity;
 
 import edu.nf.shopping.order.entity.OrderInfo;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**

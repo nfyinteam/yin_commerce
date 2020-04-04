@@ -8,6 +8,8 @@ import edu.nf.shopping.page.entity.PageRegion;
 import edu.nf.shopping.page.entity.RegionContent;
 import edu.nf.shopping.util.UUIDUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -29,6 +31,7 @@ public class PageRegionServiceImpl implements PageRegionService {
     private RegionContentDao regionContentDao;
 
     @Override
+    @Cacheable(value = "pageCache", key = "'pageRegion-'+#state[0]")
     public List<PageRegion> listPageRegion(String[] state) {
         try{
             List<PageRegion> list=pageRegionDao.listPageRegion(state);
@@ -43,8 +46,12 @@ public class PageRegionServiceImpl implements PageRegionService {
     }
 
     @Override
+    @CacheEvict(value = "pageCache", key = "'pageRegion-0'",beforeInvocation=true)
     public PageRegion addPageRegion(String regionSign,String index,String editNumber,String state) {
         try{
+            if("".equals(regionSign)|| regionSign==null || Integer.parseInt(editNumber)<=0){
+                throw new PageException("出错了哦！");
+            }
             PageRegion pageRegion=new PageRegion();
             pageRegion.setPrId(UUIDUtils.createUUID());
             pageRegion.setIndex(index);
@@ -61,13 +68,17 @@ public class PageRegionServiceImpl implements PageRegionService {
                 regionContentDao.addRegionInfo(info);
             }
             return pageRegion;
-        }catch (RuntimeException e){
+        }catch (PageException e){
+            throw e;
+        }
+        catch (RuntimeException e){
             e.printStackTrace();
             throw new PageException(e.getMessage());
         }
     }
 
     @Override
+    @CacheEvict(value = "pageCache", key = "'pageRegion-0'",beforeInvocation=true)
     public void updatePageRegion(List<PageRegion> list) {
         try{
             pageRegionDao.updatePageRegionIndex(list);
@@ -78,17 +89,19 @@ public class PageRegionServiceImpl implements PageRegionService {
     }
 
     @Override
+    @CacheEvict(value = "pageCache", key = "'pageRegion-1'",beforeInvocation=true)
     public void submitPageRegion(List<PageRegion> list) {
         try{
             //更新区域index和状态
             pageRegionDao.submitPageRegion(list);
-            //将待删除的区域删除
-            pageRegionDao.deletePageRegionByState(null,new String[]{"3"});
             //查找草稿内容并更新
             for (PageRegion pageRegion : list) {
                 List<RegionContent> contents=regionContentDao.listRegionInfo(new String[]{"0"},pageRegion.getPrId());
                 regionContentDao.submitRegionContent(contents);
-            }//将待删除的内容删除
+            }
+            //将待删除的区域删除
+            pageRegionDao.deletePageRegionByState(null,new String[]{"3"});
+            //将待删除的内容删除
             regionContentDao.delRegionContent(null,new String[]{"3"});
         }catch (RuntimeException e){
             e.printStackTrace();
@@ -97,6 +110,7 @@ public class PageRegionServiceImpl implements PageRegionService {
     }
 
     @Override
+    @CacheEvict(value = "pageCache", key = "'pageRegion-0'",beforeInvocation=true)
     public void deletePageRegionByState(List<PageRegion> pageRegions,String[] state) {
         try{
             if(pageRegions.size()>0){

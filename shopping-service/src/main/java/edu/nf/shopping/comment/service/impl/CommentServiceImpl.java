@@ -13,6 +13,7 @@ import edu.nf.shopping.util.FileNameUtils;
 import edu.nf.shopping.util.UUIDUtils;
 import edu.nf.shopping.util.UploadAddressUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -78,7 +79,7 @@ public class CommentServiceImpl implements CommentService {
     public void addBuyShow(MultipartFile[] files,Comment comment) throws IOException{
         try{
             if(files.length>5){
-                throw new CommentException("出错了啊！");
+                throw new CommentException("出错了喔");
             }
             comment.setComId(UUIDUtils.createUUID());
             comment.setState("2");
@@ -105,7 +106,8 @@ public class CommentServiceImpl implements CommentService {
             }
         }catch (CommentException e){
             throw e;
-        }catch (RuntimeException e){
+        }
+        catch (RuntimeException e){
             e.printStackTrace();
             throw new CommentException("数据库出错");
         }
