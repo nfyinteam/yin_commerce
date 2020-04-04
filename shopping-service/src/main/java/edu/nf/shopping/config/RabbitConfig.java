@@ -22,10 +22,12 @@ public class RabbitConfig {
     public static final String PRAISE_QUEUE = "praise.queue";
     public static final String COMMENT_QUEUE = "comment.queue";
     public static final String MESSAGE_QUEUE = "message.queue";
+    public static final String ORDER_DETAILS_QUEUE = "order.details.queue";
 
     public static final String PRAISE_ROUTER_KEY = "praise.message";
     public static final String COMMENT_ROUTER_KEY = "comment.message";
     public static final String MESSAGE_ROUTER_KEY = "message.message";
+    public static final String ORDER_DETAILS_ROUTER_KEY = "order.details.message";
 
     /**
      * 自定义Exchange，设置交换机类型
@@ -57,6 +59,11 @@ public class RabbitConfig {
         return new Queue(MESSAGE_QUEUE, true);
     }
 
+    @Bean
+    public Queue orderDetailsQueue(){
+        return new Queue(ORDER_DETAILS_QUEUE, true);
+    }
+
     /**
      * 将queue绑定到exchange
      */
@@ -76,6 +83,12 @@ public class RabbitConfig {
     public Binding messageBinding(@Qualifier("messageQueue") Queue queue,
                                   @Qualifier("exchange") Exchange exchange){
         return BindingBuilder.bind(queue).to(exchange).with(MESSAGE_ROUTER_KEY).noargs();
+    }
+
+    @Bean
+    public Binding orderDetailsBinding(@Qualifier("orderDetailsQueue") Queue queue,
+                                  @Qualifier("exchange") Exchange exchange){
+        return BindingBuilder.bind(queue).to(exchange).with(ORDER_DETAILS_ROUTER_KEY).noargs();
     }
 
     /**
