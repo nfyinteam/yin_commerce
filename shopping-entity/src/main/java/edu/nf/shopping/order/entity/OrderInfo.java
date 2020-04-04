@@ -23,7 +23,7 @@ public class OrderInfo {
     /**
      * 货物编号
      */
-    private CargoInfo cargo;
+    private String cargoIds;
     /**
      * 购买价格
      */
@@ -94,12 +94,12 @@ public class OrderInfo {
         this.orderId = orderId;
     }
 
-    public CargoInfo getCargo() {
-        return cargo;
+    public String getCargoIds() {
+        return cargoIds;
     }
 
-    public void setCargo(CargoInfo cargo) {
-        this.cargo = cargo;
+    public void setCargoIds(String cargoIds) {
+        this.cargoIds = cargoIds;
     }
 
     public BigDecimal getBuyPrice() {

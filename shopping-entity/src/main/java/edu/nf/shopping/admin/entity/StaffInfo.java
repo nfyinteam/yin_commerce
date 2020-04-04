@@ -24,6 +24,7 @@ public class StaffInfo {
     @JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date outTime;
+    private StaffState staffState;
 
     public String getStaffId() {
         return staffId;
@@ -87,5 +88,13 @@ public class StaffInfo {
 
     public void setOutTime(Date outTime) {
         this.outTime = outTime;
+    }
+
+    public StaffState getStaffState() {
+        return staffState;
+    }
+
+    public void setStaffState(StaffState staffState) {
+        this.staffState = staffState;
     }
 }
