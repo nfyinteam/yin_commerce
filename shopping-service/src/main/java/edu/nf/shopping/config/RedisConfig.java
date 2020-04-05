@@ -33,6 +33,7 @@ public class RedisConfig {
         map.put("commentCache", initRedisCacheConfiguration(1800L));
         map.put("pageCache", initRedisCacheConfiguration(1800L));
         map.put("goodsCache", initRedisCacheConfiguration(1800L));
+        map.put("orderCache", initRedisCacheConfiguration(1800L));
         map.put("skuInfoCache", initRedisCacheConfiguration(1800L));
         map.put("userInfoCache", initRedisCacheConfiguration(1800L));
         map.put("shopcartInfoCache", initRedisCacheConfiguration(1800L));
