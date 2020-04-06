@@ -57,7 +57,7 @@ public class InitOrderInfoServiceImpl implements InitOrderInfoService {
                 throw new OrderException("该用户不能为空");
             }
             orderInfo.setBuyUser(userInfo);
-            orderInfo.setOrderState("待付款");
+            orderInfo.setOrderState("确认中");
             orderInfo.setCreateTime(new Date());
             CorrelationData correlationData = new CorrelationData();
             correlationData.setId(orderInfo.getOrderId());

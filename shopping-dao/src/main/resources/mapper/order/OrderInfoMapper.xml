@@ -15,10 +15,13 @@
         <result property="buyRemark" column="buy_remark"/>
         <result property="orderRemark" column="order_remark"/>
         <result property="orderState" column="order_state"/>
-        <result property="cargoIds" column="cargo_id"/>
+        <result property="addressName" column="address_name"/>
+        <result property="addressTel" column="address_tel"/>
+        <result property="addressUser" column="address_user"/>
+        <result property="isDel" column="is_del"/>
         <association property="buyAdmin" resultMap="staffInfoMap"/>
         <association property="buyUser" resultMap="userInfoMap"/>
-        <association property="userAddress" resultMap="userAddressMap"/>
+        <association property="addressRegion" resultMap="cityMap"/>
     </resultMap>
 
     <resultMap id="staffInfoMap" type="edu.nf.shopping.admin.entity.StaffInfo">
@@ -61,14 +64,6 @@
         <result property="joinDate" column="join_date"/>
     </resultMap>
 
-    <resultMap id="userAddressMap" type="edu.nf.shopping.user.entity.UserAddress">
-        <id property="addressId" column="address_id"/>
-        <result property="addressName" column="address_name"/>
-        <result property="isSel" column="is_sel"/>
-        <result property="addressTel" column="address_tel"/>
-        <result property="addressUser" column="address_user"/>
-        <association property="city" resultMap="cityMap"/>
-    </resultMap>
     <resultMap id="cityMap" type="edu.nf.shopping.warehouse.entity.City">
         <id property="cid" column="c_id"/>
         <result property="cname" column="c_name"/>
@@ -77,52 +72,55 @@
     </resultMap>
 
     <select id="listOrderInfo" resultMap="orderMap">
-        select oi.order_id, oi.buy_price, oi.cheap_price, oi.transport_price,
-        oi.create_time, oi.pay_time, oi.deliver_time, oi.deal_time, oi.buy_remark,
-        oi.order_remark, oi.order_state, si.s_id, st.st_id, ss.ss_id,
-        di.dpment_id, ui.u_id, uf.face_id, uf.face_file, ua.address_id, ua.address_name,
-        ua.address_tel, ua.address_user, ua.is_sel, c.c_id, c.c_name, c.p_id, c.type from order_info oi
+        select oi.order_id, oi.buy_price, oi.cheap_price, oi.transport_price, oi.create_time,
+        oi.pay_time, oi.deliver_time, oi.deal_time, oi.buy_remark, oi.order_remark, oi.is_del,
+        oi.order_state, si.s_id, st.st_id, ss.ss_id, di.dpment_id, ui.u_id, uf.face_id,
+        uf.face_file, oi.address_name, oi.address_tel, oi.address_user, c.c_id,
+        c.c_name, c.p_id, c.type from order_info oi
         left join staff_info si on si.s_id = oi.buy_admin
         left join user_info ui on ui.u_id = oi.buy_user
-        left join user_address ua on ua.address_id = oi.address_id
         left join staff_type st on st.st_id = si.st_id
         left join department_info di on di.dpment_id = si.dpment_id
         left join staff_state ss on ss.ss_id = si.ss_id
         left join user_face uf on uf.face_id = ui.face_id
-        left join city c on c.c_id = ua.address_region where ui.u_id = #{userId}
+        left join city c on c.c_id = oi.address_region
+        where ui.u_id = #{userId} and oi.is_del = 0 and oi.order_state != '确认中'
     </select>
     <select id="getOrderInfoByOrderId" resultMap="orderMap">
-        select oi.order_id, oi.buy_price, oi.cheap_price, oi.transport_price,
-        oi.create_time, oi.pay_time, oi.deliver_time, oi.deal_time, oi.buy_remark,
-        oi.order_remark, oi.order_state, si.s_id, st.st_id, ss.ss_id,
-        di.dpment_id, ui.u_id, uf.face_id, uf.face_file, ua.address_id, ua.address_name,
-        ua.address_tel, ua.address_user, ua.is_sel, c.c_id, c.c_name, c.p_id, c.type from order_info oi
+        select oi.order_id, oi.buy_price, oi.cheap_price, oi.transport_price, oi.create_time,
+        oi.pay_time, oi.deliver_time, oi.deal_time, oi.buy_remark, oi.order_remark, oi.is_del,
+        oi.order_state, si.s_id, st.st_id, ss.ss_id, di.dpment_id, ui.u_id, uf.face_id,
+        uf.face_file, oi.address_name, oi.address_tel, oi.address_user, c.c_id,
+        c.c_name, c.p_id, c.type from order_info oi
         left join staff_info si on si.s_id = oi.buy_admin
         left join user_info ui on ui.u_id = oi.buy_user
-        left join user_address ua on ua.address_id = oi.address_id
         left join staff_type st on st.st_id = si.st_id
         left join department_info di on di.dpment_id = si.dpment_id
         left join staff_state ss on ss.ss_id = si.ss_id
         left join user_face uf on uf.face_id = ui.face_id
-        left join city c on c.c_id = ua.address_region where oi.order_id = #{orderId}
+        left join city c on c.c_id = oi.address_region
+        where oi.order_id = #{orderId} and oi.order_state != '确认中'
     </select>
     <insert id="addOrderInfo" parameterType="edu.nf.shopping.order.entity.OrderInfo">
-        insert order_info(order_id, cargo_id, buy_price, cheap_price, transport_price,
-        create_time, pay_time, deliver_time, deal_time, buy_admin, buy_user, address_id,
-        buy_remark, order_remark, order_state)
-        value(#{orderInfo.orderId}, #{orderInfo.cargoIds}, #{orderInfo.buyPrice},
+        insert order_info(order_id, buy_price, cheap_price, transport_price, create_time,
+        pay_time, deliver_time, deal_time, buy_admin, buy_user, address_region,
+        address_name, address_tel, address_user, buy_remark, order_remark, order_state, is_del)
+        value(#{orderInfo.orderId}, #{orderInfo.buyPrice},
         #{orderInfo.cheapPrice}, #{orderInfo.transportPrice}, #{orderInfo.createTime},
         #{orderInfo.payTime}, #{orderInfo.deliverTime}, #{orderInfo.dealTime},
-        #{orderInfo.buyAdmin.staffId}, #{orderInfo.buyUser.userId}, #{orderInfo.userAddress.addressId},
-        #{orderInfo.buyRemark}, #{orderInfo.orderRemark}, #{orderInfo.orderState})
+        #{orderInfo.buyAdmin.staffId}, #{orderInfo.buyUser.userId}, #{orderInfo.addressRegion.cid},
+        #{orderInfo.addressName}, #{orderInfo.addressTel}, #{orderInfo.addressUser}
+        #{orderInfo.buyRemark}, #{orderInfo.orderRemark}, #{orderInfo.orderState} ,#{orderInfo.isDel})
     </insert>
     <update id="updateOrderInfo" parameterType="edu.nf.shopping.order.entity.OrderInfo">
-        update order_info set cargo_id = #{orderInfo.cargoIds}, buy_price = #{orderInfo.buyPrice},
+        update order_info set buy_price = #{orderInfo.buyPrice}, is_del = #{orderInfo.isDel}
         cheap_price = #{orderInfo.cheapPrice}, transport_price = #{orderInfo.transportPrice},
         pay_time = #{orderInfo.payTime}, deliver_time = #{orderInfo.deliverTime},
         deal_time = #{orderInfo.dealTime}, buy_admin = #{orderInfo.buyAdmin.staffId},
-        address_id = #{orderInfo.userAddress.addressId}, buy_remark = #{orderInfo.buyRemark},
-        order_remark = #{orderInfo.orderRemark}, order_state = #{orderInfo.orderState}
+        address_region = #{orderInfo.addressRegion.cid}, buy_remark = #{orderInfo.buyRemark},
+        order_remark = #{orderInfo.orderRemark}, order_state = #{orderInfo.orderState},
+        address_name = #{orderInfo.addressName}, address_tel = #{orderInfo.addressTel},
+        address_user = #{orderInfo.addressUser}
     </update>
     <delete id="deleteOrderInfo" parameterType="java.lang.String">
         delete from order_info where order_id = #{orderId}
