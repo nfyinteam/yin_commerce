@@ -1,5 +1,7 @@
 package edu.nf.shopping.config;
 
+import edu.nf.shopping.config.listener.KeyExpiredListener;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -7,6 +9,7 @@ import org.springframework.data.redis.cache.RedisCacheConfiguration;
 import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.listener.RedisMessageListenerContainer;
 import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.RedisSerializationContext;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
@@ -22,6 +25,8 @@ import java.util.Map;
 @Configuration
 @EnableCaching
 public class RedisConfig {
+    @Autowired
+    private RedisConnectionFactory redisConnectionFactory;
     /**
      * 装配RedisCacheManager，这里初始化了cache1和cache2两个缓存，并存入Map中,
      * 后续在使用时可以指定操作哪一个缓存。
@@ -90,4 +95,17 @@ public class RedisConfig {
         redisTemplate.setConnectionFactory(connectionFactory);
         return redisTemplate;
     }
+
+    @Bean
+    public RedisMessageListenerContainer redisMessageListenerContainer() {
+        RedisMessageListenerContainer redisMessageListenerContainer = new RedisMessageListenerContainer();
+        redisMessageListenerContainer.setConnectionFactory(redisConnectionFactory);
+        return redisMessageListenerContainer;
+    }
+
+    @Bean
+    public KeyExpiredListener keyExpiredListener() {
+        return new KeyExpiredListener(this.redisMessageListenerContainer());
+    }
+
 }
