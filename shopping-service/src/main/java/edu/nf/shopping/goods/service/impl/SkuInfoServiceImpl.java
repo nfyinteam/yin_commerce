@@ -57,7 +57,7 @@ public class SkuInfoServiceImpl implements SkuInfoService {
     }
 
     @Override
-    @Cacheable(value = "goodsCache", key = "#skuId", condition = "#skuId != null")
+    @Cacheable(value = "skuInfoCache", key = "#skuId", condition = "#skuId != null")
     public List<SkuAllInfo> getSkuAllInfoBySkuId(String[] skuId) {
         try {
             List<SkuAllInfo> list = new ArrayList<>();
@@ -83,7 +83,7 @@ public class SkuInfoServiceImpl implements SkuInfoService {
     }
 
     @Override
-    @CacheEvict(value = "goodsCache", key = "#skuInfo.skuId",beforeInvocation=true)
+    @CacheEvict(value = "skuInfoCache", key = "#skuInfo.skuId",beforeInvocation=true)
     public void addSkuInfo(SkuInfo skuInfo) {
         try {
             skuInfoDao.addSkuInfo(skuInfo);
@@ -93,7 +93,7 @@ public class SkuInfoServiceImpl implements SkuInfoService {
     }
 
     @Override
-    @CacheEvict(value = "goodsCache", key = "#skuInfo.skuId",beforeInvocation=true)
+    @CacheEvict(value = "skuInfoCache", key = "#skuInfo.skuId",beforeInvocation=true)
     public void updateSkuInfo(SkuInfo skuInfo) {
         try {
             SkuInfo sku = skuInfoDao.getSkuInfoBySkuId(skuInfo.getSkuId());
@@ -107,7 +107,7 @@ public class SkuInfoServiceImpl implements SkuInfoService {
     }
 
     @Override
-    @CacheEvict(value = "goodsCache", key = "#skuId",beforeInvocation=true)
+    @CacheEvict(value = "skuInfoCache", key = "#skuId",beforeInvocation=true)
     public void deleteSkuInfo(String skuId) {
         try {
             skuInfoDao.deleteSkuInfo(skuId);
