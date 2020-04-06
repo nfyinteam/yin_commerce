@@ -36,7 +36,7 @@ public class SkuInfoServiceImpl implements SkuInfoService {
     private GoodsImgsDao goodsImgsDao;
 
     @Override
-    @Cacheable(value = "goodsCache", key = "#skuId", condition = "#skuId != null or #skuId != ''")
+    @Cacheable(value = "skuInfoCache", key = "#skuId", condition = "#skuId != null or #skuId != ''")
     public SkuAllInfo getSkuAllInfoBySkuId(String skuId) {
         SkuAllInfo skuAllInfo = new SkuAllInfo();
         try {

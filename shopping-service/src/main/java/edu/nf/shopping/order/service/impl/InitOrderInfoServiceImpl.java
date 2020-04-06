@@ -4,6 +4,7 @@ import com.rabbitmq.client.Channel;
 import edu.nf.shopping.comment.entity.Praise;
 import edu.nf.shopping.config.RabbitConfig;
 import edu.nf.shopping.goods.entity.SkuAllInfo;
+import edu.nf.shopping.goods.entity.SkuInfo;
 import edu.nf.shopping.goods.entity.SkuRelation;
 import edu.nf.shopping.goods.exception.SkuInfoException;
 import edu.nf.shopping.goods.service.SkuInfoService;
@@ -20,6 +21,7 @@ import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.support.AmqpHeaders;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.messaging.handler.annotation.Headers;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -46,6 +48,9 @@ public class InitOrderInfoServiceImpl implements InitOrderInfoService {
 
     @Autowired
     private SkuInfoService skuInfoService;
+
+    @Autowired
+    private RedisTemplate<String, Object> redisTemplate;
 
     @Autowired
     private RabbitTemplate rabbitTemplate;
@@ -78,12 +83,13 @@ public class InitOrderInfoServiceImpl implements InitOrderInfoService {
             List<OrderDetails> detailsList = new ArrayList<>();
             for (OrderDetails details : orderDetails){
                 SkuAllInfo skuAllInfo = skuInfoService.getSkuAllInfoBySkuId(details.getSkuId());
+                SkuInfo skuInfo = skuAllInfo.getSkuInfo();
                 if(skuAllInfo == null){
                     throw new SkuInfoException("该sku不存在");
                 }
                 details.setOrderId(orderInfo.getOrderId());
-                details.setSkuId(skuAllInfo.getSkuInfo().getSkuId());
-                details.setSkuPrice(skuAllInfo.getSkuInfo().getSkuPrice());
+                details.setSkuId(skuInfo.getSkuId());
+                details.setSkuPrice(skuInfo.getSkuPrice());
                 String attribute = "";
                 int i = 0;
                 for (SkuRelation relation : skuAllInfo.getSkuRelations()){
@@ -94,9 +100,20 @@ public class InitOrderInfoServiceImpl implements InitOrderInfoService {
                     i++;
                 }
                 details.setSkuAttribute(attribute);
-                details.setGoodsId(skuAllInfo.getSkuInfo().getGood().getGoodsId());
-                details.setGoodsName(skuAllInfo.getSkuInfo().getGood().getGoodsName());
+                details.setGoodsId(skuInfo.getGood().getGoodsId());
+                details.setGoodsName(skuInfo.getGood().getGoodsName());
                 details.setGoodsFile(skuAllInfo.getImgsInfo().getImgFile());
+                //校验库存，同步库存
+                if(skuInfo.getSkuStock() == 0 || skuInfo.getSkuStock() - details.getSkuNum() < 0){
+                    throw new SkuInfoException("库存不足");
+                }
+                skuInfo.setSkuStock(skuInfo.getSkuStock() - details.getSkuNum());
+                skuInfoService.updateSkuInfo(skuInfo);
+                skuAllInfo.setSkuInfo(skuInfo);
+                //同步缓存
+                if(redisTemplate.opsForValue().get("skuInfoCache::" + skuInfo.getSkuId()) != null){
+                    redisTemplate.opsForValue().set("skuInfoCache::" + skuInfo.getSkuId(), skuAllInfo);
+                }
                 buyPrice.add(details.getSkuPrice().multiply(new BigDecimal(details.getSkuNum())));
                 detailsList.add(details);
             }
