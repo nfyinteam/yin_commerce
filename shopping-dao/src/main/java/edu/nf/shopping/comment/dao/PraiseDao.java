@@ -7,7 +7,7 @@ import edu.nf.shopping.comment.entity.Praise;
  * @date 2020/3/19
  */
 public interface PraiseDao {
-    Praise findPraise(String userId,String comId);
-    void addPraise(Praise praise);
-    void deletePraise(String userId,String comId);
+    Praise findPraise(String userId, String comId);
+    int addPraise(Praise praise);
+    void deletePraise(String userId, String comId);
 }

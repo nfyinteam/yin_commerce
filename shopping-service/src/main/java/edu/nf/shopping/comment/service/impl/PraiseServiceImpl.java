@@ -39,8 +39,8 @@ public class PraiseServiceImpl implements PraiseService {
     @Autowired
     private CommentDao commentDao;
 
-//    @Autowired
-//    private NoticeDao noticeDao;
+    /*@Autowired
+    private NoticeDao noticeDao;*/
 
     @Autowired
     private RabbitTemplate rabbitTemplate;
@@ -58,44 +58,45 @@ public class PraiseServiceImpl implements PraiseService {
 
     @Override
     public void spotPraise(String userId, String comId,String goodsId) {
-        try{
-            Praise praise=new Praise();
-            praise.setPraId(userId+comId);
-            praise.setUserId(userId);
-            praise.setComId(comId);
-            praise.setTime(new Date());
-            /*praise.setGoodsId(goodsId);*/
-            CorrelationData correlationData = new CorrelationData();
-            correlationData.setId(praise.getPraId()+praise.getTime());
-            rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME, "praise.message", praise, correlationData);
-        }catch (RuntimeException e){
-            throw new CommentException("信息出错了！");
-        }
+        Praise praise=new Praise();
+        praise.setPraId(userId+comId);
+        praise.setUserId(userId);
+        praise.setComId(comId);
+        praise.setTime(new Date());
+        praise.setGoodsId(goodsId);
+        CorrelationData correlationData = new CorrelationData();
+        correlationData.setId(praise.getPraId()+praise.getTime());
+        rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME, "praise.message", praise, correlationData);
     }
 
     /**
-     消息的消费者：专门处理点赞业务
+     点赞消费者：专门处理点赞业务
      **/
     @RabbitListener(queues = RabbitConfig.PRAISE_QUEUE)
     public void receiveMessage(Praise praise,
                                @Headers Map<String, Object> headers,
-                               Channel channel) throws IOException {
-        //发送点赞消息
-        /*if(praiseDao.addPraise(praise)>0){
-            System.out.println(111);
-            Notice notice = new Notice();
-            notice.setNoticeId(praise.getUserId() + praise.getComId());
-            notice.setContent("赞了我的评论");
-            notice.setLink("NULL");
-            notice.setTime(praise.getTime());
-            notice.setType("1");
-            notice.setAuthor(praise.getUserId());
-            notice.setTitle("NULL");
-            //noticeDao.addNotice(notice);
-        }*/
-        //确认签收
-        Long deliveryTag = (Long) headers.get(AmqpHeaders.DELIVERY_TAG);
-        channel.basicAck(deliveryTag, false);
+                               Channel channel){
+        try{
+            //发送点赞消息
+            if(praiseDao.addPraise(praise)>0){
+                System.out.println(111);
+                /*Notice notice = new Notice();
+                notice.setNoticeId(praise.getUserId() + praise.getComId());
+                notice.setContent("赞了我的评论");
+                notice.setLink("NULL");
+                notice.setTime(praise.getTime());
+                notice.setType("1");
+                notice.setAuthor(praise.getUserId());
+                notice.setTitle("NULL");*/
+                //noticeDao.addNotice(notice);
+                //确认签收
+                Long deliveryTag = (Long) headers.get(AmqpHeaders.DELIVERY_TAG);
+                channel.basicAck(deliveryTag, false);
+            }
+        }catch (RuntimeException | IOException e){
+            e.printStackTrace();
+            throw new CommentException("信息出错了！");
+        }
     }
 
 

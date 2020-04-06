@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.security.auth.login.LoginException;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 /**
@@ -22,16 +21,13 @@ public class UserInfoController extends BaseController {
     @Autowired
     private UserInfoService service;
 
-    @PostMapping("/user/login")
+    @RequestMapping("/user/login")
     @ApiOperation(value = "用户登录", notes = "用户的登录请求",
             httpMethod = "post")
-    @CrossOrigin(origins = "*", methods = {RequestMethod.POST})
+    @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})
     public ResponseVO userLogin(String userId,String passWord, HttpServletRequest request) {
-        UserInfo  userInfo=service.userLogin(userId,passWord);
-        if(userInfo!=null){
-            request.getSession().setAttribute("userId",userInfo.getUserId());
-            System.out.println(request.getSession().getId());
-        }
+        service.userLogin(userId,passWord);
+        request.getSession().setAttribute("userId",userId);
         return success(200,"登录成功！");
     }
 
@@ -40,29 +36,18 @@ public class UserInfoController extends BaseController {
             httpMethod = "get")
     @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})
     public ResponseVO getUserInfo(HttpServletRequest request) {
-        System.out.println("22"+request.getSession().getId());
-        UserInfo  userInfo=service.getUserInfo(String.valueOf(request.getSession().getAttribute("userId")));
+        String userId=String.valueOf(request.getSession().getAttribute("userId"));
+        UserInfo userInfo=service.getUserInfo(userId);
         return success(userInfo);
     }
 
-    /**
-     * 用户信息
-     * @param session
-     * @return
-     */
-    @GetMapping("/list/userInfo")
+    @RequestMapping("/cancellation/user")
+    @ApiOperation(value = "注销", notes = "用户注销登录",
+            httpMethod = "get")
     @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})
-    public ResponseVO listUserInfo(HttpSession session){
-        UserInfo userInfo=(UserInfo)session.getAttribute("user");
-        if(userInfo!=null){
-            return success(userInfo);
-        }
-        return fail(309,"请登入！");
-    }
-
-    @PostMapping("/update/userInfo")
-    public ResponseVO updateUserInfo(@RequestBody UserInfo userInfo){
-        service.updateUserInfo(userInfo);
+    public ResponseVO cancellationUser(HttpServletRequest request) {
+        request.getSession().removeAttribute("userId");
+        request.getSession().invalidate();
         return success(200);
     }
 
