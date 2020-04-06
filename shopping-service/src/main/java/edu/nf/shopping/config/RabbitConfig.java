@@ -22,10 +22,14 @@ public class RabbitConfig {
     public static final String PRAISE_QUEUE = "praise.queue";
     public static final String COMMENT_QUEUE = "comment.queue";
     public static final String MESSAGE_QUEUE = "message.queue";
+    public static final String ORDER_DETAILS_CREATE_QUEUE = "order.details.create.queue";
+    public static final String ORDER_INIT_QUEUE = "order.init.queue";
 
     public static final String PRAISE_ROUTER_KEY = "praise.message";
     public static final String COMMENT_ROUTER_KEY = "comment.message";
     public static final String MESSAGE_ROUTER_KEY = "message.message";
+    public static final String ORDER_DETAILS_CREATE_ROUTER_KEY = "order.details.create";
+    public static final String ORDER_INIT_ROUTER_KEY = "order.init";
 
     /**
      * 自定义Exchange，设置交换机类型
@@ -57,6 +61,16 @@ public class RabbitConfig {
         return new Queue(MESSAGE_QUEUE, true);
     }
 
+    @Bean
+    public Queue orderDetailsCreateQueue(){
+        return new Queue(ORDER_DETAILS_CREATE_QUEUE, true);
+    }
+
+    @Bean
+    public Queue orderInitQueue(){
+        return new Queue(ORDER_INIT_QUEUE, true);
+    }
+
     /**
      * 将queue绑定到exchange
      */
@@ -76,6 +90,18 @@ public class RabbitConfig {
     public Binding messageBinding(@Qualifier("messageQueue") Queue queue,
                                   @Qualifier("exchange") Exchange exchange){
         return BindingBuilder.bind(queue).to(exchange).with(MESSAGE_ROUTER_KEY).noargs();
+    }
+
+    @Bean
+    public Binding orderDetailsCreateBinding(@Qualifier("orderDetailsCreateQueue") Queue queue,
+                                             @Qualifier("exchange") Exchange exchange){
+        return BindingBuilder.bind(queue).to(exchange).with(ORDER_DETAILS_CREATE_ROUTER_KEY).noargs();
+    }
+
+    @Bean
+    public Binding orderInitBinding(@Qualifier("orderInitQueue") Queue queue,
+                                             @Qualifier("exchange") Exchange exchange){
+        return BindingBuilder.bind(queue).to(exchange).with(ORDER_INIT_ROUTER_KEY).noargs();
     }
 
     /**
