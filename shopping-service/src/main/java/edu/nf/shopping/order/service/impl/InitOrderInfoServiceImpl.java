@@ -3,6 +3,10 @@ package edu.nf.shopping.order.service.impl;
 import com.rabbitmq.client.Channel;
 import edu.nf.shopping.comment.entity.Praise;
 import edu.nf.shopping.config.RabbitConfig;
+import edu.nf.shopping.goods.entity.SkuAllInfo;
+import edu.nf.shopping.goods.entity.SkuRelation;
+import edu.nf.shopping.goods.exception.SkuInfoException;
+import edu.nf.shopping.goods.service.SkuInfoService;
 import edu.nf.shopping.order.dao.OrderDao;
 import edu.nf.shopping.order.entity.OrderDetails;
 import edu.nf.shopping.order.entity.OrderInfo;
@@ -18,9 +22,13 @@ import org.springframework.amqp.support.AmqpHeaders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.Headers;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -37,15 +45,20 @@ public class InitOrderInfoServiceImpl implements InitOrderInfoService {
     private UserInfoDao userInfoDao;
 
     @Autowired
+    private SkuInfoService skuInfoService;
+
+    @Autowired
     private RabbitTemplate rabbitTemplate;
 
     /**
      * 初始化订单
      * @param userId 用户编号
+     * @param orderDetails 订单明细集合
      * @return
      */
     @Override
-    public OrderInfo initOrderInfo(String userId) {
+    @Transactional(rollbackFor = {OrderException.class})
+    public OrderInfo initOrderInfo(String userId,  List<OrderDetails> orderDetails) {
         try {
             OrderInfo orderInfo = new OrderInfo();
             orderInfo.setOrderId(TimeMillisUtils.getCurrentTimeMillisName());
@@ -59,24 +72,43 @@ public class InitOrderInfoServiceImpl implements InitOrderInfoService {
             orderInfo.setBuyUser(userInfo);
             orderInfo.setOrderState("确认中");
             orderInfo.setCreateTime(new Date());
+            orderInfo.setCheapPrice(new BigDecimal(0));
+            orderInfo.setTransportPrice(new BigDecimal(0));
+            BigDecimal buyPrice = new BigDecimal(0);
+            List<OrderDetails> detailsList = new ArrayList<>();
+            for (OrderDetails details : orderDetails){
+                SkuAllInfo skuAllInfo = skuInfoService.getSkuAllInfoBySkuId(details.getSkuId());
+                if(skuAllInfo == null){
+                    throw new SkuInfoException("该sku不存在");
+                }
+                details.setOrderId(orderInfo.getOrderId());
+                details.setSkuId(skuAllInfo.getSkuInfo().getSkuId());
+                details.setSkuPrice(skuAllInfo.getSkuInfo().getSkuPrice());
+                String attribute = "";
+                int i = 0;
+                for (SkuRelation relation : skuAllInfo.getSkuRelations()){
+                    if (i != 0){
+                        attribute += ",";
+                    }
+                    attribute += relation.getKey().getKeyName() + ":" + relation.getValue().getValueName();
+                    i++;
+                }
+                details.setSkuAttribute(attribute);
+                details.setGoodsId(skuAllInfo.getSkuInfo().getGood().getGoodsId());
+                details.setGoodsName(skuAllInfo.getSkuInfo().getGood().getGoodsName());
+                details.setGoodsFile(skuAllInfo.getImgsInfo().getImgFile());
+                buyPrice.add(details.getSkuPrice().multiply(new BigDecimal(details.getSkuNum())));
+                detailsList.add(details);
+            }
+            orderInfo.setBuyPrice(buyPrice);
+            orderInfo.setOrderDetails(detailsList);
+            orderDao.addOrderInfo(orderInfo);
             CorrelationData correlationData = new CorrelationData();
             correlationData.setId(orderInfo.getOrderId());
-            rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME, "order.init", orderInfo, correlationData);
+            rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME, "order.init", detailsList, correlationData);
             return orderInfo;
         }catch (Exception e){
             throw new OrderException(e);
         }
-    }
-
-    /**
-     消息的消费者：创建订单
-     **/
-    @RabbitListener(queues = RabbitConfig.ORDER_INIT_QUEUE)
-    public void receiveMessage(OrderInfo orderInfo,
-                               @Headers Map<String, Object> headers,
-                               Channel channel) throws IOException {
-        orderDao.addOrderInfo(orderInfo);
-        Long deliveryTag = (Long) headers.get(AmqpHeaders.DELIVERY_TAG);
-        channel.basicAck(deliveryTag, false);
     }
 }

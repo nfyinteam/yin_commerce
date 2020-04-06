@@ -10,6 +10,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author Achine
@@ -101,6 +102,11 @@ public class OrderInfo {
      * 是否删除
      */
     private Boolean isDel;
+
+    /**
+     * 订单明细信息集合
+     */
+    private List<OrderDetails> orderDetails;
 
     public String getOrderId() {
         return orderId;
@@ -252,5 +258,13 @@ public class OrderInfo {
 
     public void setDel(Boolean del) {
         isDel = del;
+    }
+
+    public List<OrderDetails> getOrderDetails() {
+        return orderDetails;
+    }
+
+    public void setOrderDetails(List<OrderDetails> orderDetails) {
+        this.orderDetails = orderDetails;
     }
 }

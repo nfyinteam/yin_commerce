@@ -10,6 +10,7 @@ import edu.nf.shopping.order.entity.OrderInfo;
 import edu.nf.shopping.order.exception.OrderDetailsException;
 import edu.nf.shopping.order.service.OrderDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -17,6 +18,7 @@ import java.util.List;
  * @author Achine
  * @date 2020/4/6
  */
+@Service("orderDetailsService")
 public class OrderDetailsServiceImpl implements OrderDetailsService {
     @Autowired
     private OrderDao orderDao;

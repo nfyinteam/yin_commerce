@@ -11,6 +11,6 @@ import java.util.List;
  */
 public interface InitOrderInfoService {
 
-    OrderInfo initOrderInfo(String userId);
+    OrderInfo initOrderInfo(String userId, List<OrderDetails> orderDetails);
 
 }
