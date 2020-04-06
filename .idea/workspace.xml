@@ -30,7 +30,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="crab" />
+        <entry key="$PROJECT_DIR$" value="goods" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -259,6 +259,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.UsesrServiceTest.addUserByPhone" />
+        <item itemvalue="JUnit.GoodsServiceTest.listGoodsTest" />
         <item itemvalue="JUnit.GoodsServiceTest.getGoodsAllInfo" />
         <item itemvalue="JUnit.GoodsDaoTest.listGoods" />
         <item itemvalue="JUnit.DemoApplication.listGoods" />
@@ -690,11 +691,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="269" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586025332327" />
-    <state x="1" y="1" key="CommitChangelistDialog2" timestamp="1586025789410">
+    <state x="1" y="1" key="CommitChangelistDialog2" timestamp="1586189637857">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="236" y="0" key="CommitChangelistDialog2/0.0.1304.768@0.0.1304.768" timestamp="1584978281617" />
-    <state x="1" y="1" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586025789410" />
+    <state x="1" y="1" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586189637857" />
     <state x="135" y="125" width="1120" height="584" key="DiffContextDialog" timestamp="1585851836086">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -705,26 +706,26 @@
     </state>
     <state x="431" y="126" key="FileChooserDialogImpl/0.0.1304.768@0.0.1304.768" timestamp="1584841258047" />
     <state x="635" y="171" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585923056306" />
-    <state width="1877" height="351" key="GridCell.Tab.0.bottom" timestamp="1586025685076">
+    <state width="1877" height="351" key="GridCell.Tab.0.bottom" timestamp="1586189619183">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1261" height="228" key="GridCell.Tab.0.bottom/0.0.1304.768@0.0.1304.768" timestamp="1584965452632" />
-    <state width="1877" height="351" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586025685076" />
-    <state width="1877" height="351" key="GridCell.Tab.0.center" timestamp="1586025685076">
+    <state width="1877" height="351" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586189619183" />
+    <state width="1877" height="351" key="GridCell.Tab.0.center" timestamp="1586189619183">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1261" height="228" key="GridCell.Tab.0.center/0.0.1304.768@0.0.1304.768" timestamp="1584965452631" />
-    <state width="1877" height="351" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586025685076" />
-    <state width="1877" height="351" key="GridCell.Tab.0.left" timestamp="1586025685076">
+    <state width="1877" height="351" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586189619183" />
+    <state width="1877" height="351" key="GridCell.Tab.0.left" timestamp="1586189619183">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1261" height="228" key="GridCell.Tab.0.left/0.0.1304.768@0.0.1304.768" timestamp="1584965452629" />
-    <state width="1877" height="351" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586025685076" />
-    <state width="1877" height="351" key="GridCell.Tab.0.right" timestamp="1586025685076">
+    <state width="1877" height="351" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586189619183" />
+    <state width="1877" height="351" key="GridCell.Tab.0.right" timestamp="1586189619183">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1261" height="228" key="GridCell.Tab.0.right/0.0.1304.768@0.0.1304.768" timestamp="1584965452632" />
-    <state width="1877" height="351" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586025685076" />
+    <state width="1877" height="351" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586189619183" />
     <state width="1877" height="351" key="GridCell.Tab.1.bottom" timestamp="1585921572915">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -772,11 +773,11 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="414" y="96" key="git4idea.branch.GitSmartOperationDialog/0.0.1304.768@0.0.1304.768" timestamp="1584978503921" />
-    <state x="481" y="237" key="git4idea.merge.GitPullDialog" timestamp="1585851330483">
+    <state x="481" y="237" key="git4idea.merge.GitPullDialog" timestamp="1586189555282">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="327" y="175" key="git4idea.merge.GitPullDialog/0.0.1304.768@0.0.1304.768" timestamp="1584978237876" />
-    <state x="481" y="237" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585851330483" />
+    <state x="481" y="237" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586189555282" />
     <state x="306" y="232" key="git4idea.ui.GitUnstashDialog" timestamp="1584283072939">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
