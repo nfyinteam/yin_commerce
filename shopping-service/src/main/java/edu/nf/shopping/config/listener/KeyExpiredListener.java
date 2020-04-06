@@ -11,7 +11,7 @@ import java.nio.charset.StandardCharsets;
  * @author Achine
  * @date 2020/4/6
  */
-@Component
+@Component("edu.nf.shopping.order")
 public class KeyExpiredListener extends KeyExpirationEventMessageListener {
 
     public KeyExpiredListener(RedisMessageListenerContainer listenerContainer) {

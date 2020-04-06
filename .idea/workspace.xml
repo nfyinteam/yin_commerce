@@ -3,8 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="62b8ac9c-86a9-4199-8f79-2819b827666b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/goods/service/impl/SkuInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/goods/service/impl/SkuInfoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/order/service/impl/InitOrderInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/order/service/impl/InitOrderInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/config/listener/KeyExpiredListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/config/listener/KeyExpiredListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/resources/application-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/resources/application-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-util/target/classes/edu/nf/shopping/util/FileNameUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-util/target/classes/edu/nf/shopping/util/GetUUIDUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-util/target/classes/edu/nf/shopping/util/PageBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-util/target/classes/edu/nf/shopping/util/TimeMillisUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-util/target/classes/edu/nf/shopping/util/UUIDUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-util/target/classes/edu/nf/shopping/util/UploadAddressUtils.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +39,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/comment/service/impl/CommentServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/comment/service/impl/PraiseServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/order/service/impl/InitOrderInfoServiceImpl.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/goods/service/impl/GoodsAllInfoServiceImpl.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MavenImportPreferences">
@@ -90,7 +97,13 @@
       <recent name="D:\ideaprojects\addiction-shopping\shopping-dao\src\main\resources\mapper\shoppingCart" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TimeMillisUtils">
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean install" />
+      <command value="mvn clean" />
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.GoodsServiceTest.getGoodsAllInfo">
     <configuration name="TimeMillisUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.nf.shopping.util.TimeMillisUtils" />
       <module name="shopping-util" />
@@ -100,22 +113,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CommentServiceTest.listComment" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="shopping-userapi" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.nf.shopping.message.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.nf.shopping.comment.service" />
-      <option name="MAIN_CLASS_NAME" value="edu.nf.shopping.comment.service.CommentServiceTest" />
-      <option name="METHOD_NAME" value="listComment" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -152,6 +149,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GoodsServiceTest.getGoodsAllInfo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="shopping-userapi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.nf.shopping.goods.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.nf.shopping.goods.service" />
+      <option name="MAIN_CLASS_NAME" value="edu.nf.shopping.goods.service.GoodsServiceTest" />
+      <option name="METHOD_NAME" value="getGoodsAllInfo" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AdminApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="shopping-adminapi" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="edu.nf.shopping.AdminApiApplication" />
@@ -174,11 +187,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GoodsServiceTest.getGoodsAllInfo" />
         <item itemvalue="Application.TimeMillisUtils" />
         <item itemvalue="Spring Boot.UserApiApplication" />
         <item itemvalue="JUnit.CommentServiceTest.testForValue" />
         <item itemvalue="JUnit.CommentServiceTest.rabbitTest" />
-        <item itemvalue="JUnit.CommentServiceTest.listComment" />
       </list>
     </recent_temporary>
   </component>
@@ -371,7 +384,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586184221468</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="同步到redis">
+      <created>1586188218161</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1586188218161</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -433,7 +453,8 @@
     <MESSAGE value="添加了订单明细dao" />
     <MESSAGE value="添加了订单明细Exception" />
     <MESSAGE value="完成了创建订单的service层" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成了创建订单的service层" />
+    <MESSAGE value="同步到redis" />
+    <option name="LAST_COMMIT_MESSAGE" value="同步到redis" />
   </component>
   <component name="WindowStateProjectService">
     <state x="306" y="187" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584442518016">
@@ -453,11 +474,11 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="242" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1304.768@0.0.1304.768" timestamp="1584956561929" />
-    <state x="347" y="0" key="CommitChangelistDialog2" timestamp="1586184217715">
+    <state x="347" y="0" key="CommitChangelistDialog2" timestamp="1586189489680">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="236" y="0" key="CommitChangelistDialog2/0.0.1304.768@0.0.1304.768" timestamp="1584978281617" />
-    <state x="347" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586184217715" />
+    <state x="347" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586189489680" />
     <state x="92" y="92" width="1120" height="584" key="DiffContextDialog" timestamp="1584433974098">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
@@ -466,26 +487,26 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="431" y="126" key="FileChooserDialogImpl/0.0.1304.768@0.0.1304.768" timestamp="1584841258047" />
-    <state width="1877" height="351" key="GridCell.Tab.0.bottom" timestamp="1586032301443">
+    <state width="1877" height="351" key="GridCell.Tab.0.bottom" timestamp="1586189456068">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1261" height="228" key="GridCell.Tab.0.bottom/0.0.1304.768@0.0.1304.768" timestamp="1584965452632" />
-    <state width="1877" height="351" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586032301443" />
-    <state width="1877" height="351" key="GridCell.Tab.0.center" timestamp="1586032301443">
+    <state width="1877" height="351" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586189456068" />
+    <state width="1877" height="351" key="GridCell.Tab.0.center" timestamp="1586189456068">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1261" height="228" key="GridCell.Tab.0.center/0.0.1304.768@0.0.1304.768" timestamp="1584965452631" />
-    <state width="1877" height="351" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586032301443" />
-    <state width="1877" height="351" key="GridCell.Tab.0.left" timestamp="1586032301443">
+    <state width="1877" height="351" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586189456068" />
+    <state width="1877" height="351" key="GridCell.Tab.0.left" timestamp="1586189456067">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1261" height="228" key="GridCell.Tab.0.left/0.0.1304.768@0.0.1304.768" timestamp="1584965452629" />
-    <state width="1877" height="351" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586032301443" />
-    <state width="1877" height="351" key="GridCell.Tab.0.right" timestamp="1586032301443">
+    <state width="1877" height="351" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586189456067" />
+    <state width="1877" height="351" key="GridCell.Tab.0.right" timestamp="1586189456068">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1261" height="228" key="GridCell.Tab.0.right/0.0.1304.768@0.0.1304.768" timestamp="1584965452632" />
-    <state width="1877" height="351" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586032301443" />
+    <state width="1877" height="351" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586189456068" />
     <state width="1877" height="282" key="GridCell.Tab.1.bottom" timestamp="1585512084143">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -520,11 +541,11 @@
     </state>
     <state x="153" y="0" key="SettingsEditor/0.0.1304.768@0.0.1304.768" timestamp="1584193163717" />
     <state x="225" y="0" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1585507329807" />
-    <state x="359" y="158" key="Vcs.Push.Dialog.v2" timestamp="1586184222918">
+    <state x="359" y="158" key="Vcs.Push.Dialog.v2" timestamp="1586188221225">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="244" y="117" key="Vcs.Push.Dialog.v2/0.0.1304.768@0.0.1304.768" timestamp="1584978450874" />
-    <state x="359" y="158" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1586184222918" />
+    <state x="359" y="158" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1586188221225" />
     <state x="414" y="96" key="git4idea.branch.GitSmartOperationDialog" timestamp="1584978503921">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
@@ -538,6 +559,10 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="306" y="232" key="git4idea.ui.GitUnstashDialog/0.0.1304.768@0.0.1304.768" timestamp="1584283072939" />
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1586189456138">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1586189456138" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1586176498376">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

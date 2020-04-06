@@ -1,12 +1,12 @@
 spring:
   #消息队列
   rabbitmq:
-    addresses: 127.0.0.1
+    addresses: www.88k88.cn
     # 连接端口,默认5672
-    port: 5672
+    port: 15672
     # 设置登陆认证的账号密码，默认为guest
-    username: crab
-    password: 123456
+    username: topyin
+    password: qq520340
     # 虚拟主机地址，默认为"/"
     virtual-host: /
     # 设置连接诶超时时间
