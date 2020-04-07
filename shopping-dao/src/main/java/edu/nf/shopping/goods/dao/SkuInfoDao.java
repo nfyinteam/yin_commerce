@@ -1,6 +1,7 @@
 package edu.nf.shopping.goods.dao;
 
 import edu.nf.shopping.goods.entity.SkuInfo;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * @author Achine
@@ -24,7 +25,7 @@ public interface SkuInfoDao {
      * 修改SkuInfo
      * @param skuInfo
      */
-    void updateSkuInfo(SkuInfo skuInfo);
+    void updateSkuInfo(@Param("skuInfo") SkuInfo skuInfo);
 
     /**
      * 删除SkuInfo

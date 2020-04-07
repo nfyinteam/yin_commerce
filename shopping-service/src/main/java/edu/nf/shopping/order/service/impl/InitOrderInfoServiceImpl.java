@@ -12,7 +12,9 @@ import edu.nf.shopping.order.dao.OrderDao;
 import edu.nf.shopping.order.entity.OrderDetails;
 import edu.nf.shopping.order.entity.OrderInfo;
 import edu.nf.shopping.order.exception.OrderException;
+import edu.nf.shopping.order.service.InitOrderDetailsService;
 import edu.nf.shopping.order.service.InitOrderInfoService;
+import edu.nf.shopping.order.service.OrderDetailsService;
 import edu.nf.shopping.user.dao.UserInfoDao;
 import edu.nf.shopping.user.entity.UserInfo;
 import edu.nf.shopping.util.TimeMillisUtils;
@@ -75,21 +77,26 @@ public class InitOrderInfoServiceImpl implements InitOrderInfoService {
                 throw new OrderException("该用户不能为空");
             }
             orderInfo.setBuyUser(userInfo);
-            orderInfo.setOrderState("确认中");
+            orderInfo.setOrderState("提交中");
             orderInfo.setCreateTime(new Date());
             orderInfo.setCheapPrice(new BigDecimal(0));
             orderInfo.setTransportPrice(new BigDecimal(0));
+            orderInfo.setDel(false);
             BigDecimal buyPrice = new BigDecimal(0);
             List<OrderDetails> detailsList = new ArrayList<>();
             for (OrderDetails details : orderDetails){
+                OrderDetails d = new OrderDetails();
                 SkuAllInfo skuAllInfo = skuInfoService.getSkuAllInfoBySkuId(details.getSkuId());
                 SkuInfo skuInfo = skuAllInfo.getSkuInfo();
+                System.out.println(skuInfo.getSkuId());
+                System.out.println(skuInfo.getGood().getGoodsName());
                 if(skuAllInfo == null){
                     throw new SkuInfoException("该sku不存在");
                 }
-                details.setOrderId(orderInfo.getOrderId());
-                details.setSkuId(skuInfo.getSkuId());
-                details.setSkuPrice(skuInfo.getSkuPrice());
+                d.setOrderId(orderInfo.getOrderId());
+                d.setSkuId(skuInfo.getSkuId());
+                d.setSkuPrice(skuInfo.getSkuPrice());
+                d.setSkuNum(details.getSkuNum());
                 String attribute = "";
                 int i = 0;
                 for (SkuRelation relation : skuAllInfo.getSkuRelations()){
@@ -99,24 +106,27 @@ public class InitOrderInfoServiceImpl implements InitOrderInfoService {
                     attribute += relation.getKey().getKeyName() + ":" + relation.getValue().getValueName();
                     i++;
                 }
-                details.setSkuAttribute(attribute);
-                details.setGoodsId(skuInfo.getGood().getGoodsId());
-                details.setGoodsName(skuInfo.getGood().getGoodsName());
-                details.setGoodsFile(skuAllInfo.getImgsInfo().getImgFile());
+                d.setSkuAttribute(attribute);
+                d.setGoodsId(skuInfo.getGood().getGoodsId());
+                d.setGoodsName(skuInfo.getGood().getGoodsName());
+                d.setGoodsFile(skuAllInfo.getImgsInfo().getImgFile());
                 //校验库存，同步库存
-                if(skuInfo.getSkuStock() == 0 || skuInfo.getSkuStock() - details.getSkuNum() < 0){
+                if(skuInfo.getSkuStock() == 0 || skuInfo.getSkuStock() - d.getSkuNum() < 0){
                     throw new SkuInfoException("库存不足");
                 }
-                skuInfo.setSkuStock(skuInfo.getSkuStock() - details.getSkuNum());
+                skuInfo.setSkuStock(skuInfo.getSkuStock() - d.getSkuNum());
                 skuInfoService.updateSkuInfo(skuInfo);
                 skuAllInfo.setSkuInfo(skuInfo);
                 //同步缓存
                 if(redisTemplate.opsForValue().get("skuInfoCache::" + skuInfo.getSkuId()) != null){
                     redisTemplate.opsForValue().set("skuInfoCache::" + skuInfo.getSkuId(), skuAllInfo);
                 }
-                buyPrice.add(details.getSkuPrice().multiply(new BigDecimal(details.getSkuNum())));
-                detailsList.add(details);
+                BigDecimal buy = d.getSkuPrice().multiply(new BigDecimal(d.getSkuNum()));
+                System.out.println(buy.toString());
+                buyPrice = buyPrice.add(buy);
+                detailsList.add(d);
             }
+            System.out.println(buyPrice.toString());
             orderInfo.setBuyPrice(buyPrice);
             orderInfo.setOrderDetails(detailsList);
             orderDao.addOrderInfo(orderInfo);

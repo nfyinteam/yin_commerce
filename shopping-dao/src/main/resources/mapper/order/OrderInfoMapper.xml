@@ -84,7 +84,7 @@
         left join staff_state ss on ss.ss_id = si.ss_id
         left join user_face uf on uf.face_id = ui.face_id
         left join city c on c.c_id = oi.address_region
-        where ui.u_id = #{userId} and oi.is_del = 0 and oi.order_state != '确认中'
+        where ui.u_id = #{userId} and oi.is_del = 0 and oi.order_state != '提交中'
     </select>
     <select id="getOrderInfoByOrderId" resultMap="orderMap">
         select oi.order_id, oi.buy_price, oi.cheap_price, oi.transport_price, oi.create_time,
@@ -99,7 +99,7 @@
         left join staff_state ss on ss.ss_id = si.ss_id
         left join user_face uf on uf.face_id = ui.face_id
         left join city c on c.c_id = oi.address_region
-        where oi.order_id = #{orderId} and oi.order_state != '确认中'
+        where oi.order_id = #{orderId}
     </select>
     <insert id="addOrderInfo" parameterType="edu.nf.shopping.order.entity.OrderInfo">
         insert order_info(order_id, buy_price, cheap_price, transport_price, create_time,
@@ -109,7 +109,7 @@
         #{orderInfo.cheapPrice}, #{orderInfo.transportPrice}, #{orderInfo.createTime},
         #{orderInfo.payTime}, #{orderInfo.deliverTime}, #{orderInfo.dealTime},
         #{orderInfo.buyAdmin.staffId}, #{orderInfo.buyUser.userId}, #{orderInfo.addressRegion.cid},
-        #{orderInfo.addressName}, #{orderInfo.addressTel}, #{orderInfo.addressUser}
+        #{orderInfo.addressName}, #{orderInfo.addressTel}, #{orderInfo.addressUser},
         #{orderInfo.buyRemark}, #{orderInfo.orderRemark}, #{orderInfo.orderState} ,#{orderInfo.isDel})
     </insert>
     <update id="updateOrderInfo" parameterType="edu.nf.shopping.order.entity.OrderInfo">

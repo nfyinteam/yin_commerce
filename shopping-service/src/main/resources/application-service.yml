@@ -3,7 +3,7 @@ spring:
   rabbitmq:
     addresses: www.88k88.cn
     # 连接端口,默认5672
-    port: 15672
+    port: 5672
     # 设置登陆认证的账号密码，默认为guest
     username: topyin
     password: qq520340

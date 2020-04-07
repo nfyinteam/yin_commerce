@@ -77,7 +77,6 @@ public class SkuInfoServiceImpl implements SkuInfoService {
             }
             return list;
         }catch (Exception e){
-            e.printStackTrace();
             throw new SkuInfoException(e);
         }
     }
@@ -100,6 +99,8 @@ public class SkuInfoServiceImpl implements SkuInfoService {
             if(sku == null){
                 throw new SkuInfoException("该sku不存在");
             }
+            System.out.println(skuInfo.getSkuId());
+            System.out.println(skuInfo.getGood().getGoodsName());
             skuInfoDao.updateSkuInfo(skuInfo);
         }catch (Exception e){
             throw new SkuInfoException(e);

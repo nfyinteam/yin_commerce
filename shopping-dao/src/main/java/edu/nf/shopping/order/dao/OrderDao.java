@@ -1,6 +1,7 @@
 package edu.nf.shopping.order.dao;
 
 import edu.nf.shopping.order.entity.OrderInfo;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -27,13 +28,13 @@ public interface OrderDao {
      * 添加订单
      * @param orderInfo 订单信息
      */
-    void addOrderInfo(OrderInfo orderInfo);
+    void addOrderInfo(@Param("orderInfo") OrderInfo orderInfo);
 
     /**
      * 修改订单
      * @param orderInfo 订单信息
      */
-    void updateOrderInfo(OrderInfo orderInfo);
+    void updateOrderInfo(@Param("orderInfo") OrderInfo orderInfo);
 
     /**
      * 删除订单

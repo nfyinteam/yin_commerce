@@ -59,6 +59,9 @@ public class GoodsAllInfoServiceImpl implements GoodsAllInfoService {
                 //插入key与value
                 Map<String, List<ValueInfo>> map = new HashMap<>();
                 for (SkuRelation relation : relations){
+                    if(relation.getKey() == null){
+                        throw new GoodsException("缺少数据:销售属性名称");
+                    }
                     if(relation.getKey().getKeyName() != null){
                         List<ValueInfo> list = map.get(relation.getKey().getKeyName());
                         if(list == null){
@@ -73,13 +76,18 @@ public class GoodsAllInfoServiceImpl implements GoodsAllInfoService {
                     }
                 }
                 allInfo.setSkuMap(map);
+            }else{
+                throw new GoodsException("缺少数据:该商品暂无销售属性");
             }
             allInfo.setIntroduceTypes(introduceTypeDao.listIntroduceTypeByGoodId(goodId));
             //插入介绍类型和介绍内容
             List<IntroduceInfo> introduceInfos = introduceInfoDao.listIntroduceInfoByGoodsId(goodId);
-            if(introduceInfos != null){
+            if(introduceInfos != null && introduceInfos.size() != 0){
                 Map<String, List<IntroduceInfo>> introduceMap = new HashMap<>();
                 for (IntroduceInfo introduceInfo : introduceInfos){
+                    if(introduceInfo.getIntroduceType() == null){
+                        throw new GoodsException("缺少数据:介绍内容类型");
+                    }
                     if(introduceInfo.getIntroduceType().getItName() != null){
                         List<IntroduceInfo> list = introduceMap.get(introduceInfo.getIntroduceType().getItName());
                         if(list == null){
@@ -92,12 +100,17 @@ public class GoodsAllInfoServiceImpl implements GoodsAllInfoService {
                 }
                 allInfo.setIntroduceMap(introduceMap);
                 allInfo.setIntroduceInfos(introduceInfos);
+            }else{
+                throw new GoodsException("缺少数据:介绍内容");
             }
             //插入关键值类型和关键属性内容
             List<KeyRelation> keyRelations = keyRelationDao.listKeyRelationByGoodsId(goodId);
-            if(keyRelations != null){
+            if(keyRelations != null && keyRelations.size() != 0){
                 Map<String, List<KeyRelation>> keyRelationMap = new HashMap<>();
                 for (KeyRelation keyRelation : keyRelations){
+                    if(keyRelation.getKey() == null || keyRelation.getKey().getKeyType() == null){
+                        throw new GoodsException("缺少数据:关联属性名称");
+                    }
                     if(keyRelation.getKey().getKeyType().getKtName() != null){
                         List<KeyRelation> list = keyRelationMap.get(keyRelation.getKey().getKeyType().getKtName());
                         if(list == null){
@@ -109,6 +122,8 @@ public class GoodsAllInfoServiceImpl implements GoodsAllInfoService {
                     }
                 }
                 allInfo.setKeyRelationMap(keyRelationMap);
+            }else{
+                throw new GoodsException("缺少数据:属性名称");
             }
             return allInfo;
         }catch (Exception e){

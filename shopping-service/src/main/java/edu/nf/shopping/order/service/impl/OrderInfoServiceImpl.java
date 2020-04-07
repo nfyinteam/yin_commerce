@@ -28,6 +28,7 @@ public class OrderInfoServiceImpl implements OrderInfoService {
      * @return
      */
     @Override
+    @Cacheable(value = "orderListCache", key = "#userId", condition = "#userId != null or #userId != ''")
     public List<OrderInfo> listOrderInfoByUserId(String userId) {
         try {
             if(userId == "" || userId == null){
