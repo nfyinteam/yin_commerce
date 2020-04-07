@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author Achine
@@ -57,4 +58,5 @@ public class SpuInfo {
     public void setSpuNum(Integer spuNum) {
         this.spuNum = spuNum;
     }
+
 }

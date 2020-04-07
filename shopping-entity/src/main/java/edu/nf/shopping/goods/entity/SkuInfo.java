@@ -1,6 +1,7 @@
 package edu.nf.shopping.goods.entity;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 /**
  * @author Achine
@@ -52,4 +53,5 @@ public class SkuInfo {
     public void setGood(GoodsInfo good) {
         this.good = good;
     }
+
 }

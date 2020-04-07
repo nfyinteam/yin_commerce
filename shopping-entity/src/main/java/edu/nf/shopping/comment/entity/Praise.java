@@ -18,4 +18,5 @@ public class Praise {
     @JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date time;
+    private String goodsId;
 }

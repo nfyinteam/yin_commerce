@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.nf.shopping.goods.dao.SkuInfoDao">
+    <resultMap id="skuInfoMap" type="edu.nf.shopping.goods.entity.SkuInfo">
+        <id property="skuId" column="sku_id"/>
+        <result property="skuPrice" column="sku_price"/>
+        <result property="skuStock" column="sku_stock"/>
+        <result property="skuSales" column="sku_sales"/>
+        <association property="good" resultMap="goodsMap"/>
+    </resultMap>
+
+    <resultMap id="goodsMap" type="edu.nf.shopping.goods.entity.GoodsInfo">
+        <id property="goodsId" column="goods_id"/>
+        <result property="goodsName" column="goods_name"/>
+        <result property="shelfTime" column="shelf_time"/>
+        <result property="isShelf" column="is_shelf"/>
+        <association property="spuInfo" resultMap="spuInfoMap"/>
+        <association property="goodsType" resultMap="goodsTypeMap"/>
+    </resultMap>
+    <resultMap id="spuInfoMap" type="edu.nf.shopping.goods.entity.SpuInfo">
+        <id property="spuId" column="spu_id"/>
+        <result property="spuName" column="spu_name"/>
+        <result property="spuNum" column="spu_num"/>
+        <result property="listTime" column="list_time"/>
+        <result property="spuRemark" column="spu_remark"/>
+    </resultMap>
+    <resultMap id="goodsTypeMap" type="edu.nf.shopping.goods.entity.GoodsType">
+        <id property="gtId" column="gt_id"/>
+        <result property="gtName" column="gt_name"/>
+        <result property="pId" column="p_id"/>
+    </resultMap>
+    <resultMap id="skuRelationMap" type="edu.nf.shopping.goods.entity.SkuRelation">
+        <association property="key" resultMap="keyMap"/>
+        <association property="value" resultMap="valueMap"/>
+    </resultMap>
+    <resultMap id="valueMap" type="edu.nf.shopping.goods.entity.ValueInfo">
+        <id property="valueId" column="value_id"/>
+        <result property="valueName" column="value_name"/>
+        <association property="keyInfo" resultMap="keyMap"/>
+    </resultMap>
+    <resultMap id="keyMap" type="edu.nf.shopping.goods.entity.KeyInfo">
+        <id property="keyId" column="key_id"/>
+        <result property="keyName" column="key_name"/>
+        <association property="goodsType" resultMap="goodsTypeMap"/>
+        <association property="keyType" resultMap="keyTypeMap"/>
+    </resultMap>
+    <resultMap id="keyTypeMap" type="edu.nf.shopping.goods.entity.KeyType">
+        <id property="ktId" column="kt_id"/>
+        <result property="ktName" column="kt_name"/>
+    </resultMap>
+
+    <select id="getSkuInfoBySkuId" resultMap="skuInfoMap">
+        select si.sku_id, si.sku_price, si.sku_stock, si.sku_sales, gi.goods_id,
+        gi.goods_name, gi.shelf_time, gi.is_shelf, gi.spu_id, gi.gt_id from sku_info si
+        LEFT JOIN goods_info gi on gi.goods_id = si.goods_id where si.sku_id = #{skuId}
+    </select>
+    <insert id="addSkuInfo" parameterType="edu.nf.shopping.goods.entity.SkuInfo">
+        insert sku_info(sku_id, sku_price, sku_stock, sku_sales, goods_id)
+        value(#{skuInfo.skuId}, #{skuInfo.skuPrice}, #{skuInfo.skuStock}, #{skuInfo.skuSales}, #{skuInfo.good.goodsId})
+    </insert>
+    <update id="updateSkuInfo" parameterType="edu.nf.shopping.goods.entity.SkuInfo">
+        update sku_info set sku_price = #{skuInfo.skuPrice}, sku_stock = #{skuInfo.skuStock},
+        sku_sales = #{skuInfo.sku_sales} where sku_id = #{skuInfo.skuId}
+    </update>
+    <delete id="deleteSkuInfo" parameterType="java.lang.String">
+        delete from sku_info where sku_id = #{skuId}
+    </delete>
+</mapper>

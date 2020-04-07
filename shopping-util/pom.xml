@@ -21,6 +21,12 @@
             <artifactId>httpmime</artifactId>
             <version>4.5.3</version>
         </dependency>
+        <!-- Lettuce -->
+        <dependency>
+            <groupId>io.lettuce</groupId>
+            <artifactId>lettuce-core</artifactId>
+            <version>5.2.2.RELEASE</version>
+        </dependency>
     </dependencies>
 
 

@@ -14,6 +14,7 @@ import java.util.List;
 @Data
 public class Comment {
     private String comId;
+    private String orderId;
     private String goodsId;
     private String userId;
     private String parentId;
@@ -29,9 +30,11 @@ public class Comment {
     private String total;
     private String praiseNum;
     private String theUser;
+    private String isPraise;
     private String totalScore;
     private String userName;
     private String userFace;
+    private String skuInfo;
     private List<ImgInfo> imgInfoList;
     private List<Comment> commentList;
 

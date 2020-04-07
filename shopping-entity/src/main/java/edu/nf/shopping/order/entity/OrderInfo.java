@@ -1,16 +1,20 @@
 package edu.nf.shopping.order.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import edu.nf.shopping.admin.entity.StaffInfo;
+import edu.nf.shopping.user.entity.UserAddress;
 import edu.nf.shopping.user.entity.UserInfo;
 import edu.nf.shopping.warehouse.entity.CargoInfo;
 import edu.nf.shopping.warehouse.entity.City;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 /**
- * @author lishun
- * @date 2020/3/11
+ * @author Achine
+ * @date 2020/4/5
  * 订单信息表
  */
 public class OrderInfo {
@@ -18,10 +22,6 @@ public class OrderInfo {
      * 时间戳、主键
      */
     private String orderId;
-    /**
-     * 货物编号
-     */
-    private CargoInfo cargo;
     /**
      * 购买价格
      */
@@ -35,9 +35,29 @@ public class OrderInfo {
      */
     private BigDecimal transportPrice;
     /**
-     * 购买时间
+     * 订单创建时间
      */
-    private Date buyTime;
+    @JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date createTime;
+    /**
+     * 支付时间
+     */
+    @JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date payTime;
+    /**
+     * 发货时间
+     */
+    @JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date deliverTime;
+    /**
+     * 成交时间
+     */
+    @JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date dealTime;
     /**
      * 客服人员
      */
@@ -47,13 +67,9 @@ public class OrderInfo {
      */
     private UserInfo buyUser;
     /**
-     * 收货地区
+     * 收货地址
      */
-    private City collectRegion;
-    /**
-     * 收货详细地址
-     */
-    private String collectAddress;
+    private UserAddress userAddress;
     /**
      * 买家备注
      */
@@ -65,7 +81,32 @@ public class OrderInfo {
     /**
      * 订单状态
      */
-    private OrderState orderState;
+    private String orderState;
+    /**
+     * 用户地址区域
+     */
+    private City addressRegion;
+    /**
+     * 用户详细地址
+     */
+    private String addressName;
+    /**
+     * 签收号码
+     */
+    private String addressTel;
+    /**
+     * 签收人
+     */
+    private String addressUser;
+    /**
+     * 是否删除
+     */
+    private Boolean isDel;
+
+    /**
+     * 订单明细信息集合
+     */
+    private List<OrderDetails> orderDetails;
 
     public String getOrderId() {
         return orderId;
@@ -99,12 +140,36 @@ public class OrderInfo {
         this.transportPrice = transportPrice;
     }
 
-    public Date getBuyTime() {
-        return buyTime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setBuyTime(Date buyTime) {
-        this.buyTime = buyTime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Date getPayTime() {
+        return payTime;
+    }
+
+    public void setPayTime(Date payTime) {
+        this.payTime = payTime;
+    }
+
+    public Date getDeliverTime() {
+        return deliverTime;
+    }
+
+    public void setDeliverTime(Date deliverTime) {
+        this.deliverTime = deliverTime;
+    }
+
+    public Date getDealTime() {
+        return dealTime;
+    }
+
+    public void setDealTime(Date dealTime) {
+        this.dealTime = dealTime;
     }
 
     public StaffInfo getBuyAdmin() {
@@ -123,20 +188,12 @@ public class OrderInfo {
         this.buyUser = buyUser;
     }
 
-    public City getCollectRegion() {
-        return collectRegion;
+    public UserAddress getUserAddress() {
+        return userAddress;
     }
 
-    public void setCollectRegion(City collectRegion) {
-        this.collectRegion = collectRegion;
-    }
-
-    public String getCollectAddress() {
-        return collectAddress;
-    }
-
-    public void setCollectAddress(String collectAddress) {
-        this.collectAddress = collectAddress;
+    public void setUserAddress(UserAddress userAddress) {
+        this.userAddress = userAddress;
     }
 
     public String getBuyRemark() {
@@ -155,19 +212,59 @@ public class OrderInfo {
         this.orderRemark = orderRemark;
     }
 
-    public OrderState getOrderState() {
+    public String getOrderState() {
         return orderState;
     }
 
-    public void setOrderState(OrderState orderState) {
+    public void setOrderState(String orderState) {
         this.orderState = orderState;
     }
 
-    public CargoInfo getCargo() {
-        return cargo;
+    public City getAddressRegion() {
+        return addressRegion;
     }
 
-    public void setCargo(CargoInfo cargo) {
-        this.cargo = cargo;
+    public void setAddressRegion(City addressRegion) {
+        this.addressRegion = addressRegion;
+    }
+
+    public String getAddressName() {
+        return addressName;
+    }
+
+    public void setAddressName(String addressName) {
+        this.addressName = addressName;
+    }
+
+    public String getAddressTel() {
+        return addressTel;
+    }
+
+    public void setAddressTel(String addressTel) {
+        this.addressTel = addressTel;
+    }
+
+    public String getAddressUser() {
+        return addressUser;
+    }
+
+    public void setAddressUser(String addressUser) {
+        this.addressUser = addressUser;
+    }
+
+    public Boolean getDel() {
+        return isDel;
+    }
+
+    public void setDel(Boolean del) {
+        isDel = del;
+    }
+
+    public List<OrderDetails> getOrderDetails() {
+        return orderDetails;
+    }
+
+    public void setOrderDetails(List<OrderDetails> orderDetails) {
+        this.orderDetails = orderDetails;
     }
 }

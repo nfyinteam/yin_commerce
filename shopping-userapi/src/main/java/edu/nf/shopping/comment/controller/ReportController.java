@@ -24,7 +24,7 @@ public class ReportController extends BaseController {
     @ApiOperation(value = "点赞", notes = "用户可以给评论点赞",
             httpMethod = "post")
     private ResponseVO addReport(String commentId, String reason, HttpServletRequest request){
-        reportService.addReport(commentId,reason,"1578412684666");
+        reportService.addReport(commentId,reason,(String)request.getSession().getAttribute("userId"));
         return success(200,"举报成功");
     }
 }

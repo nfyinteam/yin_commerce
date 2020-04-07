@@ -51,5 +51,5 @@ public interface GoodsDao {
      * 批量删除商品
      * @param goodsId
      */
-    void deleteGoods(String ... goodsId);
+    void deleteGoods(String... goodsId);
 }

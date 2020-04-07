@@ -8,6 +8,6 @@ import edu.nf.shopping.comment.entity.Praise;
  */
 public interface PraiseService {
     Praise findPraise(String userId,String comId);
-    Boolean spotPraise(String userId, String comId);
+    void spotPraise(String userId, String comId,String goodsId);
     void deletePraise(String userId,String comId);
 }

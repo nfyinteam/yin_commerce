@@ -9,11 +9,11 @@ import edu.nf.shopping.comment.entity.CommentImage;
 import edu.nf.shopping.comment.entity.ImgInfo;
 import edu.nf.shopping.comment.exception.CommentException;
 import edu.nf.shopping.comment.service.CommentService;
+import edu.nf.shopping.message.entity.Notice;
 import edu.nf.shopping.util.FileNameUtils;
 import edu.nf.shopping.util.UUIDUtils;
 import edu.nf.shopping.util.UploadAddressUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -39,11 +39,15 @@ public class CommentServiceImpl implements CommentService {
     @Autowired
     private ImgInfoDao imgInfoDao;
 
+//    @Autowired
+//    private NoticeDao noticeDao;
+
     @Override
+    //@Cacheable(value = "commentCache", key = "#goodsId" , condition = "#pageNum==0 or #pageNum==1" )
     public PageInfo<Comment> listBuyShow(Integer pageNum,Integer pageSize,Integer replySize,String goodsId,String userId,Date dataTime,String order,String commentType) {
         try{
             List<Comment> byShowList=commentDao.listBuyShow(pageNum,pageSize,goodsId,userId,dataTime,order,commentType);
-            //查询买家秀的子评论和图片
+            //查询买家秀的子评论、图片
             if(byShowList.size()>0){
                 for (Comment comment : byShowList) {
                     comment.setImgInfoList(imgInfoDao.listImgInfo(comment.getComId()));
@@ -57,6 +61,7 @@ public class CommentServiceImpl implements CommentService {
             throw new CommentException("数据库出错");
         }
     }
+
 
     @Override
     public PageInfo<Comment> listComment(Integer pageNum, Integer pageSize, String comId,String userId,Date dataTime,String order) {
@@ -85,6 +90,8 @@ public class CommentServiceImpl implements CommentService {
             comment.setState("2");
             comment.setTime(new Date());
             comment.setGrade("1");
+            //需要调用订单的sku
+            comment.setSkuInfo("");
             comment.setParentId("NULL");
             comment.setBycId("NULL");
             commentDao.addComment(comment);
@@ -116,39 +123,37 @@ public class CommentServiceImpl implements CommentService {
     @Override
     public void addComment(Comment comment) {
         try{
-            //判断被回复的评论是否存在
             if(comment.getBycId()!=null && !"".equals(comment.getBycId()) && comment.getGoodsId()!=null && !"".equals(comment.getGoodsId())){
-                if(commentDao.findComment(comment.getBycId(),null,null)!=null){
-                    comment.setComId(UUIDUtils.createUUID());
-                    comment.setState("1");
-                    comment.setTime(new Date());
-                    comment.setGrade(comment.getBycId().equals(comment.getParentId())?"2":"3");
-                    comment.setComScore("NULL");
-                    commentDao.addComment(comment);
-                }else {
-                    throw new CommentException("出错了");
-                }
+                comment.setComId(UUIDUtils.createUUID());
+                comment.setState("1");
+                comment.setSkuInfo("NULL");
+                comment.setOrderId("NULL");
+                comment.setTime(new Date());
+                comment.setGrade(comment.getBycId().equals(comment.getParentId())?"2":"3");
+                comment.setComScore("NULL");
+                commentDao.addComment(comment);
+                //发送回复消息
+                Notice notice = new Notice();
+                notice.setNoticeId(UUIDUtils.createUUID());
+                notice.setContent("赞了我的评论");
+                notice.setLink("NULL");
+                notice.setTime(comment.getTime());
+                notice.setType("1");
+                notice.setAuthor(comment.getUserId());
+                notice.setTitle("NULL");
+                //
             }
-        }catch (CommentException e){
-            throw e;
-        }
-        catch (RuntimeException e){
+        }catch (RuntimeException e){
             e.printStackTrace();
             throw new CommentException("数据库出错");
         }
     }
 
-
     @Override
     public void updateComment(String comId,String state,String userId) {
         try{
             if(comId!=""&&comId!=null){
-                //判断是否为本人
-                if(commentDao.findComment(comId,null,userId)!=null){
                     commentDao.updateComment(comId,state);
-                }else {
-                    throw new CommentException("出错了！");
-                }
             }else {
                 throw new CommentException("出错了！");
             }

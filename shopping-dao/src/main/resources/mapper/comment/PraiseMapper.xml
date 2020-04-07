@@ -13,7 +13,7 @@
         where u_id=#{param1} and com_id=#{param2}
     </select>
     <insert id="addPraise" parameterType="edu.nf.shopping.comment.entity.Praise">
-        insert praise(praise_id,u_id,com_id,praise_time)
+        insert IGNORE praise(praise_id,u_id,com_id,praise_time)
         value(#{praId},#{userId},#{comId},#{time})
     </insert>
     <delete id="deletePraise" parameterType="String">

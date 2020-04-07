@@ -11,8 +11,28 @@ import java.util.List;
  */
 public interface NoticeDao {
 
-    List<Notice> listNotice(@Param("pageNum") Integer pageNum, @Param("pageSize") Integer pageSize, String userId, String type);
+    /**
+     * 根据类型查询通知
+     * @param type
+     * @param userId
+     * @return
+     */
+    List<Notice> userListNotice(String type,String userId);
 
-    void addNotice(Notice notice);
+    /**
+     * 查询用户未读通知数量
+     * @param userId
+     * @return
+     */
+    List<Notice> listNotViewByUserId(String userId);
+
+
+
+    /**
+     * 添加通知
+     * @param notice
+     * @return
+     */
+    int addNotice(Notice notice);
 
 }

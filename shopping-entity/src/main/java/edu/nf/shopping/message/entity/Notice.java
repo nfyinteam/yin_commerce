@@ -1,8 +1,12 @@
 package edu.nf.shopping.message.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import edu.nf.shopping.comment.entity.Comment;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
+import java.util.List;
 
 /**
  * @author Bull fighters
@@ -15,8 +19,14 @@ public class Notice {
     private String content;
     private String link;
     private String author;
+    private String comId;
     private String type;
     @JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private String time;
+    private Date time;
+    private String state;
+    private Comment comment;
+    private String notView;
+    private String newMessageNum;
+    private List<UserSetUp> userSetUpList;
 }

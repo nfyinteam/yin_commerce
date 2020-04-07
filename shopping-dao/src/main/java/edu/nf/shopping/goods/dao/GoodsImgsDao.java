@@ -29,7 +29,7 @@ public interface GoodsImgsDao {
      * @param goodsId 商品编号
      * @return
      */
-    List<ImgsInfo> listFirstGoodsImgsByGoodsId(String ... goodsId);
+    List<ImgsInfo> listFirstGoodsImgsByGoodsId(String... goodsId);
 
     /**
      * 根据图片编号imgId查询该图片相关的信息

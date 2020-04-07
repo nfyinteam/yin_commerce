@@ -1,119 +1,50 @@
 package edu.nf.shopping.user.entity;
 
 
+import lombok.Data;
 
 /**
  * @author re
  * @date 2020/3/22
  */
+@Data
 public class UserInfo {
     /**
      * 用户编号
      */
-    private String uid;
+    private String userId;
     /**
      * 用户名称
      */
-    private String uname;
+    private String userName;
     /**
      * 用户邮箱
      */
-    private String uemail;
+    private String userEmail;
     /**
      * 用户手机号
      */
-    private String utel;
+    private String tel;
     /**
      * 用户密码
      */
-    private String upassword;
+    private String password;
     /**
      * 用户性别
      */
-    private String usex;
+    private String sex;
     /**
      * 用户真实姓名
      */
-    private String realname;
+    private String realName;
     /**
      * 用户身份证号码
      */
-    private String carnumber;
+    private String carNumber;
     /**
      * 用户头像编号
      */
-    private String factid;
+    private String faceId;
 
-    public String getUid() {
-        return uid;
-    }
-
-    public void setUid(String uid) {
-        this.uid = uid;
-    }
-
-    public String getUname() {
-        return uname;
-    }
-
-    public void setUname(String uname) {
-        this.uname = uname;
-    }
-
-    public String getUemail() {
-        return uemail;
-    }
-
-    public void setUemail(String uemail) {
-        this.uemail = uemail;
-    }
-
-    public String getUtel() {
-        return utel;
-    }
-
-    public void setUtel(String utel) {
-        this.utel = utel;
-    }
-
-    public String getUpassword() {
-        return upassword;
-    }
-
-    public void setUpassword(String upassword) {
-        this.upassword = upassword;
-    }
-
-    public String getUsex() {
-        return usex;
-    }
-
-    public void setUsex(String usex) {
-        this.usex = usex;
-    }
-
-    public String getRealname() {
-        return realname;
-    }
-
-    public void setRealname(String realname) {
-        this.realname = realname;
-    }
-
-    public String getCarnumber() {
-        return carnumber;
-    }
-
-    public void setCarnumber(String carnumber) {
-        this.carnumber = carnumber;
-    }
-
-    public String getFactid() {
-        return factid;
-    }
-
-    public void setFactid(String factid) {
-        this.factid = factid;
-    }
 
 }

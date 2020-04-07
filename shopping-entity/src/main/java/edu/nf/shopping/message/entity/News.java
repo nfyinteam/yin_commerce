@@ -13,12 +13,13 @@ import java.util.Date;
 @Data
 public class News {
     private String newsId;
-    private String contents;
-    private String imgId;
+    private String content;
+    private String imgName;
     private String authorId;
     private String goodsId;
     @JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date time;
-    private Receive receive;
+    private String notView;
+    private String receiveUserId;
 }

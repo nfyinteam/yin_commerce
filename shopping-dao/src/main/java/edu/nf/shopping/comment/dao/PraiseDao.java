@@ -8,6 +8,6 @@ import edu.nf.shopping.comment.entity.Praise;
  */
 public interface PraiseDao {
     Praise findPraise(String userId,String comId);
-    void addPraise(Praise praise);
+    int addPraise(Praise praise);
     void deletePraise(String userId,String comId);
 }
