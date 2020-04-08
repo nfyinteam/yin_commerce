@@ -25,8 +25,6 @@ import java.util.Map;
 @Configuration
 @EnableCaching
 public class RedisConfig {
-    @Autowired
-    private RedisConnectionFactory redisConnectionFactory;
     /**
      * 装配RedisCacheManager，这里初始化了cache1和cache2两个缓存，并存入Map中,
      * 后续在使用时可以指定操作哪一个缓存。
@@ -40,12 +38,13 @@ public class RedisConfig {
         map.put("pageCache", initRedisCacheConfiguration(-1L));
         map.put("goodsCache", initRedisCacheConfiguration(1800L));
         map.put("orderCache", initRedisCacheConfiguration(1800L));
-        map.put("orderDetailsCache", initRedisCacheConfiguration(1800L));
         map.put("orderListCache", initRedisCacheConfiguration(1800L));
+        map.put("orderDetailsCache", initRedisCacheConfiguration(1800L));
+        map.put("orderDetailsListCache", initRedisCacheConfiguration(1800L));
         map.put("skuInfoCache", initRedisCacheConfiguration(1800L));
         map.put("userInfoCache", initRedisCacheConfiguration(1800L));
         map.put("shopcartInfoCache", initRedisCacheConfiguration(1800L));
-        map.put("messageInfoCache", initRedisCacheConfiguration(1800L));
+        map.put("messageCache", initRedisCacheConfiguration(1800L));
         map.put("warehouseCache", initRedisCacheConfiguration(1800L));
         RedisCacheManager cacheManager = RedisCacheManager.builder(redisConnectionFactory)
                 .withInitialCacheConfigurations(map)
@@ -98,6 +97,9 @@ public class RedisConfig {
         return redisTemplate;
     }
 
+    @Autowired
+    private RedisConnectionFactory redisConnectionFactory;
+
     @Bean
     public RedisMessageListenerContainer redisMessageListenerContainer() {
         RedisMessageListenerContainer redisMessageListenerContainer = new RedisMessageListenerContainer();
@@ -105,9 +107,9 @@ public class RedisConfig {
         return redisMessageListenerContainer;
     }
 
-    @Bean
-    public KeyExpiredListener keyExpiredListener() {
-        return new KeyExpiredListener(this.redisMessageListenerContainer());
-    }
+//    @Bean
+//    public KeyExpiredListener keyExpiredListener() {
+//        return new KeyExpiredListener(this.redisMessageListenerContainer());
+//    }
 
 }

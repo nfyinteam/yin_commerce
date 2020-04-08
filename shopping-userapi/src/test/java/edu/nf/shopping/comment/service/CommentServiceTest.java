@@ -2,13 +2,19 @@ package edu.nf.shopping.comment.service;
 
 import com.github.pagehelper.PageInfo;
 import edu.nf.shopping.comment.entity.Comment;
-import edu.nf.shopping.message.ProducerServer;
+import edu.nf.shopping.message.entity.Notice;
+import edu.nf.shopping.message.service.NoticeService;
+import edu.nf.shopping.page.entity.PageRegion;
+import edu.nf.shopping.util.LettuceUtils;
+import io.lettuce.core.api.sync.RedisCommands;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author Bull fighters
@@ -21,10 +27,11 @@ public class CommentServiceTest {
     private CommentService commentService;
 
     @Autowired
-    private ProducerServer producerServer;
+    private StringRedisTemplate stringRedisTemplate;
+
 
     @Autowired
-    private StringRedisTemplate stringRedisTemplate;
+    private RedisTemplate redisTemplate;
 
     @Test
     void rabbitTest(){
@@ -43,5 +50,14 @@ public class CommentServiceTest {
         System.out.println(name);
         //删除
         stringRedisTemplate.delete("user:1001");
+    }
+
+    @Test
+    void testNotice(){
+        RedisCommands<String, String> commands = LettuceUtils.getCommands();
+        List<PageRegion> list=(List<PageRegion>)redisTemplate.opsForValue().get("pageCache::pageRegion-0");
+        for (PageRegion pageRegion : list) {
+            System.out.println(pageRegion);
+        }
     }
 }

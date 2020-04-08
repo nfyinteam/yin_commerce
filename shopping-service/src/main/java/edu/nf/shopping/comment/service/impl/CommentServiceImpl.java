@@ -1,7 +1,6 @@
 package edu.nf.shopping.comment.service.impl;
 
 import com.github.pagehelper.PageInfo;
-import com.rabbitmq.client.Channel;
 import edu.nf.shopping.comment.dao.ComImageDao;
 import edu.nf.shopping.comment.dao.CommentDao;
 import edu.nf.shopping.comment.dao.ImgInfoDao;
@@ -10,15 +9,13 @@ import edu.nf.shopping.comment.entity.CommentImage;
 import edu.nf.shopping.comment.entity.ImgInfo;
 import edu.nf.shopping.comment.exception.CommentException;
 import edu.nf.shopping.comment.service.CommentService;
-import edu.nf.shopping.config.RabbitConfig;
+import edu.nf.shopping.message.entity.Notice;
 import edu.nf.shopping.util.FileNameUtils;
 import edu.nf.shopping.util.UUIDUtils;
 import edu.nf.shopping.util.UploadAddressUtils;
-import org.springframework.amqp.rabbit.annotation.RabbitListener;
-import org.springframework.amqp.support.AmqpHeaders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
-import org.springframework.messaging.handler.annotation.Headers;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -26,7 +23,6 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author Bull fighters
@@ -45,11 +41,9 @@ public class CommentServiceImpl implements CommentService {
     @Autowired
     private ImgInfoDao imgInfoDao;
 
-//    @Autowired
-//    private NoticeDao noticeDao;
 
     @Override
-    //@Cacheable(value = "commentCache", key = "#goodsId" , condition = "#pageNum==0 or #pageNum==1" )
+    @Cacheable(value = "commentCache", key = "#goodsId" , condition = "#userId==null and #pageNum<=1 and #order=='0' and #commentType=='0'")
     public PageInfo<Comment> listBuyShow(Integer pageNum,Integer pageSize,Integer replySize,String goodsId,String userId,Date dataTime,String order,String commentType) {
         try{
             List<Comment> byShowList=commentDao.listBuyShow(pageNum,pageSize,goodsId,userId,dataTime,order,commentType);
@@ -139,14 +133,14 @@ public class CommentServiceImpl implements CommentService {
                 comment.setComScore("NULL");
                 commentDao.addComment(comment);
                 //发送回复消息
-                /*Notice notice = new Notice();
+                Notice notice = new Notice();
                 notice.setNoticeId(UUIDUtils.createUUID());
                 notice.setContent("赞了我的评论");
                 notice.setLink("NULL");
                 notice.setTime(comment.getTime());
                 notice.setType("1");
                 notice.setAuthor(comment.getUserId());
-                notice.setTitle("NULL");*/
+                notice.setTitle("NULL");
                 //
             }
         }catch (RuntimeException e){
@@ -154,6 +148,8 @@ public class CommentServiceImpl implements CommentService {
             throw new CommentException("数据库出错");
         }
     }
+
+
 
     @Override
     public void updateComment(String comId,String state,String userId) {

@@ -1,24 +1,27 @@
-package edu.nf.shopping.user.advice;
+package edu.nf.shopping.message.advice;
 
 import edu.nf.shopping.goods.exception.GoodsException;
-import edu.nf.shopping.user.exception.UserException;
+import edu.nf.shopping.message.exception.MessageException;
 import edu.nf.shopping.vo.ResponseVO;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- * @author Vera
- * @date 2020/4/2
+ * @author Achine
+ * @date 2019/11/14
  */
-public class UserControllerAspect {
+@ControllerAdvice({"edu.nf.shopping.message.controller"})
+public class MessageControllerAspect {
 
-    @ExceptionHandler(UserException.class)
+    @ExceptionHandler(MessageException.class)
     @ResponseBody
-    public ResponseVO loginException(UserException e){
+    public ResponseVO loginException(MessageException e){
         ResponseVO vo = new ResponseVO();
         vo.setCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
         vo.setMessage(e.getMessage());
         return vo;
     }
+
 }

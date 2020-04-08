@@ -11,12 +11,13 @@ import java.nio.charset.StandardCharsets;
  * @author Achine
  * @date 2020/4/6
  */
-@Component("edu.nf.shopping.order")
+@Component
 public class KeyExpiredListener extends KeyExpirationEventMessageListener {
 
     public KeyExpiredListener(RedisMessageListenerContainer listenerContainer) {
         super(listenerContainer);
     }
+
     @Override
     public void onMessage(Message message, byte[] pattern) {
         String channel = new String(message.getChannel(), StandardCharsets.UTF_8);
@@ -24,5 +25,4 @@ public class KeyExpiredListener extends KeyExpirationEventMessageListener {
         String key = new String(message.getBody(),StandardCharsets.UTF_8);
         System.out.println("redis key 过期：pattern={},channel={},key={}, " + new String(pattern) + channel + key);
     }
-
 }

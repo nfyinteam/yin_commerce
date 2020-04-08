@@ -57,14 +57,4 @@ public class UserInfoServiceImpl implements UserInfoService {
            throw new UserException("账号或秘密错误");
         }
     }
-
-    @Override
-    public void updateUserInfo(UserInfo userInfo) {
-        try{
-            userInfoDao.updateUserInfo(userInfo);
-        }catch (Exception e){
-            e.printStackTrace();
-            throw new UserException("用户信息更新失败");
-        }
-    }
 }

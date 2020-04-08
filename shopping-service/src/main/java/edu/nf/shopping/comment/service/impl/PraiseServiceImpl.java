@@ -1,15 +1,16 @@
 package edu.nf.shopping.comment.service.impl;
 
-import com.github.pagehelper.PageInfo;
 import com.rabbitmq.client.Channel;
 import edu.nf.shopping.comment.dao.CommentDao;
 import edu.nf.shopping.comment.dao.PraiseDao;
-import edu.nf.shopping.comment.entity.Comment;
 import edu.nf.shopping.comment.entity.Praise;
 import edu.nf.shopping.comment.exception.CommentException;
 import edu.nf.shopping.comment.service.PraiseService;
 import edu.nf.shopping.config.RabbitConfig;
-import edu.nf.shopping.util.UUIDUtils;
+import edu.nf.shopping.message.dao.NoticeDao;
+import edu.nf.shopping.message.dao.ReceiveDao;
+import edu.nf.shopping.message.entity.Notice;
+import edu.nf.shopping.message.entity.Receive;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -22,7 +23,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
 import java.util.Date;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -39,8 +39,11 @@ public class PraiseServiceImpl implements PraiseService {
     @Autowired
     private CommentDao commentDao;
 
-    /*@Autowired
-    private NoticeDao noticeDao;*/
+    @Autowired
+    private NoticeDao noticeDao;
+
+    @Autowired
+    private ReceiveDao receiveDao;
 
     @Autowired
     private RabbitTemplate rabbitTemplate;
@@ -57,41 +60,65 @@ public class PraiseServiceImpl implements PraiseService {
     }
 
     @Override
-    public void spotPraise(String userId, String comId,String goodsId) {
-        Praise praise=new Praise();
-        praise.setPraId(userId+comId);
-        praise.setUserId(userId);
-        praise.setComId(comId);
-        praise.setTime(new Date());
-        praise.setGoodsId(goodsId);
-        CorrelationData correlationData = new CorrelationData();
-        correlationData.setId(praise.getPraId()+praise.getTime());
-        rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME, "praise.message", praise, correlationData);
+    public void spotPraise(String userId, String comId,String goodsId,String receiveUserId) {
+        try {
+            if (userId ==null||userId==""||comId == null || comId == "" || receiveUserId == null || receiveUserId == "") {
+                throw new CommentException("数据错误了！");
+            }
+            Praise praise = new Praise();
+            praise.setPraId(userId + comId);
+            praise.setUserId(userId);
+            praise.setComId(comId);
+            praise.setTime(new Date());
+            praise.setGoodsId(goodsId);
+            praise.setReceiveUserId(receiveUserId);
+            CorrelationData correlationData = new CorrelationData();
+            correlationData.setId(praise.getPraId() + praise.getTime());
+            rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME, "praise.message", praise, correlationData);
+        }catch (CommentException e){
+            throw e;
+        } catch (RuntimeException e){
+            e.printStackTrace();
+            throw new CommentException("信息出错了！");
+        }
     }
 
     /**
      点赞消费者：专门处理点赞业务
      **/
     @RabbitListener(queues = RabbitConfig.PRAISE_QUEUE)
+    @CacheEvict(value = "commentCache", key = "#praise.goodsId",beforeInvocation=true)
     public void receiveMessage(Praise praise,
                                @Headers Map<String, Object> headers,
                                Channel channel){
         try{
-            //发送点赞消息
-            if(praiseDao.addPraise(praise)>0){
-                System.out.println(111);
-                /*Notice notice = new Notice();
-                notice.setNoticeId(praise.getUserId() + praise.getComId());
+            //判断是否已点过
+            if(praiseDao.findPraise(praise.getUserId(),praise.getComId())==null){
+                System.out.println(praise.toString());
+                //点赞通知记录
+                Notice notice = new Notice();
+                notice.setNoticeId(praise.getPraId());
                 notice.setContent("赞了我的评论");
                 notice.setLink("NULL");
                 notice.setTime(praise.getTime());
                 notice.setType("1");
                 notice.setAuthor(praise.getUserId());
-                notice.setTitle("NULL");*/
-                //noticeDao.addNotice(notice);
+                notice.setTitle("赞了我的评论");
+                notice.setComId(praise.getComId());
+                //接收者记录
+                Receive receive=new Receive();
+                receive.setMessageId(praise.getPraId());
+                receive.setReceiveUserId(praise.getReceiveUserId());
+                receive.setState("1");
+                //添加记录
+                praiseDao.addPraise(praise);
+                receiveDao.addReceive(receive);
+                noticeDao.addNotice(notice);
                 //确认签收
                 Long deliveryTag = (Long) headers.get(AmqpHeaders.DELIVERY_TAG);
                 channel.basicAck(deliveryTag, false);
+            }else {
+                praiseDao.deletePraise(praise.getUserId(),praise.getComId());
             }
         }catch (RuntimeException | IOException e){
             e.printStackTrace();

@@ -31,7 +31,7 @@ public class UserInfoController extends BaseController {
         return success(200,"登录成功！");
     }
 
-    @RequestMapping("/get_userInfo")
+    @RequestMapping("/get/userInfo")
     @ApiOperation(value = "获取用户信息", notes = "用户获取自己的信息",
             httpMethod = "get")
     @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})
@@ -41,7 +41,7 @@ public class UserInfoController extends BaseController {
         return success(userInfo);
     }
 
-    @RequestMapping("/cancellation/user")
+    @RequestMapping("/user/cancellation")
     @ApiOperation(value = "注销", notes = "用户注销登录",
             httpMethod = "get")
     @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})

@@ -1,11 +1,9 @@
 package edu.nf.shopping.order.service.impl;
 
 import edu.nf.shopping.order.dao.OrderDao;
-import edu.nf.shopping.order.entity.OrderDetails;
 import edu.nf.shopping.order.entity.OrderInfo;
 import edu.nf.shopping.order.exception.OrderException;
 import edu.nf.shopping.order.service.OrderInfoService;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;

@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @ControllerAdvice({"edu.nf.shopping.comment.controller"})
 public class CommentControllerAspect {
 
-    @ExceptionHandler(GoodsException.class)
+    @ExceptionHandler(CommentException.class)
     @ResponseBody
     public ResponseVO loginException(CommentException e){
         ResponseVO vo = new ResponseVO();

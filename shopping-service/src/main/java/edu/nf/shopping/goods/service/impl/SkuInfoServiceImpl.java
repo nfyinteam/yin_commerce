@@ -6,7 +6,6 @@ import edu.nf.shopping.goods.dao.SkuRelationDao;
 import edu.nf.shopping.goods.entity.ImgsInfo;
 import edu.nf.shopping.goods.entity.SkuAllInfo;
 import edu.nf.shopping.goods.entity.SkuInfo;
-import edu.nf.shopping.goods.exception.GoodsException;
 import edu.nf.shopping.goods.exception.SkuInfoException;
 import edu.nf.shopping.goods.service.SkuInfoService;
 import org.springframework.beans.factory.annotation.Autowired;

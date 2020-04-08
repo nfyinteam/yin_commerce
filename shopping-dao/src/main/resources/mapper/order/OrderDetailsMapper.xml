@@ -10,37 +10,37 @@
         <result property="skuAttribute" column="sku_attribute"/>
         <result property="goodsName" column="goods_name"/>
         <result property="goodsId" column="goods_id"/>
-        <result property="goodsFile" column="goods_file"/>
+        <result property="goodsFile" column="good_file"/>
         <result property="cargoId" column="cargo_id"/>
     </resultMap>
 
     <select id="listOrderDetailsByOrderId" resultMap="orderDetailsMap">
-        select order_id, sku_num, sku_price, sku_attribute, goods_name, goods_file,
+        select order_id, sku_num, sku_price, sku_attribute, goods_name, good_file,
         cargo_id, sku_id, goods_id from order_details where order_id = #{orderId}
     </select>
 
     <select id="getOrderDetailsByOrderId" resultMap="orderDetailsMap">
-        select order_id, sku_num, sku_price, sku_attribute, goods_name, goods_file,
+        select order_id, sku_num, sku_price, sku_attribute, goods_name, good_file,
         cargo_id, sku_id, goods_id from order_details where order_id = #{param1} and sku_id = #{param2}
     </select>
 
     <insert id="addOrderDetails" parameterType="list">
-        insert into order_details(order_id ,sku_num, sku_price, sku_attribute, goods_name, goods_file,
+        insert into order_details(order_id ,sku_num, sku_price, sku_attribute, goods_name, good_file,
         cargo_id, sku_id, goods_id) values
-        <foreach collection="orderDetails" item="orderDetail" separator=",">
-            (#{orderDetail.orderId}, #{orderDetail.skuNum}, #{orderDetail.skuPrice}, #{orderDetail.skuAttribute},
-            #{orderDetail.goodsName}, #{orderDetail.goodsFile}, #{orderDetail.cargoId},
-            #{orderDetail.skuId}, #{orderDetail.goodsId})
+        <foreach collection="list" item="orderDetail" separator=",">
+            (#{orderDetails.orderId}, #{orderDetails.skuNum}, #{orderDetails.skuPrice}, #{orderDetails.skuAttribute},
+            #{orderDetails.goodsName}, #{orderDetails.goodsFile}, #{orderDetails.cargoId},
+            #{orderDetails.skuId}, #{orderDetails.goodsId})
         </foreach>
     </insert>
 
     <update id="updateOrderDetails" parameterType="list">
-        <foreach collection="orderDetails" item="orderDetail" separator=";">
+        <foreach collection="list" item="orderDetail" separator=";">
             update order_details
             <set>
                 sku_num = #{orderDetails.skuNum}, sku_price = #{orderDetails.skuPrice},
                 sku_attribute = #{orderDetails.skuAttribute}, goods_name = #{orderDetails.goodsName},
-                goods_file = #{orderDetails.goodsFile}, cargo_id = #{orderDetails.cargoId}
+                good_file = #{orderDetails.goodsFile}, cargo_id = #{orderDetails.cargoId}
             </set>
             <where>
                 order_id = #{orderDetails.orderId} and sku_id = #{orderDetails.skuId}
@@ -50,7 +50,7 @@
 
     <delete id="deleteOrderDetails" parameterType="collection">
         delete from order_details where order_id in
-        <foreach collection="orderIds" item="orderId" open="(" close=")" separator=",">
+        <foreach collection="array" item="orderId" open="(" close=")" separator=",">
             #{orderId}
         </foreach>
     </delete>

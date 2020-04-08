@@ -19,4 +19,5 @@ public class Praise {
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date time;
     private String goodsId;
+    private String receiveUserId;
 }

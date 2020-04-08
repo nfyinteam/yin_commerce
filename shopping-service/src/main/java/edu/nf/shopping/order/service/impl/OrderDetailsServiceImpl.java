@@ -36,7 +36,7 @@ public class OrderDetailsServiceImpl implements OrderDetailsService {
      * @return
      */
     @Override
-    @Cacheable(value = "orderDetailsCache", key = "#orderId", condition = "#orderId != null or #orderId != ''")
+    @Cacheable(value = "orderDetailsListCache", key = "#orderId", condition = "#orderId != null or #orderId != ''")
     public List<OrderDetails> listOrderDetailsByOrderId(String orderId) {
         try {
             if(orderId == null || orderId == ""){
@@ -59,7 +59,8 @@ public class OrderDetailsServiceImpl implements OrderDetailsService {
      * @return
      */
     @Override
-    @Cacheable(value = "orderDetailsCache", key = "#orderId" + "-" + "#skuId", condition = "#orderId != null or #orderId != ''")
+    @Cacheable(value = "orderDetailsCache", key = "#orderId" + "-" + "#skuId", condition =
+            "(#orderId != null or #orderId != '') and (#skuId != null or #skuId != '')")
     public OrderDetails getOrederDetails(String orderId, String skuId) {
         try {
             if(orderId == null || orderId == ""){

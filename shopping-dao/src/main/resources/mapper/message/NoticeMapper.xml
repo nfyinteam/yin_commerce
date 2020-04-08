@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.nf.shopping.message.dao.NoticeDao">
+    <resultMap id="noticeMap" type="edu.nf.shopping.message.entity.Notice">
+        <result property="noticeId" column="notice_id"/>
+        <result property="title" column="notice_title"/>
+        <result property="content" column="notice_content"/>
+        <result property="link" column="notice_link"/>
+        <result property="author" column="notice_author"/>
+        <result property="comId" column="com_id"/>
+        <result property="type" column="notice_type"/>
+        <result property="time" column="notice_time"/>
+        <result property="state" column="state"/>
+        <result property="notView" column="not_view"/>
+        <result property="currentContent" column="content"/>
+        <result property="parentContent" column="parent_content"/>
+        <association property="comment" resultMap="commentMap"/>
+    </resultMap>
+    <resultMap id="commentMap" type="edu.nf.shopping.comment.entity.Comment">
+        <result property="content" column="by_content"/>
+        <result property="userName" column="u_name"/>
+        <result property="userFace" column="face_file"/>
+        <result property="grade" column="com_grade"/>
+    </resultMap>
+
+    <select id="userListNotice" resultMap="noticeMap" parameterType="String">
+        select
+        <if test="param1=='0' || param1==0">
+            (select pr.com_content from comments pr where pr.com_id=c.parent_cid) as parent_content,
+            (select cs.com_content from comments cs where cs.com_id=c.by_cid) as by_content,
+        </if>
+        <if test="param1!='2' and param1!=2">
+            uf.face_file,u.u_name,c.com_content as content,c.com_grade,
+        </if>
+        ne.notice_id,ne.notice_title,ne.notice_link,ne.notice_content,
+        ne.notice_author,ne.com_id,ne.notice_type,ne.notice_time,nr.state
+        from notice ne INNER JOIN news_receive nr
+        <if test="param1!='2'and param1!=2">
+            INNER JOIN user_face uf
+            INNER JOIN comments c INNER JOIN user_info u
+        </if>
+        on ne.notice_id=nr.ns_id
+        <if test="param1!='2' and param1!=2">
+            and uf.u_id=ne.notice_author
+            and c.com_id=ne.com_id and u.u_id=ne.notice_author
+        </if>
+        where nr.receive_uid=#{param2} and ne.notice_type=#{param1} and nr.state!='0'
+        ORDER BY ne.notice_time desc
+    </select>
+
+    <select id="listNotViewByUserId" resultMap="noticeMap" parameterType="String">
+        select COUNT(1) as not_view,ne.notice_type
+        from notice ne INNER JOIN news_receive nr on ne.notice_id=nr.ns_id
+        where nr.receive_uid=#{userId} and nr.state='1' group by ne.notice_type
+    </select>
+
+    <insert id="addNotice" parameterType="edu.nf.shopping.message.entity.Notice">
+        REPLACE into notice(notice_id,notice_title,notice_content,notice_link,
+        com_id,notice_author,notice_type,notice_time)
+        values(#{noticeId},#{title},#{content},#{link},#{comId},#{author},#{type},#{time})
+    </insert>
+</mapper>

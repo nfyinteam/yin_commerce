@@ -13,7 +13,7 @@ public interface SkuInfoService {
 
     SkuAllInfo getSkuAllInfoBySkuId(String skuId);
 
-    List<SkuAllInfo> getSkuAllInfoBySkuId(String ... skuId);
+    List<SkuAllInfo> getSkuAllInfoBySkuId(String... skuId);
 
     void addSkuInfo(SkuInfo skuInfo);
 

@@ -14,7 +14,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 @MapperScan(basePackages = {"edu.nf.shopping.goods.dao", "edu.nf.shopping.comment.dao",
         "edu.nf.shopping.warehouse.dao", "edu.nf.shopping.page.dao", "edu.nf.shopping.shopcart.dao",
         "edu.nf.shopping.user.dao", "edu.nf.shopping.goodsearch.dao",
-        "edu.nf.shopping.order.dao"})
+        "edu.nf.shopping.order.dao", "edu.nf.shopping.message.dao"})
 public class UserApiApplication {
     public static void main(String[] args) {
         SpringApplication.run(UserApiApplication.class, args);
