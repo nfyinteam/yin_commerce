@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.nf.shopping.user.dao.UserAddressDao">
+    <resultMap id="userAddressMap" type="edu.nf.shopping.user.entity.UserAddress">
+        <id property="addressId" column="address_id"/>
+        <result property="uid" column="u_id"/>
+        <result property="addressName" column="address_name"/>
+        <result property="addressUser" column="address_user"/>
+        <result property="addressTel" column="address_tel"/>
+        <result property="isSel" column="is_sel"/>
+        <association property="city" resultMap="CityMap"/>
+    </resultMap>
+
+    <resultMap id="CityMap" type="edu.nf.shopping.warehouse.entity.City">
+        <id property="cid" column="c_id"/>
+        <result property="pid" column="p_id"/>
+        <result property="cname" column="c_name"/>
+        <result property="type" column="type"/>
+    </resultMap>
+
+
+    <select id="listUserAddress" resultMap="userAddressMap" parameterType="java.lang.String">
+        select address_id, u_id, address_name, address_tel, address_user, is_sel, c_id, p_id, c_name, type from user_address
+        left join city  on address_region = c_id
+        where u_id = #{uid}
+    </select>
+
+    <delete id="deleteUserAddress" parameterType="java.lang.String">
+        delete from user_address
+        where address_id=#{addressId}
+    </delete>
+
+    <insert id="addUserAddress" parameterType="edu.nf.shopping.user.entity.UserAddress">
+        insert into user_address(address_id, u_id, address_name, address_tel, address_user, is_sel,address_region)
+        values (#{addressId},#{uid},#{addressName},#{addressTel},#{addressUser},#{isSel},#{city.cid})
+    </insert>
+
+    <update id="updateUserAddress" parameterType="edu.nf.shopping.user.entity.UserAddress">
+        update user_address
+        <set>
+            <if test="addressName !=null and addressName !='' ">
+                address_name=#{addressName},
+            </if>
+
+            <if test="addressTel !=null and addressTel!=''">
+                address_tel=#{addressTel},
+            </if>
+            <if test="addressUser != null and addressUser!=''">
+                address_user=#{addressUser},
+            </if>
+            <if test="isSel !=null ">
+                is_sel=#{isSel},
+            </if>
+            <if test="city !=null">
+                address_region=#{city.cid}
+            </if>
+        </set>
+        <where>
+            address_id=#{addressId}
+        </where>
+    </update>
+</mapper>

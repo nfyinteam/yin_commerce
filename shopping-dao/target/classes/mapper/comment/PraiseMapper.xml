@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.nf.shopping.comment.dao.PraiseDao">
+    <resultMap id="praiseMap" type="edu.nf.shopping.comment.entity.Praise">
+        <result property="praId" column="praise_id"/>
+        <result property="userId" column="u_id"/>
+        <result property="comId" column="com_id"/>
+        <result property="time" column="praise_time"/>
+    </resultMap>
+    <select id="findPraise" parameterType="String" resultMap="praiseMap">
+        select praise_id,u_id,com_id,praise_time from praise
+        where u_id=#{param1} and com_id=#{param2}
+    </select>
+    <insert id="addPraise" parameterType="edu.nf.shopping.comment.entity.Praise">
+        REPLACE into praise(praise_id,u_id,com_id,praise_time)
+        value(#{praId},#{userId},#{comId},#{time})
+    </insert>
+    <delete id="deletePraise" parameterType="String">
+        delete from praise where u_id=#{param1} and com_id=#{param2}
+    </delete>
+</mapper>

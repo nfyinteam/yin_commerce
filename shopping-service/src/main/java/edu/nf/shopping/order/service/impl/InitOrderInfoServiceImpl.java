@@ -6,6 +6,7 @@ import edu.nf.shopping.goods.entity.SkuInfo;
 import edu.nf.shopping.goods.entity.SkuRelation;
 import edu.nf.shopping.goods.exception.SkuInfoException;
 import edu.nf.shopping.goods.service.SkuInfoService;
+import edu.nf.shopping.order.config.OrderRabbitConfig;
 import edu.nf.shopping.order.dao.OrderDao;
 import edu.nf.shopping.order.entity.OrderDetails;
 import edu.nf.shopping.order.entity.OrderInfo;
@@ -78,8 +79,6 @@ public class InitOrderInfoServiceImpl implements InitOrderInfoService {
             for (OrderDetails details : orderDetails){
                 SkuAllInfo skuAllInfo = skuInfoService.getSkuAllInfoBySkuId(details.getSkuId());
                 SkuInfo skuInfo = skuAllInfo.getSkuInfo();
-                System.out.println(skuInfo.getSkuId());
-                System.out.println(skuInfo.getGood().getGoodsName());
                 if(skuAllInfo == null){
                     throw new SkuInfoException("该sku不存在");
                 }
@@ -111,20 +110,45 @@ public class InitOrderInfoServiceImpl implements InitOrderInfoService {
                     redisTemplate.opsForValue().set("skuInfoCache::" + skuInfo.getSkuId(), skuAllInfo);
                 }
                 BigDecimal buy = details.getSkuPrice().multiply(new BigDecimal(details.getSkuNum()));
-                System.out.println(buy.toString());
                 buyPrice = buyPrice.add(buy);
                 detailsList.add(details);
             }
-            System.out.println(buyPrice.toString());
             orderInfo.setBuyPrice(buyPrice);
             orderInfo.setOrderDetails(detailsList);
-            orderDao.addOrderInfo(orderInfo);
-            CorrelationData correlationData = new CorrelationData();
-            correlationData.setId(orderInfo.getOrderId());
-            rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME, "order.init", detailsList, correlationData);
+            sendInitOrder(orderInfo);
+            //如果10分钟内完成创建订单，则销毁订单
+            sendDestroyOrder(orderInfo, 600000);
             return orderInfo;
         }catch (Exception e){
             throw new OrderException(e);
         }
+    }
+
+    /**
+     * 发送订单创建时间
+     * @param orderInfo 订单信息对象
+     */
+    public void sendInitOrder(OrderInfo orderInfo){
+        CorrelationData correlationData = new CorrelationData();
+        correlationData.setId(orderInfo.getOrderId());
+        orderDao.addOrderInfo(orderInfo);
+        //订单明细添加到数据库
+        rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME, OrderRabbitConfig.ORDER_INIT_ROUTER_KEY, orderInfo.getOrderDetails(), correlationData);
+    }
+
+    /**
+     * 发送销毁订单（设置订单失效）信息
+     * @param orderInfo 订单对象
+     * @param delayTime 延迟时间
+     */
+    public void sendDestroyOrder(OrderInfo orderInfo, Integer delayTime){
+        CorrelationData correlationData = new CorrelationData();
+        correlationData.setId(orderInfo.getOrderId());
+        //延迟消费，当订单在三十分钟内不创建，则状态为（确认中），延迟消费会将状态修改为已失效
+        rabbitTemplate.convertAndSend(RabbitConfig.DELAY_EXCHANGE_NAME, OrderRabbitConfig.ORDER_DESTROY_ROUTER_KEY, orderInfo, message -> {
+            //设置延迟时间
+            message.getMessageProperties().setDelay(delayTime);
+            return message;
+        }, correlationData);
     }
 }
