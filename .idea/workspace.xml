@@ -2,158 +2,69 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62b8ac9c-86a9-4199-8f79-2819b827666b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/shopping-adminapi/src/main/java/edu/nf/shopping/comment/CommentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/goods/dao/ImgsInfoDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/goods/dao/SkuInfoDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/message/dao/NewsListDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/order/dao/OrderDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/order/dao/OrderDetailsDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/goods/ImgInfoMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/goods/SkuInfoMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/message/NewsMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/message/NoticeMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/message/ReceiveMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/message/UserSetUpMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/admin/entity/StaffState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/goods/entity/SkuAllInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/message/entity/NewsList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/order/entity/OrderDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/config/WebSocketConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/config/listener/KeyExpiredListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/goods/exception/GoodsImgException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/goods/exception/ImgsInfoException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/goods/exception/SkuInfoException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/goods/service/ImgsInfoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/goods/service/InsertGoodImgService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/goods/service/SkuInfoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/goods/service/UploadGoodsImageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/goods/service/impl/ImgsInfoServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/goods/service/impl/InsertGoodImgServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/goods/service/impl/SkuInfoServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/message/exception/MessageException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/message/service/NewsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/message/service/NoticeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/message/service/impl/NewsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/message/service/impl/NoticeServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/order/exception/OrderDetailsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/order/exception/OrderException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/order/service/InitOrderDetailsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/order/service/InitOrderInfoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/order/service/OrderDetailsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/order/service/OrderInfoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/order/service/UpdateOrderInfoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/order/service/impl/InitOrderDetailsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/order/service/impl/InitOrderInfoServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/order/service/impl/OrderDetailsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/order/service/impl/OrderInfoServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/order/service/impl/UpdateOrderInfoServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/filter/CorsFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/goods/advice/GoodControllerAspect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/message/controller/NewsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/message/controller/NoticeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/order/advice/OrderControllerAspect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-util/src/main/java/edu/nf/shopping/util/LettuceUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-util/src/main/java/edu/nf/shopping/util/TimeMillisUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/comment/config/CommentRabbitConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/goods/config/GoodsRabbitConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/order/config/OrderRabbitConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-adminapi/shopping-adminapi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/shopping-adminapi.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-adminapi/src/main/java/edu/nf/shopping/AdminApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/src/main/java/edu/nf/shopping/AdminApiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-adminapi/target/classes/META-INF/shopping-adminapi.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-adminapi/target/classes/edu/nf/shopping/AdminApiApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/target/classes/edu/nf/shopping/AdminApiApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/comment/dao/PraiseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/comment/dao/PraiseDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/goods/dao/GoodsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/goods/dao/GoodsDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/goods/dao/GoodsImgsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/goods/dao/GoodsImgsDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/goods/dao/SkuRelationDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/goods/dao/SkuRelationDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/message/dao/NewsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/message/dao/NewsDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/message/dao/NoticeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/message/dao/NoticeDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/message/dao/ReceiveDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/message/dao/ReceiveDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/message/dao/UserSetUpDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/message/dao/UserSetUpDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/user/dao/UserInfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/user/dao/UserInfoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/goods/dao/SkuInfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/goods/dao/SkuInfoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/order/dao/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/order/dao/OrderDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/resources/application-dao.yml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/application-dao.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/comment/ComImageDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/comment/ComImageMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/comment/CommentsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/comment/CommentsMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/comment/PraiseMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/comment/PraiseMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/goods/SkuRelationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/goods/SkuRelationMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/user/UserInfoDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/user/UserInfoDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/goods/SkuInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/goods/SkuInfoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/message/NoticeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/message/NoticeMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/message/ReceiveMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/message/ReceiveMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/order/OrderInfoMapper.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-dao/target/classes/application-dao.yml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/target/classes/application-dao.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/target/classes/edu/nf/shopping/comment/dao/PraiseDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/target/classes/edu/nf/shopping/comment/dao/PraiseDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/target/classes/edu/nf/shopping/goods/dao/SkuRelationDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/target/classes/edu/nf/shopping/goods/dao/SkuRelationDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/target/classes/edu/nf/shopping/user/dao/UserInfoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/target/classes/edu/nf/shopping/user/dao/UserInfoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/comment/ComImageDao.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/comment/CommentsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/comment/CommentsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-dao/target/classes/edu/nf/shopping/goods/dao/SkuInfoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/target/classes/edu/nf/shopping/goods/dao/SkuInfoDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-dao/target/classes/edu/nf/shopping/order/dao/OrderDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/target/classes/edu/nf/shopping/order/dao/OrderDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/comment/PraiseMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/comment/PraiseMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/goods/SkuRelationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/goods/SkuRelationMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/user/UserInfoDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/user/UserInfoDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/comment/entity/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/comment/entity/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/goods/SkuInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/goods/SkuInfoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/message/NoticeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/message/NoticeMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/message/ReceiveMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/message/ReceiveMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/order/OrderInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/order/OrderInfoMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/comment/entity/Praise.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/comment/entity/Praise.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/goods/entity/SkuInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/goods/entity/SkuInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/goods/entity/SpuInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/goods/entity/SpuInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/message/entity/News.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/message/entity/News.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/message/entity/Notice.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/message/entity/Notice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/order/entity/OrderInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/order/entity/OrderInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/order/entity/OrderState.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/user/entity/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/user/entity/UserInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/comment/entity/Comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/comment/entity/Comment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/message/entity/Receive.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/message/entity/Receive.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/comment/entity/Praise.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/comment/entity/Praise.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/goods/entity/SkuInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/goods/entity/SkuInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/goods/entity/SpuInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/goods/entity/SpuInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/order/entity/OrderInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/order/entity/OrderInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/order/entity/OrderState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/user/entity/UserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/user/entity/UserInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/message/entity/Notice.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/message/entity/Notice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/message/entity/Receive.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/message/entity/Receive.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-service/shopping-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/shopping-service.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/comment/service/PraiseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/comment/service/PraiseService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/comment/service/impl/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/comment/service/impl/CommentServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/comment/service/impl/PraiseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/comment/service/impl/PraiseServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/config/RabbitConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/config/RabbitConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/config/RedisConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/goods/service/impl/GoodsAllInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/goods/service/impl/GoodsAllInfoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/goods/service/impl/GoodsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/goods/service/impl/GoodsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/message/ConsumerServer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/message/ProducerServer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/page/service/PageRegionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/page/service/PageRegionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/user/exception/LoginException.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/user/exception/UserException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/user/service/UserInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/user/service/UserInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/user/service/impl/UserInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/user/service/impl/UserInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/goods/service/impl/SkuInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/goods/service/impl/SkuInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/message/service/impl/NoticeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/message/service/impl/NoticeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/order/service/impl/InitOrderDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/order/service/impl/InitOrderDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/order/service/impl/InitOrderInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/order/service/impl/InitOrderInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/order/service/impl/OrderInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/order/service/impl/OrderInfoServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-service/src/main/resources/application-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/resources/application-service.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-service/target/classes/application-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/target/classes/application-service.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/comment/service/PraiseService.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/comment/service/PraiseService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/comment/service/impl/CommentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/comment/service/impl/CommentServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/comment/service/impl/PraiseServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/comment/service/impl/PraiseServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/config/RabbitConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/config/RabbitConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/config/RedisConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/config/RedisConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/goods/service/impl/GoodsAllInfoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/goods/service/impl/GoodsAllInfoServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/goods/service/impl/GoodsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/goods/service/impl/GoodsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/message/ConsumerServer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/message/ProducerServer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/user/exception/LoginException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/user/service/UserInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/user/service/UserInfoService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/user/service/impl/UserInfoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/user/service/impl/UserInfoServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/shopping-userapi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/shopping-userapi.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/UserApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/UserApiApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/goods/service/impl/SkuInfoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/goods/service/impl/SkuInfoServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/message/service/impl/NoticeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/message/service/impl/NoticeServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/order/service/impl/InitOrderDetailsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/order/service/impl/InitOrderDetailsServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/order/service/impl/InitOrderInfoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/order/service/impl/InitOrderInfoServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/order/service/impl/OrderInfoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/order/service/impl/OrderInfoServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/comment/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/comment/controller/CommentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/comment/controller/PraiseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/comment/controller/PraiseController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/comment/controller/ReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/comment/controller/ReportController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/config/CorsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/goods/advice/GoodsControllerAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/message/advice/MessageControllerAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/goods/controller/GoodsAllInfoController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/goods/controller/ImgeUploadController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/page/PageRegionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/page/controller/PageRegionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/user/advice/ExceptionAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/user/advice/UserControllerAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/comment/controller/ReportReasonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/comment/controller/ReportReasonController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/message/controller/NoticeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/message/controller/NoticeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/page/controller/PageRegionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/page/controller/PageRegionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/user/controller/UserInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/user/controller/UserInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/src/test/java/edu/nf/shopping/comment/service/CommentServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/src/test/java/edu/nf/shopping/comment/service/CommentServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/UserApiApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/UserApiApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/comment/controller/CommentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/comment/controller/CommentController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/comment/controller/PraiseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/comment/controller/PraiseController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/comment/controller/ReportController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/comment/controller/ReportController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/config/CorsConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/config/CorsConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/goods/advice/GoodsControllerAspect.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/goods/controller/ImgeUploadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/goods/controller/ImgeUploadController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/page/PageRegionController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/user/advice/ExceptionAdvice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/comment/controller/ReportReasonController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/comment/controller/ReportReasonController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/message/controller/NoticeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/message/controller/NoticeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/page/controller/PageRegionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/page/controller/PageRegionController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/user/controller/UserInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/user/controller/UserInfoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/target/test-classes/edu/nf/shopping/comment/service/CommentServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/target/test-classes/edu/nf/shopping/comment/service/CommentServiceTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-util/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-util/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-util/shopping-util.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-util/shopping-util.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,6 +108,7 @@
     <setting file="file://$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/message/service/impl/NoticeServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/comment/service/impl/CommentServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/shopping-adminapi/src/main/java/edu/nf/shopping/page/PageRegionController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/comment/controller/CommentController.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/page/service/impl/PageRegionServiceImpl.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/page/service/impl/RegionContentServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -233,7 +145,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/admin/entity" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/order/config" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -243,6 +155,9 @@
     <selection>jr</selection>
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\addiction-shopping\shopping-service\src\main\java\edu\nf\shopping\goods\config" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="edu.nf.shopping.config" />
       <recent name="edu.nf.shopping.message.exception" />
@@ -251,11 +166,11 @@
       <recent name="edu.nf.shopping.page.exception" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="H:\addiction-shopping\shopping-entity\src\main\java\edu\nf\shopping\admin\entity" />
-      <recent name="H:\addiction-shopping\shopping-service\src\main\java\edu\nf\shopping\config" />
-      <recent name="H:\addiction-shopping\shopping-util\src\main\java\edu\nf\shopping\util" />
-      <recent name="H:\addiction-shopping\shopping-userapi\src\main\java\edu\nf\shopping" />
-      <recent name="H:\addiction-shopping\shopping-service\src\main\java\edu\nf\shopping" />
+      <recent name="H:\addiction-shopping\shopping-service\src\main\java\edu\nf\shopping\order\config" />
+      <recent name="H:\addiction-shopping\shopping-dao\src\main\resources\mapper\goods" />
+      <recent name="H:\addiction-shopping\shopping-dao\src\main\resources\mapper\order" />
+      <recent name="H:\addiction-shopping\shopping-dao\src\main\java\edu\nf\shopping\goods\dao" />
+      <recent name="H:\addiction-shopping\shopping-dao\src\main\java\edu\nf\shopping\order\dao" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.UserApiApplication">
@@ -485,6 +400,15 @@
       <workItem from="1586177399781" duration="3295000" />
       <workItem from="1586181038855" duration="6882000" />
       <workItem from="1586191909741" duration="2198000" />
+      <workItem from="1586223773996" duration="4044000" />
+      <workItem from="1586228006382" duration="5314000" />
+      <workItem from="1586242507412" duration="3621000" />
+      <workItem from="1586246175947" duration="3593000" />
+      <workItem from="1586249801034" duration="3730000" />
+      <workItem from="1586253565160" duration="3606000" />
+      <workItem from="1586257218709" duration="1214000" />
+      <workItem from="1586273927560" duration="3598000" />
+      <workItem from="1586277568538" duration="2882000" />
     </task>
     <task id="LOCAL-00001" summary="评论界面的剩余功能">
       <created>1584768589639</created>
@@ -514,7 +438,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585842465757</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="消息中心部分">
+      <created>1586224056986</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1586224056986</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -570,7 +501,8 @@
     <MESSAGE value="发布评价" />
     <MESSAGE value="动态页面的实现" />
     <MESSAGE value="合并主分支" />
-    <option name="LAST_COMMIT_MESSAGE" value="合并主分支" />
+    <MESSAGE value="消息中心部分" />
+    <option name="LAST_COMMIT_MESSAGE" value="消息中心部分" />
   </component>
   <component name="WindowStateProjectService">
     <state x="244" y="43" key="#Notifications" timestamp="1584965610288">
@@ -597,14 +529,14 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="186" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1304.768@0.0.1304.768" timestamp="1585324572945" />
-    <state x="382" y="131" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586192413956">
+    <state x="382" y="131" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586229188952">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="382" y="131" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1304.768@0.0.1304.768" timestamp="1586192413956" />
-    <state x="-44" y="0" key="CommitChangelistDialog2" timestamp="1585842454179">
+    <state x="382" y="131" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1304.768@0.0.1304.768" timestamp="1586229188952" />
+    <state x="117" y="0" key="CommitChangelistDialog2" timestamp="1586224048917">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="-44" y="0" key="CommitChangelistDialog2/0.0.1304.768@0.0.1304.768" timestamp="1585842454179" />
+    <state x="117" y="0" key="CommitChangelistDialog2/0.0.1304.768@0.0.1304.768" timestamp="1586224048917" />
     <state x="92" y="92" width="1120" height="584" key="DiffContextDialog" timestamp="1584433974098">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
@@ -613,38 +545,38 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="431" y="126" key="FileChooserDialogImpl/0.0.1304.768@0.0.1304.768" timestamp="1585911075241" />
-    <state width="1261" height="199" key="GridCell.Tab.0.bottom" timestamp="1586194110147">
+    <state width="1261" height="199" key="GridCell.Tab.0.bottom" timestamp="1586280184568">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="199" key="GridCell.Tab.0.bottom/0.0.1304.768@0.0.1304.768" timestamp="1586194110147" />
-    <state width="1261" height="199" key="GridCell.Tab.0.center" timestamp="1586194110147">
+    <state width="1261" height="199" key="GridCell.Tab.0.bottom/0.0.1304.768@0.0.1304.768" timestamp="1586280184568" />
+    <state width="1261" height="199" key="GridCell.Tab.0.center" timestamp="1586280184568">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="199" key="GridCell.Tab.0.center/0.0.1304.768@0.0.1304.768" timestamp="1586194110147" />
-    <state width="1261" height="199" key="GridCell.Tab.0.left" timestamp="1586194110147">
+    <state width="1261" height="199" key="GridCell.Tab.0.center/0.0.1304.768@0.0.1304.768" timestamp="1586280184568" />
+    <state width="1261" height="199" key="GridCell.Tab.0.left" timestamp="1586280184568">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="199" key="GridCell.Tab.0.left/0.0.1304.768@0.0.1304.768" timestamp="1586194110147" />
-    <state width="1261" height="199" key="GridCell.Tab.0.right" timestamp="1586194110147">
+    <state width="1261" height="199" key="GridCell.Tab.0.left/0.0.1304.768@0.0.1304.768" timestamp="1586280184568" />
+    <state width="1261" height="199" key="GridCell.Tab.0.right" timestamp="1586280184568">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="199" key="GridCell.Tab.0.right/0.0.1304.768@0.0.1304.768" timestamp="1586194110147" />
-    <state width="1261" height="199" key="GridCell.Tab.1.bottom" timestamp="1586194110148">
+    <state width="1261" height="199" key="GridCell.Tab.0.right/0.0.1304.768@0.0.1304.768" timestamp="1586280184568" />
+    <state width="1261" height="199" key="GridCell.Tab.1.bottom" timestamp="1586280184569">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="199" key="GridCell.Tab.1.bottom/0.0.1304.768@0.0.1304.768" timestamp="1586194110148" />
-    <state width="1261" height="199" key="GridCell.Tab.1.center" timestamp="1586194110148">
+    <state width="1261" height="199" key="GridCell.Tab.1.bottom/0.0.1304.768@0.0.1304.768" timestamp="1586280184569" />
+    <state width="1261" height="199" key="GridCell.Tab.1.center" timestamp="1586280184568">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="199" key="GridCell.Tab.1.center/0.0.1304.768@0.0.1304.768" timestamp="1586194110148" />
-    <state width="1261" height="199" key="GridCell.Tab.1.left" timestamp="1586194110148">
+    <state width="1261" height="199" key="GridCell.Tab.1.center/0.0.1304.768@0.0.1304.768" timestamp="1586280184568" />
+    <state width="1261" height="199" key="GridCell.Tab.1.left" timestamp="1586280184568">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="199" key="GridCell.Tab.1.left/0.0.1304.768@0.0.1304.768" timestamp="1586194110148" />
-    <state width="1261" height="199" key="GridCell.Tab.1.right" timestamp="1586194110148">
+    <state width="1261" height="199" key="GridCell.Tab.1.left/0.0.1304.768@0.0.1304.768" timestamp="1586280184568" />
+    <state width="1261" height="199" key="GridCell.Tab.1.right" timestamp="1586280184569">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="199" key="GridCell.Tab.1.right/0.0.1304.768@0.0.1304.768" timestamp="1586194110148" />
+    <state width="1261" height="199" key="GridCell.Tab.1.right/0.0.1304.768@0.0.1304.768" timestamp="1586280184569" />
     <state width="1261" height="238" key="GridCell.Tab.2.bottom" timestamp="1585892883614">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
@@ -669,10 +601,10 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="153" y="0" key="SettingsEditor/0.0.1304.768@0.0.1304.768" timestamp="1585810191209" />
-    <state x="244" y="117" key="Vcs.Push.Dialog.v2" timestamp="1585842472584">
+    <state x="244" y="117" key="Vcs.Push.Dialog.v2" timestamp="1586224060409">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="244" y="117" key="Vcs.Push.Dialog.v2/0.0.1304.768@0.0.1304.768" timestamp="1585842472584" />
+    <state x="244" y="117" key="Vcs.Push.Dialog.v2/0.0.1304.768@0.0.1304.768" timestamp="1586224060409" />
     <state x="327" y="175" key="git4idea.merge.GitPullDialog" timestamp="1585844568165">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
@@ -685,9 +617,9 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="308" y="172" key="run.anything.popup/0.0.1304.768@0.0.1304.768" timestamp="1585931142292" />
-    <state x="315" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1586155243164">
+    <state x="315" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1586244189921">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="315" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1304.768@0.0.1304.768" timestamp="1586155243164" />
+    <state x="315" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1304.768@0.0.1304.768" timestamp="1586244189921" />
   </component>
 </project>

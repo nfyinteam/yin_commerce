@@ -23,12 +23,13 @@ public class PraiseController extends BaseController {
     @Autowired
     private PraiseService praiseService;
 
-    @RequestMapping("/spot_praise")
+    @RequestMapping("/post/praise")
     @ApiOperation(value = "点赞", notes = "用户给评论的点赞",
             httpMethod = "post")
     @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})
-    private ResponseVO spotPraise(String commentId,String goodsId, HttpServletRequest request){
-        praiseService.spotPraise((String)request.getSession().getAttribute("userId"),commentId,goodsId);
+    private ResponseVO spotPraise(String commentId,String goodsId,String receiveUserId, HttpServletRequest request){
+
+        praiseService.spotPraise((String)request.getSession().getAttribute("userId"),commentId,goodsId,receiveUserId);
         return success(200,"");
     }
 }

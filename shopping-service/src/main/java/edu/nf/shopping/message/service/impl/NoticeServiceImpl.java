@@ -42,6 +42,7 @@ public class NoticeServiceImpl implements NoticeService {
     @Cacheable(value="messageCache",key="#userId+'-'+#noticeType")
     public List<Notice> userListNotice(String noticeType,String userId) {
         try{
+            System.out.println("类型"+noticeType);
             List<Notice> list=noticeDao.userListNotice(noticeType,userId);
             receiveDao.updateNoticeState(noticeType,userId);
             return list;

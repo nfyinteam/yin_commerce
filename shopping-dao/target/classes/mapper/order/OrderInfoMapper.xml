@@ -109,7 +109,7 @@
         #{orderInfo.cheapPrice}, #{orderInfo.transportPrice}, #{orderInfo.createTime},
         #{orderInfo.payTime}, #{orderInfo.deliverTime}, #{orderInfo.dealTime},
         #{orderInfo.buyAdmin.staffId}, #{orderInfo.buyUser.userId}, #{orderInfo.addressRegion.cid},
-        #{orderInfo.addressName}, #{orderInfo.addressTel}, #{orderInfo.addressUser}
+        #{orderInfo.addressName}, #{orderInfo.addressTel}, #{orderInfo.addressUser},
         #{orderInfo.buyRemark}, #{orderInfo.orderRemark}, #{orderInfo.orderState} ,#{orderInfo.isDel})
     </insert>
     <update id="updateOrderInfo" parameterType="edu.nf.shopping.order.entity.OrderInfo">

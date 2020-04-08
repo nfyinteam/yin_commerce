@@ -2,6 +2,7 @@ package edu.nf.shopping.order.service.impl;
 
 import com.rabbitmq.client.Channel;
 import edu.nf.shopping.config.RabbitConfig;
+import edu.nf.shopping.order.config.OrderRabbitConfig;
 import edu.nf.shopping.order.dao.OrderDetailsDao;
 import edu.nf.shopping.order.entity.OrderDetails;
 import edu.nf.shopping.order.exception.OrderDetailsException;
@@ -22,6 +23,7 @@ import java.util.Map;
  */
 @Service("initOrderDetailsService")
 public class InitOrderDetailsServiceImpl implements InitOrderDetailsService {
+
     @Autowired
     private OrderDetailsDao detailsDao;
 
@@ -40,7 +42,7 @@ public class InitOrderDetailsServiceImpl implements InitOrderDetailsService {
     /**
      消息的消费者：创建订单
      **/
-    @RabbitListener(queues = RabbitConfig.ORDER_INIT_QUEUE)
+    @RabbitListener(queues = OrderRabbitConfig.ORDER_INIT_QUEUE)
     public void receiveMessage(List<OrderDetails> orderDetails,
                                @Headers Map<String, Object> headers,
                                Channel channel) throws IOException {

@@ -13,18 +13,25 @@
         <result property="time" column="notice_time"/>
         <result property="state" column="state"/>
         <result property="notView" column="not_view"/>
+        <result property="currentContent" column="content"/>
+        <result property="parentContent" column="parent_content"/>
         <association property="comment" resultMap="commentMap"/>
     </resultMap>
     <resultMap id="commentMap" type="edu.nf.shopping.comment.entity.Comment">
-        <result property="content" column="content"/>
+        <result property="content" column="by_content"/>
         <result property="userName" column="u_name"/>
         <result property="userFace" column="face_file"/>
+        <result property="grade" column="com_grade"/>
     </resultMap>
+
     <select id="userListNotice" resultMap="noticeMap" parameterType="String">
         select
-        <if test="param1!='2'and param1!=2">
-        (select cs.com_content from comments cs where cs.com_id=c.by_cid)
-        as content,uf.face_file,u.u_name,
+        <if test="param1=='0' || param1==0">
+            (select pr.com_content from comments pr where pr.com_id=c.parent_cid) as parent_content,
+            (select cs.com_content from comments cs where cs.com_id=c.by_cid) as by_content,
+        </if>
+        <if test="param1!='2' and param1!=2">
+            uf.face_file,u.u_name,c.com_content as content,c.com_grade,
         </if>
         ne.notice_id,ne.notice_title,ne.notice_link,ne.notice_content,
         ne.notice_author,ne.com_id,ne.notice_type,ne.notice_time,nr.state
@@ -49,6 +56,8 @@
     </select>
 
     <insert id="addNotice" parameterType="edu.nf.shopping.message.entity.Notice">
-
+        REPLACE into notice(notice_id,notice_title,notice_content,notice_link,
+        com_id,notice_author,notice_type,notice_time)
+        values(#{noticeId},#{title},#{content},#{link},#{comId},#{author},#{type},#{time})
     </insert>
 </mapper>

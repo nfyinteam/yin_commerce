@@ -6,7 +6,6 @@ import edu.nf.shopping.goods.dao.SkuRelationDao;
 import edu.nf.shopping.goods.entity.ImgsInfo;
 import edu.nf.shopping.goods.entity.SkuAllInfo;
 import edu.nf.shopping.goods.entity.SkuInfo;
-import edu.nf.shopping.goods.exception.GoodsException;
 import edu.nf.shopping.goods.exception.SkuInfoException;
 import edu.nf.shopping.goods.service.SkuInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -77,7 +76,6 @@ public class SkuInfoServiceImpl implements SkuInfoService {
             }
             return list;
         }catch (Exception e){
-            e.printStackTrace();
             throw new SkuInfoException(e);
         }
     }
@@ -100,6 +98,8 @@ public class SkuInfoServiceImpl implements SkuInfoService {
             if(sku == null){
                 throw new SkuInfoException("该sku不存在");
             }
+            System.out.println(skuInfo.getSkuId());
+            System.out.println(skuInfo.getGood().getGoodsName());
             skuInfoDao.updateSkuInfo(skuInfo);
         }catch (Exception e){
             throw new SkuInfoException(e);

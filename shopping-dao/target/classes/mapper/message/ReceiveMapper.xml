@@ -3,6 +3,14 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="edu.nf.shopping.message.dao.ReceiveDao">
 
+    <insert id="addReceive" parameterType="edu.nf.shopping.message.entity.Receive">
+        REPLACE into news_receive(ns_id,receive_uid,state)
+        values(#{messageId},#{receiveUserId},#{state})
+    </insert>
+
+    <update id="updateNewsState" keyProperty="String">
+
+    </update>
 
     <update id="updateNoticeState" parameterType="String">
         update notice ne INNER JOIN news_receive nr on ne.notice_id=nr.ns_id

@@ -30,7 +30,7 @@ public class CommentController extends BaseController {
 
     private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-    @RequestMapping("/list_buyShow/{pageNum}/{pageSize}/{replySize}/{goodsId}/{refreshTime}/{order}/{commentType}")
+    @RequestMapping("get/buyShow/{pageNum}/{pageSize}/{replySize}/{goodsId}/{refreshTime}/{order}/{commentType}")
     @ApiOperation(value = "查询买家秀", notes = "查询单个商品的买家秀",
             httpMethod = "get")
     @ApiImplicitParams({
@@ -45,11 +45,12 @@ public class CommentController extends BaseController {
     @CrossOrigin(origins = "*", methods = {RequestMethod.GET})
     private ResponseVO<PageInfo<Comment>> listBuyShow(@PathVariable("pageNum") Integer pageNum, @PathVariable("pageSize") Integer pageSize, @PathVariable("replySize") Integer replySize, @PathVariable("goodsId") String goodsId, @PathVariable("refreshTime") String refreshTime, @PathVariable("order") String order, @PathVariable("commentType") String commentType,
                                                       HttpServletRequest request) throws ParseException {
+        System.out.println(request.getSession().getAttribute("userId"));
         PageInfo<Comment> pageInfo=commentService.listBuyShow(pageNum,pageSize,replySize,goodsId,(String)request.getSession().getAttribute("userId"),sdf.parse(refreshTime),order,commentType);
         return success(pageInfo);
     }
 
-    @RequestMapping("/list_comment/{pageNum}/{pageSize}/{commentId}/{refreshTime}/{order}")
+    @RequestMapping("get/comment/{pageNum}/{pageSize}/{commentId}/{refreshTime}/{order}")
     @ApiOperation(value = "查询回复评论", notes = "查询买家秀的回复评论",
             httpMethod = "get")
     @ApiImplicitParams({
@@ -66,7 +67,7 @@ public class CommentController extends BaseController {
         return success(pageInfo);
     }
 
-    @RequestMapping("/add_comment")
+    @RequestMapping("post/comment")
     @ApiOperation(value = "添加评论", notes = "用户发表一个评论",
             httpMethod = "post")
     @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})
@@ -76,7 +77,7 @@ public class CommentController extends BaseController {
         return success(200,"发表评论成功");
     }
 
-    @RequestMapping(value="add_buyShow",headers = "content-type=multipart/*")
+    @RequestMapping(value="post/buyShow",headers = "content-type=multipart/*")
     @ApiOperation(value = "提交商品评价", notes = "用户提交买家秀",
             httpMethod = "post")
     @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})
@@ -86,7 +87,7 @@ public class CommentController extends BaseController {
         return success(200,"提交评价成功");
     }
 
-    @RequestMapping("/delete_comment")
+    @RequestMapping("/delete/comment/id")
     @ApiOperation(value = "删除评论", notes = "用户删除自己的评论",
             httpMethod = "post")
     @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})

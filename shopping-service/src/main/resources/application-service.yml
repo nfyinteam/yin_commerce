@@ -1,11 +1,11 @@
 spring:
   #消息队列
   rabbitmq:
-    addresses: www.88k88.cn
+    addresses: 127.0.0.1
     # 连接端口,默认5672
     port: 5672
-    username: topyin
-    password: qq520340
+    username: crab
+    password: 123456
     # 虚拟主机地址，默认为"/"
     virtual-host: /
     # 设置连接诶超时时间
@@ -30,15 +30,15 @@ spring:
     database: 1
     timeout: 30000s
     #连接池配置
-    lettuce:
-      pool:
-        # 最大连接数
-        max-active: 20
-        # 最大空闲连接
-        max-idle: 8
-        # 最小空闲连接
-        min-idle: 5
-        # 建立连接最大等待时间
-        max-wait: 2000
-        # 每间隔多少毫秒运行一次空闲连接回收
-        time-between-eviction-runs: 60000
+#    lettuce:
+#      pool:
+#        # 最大连接数
+#        max-active: 20
+#        # 最大空闲连接
+#        max-idle: 8
+#        # 最小空闲连接
+#        min-idle: 5
+#        # 建立连接最大等待时间
+#        max-wait: 2000
+#        # 每间隔多少毫秒运行一次空闲连接回收
+#        time-between-eviction-runs: 60000

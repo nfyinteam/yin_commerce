@@ -24,9 +24,12 @@ public class Notice {
     @JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date time;
+
     private String state;
     private Comment comment;
     private String notView;
     private String newMessageNum;
+    private String currentContent;
+    private String parentContent;
     private List<UserSetUp> userSetUpList;
 }

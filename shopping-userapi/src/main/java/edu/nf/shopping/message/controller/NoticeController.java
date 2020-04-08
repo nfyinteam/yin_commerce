@@ -24,32 +24,29 @@ public class NoticeController extends BaseController {
     @Autowired
     private NoticeService noticeService;
 
-    @RequestMapping("/list_notice/reply")
+    @RequestMapping("/get/notice/reply")
     @ApiOperation(value = "查询回复消息", notes = "用户查询自己的回复消息",
             httpMethod = "get")
     @CrossOrigin(origins = "*", methods = {RequestMethod.GET})
     private ResponseVO listUserReply(HttpServletRequest request){
-        System.out.println("1111");
         List<Notice> list=noticeService.userListNotice("0","1578412684666");
         return success(list);
     }
 
-    @RequestMapping("/list_notice/love")
+    @RequestMapping("/get/notice/love")
     @ApiOperation(value = "查询回复消息", notes = "用户查询自己的回复消息",
             httpMethod = "get")
     @CrossOrigin(origins = "*", methods = {RequestMethod.GET})
     private ResponseVO listUserLove(HttpServletRequest request){
-        System.out.println("222");
         List<Notice> list=noticeService.userListNotice("1","1578412684666");
         return success(list);
     }
 
-    @RequestMapping("/list_notice/system")
+    @RequestMapping("/get/notice/system")
     @ApiOperation(value = "查询回复消息", notes = "用户查询自己的回复消息",
             httpMethod = "get")
     @CrossOrigin(origins = "*", methods = {RequestMethod.GET})
     private ResponseVO listUserSystem(HttpServletRequest request){
-        System.out.println("333");
         List<Notice> list=noticeService.userListNotice("2","1578412684666");
         return success(list);
     }

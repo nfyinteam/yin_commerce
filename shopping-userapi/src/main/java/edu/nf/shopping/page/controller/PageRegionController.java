@@ -21,7 +21,7 @@ public class PageRegionController extends BaseController {
     @Autowired
     private PageRegionService pageRegionService;
 
-    @RequestMapping("/list_pageRegion")
+    @RequestMapping("get/pageRegion")
     @ApiOperation(value = "加载区域", notes = "加载页面",
             httpMethod = "get")
     private ResponseVO listHomePage() {

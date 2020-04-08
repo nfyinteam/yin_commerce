@@ -20,8 +20,8 @@ public class ReportController extends BaseController {
     @Autowired
     private ReportService reportService;
 
-    @RequestMapping("/add_report")
-    @ApiOperation(value = "点赞", notes = "用户可以给评论点赞",
+    @RequestMapping("/post/report")
+    @ApiOperation(value = "举报", notes = "用户可以举报某个评论",
             httpMethod = "post")
     private ResponseVO addReport(String commentId, String reason, HttpServletRequest request){
         reportService.addReport(commentId,reason,(String)request.getSession().getAttribute("userId"));

@@ -61,7 +61,7 @@
     </insert>
     <update id="updateSkuInfo" parameterType="edu.nf.shopping.goods.entity.SkuInfo">
         update sku_info set sku_price = #{skuInfo.skuPrice}, sku_stock = #{skuInfo.skuStock},
-        sku_sales = #{skuInfo.sku_sales} where sku_id = #{skuInfo.skuId}
+        sku_sales = #{skuInfo.skuSales} where sku_id = #{skuInfo.skuId}
     </update>
     <delete id="deleteSkuInfo" parameterType="java.lang.String">
         delete from sku_info where sku_id = #{skuId}

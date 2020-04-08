@@ -8,8 +8,8 @@ import lombok.Data;
  */
 @Data
 public class Receive {
-    private String reId;
+    //private String reId;
     private String messageId;
-    private String userId;
+    private String receiveUserId;
     private String state;
 }

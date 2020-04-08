@@ -4,8 +4,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/yin_commerce?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useAffectedRows=true
-    username: root # Achine
-    password: root # qq520340
+    username: root #Achine
+    password: root #qq520340
     # 使用druid连接池，当使用其他连接池的时候，可以指定type类型为对应的数据源
     type: com.alibaba.druid.pool.DruidDataSource
     druid:

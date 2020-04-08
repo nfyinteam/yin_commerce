@@ -72,11 +72,14 @@ public class InitOrderInfoServiceImpl implements InitOrderInfoService {
             orderInfo.setCreateTime(new Date());
             orderInfo.setCheapPrice(new BigDecimal(0));
             orderInfo.setTransportPrice(new BigDecimal(0));
+            orderInfo.setDel(false);
             BigDecimal buyPrice = new BigDecimal(0);
             List<OrderDetails> detailsList = new ArrayList<>();
             for (OrderDetails details : orderDetails){
                 SkuAllInfo skuAllInfo = skuInfoService.getSkuAllInfoBySkuId(details.getSkuId());
                 SkuInfo skuInfo = skuAllInfo.getSkuInfo();
+                System.out.println(skuInfo.getSkuId());
+                System.out.println(skuInfo.getGood().getGoodsName());
                 if(skuAllInfo == null){
                     throw new SkuInfoException("该sku不存在");
                 }
@@ -107,9 +110,12 @@ public class InitOrderInfoServiceImpl implements InitOrderInfoService {
                 if(redisTemplate.opsForValue().get("skuInfoCache::" + skuInfo.getSkuId()) != null){
                     redisTemplate.opsForValue().set("skuInfoCache::" + skuInfo.getSkuId(), skuAllInfo);
                 }
-                buyPrice.add(details.getSkuPrice().multiply(new BigDecimal(details.getSkuNum())));
+                BigDecimal buy = details.getSkuPrice().multiply(new BigDecimal(details.getSkuNum()));
+                System.out.println(buy.toString());
+                buyPrice = buyPrice.add(buy);
                 detailsList.add(details);
             }
+            System.out.println(buyPrice.toString());
             orderInfo.setBuyPrice(buyPrice);
             orderInfo.setOrderDetails(detailsList);
             orderDao.addOrderInfo(orderInfo);

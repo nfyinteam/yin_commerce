@@ -23,9 +23,9 @@ public class ReportReasonController extends BaseController {
     @Autowired
     private ReportReasonService reportReasonService;
 
-    @RequestMapping("/list_reportReason")
+    @RequestMapping("/get/reportReason")
     @ApiOperation(value = "默认举报理由", notes = "查询所有的默认举报理由",
-            httpMethod = "post")
+            httpMethod = "get")
     private ResponseVO listReportReason(){
         List<ReportReason> list=reportReasonService.listReportReason();
         System.out.println(list.size());
