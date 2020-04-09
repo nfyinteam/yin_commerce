@@ -2,16 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62b8ac9c-86a9-4199-8f79-2819b827666b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/order/service/DestroyOrderInfoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/order/service/impl/InitDestroyOrderInfoServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/order/service/impl/PayDestroyOrderInfoServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/order/controller/CancelOrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/order/controller/CommitOrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/order/controller/DelOrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/order/controller/GetListOrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/order/controller/GetOrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/order/controller/InitOrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/order/dao/OrderDetailsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/order/dao/OrderDetailsDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/order/OrderDetailsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/order/OrderDetailsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/order/OrderInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/order/OrderInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/goods/service/impl/SkuInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/goods/service/impl/SkuInfoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/order/config/OrderRabbitConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/order/config/OrderRabbitConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/order/service/impl/InitOrderInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/order/service/impl/InitOrderInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/user/UserInfoDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/user/UserInfoDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/user/service/impl/UserInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/user/service/impl/UserInfoServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +69,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/goods/controller/GoodsAllInfoController.java" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../hansen" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../spring-session-demo" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -255,7 +254,7 @@
       <workItem from="1584948627601" duration="3469000" />
       <workItem from="1584952290615" duration="1380000" />
       <workItem from="1584977672145" duration="997000" />
-      <workItem from="1586220648403" duration="36921000" />
+      <workItem from="1586220648403" duration="44323000" />
     </task>
     <task id="LOCAL-00001" summary="评论界面的剩余功能">
       <created>1584768589639</created>
@@ -425,7 +424,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586333484597</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="修改订单的bug">
+      <created>1586372549413</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1586372549413</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -511,20 +517,20 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="242" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1304.768@0.0.1304.768" timestamp="1584956561929" />
-    <state x="347" y="0" key="CommitChangelistDialog2" timestamp="1586333477505">
+    <state x="347" y="0" key="CommitChangelistDialog2" timestamp="1586372543477">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="236" y="0" key="CommitChangelistDialog2/0.0.1304.768@0.0.1304.768" timestamp="1584978281617" />
-    <state x="347" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586333477505" />
+    <state x="347" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586372543477" />
     <state x="92" y="92" width="1120" height="584" key="DiffContextDialog" timestamp="1584433974098">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="92" y="92" width="1120" height="584" key="DiffContextDialog/0.0.1304.768@0.0.1304.768" timestamp="1584433974098" />
-    <state x="635" y="171" key="FileChooserDialogImpl" timestamp="1586335502977">
+    <state x="635" y="171" key="FileChooserDialogImpl" timestamp="1586418913594">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="431" y="126" key="FileChooserDialogImpl/0.0.1304.768@0.0.1304.768" timestamp="1584841258047" />
-    <state x="635" y="171" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1586335502977" />
+    <state x="635" y="171" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1586418913594" />
     <state width="1877" height="351" key="GridCell.Tab.0.bottom" timestamp="1586372283750">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -579,11 +585,11 @@
     </state>
     <state x="153" y="0" key="SettingsEditor/0.0.1304.768@0.0.1304.768" timestamp="1584193163717" />
     <state x="225" y="0" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586273328331" />
-    <state x="359" y="158" key="Vcs.Push.Dialog.v2" timestamp="1586333494779">
+    <state x="359" y="158" key="Vcs.Push.Dialog.v2" timestamp="1586372551910">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="244" y="117" key="Vcs.Push.Dialog.v2/0.0.1304.768@0.0.1304.768" timestamp="1584978450874" />
-    <state x="359" y="158" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1586333494779" />
+    <state x="359" y="158" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1586372551910" />
     <state x="414" y="96" key="git4idea.branch.GitSmartOperationDialog" timestamp="1584978503921">
       <screen x="0" y="0" width="1304" height="768" />
     </state>

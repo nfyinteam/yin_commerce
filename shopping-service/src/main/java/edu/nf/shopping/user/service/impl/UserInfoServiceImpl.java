@@ -24,7 +24,7 @@ public class UserInfoServiceImpl implements UserInfoService {
     @Override
     public UserInfo getUserInfo(String userId) {
         try{
-           UserInfo userInfo=userInfoDao.getUserInfo(userId);
+           UserInfo userInfo = userInfoDao.getUserInfo(userId);
             return userInfo;
         } catch (RuntimeException e) {
             throw new UserException("错误");
@@ -33,7 +33,7 @@ public class UserInfoServiceImpl implements UserInfoService {
 
     @Override
     public List<UserInfo> listUser()  {
-        try{  List<UserInfo> list=userInfoDao.listUser();
+        try{  List<UserInfo> list = userInfoDao.listUser();
             return list;
         } catch (RuntimeException e) {
             e.printStackTrace();
@@ -45,7 +45,7 @@ public class UserInfoServiceImpl implements UserInfoService {
     @Override
     public UserInfo userLogin(String userId,String passWord) {
         try{
-            UserInfo u=userInfoDao.userLogin(userId,passWord);
+            UserInfo u = userInfoDao.userLogin(userId,passWord);
             if(u==null || !passWord.equals(u.getPassword())){
                 throw new UserException("用户名或密码错误");
             }
