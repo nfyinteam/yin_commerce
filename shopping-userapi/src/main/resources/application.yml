@@ -1,11 +1,11 @@
 server:
   # 设置tomcat
-  tomcat:
+  jetty:
     uri-encoding: UTF-8
     max-threads: 1000
     min-spare-threads: 50
   # 指定端口
-  port: 8080
+  port: 80
   # 指定项目的ContextPath路径
   servlet:
     context-path: /userapi

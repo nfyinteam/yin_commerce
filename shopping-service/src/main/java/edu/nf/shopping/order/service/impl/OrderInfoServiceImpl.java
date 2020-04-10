@@ -1,8 +1,10 @@
 package edu.nf.shopping.order.service.impl;
 
 import edu.nf.shopping.order.dao.OrderDao;
+import edu.nf.shopping.order.entity.OrderDetails;
 import edu.nf.shopping.order.entity.OrderInfo;
 import edu.nf.shopping.order.exception.OrderException;
+import edu.nf.shopping.order.service.OrderDetailsService;
 import edu.nf.shopping.order.service.OrderInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
@@ -19,6 +21,9 @@ public class OrderInfoServiceImpl implements OrderInfoService {
 
     @Autowired
     private OrderDao orderDao;
+
+    @Autowired
+    private OrderDetailsService detailsService;
 
     /**
      * 根据用户编号查询该用户所有订单信息
@@ -55,6 +60,7 @@ public class OrderInfoServiceImpl implements OrderInfoService {
                 throw new OrderException("订单不能为空");
             }
             OrderInfo orderInfo = orderDao.getOrderInfoByOrderId(orderId);
+            orderInfo.setOrderDetails(detailsService.listOrderDetailsByOrderId(orderId));
             if(orderInfo == null){
                 throw new OrderException("该订单不存在");
             }

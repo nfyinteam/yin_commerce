@@ -43,7 +43,7 @@ public class CommitOrderInfoServiceImpl implements CommitOrderInfoService {
      * @return
      */
     @Override
-    public OrderInfo commitOrderInfo(String orderId, String addressId) {
+    public OrderInfo commitOrderInfo(String orderId, String buyRemark, String addressId) {
         try {
             OrderInfo orderInfo = checkOrder(orderId);
             orderInfo.setOrderDetails(orderDetailsDao.listOrderDetailsByOrderId(orderId));
@@ -53,6 +53,7 @@ public class CommitOrderInfoServiceImpl implements CommitOrderInfoService {
             orderInfo.setAddressName(address.getAddressName());
             orderInfo.setAddressTel(address.getAddressTel());
             orderInfo.setAddressUser(address.getAddressName());
+            orderInfo.setBuyRemark(buyRemark);
             //修改真正的创建时间
             orderInfo.setCreateTime(new Date());
             //修改订单状态

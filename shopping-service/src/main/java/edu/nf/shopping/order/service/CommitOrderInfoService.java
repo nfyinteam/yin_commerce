@@ -8,5 +8,5 @@ import edu.nf.shopping.order.entity.OrderInfo;
  */
 public interface CommitOrderInfoService {
 
-    OrderInfo commitOrderInfo(String orderId, String addressId);
+    OrderInfo commitOrderInfo(String orderId, String buyRemark, String addressId);
 }
