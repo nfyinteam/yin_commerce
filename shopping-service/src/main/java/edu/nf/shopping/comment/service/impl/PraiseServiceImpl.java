@@ -1,6 +1,7 @@
 package edu.nf.shopping.comment.service.impl;
 
 import com.rabbitmq.client.Channel;
+import edu.nf.shopping.comment.config.CommentRabbitConfig;
 import edu.nf.shopping.comment.dao.CommentDao;
 import edu.nf.shopping.comment.dao.PraiseDao;
 import edu.nf.shopping.comment.entity.Praise;
@@ -86,7 +87,7 @@ public class PraiseServiceImpl implements PraiseService {
     /**
      点赞消费者：专门处理点赞业务
      **/
-    @RabbitListener(queues = RabbitConfig.PRAISE_QUEUE)
+    @RabbitListener(queues = CommentRabbitConfig.PRAISE_QUEUE)
     @CacheEvict(value = "commentCache", key = "#praise.goodsId",beforeInvocation=true)
     public void receiveMessage(Praise praise,
                                @Headers Map<String, Object> headers,

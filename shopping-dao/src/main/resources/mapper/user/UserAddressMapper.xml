@@ -26,6 +26,12 @@
         where u_id = #{uid}
     </select>
 
+    <select id="getUserAddressByAddrssId" resultMap="userAddressMap">
+        select address_id, u_id, address_name, address_tel, address_user, is_sel, c_id, p_id, c_name, type from user_address
+        left join city  on address_region = c_id
+        where address_id = #{addressId}
+    </select>
+
     <delete id="deleteUserAddress" parameterType="java.lang.String">
         delete from user_address
         where address_id=#{addressId}

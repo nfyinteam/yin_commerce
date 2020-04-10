@@ -12,6 +12,8 @@ public interface UserAddressDao {
 
     List<UserAddress> listUserAddress(String uid);
 
+    UserAddress getUserAddressByAddrssId(String addressId);
+
     void updateUserAddress(UserAddress userAddress);
 
     void addUserAddress(UserAddress userAddress);

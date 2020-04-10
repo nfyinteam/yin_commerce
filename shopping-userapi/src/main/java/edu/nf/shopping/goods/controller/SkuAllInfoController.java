@@ -10,6 +10,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -28,8 +29,9 @@ public class SkuAllInfoController extends BaseController {
             @ApiImplicitParam(name = "SkuId", value = "sku编号", required = true)
     })
     @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})
-    public ResponseVO<List<SkuAllInfo>> getSkuAllInfo(String[] skuId){
-        List<SkuAllInfo> list = skuInfoService.getSkuAllInfoBySkuId(skuId);
+    public ResponseVO<List<SkuAllInfo>> getSkuAllInfo(String[] skuId, HttpSession session){
+        String userId = (String) session.getAttribute("userId");
+        List<SkuAllInfo> list = skuInfoService.getSkuAllInfoBySkuId(userId, skuId);
         return success(list);
     }
 }

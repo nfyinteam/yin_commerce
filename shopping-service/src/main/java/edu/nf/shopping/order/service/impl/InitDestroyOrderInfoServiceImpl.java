@@ -14,6 +14,7 @@ import edu.nf.shopping.order.service.DestroyOrderInfoService;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.support.AmqpHeaders;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.messaging.handler.annotation.Headers;
 import org.springframework.stereotype.Service;
 
@@ -36,6 +37,9 @@ public class InitDestroyOrderInfoServiceImpl implements DestroyOrderInfoService 
     @Autowired
     private SkuInfoService skuInfoService;
 
+    @Autowired
+    private RedisTemplate<String, Object> redisTemplate;
+
     /**
      * 根据订单状态为提交中的，设置为已失效
      * @param orderInfo 订单信息
@@ -45,7 +49,7 @@ public class InitDestroyOrderInfoServiceImpl implements DestroyOrderInfoService 
         try {
             OrderInfo o = orderDao.getOrderInfoByOrderId(orderInfo.getOrderId());
             if(o != null){
-                if(o.getOrderState().equals("确认中")){
+                if(o.getOrderState().equals("确认中") || o.getOrderState().equals("待付款")){
                     //修改状态
                     o.setOrderState("已失效");
                     //恢复库存
@@ -55,6 +59,13 @@ public class InitDestroyOrderInfoServiceImpl implements DestroyOrderInfoService 
                         skuInfoService.updateSkuInfo(skuInfo);
                     }
                     orderDao.updateOrderInfo(o);
+                    if(redisTemplate.opsForValue().get("orderCache::" + o.getOrderId()) != null){
+                        redisTemplate.opsForValue().set("orderCache::" + o.getOrderId(), o);
+                    }
+                    String userId = o.getBuyUser().getUserId();
+                    if(redisTemplate.opsForValue().get("orderListCache::" + userId) != null){
+                        redisTemplate.opsForValue().set("orderListCache::" + userId, orderDao.listOrderInfo(userId));
+                    }
                 }
             }
         }catch (Exception e){
@@ -66,7 +77,7 @@ public class InitDestroyOrderInfoServiceImpl implements DestroyOrderInfoService 
      * 接收消息
      * 这里会延迟接收，也就是在发送端指定的延迟时间后才才进行接收
      */
-    @RabbitListener(queues = OrderRabbitConfig.ORDER_DESTROY_QUEUE)
+    @RabbitListener(queues = {OrderRabbitConfig.ORDER_DESTROY_QUEUE, })
     public void receiveMessage(OrderInfo orderInfo,
                                @Headers Map<String, Object> headers,
                                Channel channel) throws IOException {

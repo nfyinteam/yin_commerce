@@ -128,7 +128,7 @@ public class InitOrderInfoServiceImpl implements InitOrderInfoService {
      * 发送订单创建时间
      * @param orderInfo 订单信息对象
      */
-    public void sendInitOrder(OrderInfo orderInfo){
+    private void sendInitOrder(OrderInfo orderInfo){
         CorrelationData correlationData = new CorrelationData();
         correlationData.setId(orderInfo.getOrderId());
         orderDao.addOrderInfo(orderInfo);
@@ -141,7 +141,7 @@ public class InitOrderInfoServiceImpl implements InitOrderInfoService {
      * @param orderInfo 订单对象
      * @param delayTime 延迟时间
      */
-    public void sendDestroyOrder(OrderInfo orderInfo, Integer delayTime){
+    private void sendDestroyOrder(OrderInfo orderInfo, Integer delayTime){
         CorrelationData correlationData = new CorrelationData();
         correlationData.setId(orderInfo.getOrderId());
         //延迟消费，当订单在三十分钟内不创建，则状态为（确认中），延迟消费会将状态修改为已失效

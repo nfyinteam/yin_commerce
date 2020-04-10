@@ -56,8 +56,8 @@ public class SkuInfoServiceImpl implements SkuInfoService {
     }
 
     @Override
-    @Cacheable(value = "skuInfoCache", key = "#skuId", condition = "#skuId != null")
-    public List<SkuAllInfo> getSkuAllInfoBySkuId(String[] skuId) {
+    @Cacheable(value = "skuInfoListCache", key = "#userId", condition = "#userId != null")
+    public List<SkuAllInfo> getSkuAllInfoBySkuId(String userId, String[] skuId) {
         try {
             List<SkuAllInfo> list = new ArrayList<>();
             for (String id : skuId){

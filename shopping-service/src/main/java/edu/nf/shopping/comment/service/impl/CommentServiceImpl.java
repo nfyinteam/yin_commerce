@@ -1,21 +1,34 @@
 package edu.nf.shopping.comment.service.impl;
 
 import com.github.pagehelper.PageInfo;
+import com.rabbitmq.client.Channel;
+import edu.nf.shopping.comment.config.CommentRabbitConfig;
 import edu.nf.shopping.comment.dao.ComImageDao;
 import edu.nf.shopping.comment.dao.CommentDao;
 import edu.nf.shopping.comment.dao.ImgInfoDao;
 import edu.nf.shopping.comment.entity.Comment;
 import edu.nf.shopping.comment.entity.CommentImage;
 import edu.nf.shopping.comment.entity.ImgInfo;
+import edu.nf.shopping.comment.entity.Praise;
 import edu.nf.shopping.comment.exception.CommentException;
 import edu.nf.shopping.comment.service.CommentService;
+import edu.nf.shopping.config.RabbitConfig;
+import edu.nf.shopping.message.dao.NoticeDao;
+import edu.nf.shopping.message.dao.ReceiveDao;
 import edu.nf.shopping.message.entity.Notice;
+import edu.nf.shopping.message.entity.Receive;
 import edu.nf.shopping.util.FileNameUtils;
 import edu.nf.shopping.util.UUIDUtils;
 import edu.nf.shopping.util.UploadAddressUtils;
+import org.springframework.amqp.core.Message;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.amqp.rabbit.connection.CorrelationData;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.amqp.support.AmqpHeaders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.messaging.handler.annotation.Headers;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -23,6 +36,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author Bull fighters
@@ -41,6 +55,17 @@ public class CommentServiceImpl implements CommentService {
     @Autowired
     private ImgInfoDao imgInfoDao;
 
+    @Autowired
+    private NoticeDao noticeDao;
+
+    @Autowired
+    private ReceiveDao receiveDao;
+
+    @Autowired
+    private RedisTemplate<String,Object> redisTemplate;
+
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
 
     @Override
     @Cacheable(value = "commentCache", key = "#goodsId" , condition = "#userId==null and #pageNum<=1 and #order=='0' and #commentType=='0'")
@@ -122,33 +147,87 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public void addComment(Comment comment) {
+        System.out.println(comment.toString());
         try{
-            if(comment.getBycId()!=null && !"".equals(comment.getBycId()) && comment.getGoodsId()!=null && !"".equals(comment.getGoodsId())){
-                comment.setComId(UUIDUtils.createUUID());
-                comment.setState("1");
-                comment.setSkuInfo("NULL");
-                comment.setOrderId("NULL");
-                comment.setTime(new Date());
-                comment.setGrade(comment.getBycId().equals(comment.getParentId())?"2":"3");
-                comment.setComScore("NULL");
-                commentDao.addComment(comment);
-                //发送回复消息
-                Notice notice = new Notice();
-                notice.setNoticeId(UUIDUtils.createUUID());
-                notice.setContent("赞了我的评论");
-                notice.setLink("NULL");
-                notice.setTime(comment.getTime());
-                notice.setType("1");
-                notice.setAuthor(comment.getUserId());
-                notice.setTitle("NULL");
-                //
+            if(comment.getReceiveUserId()==null || "".equals(comment.getReceiveUserId())
+                    || comment.getBycId()==null || "".equals(comment.getBycId())
+                    || comment.getGoodsId()==null || "".equals(comment.getGoodsId())
+                    || comment.getUserId()==null){
+                throw new CommentException("数据出错了");
             }
+            comment.setComId(UUIDUtils.createUUID());
+            CorrelationData correlationData=new CorrelationData();
+            correlationData.setId(comment.getComId());
+            rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME,
+                    CommentRabbitConfig.COMMENT_ROUTER_KEY,comment,correlationData);
+        }catch (CommentException e){
+            throw e;
         }catch (RuntimeException e){
             e.printStackTrace();
             throw new CommentException("数据库出错");
         }
     }
 
+    /**
+     * 回复消息的消费者，负责发送回复消息
+     * @param comment
+     * @param headers
+     * @param channel
+     */
+    @RabbitListener(queues = CommentRabbitConfig.COMMENT_QUEUE)
+    public void commentMessage(Comment comment, @Headers Map<String, Object> headers, Channel channel) throws IOException {
+        Long deliveryTag = (Long) headers.get(AmqpHeaders.DELIVERY_TAG);
+        try{
+            //消息记录
+            comment.setState("1");
+            comment.setSkuInfo("NULL");
+            comment.setOrderId("NULL");
+            comment.setTime(new Date());
+            comment.setGrade(comment.getBycId().equals(comment.getParentId())?"2":"3");
+            comment.setComScore("NULL");
+            //点赞通知记录
+            Notice notice = new Notice();
+            notice.setNoticeId(UUIDUtils.createUUID());
+            notice.setTitle("回复了我");
+            notice.setContent(comment.getContent());
+            notice.setLink("NULL");
+            notice.setTime(comment.getTime());
+            notice.setType("0");
+            notice.setAuthor(comment.getUserId());
+            notice.setComId(comment.getComId());
+            //接收者记录
+            Receive receive=new Receive();
+            receive.setMessageId(notice.getNoticeId());
+            receive.setReceiveUserId(comment.getReceiveUserId());
+            receive.setState("1");
+            //添加记录
+            commentDao.addComment(comment);
+            receiveDao.addReceive(receive);
+            noticeDao.addNotice(notice);
+            System.out.println(comment.toString());
+            //清除接收方的回复消息和评论的缓存
+            redisTemplate.delete("messageCache::"+comment.getReceiveUserId()+"-"+notice.getType());
+            redisTemplate.delete("commentCache::"+comment.getGoodsId());
+            //确认签收
+            channel.basicAck(deliveryTag, false);
+        }catch (RuntimeException | IOException e){
+            //拒收消息，丢到死信
+            channel.basicReject(deliveryTag, false);
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 接收回复消息的死信
+     * @param message
+     * @param channel
+     * @throws IOException
+     */
+    @RabbitListener(queues = CommentRabbitConfig.COMMENT_DEAD_QUEUE)
+    public void commentDeadMessage(Message message, Channel channel) throws IOException {
+        System.out.println("收到死信消息：" + new String(message.getBody()));
+        channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
+    }
 
 
     @Override
