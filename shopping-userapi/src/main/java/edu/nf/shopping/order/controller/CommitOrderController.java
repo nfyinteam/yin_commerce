@@ -33,8 +33,8 @@ public class CommitOrderController extends BaseController {
             @ApiImplicitParam(name = "buyRemark", value = "买家备注", required = true)
     })
     @CrossOrigin(origins = "*", methods = {RequestMethod.POST})
-    public ResponseVO<OrderInfo> commitOrder(@PathVariable("orderId") String orderId, @PathVariable("addressId") String addressId,
-                                             @PathVariable("buyRemark") String buyRemark){
+    public ResponseVO<OrderInfo> commitOrder(@RequestParam("orderId") String orderId, @RequestParam("addressId") String addressId,
+                                             @RequestParam("buyRemark") String buyRemark){
 
         OrderInfo order = orderInfoService.commitOrderInfo(orderId, buyRemark, addressId);
         return success(order);

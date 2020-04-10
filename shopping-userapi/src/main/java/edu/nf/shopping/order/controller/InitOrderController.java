@@ -31,7 +31,7 @@ public class InitOrderController extends BaseController {
             @ApiImplicitParam(name = "orderDetails", value = "订单明细", required = true)
     })
     @CrossOrigin(origins = "*", methods = {RequestMethod.POST})
-    public ResponseVO<OrderInfo> initOrder(@PathVariable("orderDetails") List<OrderDetails> orderDetails, HttpSession session){
+    public ResponseVO<OrderInfo> initOrder(@RequestParam("orderDetails") List<OrderDetails> orderDetails, HttpSession session){
         String userId = (String) session.getAttribute("userId");
         OrderInfo order = initOrderInfoService.initOrderInfo(userId, orderDetails);
         return success(order);

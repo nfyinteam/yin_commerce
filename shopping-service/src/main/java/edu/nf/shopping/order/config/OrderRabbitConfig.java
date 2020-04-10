@@ -72,15 +72,27 @@ public class OrderRabbitConfig {
      */
 
     @Bean
-    public Binding orderInitBinding(@Qualifier("orderInitDeadQueue") Queue queue,
-                                    @Qualifier("deadExchange") Exchange exchange){
+    public Binding orderInitBinding(@Qualifier("orderInitQueue") Queue queue,
+                                    @Qualifier("exchange") Exchange exchange){
         return BindingBuilder.bind(queue).to(exchange).with(ORDER_INIT_ROUTER_KEY).noargs();
     }
 
     @Bean
-    public Binding orderCommitBinding(@Qualifier("orderCommitDeadQueue") Queue queue,
+    public Binding orderInitDeadBinding(@Qualifier("orderInitDeadQueue") Queue queue,
                                     @Qualifier("deadExchange") Exchange exchange){
+        return BindingBuilder.bind(queue).to(exchange).with(ORDER_INIT_DEAD_ROUTER_KEY).noargs();
+    }
+
+    @Bean
+    public Binding orderCommitBinding(@Qualifier("orderCommitQueue") Queue queue,
+                                    @Qualifier("exchange") Exchange exchange){
         return BindingBuilder.bind(queue).to(exchange).with(ORDER_COMMIT_ROUTER_KEY).noargs();
+    }
+
+    @Bean
+    public Binding orderCommitDeadBinding(@Qualifier("orderCommitDeadQueue") Queue queue,
+                                    @Qualifier("deadExchange") Exchange exchange){
+        return BindingBuilder.bind(queue).to(exchange).with(ORDER_COMMIT_DEAD_ROUTER_KEY).noargs();
     }
 
     @Bean

@@ -5,12 +5,12 @@
     <resultMap id="orderDetailsMap" type="edu.nf.shopping.order.entity.OrderDetails">
         <id property="orderId" column="order_id"/>
         <result property="skuId" column="sku_id"/>
-        <result property="skuNum" column="sku_name"/>
+        <result property="skuNum" column="sku_num"/>
         <result property="skuPrice" column="sku_price"/>
         <result property="skuAttribute" column="sku_attribute"/>
         <result property="goodsName" column="goods_name"/>
         <result property="goodsId" column="goods_id"/>
-        <result property="goodsFile" column="good_file"/>
+        <result property="goodsFile" column="goods_file"/>
         <result property="cargoId" column="cargo_id"/>
     </resultMap>
 
@@ -25,7 +25,7 @@
     </select>
 
     <insert id="addOrderDetails" parameterType="list">
-        insert into order_details(order_id ,sku_num, sku_price, sku_attribute, goods_name, goods_file,
+        insert into order_details(order_id, sku_num, sku_price, sku_attribute, goods_name, goods_file,
         cargo_id, sku_id, goods_id) values
         <foreach collection="orderDetails" item="details" separator=",">
             (#{details.orderId}, #{details.skuNum}, #{details.skuPrice}, #{details.skuAttribute},

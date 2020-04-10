@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
-import java.util.List;
 
 /**
  * @author Achine
@@ -30,7 +29,7 @@ public class GetOrderController extends BaseController {
             @ApiImplicitParam(name = "orderId", value = "订单编号", required = true)
     })
     @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})
-    public ResponseVO<OrderInfo> initOrder(@PathVariable("orderId") String orderId, HttpSession session){
+    public ResponseVO<OrderInfo> getOrderInfo(@RequestParam("orderId") String orderId, HttpSession session){
         OrderInfo order = orderInfoService.getOrderInfoByOrderId(orderId);
         return success(order);
     }
