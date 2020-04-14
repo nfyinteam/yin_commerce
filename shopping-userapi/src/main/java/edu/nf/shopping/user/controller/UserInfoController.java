@@ -1,15 +1,18 @@
 package edu.nf.shopping.user.controller;
+
 import edu.nf.shopping.user.entity.UserInfo;
 import edu.nf.shopping.user.service.UserInfoService;
 import edu.nf.shopping.vo.BaseController;
 import edu.nf.shopping.vo.ResponseVO;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
-import javax.security.auth.login.LoginException;
 import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
+import javax.servlet.http.HttpSession;
 
 /**
  * @author re
@@ -25,9 +28,8 @@ public class UserInfoController extends BaseController {
     @ApiOperation(value = "用户登录", notes = "用户的登录请求",
             httpMethod = "post")
     @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})
-    public ResponseVO userLogin(String userId,String passWord, HttpServletRequest request) {
-        service.userLogin(userId,passWord);
-        request.getSession().setAttribute("userId",userId);
+    public ResponseVO userLogin(String userId,String passWord, HttpSession session) {
+        session.setAttribute("userInfo",service.userLogin(userId,passWord));
         return success(200,"登录成功！");
     }
 
@@ -35,9 +37,9 @@ public class UserInfoController extends BaseController {
     @ApiOperation(value = "获取用户信息", notes = "用户获取自己的信息",
             httpMethod = "get")
     @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})
-    public ResponseVO getUserInfo(HttpServletRequest request) {
-        String userId=String.valueOf(request.getSession().getAttribute("userId"));
-        UserInfo userInfo=service.getUserInfo(userId);
+    public ResponseVO getUserInfo(HttpSession session) {
+        UserInfo userId=(UserInfo)session.getAttribute("userInfo");
+        UserInfo userInfo = service.getUserInfo(userId.getUserId());
         return success(userInfo);
     }
 
@@ -45,9 +47,9 @@ public class UserInfoController extends BaseController {
     @ApiOperation(value = "注销", notes = "用户注销登录",
             httpMethod = "get")
     @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})
-    public ResponseVO cancellationUser(HttpServletRequest request) {
-        request.getSession().removeAttribute("userId");
-        request.getSession().invalidate();
+    public ResponseVO cancellationUser(HttpSession session) {
+        session.removeAttribute("userInfo");
+        session.invalidate();
         return success(200);
     }
 

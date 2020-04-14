@@ -14,6 +14,7 @@ import edu.nf.shopping.order.service.DestroyOrderInfoService;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.support.AmqpHeaders;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.messaging.handler.annotation.Headers;
 import org.springframework.stereotype.Service;
@@ -45,6 +46,8 @@ public class InitDestroyOrderInfoServiceImpl implements DestroyOrderInfoService 
      * @param orderInfo 订单信息
      */
     @Override
+    @CachePut(value = "orderCache", key = "#orderInfo.orderId", condition =
+            "#orderInfo.orderState == '确认中' or #orderInfo.orderState == '待付款'")
     public void destroyOrder(OrderInfo orderInfo) {
         try {
             OrderInfo o = orderDao.getOrderInfoByOrderId(orderInfo.getOrderId());
@@ -59,13 +62,7 @@ public class InitDestroyOrderInfoServiceImpl implements DestroyOrderInfoService 
                         skuInfoService.updateSkuInfo(skuInfo);
                     }
                     orderDao.updateOrderInfo(o);
-                    if(redisTemplate.opsForValue().get("orderCache::" + o.getOrderId()) != null){
-                        redisTemplate.opsForValue().set("orderCache::" + o.getOrderId(), o);
-                    }
                     String userId = o.getBuyUser().getUserId();
-                    if(redisTemplate.opsForValue().get("orderListCache::" + userId) != null){
-                        redisTemplate.opsForValue().set("orderListCache::" + userId, orderDao.listOrderInfo(userId));
-                    }
                 }
             }
         }catch (Exception e){

@@ -24,7 +24,7 @@ public class UserAddressController extends BaseController {
     @GetMapping("/list/allAddress")
     @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})
     public ResponseVO listUserAddress(HttpSession session){
-        UserInfo user=(UserInfo)session.getAttribute("user");
+        UserInfo user=(UserInfo)session.getAttribute("userInfo");
         List<UserAddress> list=service.listUserAddress(user.getUserId());
         if(list!=null){
             return success(list);

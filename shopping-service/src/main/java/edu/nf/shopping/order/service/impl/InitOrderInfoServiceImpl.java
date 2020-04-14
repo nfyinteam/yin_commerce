@@ -105,10 +105,6 @@ public class InitOrderInfoServiceImpl implements InitOrderInfoService {
                 skuInfo.setSkuStock(skuInfo.getSkuStock() - details.getSkuNum());
                 skuInfoService.updateSkuInfo(skuInfo);
                 skuAllInfo.setSkuInfo(skuInfo);
-                //同步缓存
-                if(redisTemplate.opsForValue().get("skuInfoCache::" + skuInfo.getSkuId()) != null){
-                    redisTemplate.opsForValue().set("skuInfoCache::" + skuInfo.getSkuId(), skuAllInfo);
-                }
                 BigDecimal buy = details.getSkuPrice().multiply(new BigDecimal(details.getSkuNum()));
                 buyPrice = buyPrice.add(buy);
                 detailsList.add(details);

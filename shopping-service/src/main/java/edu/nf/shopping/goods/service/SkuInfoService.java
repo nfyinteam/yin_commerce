@@ -15,9 +15,9 @@ public interface SkuInfoService {
 
     List<SkuAllInfo> getSkuAllInfoBySkuId(String userId, String... skuId);
 
-    void addSkuInfo(SkuInfo skuInfo);
+    SkuInfo addSkuInfo(SkuInfo skuInfo);
 
-    void updateSkuInfo(SkuInfo skuInfo);
+    SkuInfo updateSkuInfo(SkuInfo skuInfo);
 
     void deleteSkuInfo(String skuId);
 }

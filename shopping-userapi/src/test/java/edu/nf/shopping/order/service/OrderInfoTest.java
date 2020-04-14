@@ -27,7 +27,7 @@ public class OrderInfoTest {
 
     @Test
     public void getOrderInfoTest(){
-        OrderInfo orderInfo = orderInfoService.getOrderInfoByOrderId("202004111586546338899");
-        System.out.println(orderInfo.getOrderId());
+        //OrderInfo orderInfo = orderInfoService.getOrderInfoByOrderId("202004111586546338899");
+        //System.out.println(orderInfo.getOrderId());
     }
 }

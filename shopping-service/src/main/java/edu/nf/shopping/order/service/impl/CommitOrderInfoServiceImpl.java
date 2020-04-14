@@ -13,6 +13,7 @@ import edu.nf.shopping.user.entity.UserAddress;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -43,6 +44,7 @@ public class CommitOrderInfoServiceImpl implements CommitOrderInfoService {
      * @return
      */
     @Override
+    @CachePut(value = "orderCache", key = "#orderId")
     public OrderInfo commitOrderInfo(String orderId, String buyRemark, String addressId) {
         try {
             OrderInfo orderInfo = checkOrder(orderId);

@@ -10,5 +10,5 @@ import java.util.List;
  */
 public interface InitOrderDetailsService {
 
-    void initOrderDetails(List<OrderDetails> orderDetails);
+    List<OrderDetails> initOrderDetails(List<OrderDetails> orderDetails);
 }

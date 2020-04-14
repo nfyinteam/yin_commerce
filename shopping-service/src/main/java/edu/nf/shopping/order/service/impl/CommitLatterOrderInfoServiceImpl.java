@@ -10,6 +10,7 @@ import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.support.AmqpHeaders;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.messaging.handler.annotation.Headers;
 import org.springframework.stereotype.Service;
@@ -32,12 +33,14 @@ public class CommitLatterOrderInfoServiceImpl implements CommitLatterOrderInfoSe
     private RedisTemplate<String, Object> redisTemplate;
 
     @Override
-    public void updateOrderInfo(OrderInfo orderInfo) {
+    @CachePut(value = "orderCache", key = "#orderInfo.orderId")
+    public OrderInfo updateOrderInfo(OrderInfo orderInfo) {
         try{
             if(orderInfo == null){
                 throw new OrderException("订单信息不能为空");
             }
             orderDao.updateOrderInfo(orderInfo);
+            return orderInfo;
         }catch (Exception e){
             throw new OrderException(e);
         }
@@ -53,9 +56,6 @@ public class CommitLatterOrderInfoServiceImpl implements CommitLatterOrderInfoSe
         Long deliveryTag = (Long) headers.get(AmqpHeaders.DELIVERY_TAG);
         try {
             updateOrderInfo(orderInfo);
-            if(redisTemplate.opsForValue().get("orderCache::" + orderInfo.getOrderId()) != null){
-                redisTemplate.opsForValue().set("orderCache::" + orderInfo.getOrderId(), orderInfo);
-            }
             String userId = orderInfo.getBuyUser().getUserId();
             //es里的订单列表修改
             channel.basicAck(deliveryTag, false);

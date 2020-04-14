@@ -11,6 +11,7 @@ import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.support.AmqpHeaders;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.messaging.handler.annotation.Headers;
 import org.springframework.stereotype.Service;
 
@@ -29,12 +30,14 @@ public class InitOrderDetailsServiceImpl implements InitOrderDetailsService {
     private OrderDetailsDao detailsDao;
 
     @Override
-    public void initOrderDetails(List<OrderDetails> orderDetails) {
+    @CachePut(value = "orderDetailsListCache", key = "#orderDetails[0].orderId")
+    public List<OrderDetails> initOrderDetails(List<OrderDetails> orderDetails) {
         try {
             if(orderDetails.size() == 0 || orderDetails == null){
                 throw new OrderDetailsException("该订单明细信息不能为空");
             }
             detailsDao.addOrderDetails(orderDetails);
+            return orderDetails;
         }catch (Exception e){
             throw new OrderDetailsException(e);
         }

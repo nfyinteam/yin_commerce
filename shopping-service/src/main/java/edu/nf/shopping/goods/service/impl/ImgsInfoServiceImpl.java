@@ -9,6 +9,7 @@ import edu.nf.shopping.util.FileNameUtils;
 import edu.nf.shopping.util.UploadAddressUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -60,7 +61,7 @@ public class ImgsInfoServiceImpl implements ImgsInfoService {
      * @param file
      */
     @Override
-    @CacheEvict(value = "goodsCache", key = "imgsInfo-2",beforeInvocation=true)
+    @CachePut(value = "goodsCache", key = "imgsInfo-2")
     public ImgsInfo addImgsInfo(MultipartFile file, Integer imgType) {
         try {
             String fileName = file.getOriginalFilename().split(".")[file.getOriginalFilename().split(".").length];

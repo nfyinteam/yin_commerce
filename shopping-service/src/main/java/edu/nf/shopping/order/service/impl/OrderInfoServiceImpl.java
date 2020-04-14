@@ -7,6 +7,7 @@ import edu.nf.shopping.order.exception.OrderException;
 import edu.nf.shopping.order.service.OrderDetailsService;
 import edu.nf.shopping.order.service.OrderInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -81,6 +82,7 @@ public class OrderInfoServiceImpl implements OrderInfoService {
      * @param orderId 订单编号
      */
     @Override
+    @CacheEvict(value = "orderCache", key = "#orderId")
     public void deleteOrderInfo(String orderId) {
         try{
             if (orderId == null || orderId == ""){

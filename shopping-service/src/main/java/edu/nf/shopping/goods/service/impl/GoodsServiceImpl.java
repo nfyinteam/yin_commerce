@@ -57,7 +57,7 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     @Override
-    public GoodsInfo listGoodsById(String id) {
+    public GoodsInfo getGoodsById(String id) {
         try {
             if(id == null || id == ""){
                 throw new GoodsException("商品编号不能为空");

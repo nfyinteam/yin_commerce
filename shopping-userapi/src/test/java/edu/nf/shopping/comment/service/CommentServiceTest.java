@@ -56,8 +56,10 @@ public class CommentServiceTest {
     void testNotice(){
         RedisCommands<String, String> commands = LettuceUtils.getCommands();
         List<PageRegion> list=(List<PageRegion>)redisTemplate.opsForValue().get("pageCache::pageRegion-0");
-        for (PageRegion pageRegion : list) {
-            System.out.println(pageRegion);
+        if(list != null){
+            for (PageRegion pageRegion : list) {
+                System.out.println(pageRegion);
+            }
         }
     }
 }

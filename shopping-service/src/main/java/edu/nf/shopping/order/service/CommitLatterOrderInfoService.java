@@ -8,5 +8,5 @@ import edu.nf.shopping.order.entity.OrderInfo;
  */
 public interface CommitLatterOrderInfoService {
 
-    void updateOrderInfo(OrderInfo orderInfo);
+    OrderInfo updateOrderInfo(OrderInfo orderInfo);
 }
