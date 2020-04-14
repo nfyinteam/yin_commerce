@@ -35,7 +35,7 @@ public class OrderInfoServiceImpl implements OrderInfoService {
     @Cacheable(value = "orderListCache", key = "#userId", condition = "#userId != null or #userId != ''")
     public List<OrderInfo> listOrderInfoByUserId(String userId) {
         try {
-            if(userId == "" || userId == null){
+            if(userId.equals("") || userId == null){
                 throw new OrderException("该用户不存在");
             }
             List<OrderInfo> list = orderDao.listOrderInfo(userId);
@@ -57,7 +57,7 @@ public class OrderInfoServiceImpl implements OrderInfoService {
     @Cacheable(value = "orderCache", key = "#orderId", condition = "#orderId != null or #orderId != ''")
     public OrderInfo getOrderInfoByOrderId(String orderId) {
         try {
-            if(orderId == "" || orderId == null){
+            if(orderId.equals("") || orderId == null){
                 throw new OrderException("订单不能为空");
             }
             OrderInfo orderInfo = orderDao.getOrderInfoByOrderId(orderId);
@@ -85,7 +85,7 @@ public class OrderInfoServiceImpl implements OrderInfoService {
     @CacheEvict(value = "orderCache", key = "#orderId")
     public void deleteOrderInfo(String orderId) {
         try{
-            if (orderId == null || orderId == ""){
+            if (orderId == null || orderId.equals("")){
                 throw new OrderException("订单编号不能为空");
             }
             orderDao.deleteOrderInfo(orderId);

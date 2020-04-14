@@ -29,7 +29,7 @@ public class UserInfoController extends BaseController {
             httpMethod = "post")
     @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})
     public ResponseVO userLogin(String userId,String passWord, HttpSession session) {
-        session.setAttribute("userInfo",service.userLogin(userId,passWord));
+        session.setAttribute("userInfo", service.userLogin(userId,passWord));
         return success(200,"登录成功！");
     }
 
@@ -38,9 +38,11 @@ public class UserInfoController extends BaseController {
             httpMethod = "get")
     @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})
     public ResponseVO getUserInfo(HttpSession session) {
-        UserInfo userId=(UserInfo)session.getAttribute("userInfo");
-        UserInfo userInfo = service.getUserInfo(userId.getUserId());
-        return success(userInfo);
+        UserInfo user = (UserInfo)session.getAttribute("userInfo");
+        if(user == null){
+            fail(500, "请登录");
+        }
+        return success(user);
     }
 
     @RequestMapping("/user/cancellation")

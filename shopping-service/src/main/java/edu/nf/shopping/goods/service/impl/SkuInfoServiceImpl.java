@@ -111,6 +111,9 @@ public class SkuInfoServiceImpl implements SkuInfoService {
     @CacheEvict(value = "skuInfoCache", key = "#skuId", beforeInvocation=true)
     public void deleteSkuInfo(String skuId) {
         try {
+            if(skuId == null || skuId.equals("")){
+                throw new SkuInfoException("sku编号不能为空");
+            }
             skuInfoDao.deleteSkuInfo(skuId);
         }catch (Exception e){
             throw new SkuInfoException(e);

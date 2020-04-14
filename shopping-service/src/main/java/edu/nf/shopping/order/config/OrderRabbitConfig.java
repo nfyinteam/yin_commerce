@@ -21,12 +21,14 @@ public class OrderRabbitConfig {
     public static final String ORDER_COMMIT_QUEUE = "order.commit.queue";
     public static final String ORDER_COMMIT_DEAD_QUEUE = "order.commit.dead.queue";
     public static final String ORDER_DESTROY_QUEUE = "order.destroy.queue";
+    public static final String ORDER_PAY_DESTROY_QUEUE = "order.pay.destroy.queue";
 
     public static final String ORDER_INIT_ROUTER_KEY = "order.init";
     public static final String ORDER_INIT_DEAD_ROUTER_KEY = "order.init.dead";
     public static final String ORDER_COMMIT_ROUTER_KEY = "order.commit";
     public static final String ORDER_COMMIT_DEAD_ROUTER_KEY = "order.commit.dead";
     public static final String ORDER_DESTROY_ROUTER_KEY = "order.destroy";
+    public static final String ORDER_PAY_DESTROY_ROUTER_KEY = "order.pay.destroy";
 
     /**
      * 装配消息队列
@@ -67,6 +69,11 @@ public class OrderRabbitConfig {
         return new Queue(ORDER_DESTROY_QUEUE, true);
     }
 
+    @Bean
+    public Queue orderPayDestroyQueue(){
+        return new Queue(ORDER_PAY_DESTROY_QUEUE, true);
+    }
+
     /**
      * 将queue绑定到exchange交换机
      */
@@ -99,5 +106,11 @@ public class OrderRabbitConfig {
     public Binding orderDestroyBinding(@Qualifier("orderDestroyQueue") Queue queue,
                                        @Qualifier("delayExchange") CustomExchange exchange){
         return BindingBuilder.bind(queue).to(exchange).with(ORDER_DESTROY_ROUTER_KEY).noargs();
+    }
+
+    @Bean
+    public Binding orderPayDestroyBinding(@Qualifier("orderPayDestroyQueue") Queue queue,
+                                       @Qualifier("delayExchange") CustomExchange exchange){
+        return BindingBuilder.bind(queue).to(exchange).with(ORDER_PAY_DESTROY_ROUTER_KEY).noargs();
     }
 }

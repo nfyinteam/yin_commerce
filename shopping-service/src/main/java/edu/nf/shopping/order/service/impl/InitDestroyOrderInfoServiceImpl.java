@@ -14,6 +14,7 @@ import edu.nf.shopping.order.service.DestroyOrderInfoService;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.support.AmqpHeaders;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.messaging.handler.annotation.Headers;
@@ -46,13 +47,12 @@ public class InitDestroyOrderInfoServiceImpl implements DestroyOrderInfoService 
      * @param orderInfo 订单信息
      */
     @Override
-    @CachePut(value = "orderCache", key = "#orderInfo.orderId", condition =
-            "#orderInfo.orderState == '确认中' or #orderInfo.orderState == '待付款'")
+    @CacheEvict(value = "orderCache", key = "#orderInfo.orderId", condition = "#orderInfo.orderState == '确认中'", beforeInvocation = true)
     public void destroyOrder(OrderInfo orderInfo) {
         try {
             OrderInfo o = orderDao.getOrderInfoByOrderId(orderInfo.getOrderId());
             if(o != null){
-                if(o.getOrderState().equals("确认中") || o.getOrderState().equals("待付款")){
+                if(o.getOrderState().equals("确认中")){
                     //修改状态
                     o.setOrderState("已失效");
                     //恢复库存
@@ -62,7 +62,6 @@ public class InitDestroyOrderInfoServiceImpl implements DestroyOrderInfoService 
                         skuInfoService.updateSkuInfo(skuInfo);
                     }
                     orderDao.updateOrderInfo(o);
-                    String userId = o.getBuyUser().getUserId();
                 }
             }
         }catch (Exception e){

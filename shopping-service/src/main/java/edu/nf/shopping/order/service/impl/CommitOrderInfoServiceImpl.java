@@ -76,7 +76,7 @@ public class CommitOrderInfoServiceImpl implements CommitOrderInfoService {
         if(orderInfo == null){
             throw new OrderException("该订单信息不存在");
         }
-        if (orderInfo.getOrderState() == "已失效"){
+        if (orderInfo.getOrderState().equals("已失效") || orderInfo.getOrderState().equals("已取消")){
             throw new OrderException("该订单已失效");
         }
         return orderInfo;
@@ -114,7 +114,7 @@ public class CommitOrderInfoServiceImpl implements CommitOrderInfoService {
         CorrelationData correlationData = new CorrelationData();
         correlationData.setId(orderInfo.getOrderId());
         //延迟消费，当订单在三十分钟内不创建，则状态为（确认中），延迟消费会将状态修改为已失效
-        rabbitTemplate.convertAndSend(RabbitConfig.DELAY_EXCHANGE_NAME, OrderRabbitConfig.ORDER_DESTROY_ROUTER_KEY, orderInfo, message -> {
+        rabbitTemplate.convertAndSend(RabbitConfig.DELAY_EXCHANGE_NAME, OrderRabbitConfig.ORDER_PAY_DESTROY_ROUTER_KEY, orderInfo, message -> {
             //设置延迟时间
             message.getMessageProperties().setDelay(delayTime);
             return message;

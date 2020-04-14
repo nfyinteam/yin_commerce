@@ -63,10 +63,10 @@ public class OrderDetailsServiceImpl implements OrderDetailsService {
             "(#orderId != null or #orderId != '') and (#skuId != null or #skuId != '')")
     public OrderDetails getOrederDetails(String orderId, String skuId) {
         try {
-            if(orderId == null || orderId == ""){
+            if(orderId == null || orderId.equals("")){
                 throw new OrderDetailsException("订单编号不能为空");
             }
-            if(skuId == null || skuId == ""){
+            if(skuId == null || skuId.equals("")){
                 throw new SkuInfoException("sku编号不能为空");
             }
             OrderInfo orderInfo = orderDao.getOrderInfoByOrderId(orderId);

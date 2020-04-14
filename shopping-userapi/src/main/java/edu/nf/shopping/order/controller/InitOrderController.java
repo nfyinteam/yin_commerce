@@ -3,6 +3,7 @@ package edu.nf.shopping.order.controller;
 import edu.nf.shopping.order.entity.OrderDetails;
 import edu.nf.shopping.order.entity.OrderInfo;
 import edu.nf.shopping.order.service.InitOrderInfoService;
+import edu.nf.shopping.user.entity.UserInfo;
 import edu.nf.shopping.vo.BaseController;
 import edu.nf.shopping.vo.ResponseVO;
 import io.swagger.annotations.ApiImplicitParam;
@@ -32,8 +33,8 @@ public class InitOrderController extends BaseController {
     })
     @CrossOrigin(origins = "*", methods = {RequestMethod.POST})
     public ResponseVO<OrderInfo> initOrder(@RequestParam("orderDetails") List<OrderDetails> orderDetails, HttpSession session){
-        String userId = (String) session.getAttribute("userId");
-        OrderInfo order = initOrderInfoService.initOrderInfo(userId, orderDetails);
+        UserInfo user = (UserInfo) session.getAttribute("userInfo");
+        OrderInfo order = initOrderInfoService.initOrderInfo(user.getUserId(), orderDetails);
         return success(order);
     }
 }

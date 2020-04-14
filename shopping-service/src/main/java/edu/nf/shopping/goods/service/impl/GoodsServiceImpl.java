@@ -33,10 +33,10 @@ public class GoodsServiceImpl implements GoodsService {
     @Override
     public List<GoodsInfo> listGoodsByName(String name) {
         try {
-            if(name == null || name == ""){
-                throw new GoodsException("商品名称不能为空");
-            }
             List<GoodsInfo> list = dao.listGoodsByName(name);
+            if(list == null || list.size() == 0){
+                throw new GoodsException("没有该商品");
+            }
             return list;
         }catch (Exception e){
             throw new GoodsException(e);
@@ -46,10 +46,10 @@ public class GoodsServiceImpl implements GoodsService {
     @Override
     public List<GoodsInfo> listGoodsBySpuId(String spuId) {
         try {
-            if(spuId == null || spuId == ""){
-                throw new GoodsException("SPU编号不能为空");
-            }
             List<GoodsInfo> list = dao.listGoodsBySpuId(spuId);
+            if(list == null || list.size() == 0){
+                throw new GoodsException("该产品没有商品");
+            }
             return list;
         }catch (Exception e){
             throw new GoodsException(e);
@@ -59,10 +59,10 @@ public class GoodsServiceImpl implements GoodsService {
     @Override
     public GoodsInfo getGoodsById(String id) {
         try {
-            if(id == null || id == ""){
-                throw new GoodsException("商品编号不能为空");
-            }
             GoodsInfo goods = dao.getGoodsById(id);
+            if(goods == null){
+                throw new GoodsException("该商品不存在");
+            }
             return goods;
         }catch (Exception e){
             throw new GoodsException(e);
