@@ -21,10 +21,10 @@ public interface NewsDao {
      * @param order
      * @return
      */
-    List<News> listUserNews(Integer pageStart,Integer pageSize, String userId, String order);
+    List<News> listUserNews(Integer pageStart,Integer pageSize, String userId,String authorId, String order);
 
     /**
-     * 查询用户未读消息的数量
+     * 查询用户未读消息的总数量
      * @param userId
      * @return
      */
@@ -35,6 +35,11 @@ public interface NewsDao {
      * @param news
      */
     void addNews(News news);
+
+    /**
+     * 查询用户单个客服未读消息数量
+     */
+    List<News> findSingleNotView(String userId);
 
     /**
      * 获取客服列表

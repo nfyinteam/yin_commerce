@@ -38,9 +38,8 @@ import java.util.concurrent.TimeUnit;
  * @author Bull fighters
  * @date 2020/4/6
  */
-@Service("newsService")
-@Transactional(rollbackFor = {RuntimeException.class})
-public class NewsServiceImpl implements NewsService {
+@Service("newsServiceApi")
+public class NewsServiceImpl implements NewsService{
 
     @Autowired
     private NewsDao newsDao;
@@ -61,20 +60,17 @@ public class NewsServiceImpl implements NewsService {
 
     @Override
     //@Cacheable(value="messageCache" , key = "chat_record:#orderId" ,condition = "#pageStart=0 and #orderId!=null")
-    public List<News> listUserNews(Integer pageStart, Integer pageSize, String userId, String orderId) {
+    public List<News> listUserNews(Integer pageStart, Integer pageSize, String userId,String authorId, String orderId) {
         try{
             pageStart=pageStart<0?0:pageStart;
-            List<News> list=newsDao.listUserNews(pageStart,pageSize,userId,orderId);
+            List<News> list=newsDao.listUserNews(pageStart,pageSize,userId,authorId,orderId);
             if (list.size()>0 && list.size()<pageSize){
-                for (News news : list) {
-                    System.out.println(news.toString());
-                }
                 list.get(0).setTotal("0");
             }
+            for (News news : list) {
+                System.out.println(news.toString());
+            }
             return list;
-        }catch (MessageException e){
-            e.printStackTrace();
-            throw e;
         }catch (RuntimeException e){
             e.printStackTrace();
             throw new MessageException("数据库出错");
@@ -82,13 +78,17 @@ public class NewsServiceImpl implements NewsService {
     }
 
     /**
-     * 判断连接记录key是否过期
-     * 添加一条消息记录并发送消息
+     *判断连接记录key是否过期
+     *添加一条消息记录并发送消息
+     * @param file
      * @param news
+     * @param customerService
+     * @param userId
+     * @param routerKey 路由的key，发送到不同的消费者
      * @return
      */
     @Override
-    public News addNews(MultipartFile file,News news,String customerService,String userId) {
+    public News addNews(MultipartFile file,News news,String customerService,String userId,String routerKey) {
         try{
             if (news.getOrderId()==null||"".equals(news.getOrderId())||"NULL".equals(news.getOrderId())) {
                 if (!redisTemplate.expire((webSocketHandler.ASSIGNMENT_CACHE_KEY + customerService + ":" + userId),
@@ -103,13 +103,11 @@ public class NewsServiceImpl implements NewsService {
             if (file!=null){
                 news.setImgName(news.getNewsId()+".png");
                 FileNameUtils.upload(UploadAddressUtils.MESSAGE_IMAGES,file.getInputStream(),news.getImgName());
+                news.setContent("[图片]");
             }else {
                 news.setImgName("NULL");
             }
-//            CorrelationData correlationData=new CorrelationData();
-//            correlationData.setId(news.getNewsId());
-            rabbitTemplate.convertAndSend(RabbitConfig.DIRECT_EXCHANGE_NAME,
-                    MessageRabbitConfig.CHAT_NEWS_ROUTER_KEY,news);
+            rabbitTemplate.convertAndSend(RabbitConfig.DIRECT_EXCHANGE_NAME,routerKey,news);
             return news;
         }catch (MessageException e){
             throw e;
@@ -119,40 +117,19 @@ public class NewsServiceImpl implements NewsService {
         }
     }
 
-    /**
-     * 聊天消息的消费者，负责处理聊天消息
-     * @param news
-     * @param headers
-     * @param channel
-     * @throws IOException
-     */
-    @RabbitListener(queues = MessageRabbitConfig.CHAT_NEWS_QUEUE)
-    public void chatMessage(News news, @Headers Map<String, Object> headers, Channel channel) throws IOException {
-        sendNews(news,headers,channel);
-    }
-
-//    @RabbitListener(queues = MessageRabbitConfig.CHAT_NEWS_QUEUE)
-//    public void chatMessage(News news, @Headers Map<String, Object> headers, Channel channel) throws IOException {
-//        sendNews(news,headers,channel);
-//    }
-
-    private void sendNews(News news, @Headers Map<String, Object> headers, Channel channel){
+    @Override
+    public void sendNews(News news){
         try {
             news.setNewsType("2");
             //根据订单编号和用户编号还有客服编号查询订单是否真实
             if (news.getOrderId()==null||"".equals(news.getOrderId())||"NULL".equals(news.getOrderId())) {
-//                if(redisTemplate.opsForValue().get(webSocketHandler.ASSIGNMENT_CACHE_KEY+
-//                        news.getCustomerService() +":"+news.getUserId())==null){
-
-//                }
 //                if(){
-                //                  news.setContent("连接断开，请刷新界面");
-////                    news.setReceiveUserId(news.getAuthorId());
-////                    webSocketHandler.receiveMessage(news);
-////                    return;
+//                    news.setContent("连接断开，请刷新界面");
+//                    news.setReceiveUserId(news.getAuthorId());
+//                    webSocketHandler.receiveMessage(news);
+//                    return;
 //                }
             }
-            //news.setReceiveUserId("1578412684888");
             news.setTime(new Date());
             Receive receive=new Receive();
             receive.setMessageId(news.getNewsId());
@@ -161,10 +138,7 @@ public class NewsServiceImpl implements NewsService {
             news.setNewsType("1");
 //            newsDao.addNews(news);
 //            receiveDao.addReceive(receive);
-            //redisTemplate.convertAndSend("chat",news);
             webSocketHandler.receiveMessage(news);
-//            Long deliveryTag = (Long) headers.get(AmqpHeaders.DELIVERY_TAG);
-//            channel.basicAck(deliveryTag, false);
         }catch (RuntimeException e){
             //消息发送失败反馈给发送者
             news.setNewsType("2");
@@ -175,9 +149,20 @@ public class NewsServiceImpl implements NewsService {
     }
 
     @Override
-    public void updateNewsState(String newsId,String orderId, String userId) {
+    public void updateNewsState(String authorId, String userId,String orderId) {
         try{
-            receiveDao.updateNewsState(newsId,orderId,userId);
+            receiveDao.updateNewsState(authorId,userId,orderId);
+        }catch (MessageException e){
+            e.printStackTrace();
+            throw new MessageException(e.getMessage());
+        }
+    }
+
+    @Override
+    public List<News> findSingleNotView(String userId) {
+        try{
+            List<News> list=newsDao.findSingleNotView(userId);
+            return list;
         }catch (MessageException e){
             e.printStackTrace();
             throw new MessageException(e.getMessage());
@@ -193,11 +178,9 @@ public class NewsServiceImpl implements NewsService {
                 for (String key : keys) {
                     UserInfo u=(UserInfo)redisTemplate.opsForValue().get("userInfo_cache:"+key.split(":")[2]);
                     u.setOrderId("NULL");
+                    u.setLastContent("");
                     list.add(u);
                 }
-            }
-            for (UserInfo userInfo : list) {
-                System.out.println(userInfo);
             }
             return list;
         }catch (MessageException e){

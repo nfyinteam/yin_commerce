@@ -15,20 +15,33 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class MessageRabbitConfig {
 
-    public static final String CHAT_NEWS_QUEUE = "chat.news.queue";
+    public static final String USER_CHAT_NEWS_QUEUE = "user.chat.news.queue";
+    public static final String ADMIN_CHAT_NEWS_QUEUE = "admin.chat.news.queue";
     public static final String NOTICE_QUEUE = "notice.queue";
 
-    public static final String CHAT_NEWS_ROUTER_KEY = "chat.news.message";
+    public static final String USER_CHAT_NEWS_ROUTER_KEY = "user.chat.news.message";
+    public static final String ADMIN_CHAT_NEWS_ROUTER_KEY = "admin.chat.news.message";
     public static final String NOTICE_ROUTER_KEY = "notice.message";
 
     @Bean
-    public Queue chatNewsQueue(){
-        return new Queue(CHAT_NEWS_QUEUE, true);
+    public Queue userChatNewsQueue(){
+        return new Queue(USER_CHAT_NEWS_QUEUE, true);
     }
 
     @Bean
-    public Binding chatNewsBinding(@Qualifier("chatNewsQueue") Queue queue,
+    public Binding userChatNewsBinding(@Qualifier("userChatNewsQueue") Queue queue,
                                  @Qualifier("directExchange") Exchange exchange){
-        return BindingBuilder.bind(queue).to(exchange).with(CHAT_NEWS_ROUTER_KEY).noargs();
+        return BindingBuilder.bind(queue).to(exchange).with(USER_CHAT_NEWS_ROUTER_KEY).noargs();
+    }
+
+    @Bean
+    public Queue adminChatNewsQueue(){
+        return new Queue(ADMIN_CHAT_NEWS_QUEUE, true);
+    }
+
+    @Bean
+    public Binding adminChatNewsBinding(@Qualifier("adminChatNewsQueue") Queue queue,
+                                   @Qualifier("directExchange") Exchange exchange){
+        return BindingBuilder.bind(queue).to(exchange).with(ADMIN_CHAT_NEWS_ROUTER_KEY).noargs();
     }
 }

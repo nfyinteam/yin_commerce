@@ -1,11 +1,14 @@
 package edu.nf.shopping.message.service;
 
+import com.rabbitmq.client.Channel;
 import edu.nf.shopping.message.entity.News;
 import edu.nf.shopping.message.entity.Receive;
 import edu.nf.shopping.user.entity.UserInfo;
+import org.springframework.messaging.handler.annotation.Headers;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author Bull fighters
@@ -21,22 +24,29 @@ public interface NewsService {
      * @param order
      * @return
      */
-    List<News> listUserNews(Integer pageStart, Integer pageSize, String userId, String order);
+    List<News> listUserNews(Integer pageStart, Integer pageSize, String userId,String authorId, String order);
 
 
     /**
      * 添加消息
      * @param news
      */
-    News addNews(MultipartFile file,News news,String customerService,String userId);
+    News addNews(MultipartFile file,News news,String customerService,String userId,String routerKey);
 
     /**
      * 修改消息的状态
      */
-    void updateNewsState(String newsId,String orderId, String userId);
+    void updateNewsState(String authorId, String userId,String orderId);
+
+    /**
+     * 查询用户单个客服未读消息数量
+     */
+    List<News> findSingleNotView(String userId);
 
     /**
      * 获取客服列表
      */
     List<UserInfo> getUserNewsListByUserId(String userId,String customerService);
+
+    void sendNews(News news);
 }

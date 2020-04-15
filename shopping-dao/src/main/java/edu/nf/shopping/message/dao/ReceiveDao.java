@@ -18,7 +18,7 @@ public interface ReceiveDao {
     /**
      * 根据消息编号修改状态
      */
-    void updateNewsState(String newsId,String orderId, String userId);
+    void updateNewsState(String authorId, String userId,String orderId);
 
     /**
      * 根据通知类型修改通知状态

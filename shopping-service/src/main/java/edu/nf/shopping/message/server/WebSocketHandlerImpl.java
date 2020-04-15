@@ -1,29 +1,19 @@
 package edu.nf.shopping.message.server;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
-import edu.nf.shopping.config.RedisConfig;
 import edu.nf.shopping.message.entity.News;
 import edu.nf.shopping.message.entity.PersonnelAssignment;
-import edu.nf.shopping.message.service.RedisMsg;
 import edu.nf.shopping.user.entity.UserInfo;
 import edu.nf.shopping.util.LettuceUtils;
 import io.lettuce.core.api.sync.RedisCommands;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataAccessException;
-import org.springframework.data.redis.connection.RedisConnection;
-import org.springframework.data.redis.connection.StringRedisConnection;
-import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.web.socket.*;
 
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
 
 /**
  * @author Bull fighters
@@ -136,7 +126,6 @@ public class WebSocketHandlerImpl implements WebSocketHandler {
                                     commands.keys(ASSIGNMENT_CACHE_KEY+personnelAssignments.
                                             get(0).getCustomerServiceId()+":*").size()));
                 connectMessage(personnelAssignments.get(0).getCustomerServiceId(),userId,"连接成功");
-                connectMessage(userId,personnelAssignments.get(0).getCustomerServiceId(),"");
                 System.out.println("匹配到的："+personnelAssignments.get(0));
             }else {
                 connectMessage("null",userId,"没有客服了哦");
@@ -206,7 +195,6 @@ public class WebSocketHandlerImpl implements WebSocketHandler {
      */
     public void receiveMessage(News news) {
         WebSocketSession receiveSession = socketMap.get(news.getReceiveUserId());
-        System.out.println("监听中："+news.toString());
         try {
             if(receiveSession==null||!receiveSession.isOpen()) {
                 return ;

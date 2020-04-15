@@ -56,4 +56,6 @@ public class UserInfo {
     private String orderId;
 
     private String lastContent;
+
+    private Integer notView;
 }
