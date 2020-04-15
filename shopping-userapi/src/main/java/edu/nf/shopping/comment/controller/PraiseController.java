@@ -2,6 +2,7 @@ package edu.nf.shopping.comment.controller;
 
 import edu.nf.shopping.comment.entity.Praise;
 import edu.nf.shopping.comment.service.PraiseService;
+import edu.nf.shopping.user.entity.UserInfo;
 import edu.nf.shopping.vo.BaseController;
 import edu.nf.shopping.vo.ResponseVO;
 import io.swagger.annotations.ApiOperation;
@@ -28,8 +29,8 @@ public class PraiseController extends BaseController {
             httpMethod = "post")
     @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})
     private ResponseVO spotPraise(String commentId,String goodsId,String receiveUserId, HttpServletRequest request){
-
-        praiseService.spotPraise((String)request.getSession().getAttribute("userId"),commentId,goodsId,receiveUserId);
+        UserInfo userInfo=(UserInfo) request.getSession().getAttribute("userInfo");
+        praiseService.spotPraise(userInfo.getUserId(),commentId,goodsId,receiveUserId);
         return success(200,"");
     }
 }

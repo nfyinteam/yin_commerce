@@ -21,14 +21,18 @@ spring:
         prefetch: 2
         # 消息签收模式，消息被消费后会回馈一条确认信息给rabbitmq
         # 可以设置为自动或者手动签收，这里设置为手动
-        acknowledge-mode: manual
+        acknowledge-mode: auto
+        default-requeue-rejected: false
+      retry:
+        enabled: true
+        max-attempts: 3
   #内存数据库
   redis:
     host: www.88k88.cn
     port: 6379
     password: qq520340
     database: 1
-    timeout: 30000s
+    timeout: 20000
     #连接池配置
 #    lettuce:
 #      pool:

@@ -42,13 +42,13 @@ public class OrderRabbitConfig {
 
     @Bean
     public Binding orderDetailsCreateBinding(@Qualifier("orderDetailsCreateQueue") Queue queue,
-                                             @Qualifier("exchange") Exchange exchange){
+                                             @Qualifier("directExchange") Exchange exchange){
         return BindingBuilder.bind(queue).to(exchange).with(ORDER_DETAILS_CREATE_ROUTER_KEY).noargs();
     }
 
     @Bean
     public Binding orderInitBinding(@Qualifier("orderInitQueue") Queue queue,
-                                    @Qualifier("exchange") Exchange exchange){
+                                    @Qualifier("directExchange") Exchange exchange){
         return BindingBuilder.bind(queue).to(exchange).with(ORDER_INIT_ROUTER_KEY).noargs();
     }
 }

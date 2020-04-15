@@ -6,6 +6,8 @@ import io.lettuce.core.api.StatefulRedisConnection;
 import io.lettuce.core.api.async.RedisAsyncCommands;
 import io.lettuce.core.api.reactive.RedisReactiveCommands;
 import io.lettuce.core.api.sync.RedisCommands;
+import org.springframework.context.annotation.Bean;
+import org.springframework.data.redis.serializer.JdkSerializationRedisSerializer;
 
 import java.time.Duration;
 
@@ -22,14 +24,14 @@ public class LettuceUtils {
                 .redis("www.88k88.cn")
                 .withPort(6379)
                 .withPassword("qq520340")
-                .withDatabase(0)
+                .withDatabase(1)
                 .withTimeout(Duration.ofSeconds(5))
                 .build();
         connection = RedisClient.create(redisURI).connect();
     }
 
     /**
-     * Sync
+     * 同步
      * @return
      */
     public static RedisCommands getCommands() {
@@ -37,7 +39,7 @@ public class LettuceUtils {
     }
 
     /**
-     * Async
+     * 异步
      * @return
      */
     public static RedisAsyncCommands getAsyncCommands(){

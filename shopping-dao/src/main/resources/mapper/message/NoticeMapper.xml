@@ -15,6 +15,7 @@
         <result property="notView" column="not_view"/>
         <result property="currentContent" column="content"/>
         <result property="parentContent" column="parent_content"/>
+        <result property="parentCid" column="parent_cid"/>
         <association property="comment" resultMap="commentMap"/>
     </resultMap>
     <resultMap id="commentMap" type="edu.nf.shopping.comment.entity.Comment">
@@ -27,7 +28,7 @@
     <select id="userListNotice" resultMap="noticeMap" parameterType="String">
         select
         <if test="param1=='0' || param1==0">
-            (select pr.com_content from comments pr where pr.com_id=c.parent_cid) as parent_content,
+            pc.com_id as parent_cid,pc.com_content parent_content,
             (select cs.com_content from comments cs where cs.com_id=c.by_cid) as by_content,
         </if>
         <if test="param1!='2' and param1!=2">
@@ -37,12 +38,12 @@
         ne.notice_author,ne.com_id,ne.notice_type,ne.notice_time,nr.state
         from notice ne INNER JOIN news_receive nr
         <if test="param1!='2'and param1!=2">
-            INNER JOIN user_face uf
+            INNER JOIN user_face uf INNER JOIN comments pc
             INNER JOIN comments c INNER JOIN user_info u
         </if>
         on ne.notice_id=nr.ns_id
         <if test="param1!='2' and param1!=2">
-            and uf.u_id=ne.notice_author
+            and uf.u_id=ne.notice_author  and pc.com_id=c.parent_cid
             and c.com_id=ne.com_id and u.u_id=ne.notice_author
         </if>
         where nr.receive_uid=#{param2} and ne.notice_type=#{param1} and nr.state!='0'

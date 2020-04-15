@@ -7,19 +7,55 @@
         <result property="content" column="news_contents"/>
         <result property="imgName" column="img_name"/>
         <result property="authorId" column="news_author"/>
-        <result property="goodsId" column="goods_id"/>
+        <result property="orderId" column="order_id"/>
         <result property="time" column="news_time"/>
         <result property="notView" column="not_view"/>
     </resultMap>
+    <resultMap id="userMap" type="edu.nf.shopping.user.entity.UserInfo">
+        <result property="userId" column="buy_user"/>
+        <result property="customerServiceId" column="buy_admin"/>
+        <result property="userName" column="userName"/>
+        <result property="faceId" column="userFace"/>
+        <result property="lastContent" column="news_contents"/>
+        <result property="orderId" column="order_id"/>
+    </resultMap>
     <select id="listUserNews" resultMap="newsMap">
         select ns.news_id,ns.news_contents,ns.img_name,ns.news_author,
-        ns.goods_id,ns.news_time,nr.receive_uid
+        ns.order_id,ns.news_time,nr.receive_uid
         from news ns INNER JOIN news_receive nr on ns.news_id=nr.ns_id
-        where nr.receive_uid=#{param3}
+        where ns.order_id=#{param4} and ns.news_author=#{param3}
+            or nr.receive_uid=#{param3} and ns.order_id=#{param4}
+        ORDER BY ns.news_time desc LIMIT #{param1},#{param2}
     </select>
+
     <select id="findNotViewByUserId" resultType="String" parameterType="String">
         select COUNT(1) as not_view
         from news ns INNER JOIN news_receive nr on ns.news_id=nr.ns_id
         where nr.receive_uid=#{userId}  and nr.state='1'
+    </select>
+
+    <insert id="addNews" parameterType="edu.nf.shopping.message.entity.News">
+        insert news(news_id,news_contents,img_name,news_author,order_id,news_time)
+        values(#{newsId},#{content},#{imgName},#{authorId},#{orderId},#{time})
+    </insert>
+
+    <select id="getUserNewsListByUserId" parameterType="String" resultMap="userMap">
+        select ns.news_contents,oi.buy_user,oi.buy_admin,oi.order_id,
+        (select ui.u_name from user_info ui where ui.u_id=#{param1})
+        as userName,
+        (select uf.face_file from user_face uf where uf.u_id=#{param1})
+        as userFace
+        from order_info oi LEFT JOIN news ns on oi.order_id=ns.order_id
+        where
+        <choose>
+            <when test="param2!=1">
+                oi.buy_user=#{param1}
+            </when>
+            <otherwise>
+                oi.buy_admin=#{param1}
+            </otherwise>
+        </choose>
+        and oi.order_state!='已完成'
+        ORDER BY ns.news_time desc LIMIT 0,1
     </select>
 </mapper>

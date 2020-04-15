@@ -37,5 +37,5 @@ public class Comment {
     private String skuInfo;
     private List<ImgInfo> imgInfoList;
     private List<Comment> commentList;
-
+    private String receiveUserId;
 }

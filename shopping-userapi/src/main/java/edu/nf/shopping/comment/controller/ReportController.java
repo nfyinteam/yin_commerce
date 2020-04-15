@@ -1,6 +1,7 @@
 package edu.nf.shopping.comment.controller;
 
 import edu.nf.shopping.comment.service.ReportService;
+import edu.nf.shopping.user.entity.UserInfo;
 import edu.nf.shopping.vo.BaseController;
 import edu.nf.shopping.vo.ResponseVO;
 import io.swagger.annotations.ApiOperation;
@@ -24,7 +25,8 @@ public class ReportController extends BaseController {
     @ApiOperation(value = "举报", notes = "用户可以举报某个评论",
             httpMethod = "post")
     private ResponseVO addReport(String commentId, String reason, HttpServletRequest request){
-        reportService.addReport(commentId,reason,(String)request.getSession().getAttribute("userId"));
+        UserInfo userInfo=(UserInfo) request.getSession().getAttribute("userInfo");
+        reportService.addReport(commentId,reason,userInfo.getUserId());
         return success(200,"举报成功");
     }
 }

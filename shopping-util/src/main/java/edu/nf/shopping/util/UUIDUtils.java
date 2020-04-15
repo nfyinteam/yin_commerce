@@ -6,7 +6,6 @@ public class UUIDUtils {
 
 	public static String createUUID() {
 		String uuid=UUID.randomUUID().toString();
-		
 		uuid = uuid.replace("-", "").toUpperCase();
 		return uuid.substring(0,18);
 		

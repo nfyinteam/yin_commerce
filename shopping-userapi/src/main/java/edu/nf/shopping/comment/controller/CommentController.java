@@ -3,11 +3,13 @@ package edu.nf.shopping.comment.controller;
 import com.github.pagehelper.PageInfo;
 import edu.nf.shopping.comment.entity.Comment;
 import edu.nf.shopping.comment.service.CommentService;
+import edu.nf.shopping.user.entity.UserInfo;
 import edu.nf.shopping.vo.BaseController;
 import edu.nf.shopping.vo.ResponseVO;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import org.elasticsearch.client.security.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
@@ -45,8 +47,8 @@ public class CommentController extends BaseController {
     @CrossOrigin(origins = "*", methods = {RequestMethod.GET})
     private ResponseVO<PageInfo<Comment>> listBuyShow(@PathVariable("pageNum") Integer pageNum, @PathVariable("pageSize") Integer pageSize, @PathVariable("replySize") Integer replySize, @PathVariable("goodsId") String goodsId, @PathVariable("refreshTime") String refreshTime, @PathVariable("order") String order, @PathVariable("commentType") String commentType,
                                                       HttpServletRequest request) throws ParseException {
-        System.out.println(request.getSession().getAttribute("userId"));
-        PageInfo<Comment> pageInfo=commentService.listBuyShow(pageNum,pageSize,replySize,goodsId,(String)request.getSession().getAttribute("userId"),sdf.parse(refreshTime),order,commentType);
+        UserInfo userInfo=(UserInfo) request.getSession().getAttribute("userInfo");
+        PageInfo<Comment> pageInfo=commentService.listBuyShow(pageNum,pageSize,replySize,goodsId,userInfo.getUserId(),sdf.parse(refreshTime),order,commentType);
         return success(pageInfo);
     }
 
@@ -63,7 +65,8 @@ public class CommentController extends BaseController {
     @CrossOrigin(origins = "*", methods = {RequestMethod.GET})
     private ResponseVO<PageInfo<Comment>> listComment(@PathVariable("pageNum") Integer pageNum, @PathVariable("pageSize") Integer pageSize, @PathVariable("commentId") String commentId, @PathVariable("refreshTime") String refreshTime, @PathVariable("order") String order,
                                                       HttpServletRequest request) throws ParseException {
-        PageInfo<Comment> pageInfo=commentService.listComment(pageNum,pageSize,commentId,(String)request.getSession().getAttribute("userId"),sdf.parse(refreshTime),order);
+        UserInfo userInfo=(UserInfo) request.getSession().getAttribute("userInfo");
+        PageInfo<Comment> pageInfo=commentService.listComment(pageNum,pageSize,commentId,userInfo.getUserId(),sdf.parse(refreshTime),order);
         return success(pageInfo);
     }
 
@@ -72,7 +75,8 @@ public class CommentController extends BaseController {
             httpMethod = "post")
     @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})
     private ResponseVO addComment(@ModelAttribute Comment comment, HttpServletRequest request){
-        comment.setUserId((String)request.getSession().getAttribute("userId"));
+        UserInfo userInfo=(UserInfo) request.getSession().getAttribute("userInfo");
+        comment.setUserId(userInfo.getUserId());
         commentService.addComment(comment);
         return success(200,"发表评论成功");
     }
@@ -82,7 +86,8 @@ public class CommentController extends BaseController {
             httpMethod = "post")
     @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})
     private ResponseVO addBuyShow(@RequestParam("imageFile")MultipartFile[] files,Comment comment,HttpServletRequest request) throws IOException {
-        comment.setUserId((String)request.getSession().getAttribute("userId"));
+        UserInfo userInfo=(UserInfo) request.getSession().getAttribute("userInfo");
+        comment.setUserId(userInfo.getUserId());
         commentService.addBuyShow(files,comment);
         return success(200,"提交评价成功");
     }
@@ -92,7 +97,8 @@ public class CommentController extends BaseController {
             httpMethod = "post")
     @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})
     private ResponseVO deleteComment(String comId, HttpServletRequest request){
-        commentService.updateComment(comId,"2",(String)request.getSession().getAttribute("userId"));
+        UserInfo userInfo=(UserInfo) request.getSession().getAttribute("userInfo");
+        commentService.updateComment(comId,"2",userInfo.getUserId());
         return success(200,"删除成功");
     }
 

@@ -46,5 +46,14 @@ public class UserInfo {
      */
     private String faceId;
 
+    /**
+     * 是否需要客服
+     */
+    private String necessaryCustomerService;
 
+    private String customerServiceId;
+
+    private String orderId;
+
+    private String lastContent;
 }

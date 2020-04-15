@@ -121,7 +121,7 @@ public class InitOrderInfoServiceImpl implements InitOrderInfoService {
             orderDao.addOrderInfo(orderInfo);
             CorrelationData correlationData = new CorrelationData();
             correlationData.setId(orderInfo.getOrderId());
-            rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME, "order.init", detailsList, correlationData);
+            rabbitTemplate.convertAndSend(RabbitConfig.DIRECT_EXCHANGE_NAME, "order.init", detailsList, correlationData);
             return orderInfo;
         }catch (Exception e){
             throw new OrderException(e);

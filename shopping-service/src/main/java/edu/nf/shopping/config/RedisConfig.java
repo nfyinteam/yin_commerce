@@ -8,7 +8,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.cache.RedisCacheConfiguration;
 import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
-import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.*;
+import org.springframework.data.redis.listener.PatternTopic;
 import org.springframework.data.redis.listener.RedisMessageListenerContainer;
 import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.RedisSerializationContext;
@@ -26,7 +27,7 @@ import java.util.Map;
 @EnableCaching
 public class RedisConfig {
     /**
-     * 装配RedisCacheManager，这里初始化了cache1和cache2两个缓存，并存入Map中,
+     * 装配RedisCacheManager，并存入Map中,
      * 后续在使用时可以指定操作哪一个缓存。
      * @param redisConnectionFactory
      * @return
@@ -35,7 +36,8 @@ public class RedisConfig {
     public RedisCacheManager redisCacheManager(RedisConnectionFactory redisConnectionFactory) {
         Map<String, RedisCacheConfiguration> map = new HashMap<>(2);
         map.put("commentCache", initRedisCacheConfiguration(1800L));
-        map.put("pageCache", initRedisCacheConfiguration(-1L));
+        //map.put("chat_record_cache", initRedisCacheConfiguration(1800L));
+        map.put("pageCache", initRedisCacheConfiguration(9000L));
         map.put("goodsCache", initRedisCacheConfiguration(1800L));
         map.put("skuInfoCache", initRedisCacheConfiguration(1800L));
         map.put("userInfoCache", initRedisCacheConfiguration(1800L));
@@ -75,7 +77,7 @@ public class RedisConfig {
      * @return
      */
     @Bean
-    public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory connectionFactory){
+    public static RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory connectionFactory){
         //创建RedisTemplate实例
         RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
 
@@ -104,8 +106,11 @@ public class RedisConfig {
     }
 
 //    @Bean
-//    public KeyExpiredListener keyExpiredListener() {
-//        return new KeyExpiredListener(this.redisMessageListenerContainer());
+//    RedisMessageListenerContainer container(RedisConnectionFactory connectionFactory) {
+//        RedisMessageListenerContainer container = new RedisMessageListenerContainer();
+//        container.setConnectionFactory(connectionFactory);
+//        container.addMessageListener(new KeyExpiredListener(container),
+//                new PatternTopic("assignmentCache"));
+//        return container;
 //    }
-
 }

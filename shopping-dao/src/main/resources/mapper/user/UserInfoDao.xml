@@ -2,7 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="edu.nf.shopping.user.dao.UserInfoDao">
-
     <resultMap id="userMap" type="edu.nf.shopping.user.entity.UserInfo">
         <id property="userId" column="u_id"/>
         <id property="userName" column="u_name"/>
@@ -13,6 +12,7 @@
         <id property="realName" column="real_name"/>
         <id property="carNumber" column="card_num"/>
         <id property="faceId" column="face_id"/>
+
     </resultMap>
 
     <select id="listUser" resultMap="userMap">
@@ -23,7 +23,9 @@
         face_id from user_info where u_id=#{uid}
     </select>
     <select id="userLogin" resultMap="userMap" parameterType="String">
-        select u_id,u_tel,u_password from user_info
-        where u_id = #{param1} or  u_tel = #{param1} or u_email=#{param1}
+        select ui.u_id,ui.u_name,ui.u_email,ui.u_tel,ui.u_password,
+        ui.u_sex,ui.real_name,ui.card_num,ui.face_id,uf.face_file
+        from user_info ui INNER JOIN user_face uf on ui.u_id=uf.u_id
+        where ui.u_id = #{param1} or  ui.u_tel = #{param1} or ui.u_email=#{param1}
     </select>
 </mapper>
