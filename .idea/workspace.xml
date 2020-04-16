@@ -2,36 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62b8ac9c-86a9-4199-8f79-2819b827666b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/shopping-adminapi/src/main/java/edu/nf/shopping/message/config/RabbitMqConsumerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/message/config/RabbitMqConsumerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/message/service/UserSetUpService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/message/service/impl/UserSetUpServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/message/controller/UserSetUpServiceController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-adminapi/src/main/java/edu/nf/shopping/message/controller/NewsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/src/main/java/edu/nf/shopping/message/controller/NewsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-adminapi/target/classes/edu/nf/shopping/message/controller/NewsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-adminapi/target/classes/edu/nf/shopping/message/controller/NewsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/message/dao/NewsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/message/dao/NewsDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/message/dao/ReceiveDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/message/dao/ReceiveDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/message/dao/NewsListDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/order/dao/OrderDetailsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/java/edu/nf/shopping/order/dao/OrderDetailsDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/message/NewsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/message/NewsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/message/ReceiveMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/message/ReceiveMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/target/classes/edu/nf/shopping/message/dao/NewsDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/target/classes/edu/nf/shopping/message/dao/NewsDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/target/classes/edu/nf/shopping/message/dao/ReceiveDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/target/classes/edu/nf/shopping/message/dao/ReceiveDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/message/NewsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/message/NewsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/message/ReceiveMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/message/ReceiveMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/user/entity/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/user/entity/UserInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/user/entity/UserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-entity/target/classes/edu/nf/shopping/user/entity/UserInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/config/RedisPublishConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/message/config/MessageRabbitConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/message/config/MessageRabbitConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/message/server/WebSocketHandlerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/message/server/WebSocketHandlerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/message/service/NewsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/message/service/NewsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/message/service/RedisMsg.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/message/UserSetUpMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/src/main/resources/mapper/message/UserSetUpMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-dao/target/classes/edu/nf/shopping/message/dao/NewsListDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/message/UserSetUpMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-dao/target/classes/mapper/message/UserSetUpMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/order/entity/OrderDetails.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/message/service/impl/NewsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/edu/nf/shopping/message/service/impl/NewsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/config/RedisPublishConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/message/config/MessageRabbitConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/message/config/MessageRabbitConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/message/server/WebSocketHandlerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/message/server/WebSocketHandlerImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/message/service/NewsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/message/service/NewsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/message/service/RedisMsg.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/message/service/impl/NewsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/target/classes/edu/nf/shopping/message/service/impl/NewsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/message/controller/NewsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/message/controller/NewsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/message/controller/NoticeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/src/main/java/edu/nf/shopping/message/controller/NoticeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/message/controller/NewsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/message/controller/NewsController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/message/controller/NoticeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-userapi/target/classes/edu/nf/shopping/message/controller/NoticeController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -120,7 +104,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="E:/ideaproject/mymvc" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/shopping-entity/src/main/java/edu/nf/shopping/order/entity" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -130,12 +114,8 @@
     <selection>jr</selection>
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="H:\addiction-shopping\shopping-adminapi\src\main\java\edu\nf\shopping\user\controller" />
-      <recent name="H:\addiction-shopping\shopping-adminapi\src\main\java\edu\nf\shopping" />
-      <recent name="H:\addiction-shopping\shopping-adminapi\src\main\java\edu\nf\shopping\message" />
-      <recent name="H:\addiction-shopping\shopping-service\src\main\java\edu\nf\shopping\config\listener" />
-      <recent name="H:\addiction-shopping\shopping-service\src\main\java\edu\nf\shopping\order\config" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\addiction-shopping\shopping-service\src\main\java\edu\nf\shopping\goods\config" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="edu.nf.shopping.user.controller" />
@@ -144,8 +124,12 @@
       <recent name="edu.nf.shopping.config" />
       <recent name="edu.nf.shopping.message.exception" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="H:\addiction-shopping\shopping-service\src\main\java\edu\nf\shopping\goods\config" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\addiction-shopping\shopping-entity\src\main\java\edu\nf\shopping\order\entity" />
+      <recent name="H:\addiction-shopping\shopping-dao\src\main\java\edu\nf\shopping\order\dao" />
+      <recent name="H:\addiction-shopping\shopping-adminapi\src\main\java\edu\nf\shopping\user\controller" />
+      <recent name="H:\addiction-shopping\shopping-adminapi\src\main\java\edu\nf\shopping" />
+      <recent name="H:\addiction-shopping\shopping-adminapi\src\main\java\edu\nf\shopping\message" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.AdminApiApplication">
@@ -153,7 +137,7 @@
       <module name="shopping-userapi" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.nf.shopping.message.service.impl.*" />
+          <option name="PATTERN" value="edu.nf.shopping.message.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -169,7 +153,7 @@
       <module name="shopping-userapi" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.nf.shopping.message.service.impl.*" />
+          <option name="PATTERN" value="edu.nf.shopping.message.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -453,7 +437,11 @@
       <workItem from="1586948687729" duration="1482000" />
       <workItem from="1586953484209" duration="2886000" />
       <workItem from="1586957321365" duration="10246000" />
-      <workItem from="1586968209427" duration="1169000" />
+      <workItem from="1586968209427" duration="5620000" />
+      <workItem from="1587024332734" duration="3289000" />
+      <workItem from="1587027984612" duration="3472000" />
+      <workItem from="1587031616103" duration="1192000" />
+      <workItem from="1587042164370" duration="271000" />
     </task>
     <task id="LOCAL-00001" summary="评论界面的剩余功能">
       <created>1584768589639</created>
@@ -504,7 +492,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586918223126</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="消息中心模块">
+      <created>1586970049874</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1586970049874</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -562,25 +557,26 @@
     <MESSAGE value="合并主分支" />
     <MESSAGE value="消息中心部分" />
     <MESSAGE value="合并商品和订单" />
-    <option name="LAST_COMMIT_MESSAGE" value="合并商品和订单" />
+    <MESSAGE value="消息中心模块" />
+    <option name="LAST_COMMIT_MESSAGE" value="消息中心模块" />
   </component>
   <component name="WindowStateProjectService">
     <state x="244" y="43" key="#Notifications" timestamp="1584965610288">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="244" y="43" key="#Notifications/0.0.1304.768@0.0.1304.768" timestamp="1584965610288" />
-    <state x="244" y="43" key="#Project_Structure" timestamp="1586613209134">
+    <state x="244" y="43" key="#Project_Structure" timestamp="1587042418223">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="244" y="43" key="#Project_Structure/0.0.1304.768@0.0.1304.768" timestamp="1586613209134" />
+    <state x="244" y="43" key="#Project_Structure/0.0.1304.768@0.0.1304.768" timestamp="1587042418223" />
     <state x="306" y="187" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585931023265">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="306" y="187" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1304.768@0.0.1304.768" timestamp="1585931023265" />
-    <state x="457" y="94" key="#com.intellij.ide.util.MemberChooser" timestamp="1586959467172">
+    <state x="457" y="94" key="#com.intellij.ide.util.MemberChooser" timestamp="1587025115378">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="457" y="94" key="#com.intellij.ide.util.MemberChooser/0.0.1304.768@0.0.1304.768" timestamp="1586959467172" />
+    <state x="457" y="94" key="#com.intellij.ide.util.MemberChooser/0.0.1304.768@0.0.1304.768" timestamp="1587025115378" />
     <state x="250" y="309" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1586403115607">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
@@ -593,14 +589,14 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1304.768@0.0.1304.768" timestamp="1586922701993" />
-    <state x="382" y="131" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586538109417">
+    <state x="382" y="131" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587042428804">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="382" y="131" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1304.768@0.0.1304.768" timestamp="1586538109417" />
-    <state x="117" y="0" key="CommitChangelistDialog2" timestamp="1586918217210">
+    <state x="382" y="131" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1304.768@0.0.1304.768" timestamp="1587042428804" />
+    <state x="117" y="0" key="CommitChangelistDialog2" timestamp="1587042665710">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="117" y="0" key="CommitChangelistDialog2/0.0.1304.768@0.0.1304.768" timestamp="1586918217210" />
+    <state x="117" y="0" key="CommitChangelistDialog2/0.0.1304.768@0.0.1304.768" timestamp="1587042665710" />
     <state x="92" y="92" width="1120" height="584" key="DiffContextDialog" timestamp="1584433974098">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
@@ -609,38 +605,38 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="431" y="126" key="FileChooserDialogImpl/0.0.1304.768@0.0.1304.768" timestamp="1586915266652" />
-    <state width="1261" height="231" key="GridCell.Tab.0.bottom" timestamp="1586969849113">
+    <state width="1261" height="231" key="GridCell.Tab.0.bottom" timestamp="1587031397033">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="231" key="GridCell.Tab.0.bottom/0.0.1304.768@0.0.1304.768" timestamp="1586969849113" />
-    <state width="1261" height="231" key="GridCell.Tab.0.center" timestamp="1586969849113">
+    <state width="1261" height="231" key="GridCell.Tab.0.bottom/0.0.1304.768@0.0.1304.768" timestamp="1587031397033" />
+    <state width="1261" height="231" key="GridCell.Tab.0.center" timestamp="1587031397033">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="231" key="GridCell.Tab.0.center/0.0.1304.768@0.0.1304.768" timestamp="1586969849113" />
-    <state width="1261" height="231" key="GridCell.Tab.0.left" timestamp="1586969849113">
+    <state width="1261" height="231" key="GridCell.Tab.0.center/0.0.1304.768@0.0.1304.768" timestamp="1587031397033" />
+    <state width="1261" height="231" key="GridCell.Tab.0.left" timestamp="1587031397032">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="231" key="GridCell.Tab.0.left/0.0.1304.768@0.0.1304.768" timestamp="1586969849113" />
-    <state width="1261" height="231" key="GridCell.Tab.0.right" timestamp="1586969849113">
+    <state width="1261" height="231" key="GridCell.Tab.0.left/0.0.1304.768@0.0.1304.768" timestamp="1587031397032" />
+    <state width="1261" height="231" key="GridCell.Tab.0.right" timestamp="1587031397033">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="231" key="GridCell.Tab.0.right/0.0.1304.768@0.0.1304.768" timestamp="1586969849113" />
-    <state width="1261" height="231" key="GridCell.Tab.1.bottom" timestamp="1586969849114">
+    <state width="1261" height="231" key="GridCell.Tab.0.right/0.0.1304.768@0.0.1304.768" timestamp="1587031397033" />
+    <state width="1261" height="231" key="GridCell.Tab.1.bottom" timestamp="1587031397033">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="231" key="GridCell.Tab.1.bottom/0.0.1304.768@0.0.1304.768" timestamp="1586969849114" />
-    <state width="1261" height="231" key="GridCell.Tab.1.center" timestamp="1586969849114">
+    <state width="1261" height="231" key="GridCell.Tab.1.bottom/0.0.1304.768@0.0.1304.768" timestamp="1587031397033" />
+    <state width="1261" height="231" key="GridCell.Tab.1.center" timestamp="1587031397033">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="231" key="GridCell.Tab.1.center/0.0.1304.768@0.0.1304.768" timestamp="1586969849114" />
-    <state width="1261" height="231" key="GridCell.Tab.1.left" timestamp="1586969849114">
+    <state width="1261" height="231" key="GridCell.Tab.1.center/0.0.1304.768@0.0.1304.768" timestamp="1587031397033" />
+    <state width="1261" height="231" key="GridCell.Tab.1.left" timestamp="1587031397033">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="231" key="GridCell.Tab.1.left/0.0.1304.768@0.0.1304.768" timestamp="1586969849114" />
-    <state width="1261" height="231" key="GridCell.Tab.1.right" timestamp="1586969849114">
+    <state width="1261" height="231" key="GridCell.Tab.1.left/0.0.1304.768@0.0.1304.768" timestamp="1587031397033" />
+    <state width="1261" height="231" key="GridCell.Tab.1.right" timestamp="1587031397033">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="231" key="GridCell.Tab.1.right/0.0.1304.768@0.0.1304.768" timestamp="1586969849114" />
+    <state width="1261" height="231" key="GridCell.Tab.1.right/0.0.1304.768@0.0.1304.768" timestamp="1587031397033" />
     <state width="1261" height="238" key="GridCell.Tab.2.bottom" timestamp="1586491274557">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
@@ -665,10 +661,10 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="153" y="0" key="SettingsEditor/0.0.1304.768@0.0.1304.768" timestamp="1586504441143" />
-    <state x="244" y="117" key="Vcs.Push.Dialog.v2" timestamp="1586918231457">
+    <state x="244" y="117" key="Vcs.Push.Dialog.v2" timestamp="1587042671150">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="244" y="117" key="Vcs.Push.Dialog.v2/0.0.1304.768@0.0.1304.768" timestamp="1586918231457" />
+    <state x="244" y="117" key="Vcs.Push.Dialog.v2/0.0.1304.768@0.0.1304.768" timestamp="1587042671150" />
     <state x="444" y="301" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586531762907">
       <screen x="0" y="0" width="1304" height="768" />
     </state>

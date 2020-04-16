@@ -1,7 +1,6 @@
 package edu.nf.shopping.order.service.impl;
 
 import com.rabbitmq.client.Channel;
-import edu.nf.shopping.config.RabbitConfig;
 import edu.nf.shopping.order.config.OrderRabbitConfig;
 import edu.nf.shopping.order.dao.OrderDetailsDao;
 import edu.nf.shopping.order.entity.OrderDetails;

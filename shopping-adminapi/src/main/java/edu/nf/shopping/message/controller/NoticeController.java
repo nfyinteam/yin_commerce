@@ -24,26 +24,10 @@ public class NoticeController extends BaseController {
     @Autowired
     private NoticeService noticeService;
 
-    @RequestMapping("/get/notice/reply")
-    @ApiOperation(value = "查询回复消息", notes = "用户查询自己的回复消息",
-            httpMethod = "get")
-    @CrossOrigin(origins = "*", methods = {RequestMethod.GET})
-    private ResponseVO listUserReply(HttpServletRequest request){
-        List<Notice> list=noticeService.userListNotice("0","1578412684666");
-        return success(list);
-    }
 
-    @RequestMapping("/get/notice/love")
-    @ApiOperation(value = "查询回复消息", notes = "用户查询自己的回复消息",
-            httpMethod = "get")
-    @CrossOrigin(origins = "*", methods = {RequestMethod.GET})
-    private ResponseVO listUserLove(HttpServletRequest request){
-        List<Notice> list=noticeService.userListNotice("1","1578412684666");
-        return success(list);
-    }
 
     @RequestMapping("/get/notice/system")
-    @ApiOperation(value = "查询回复消息", notes = "用户查询自己的回复消息",
+    @ApiOperation(value = "查询系统消息", notes = "用户查询自己的回复消息",
             httpMethod = "get")
     @CrossOrigin(origins = "*", methods = {RequestMethod.GET})
     private ResponseVO listUserSystem(HttpServletRequest request){
@@ -51,12 +35,4 @@ public class NoticeController extends BaseController {
         return success(list);
     }
 
-    @RequestMapping("/newMessageNum")
-    @ApiOperation(value = "查询回复消息", notes = "用户查询自己的回复消息",
-            httpMethod = "get")
-    @CrossOrigin(origins = "*", methods = {RequestMethod.GET})
-    private ResponseVO listNotViewByUserId(HttpServletRequest request){
-        List<Notice> list=noticeService.listNotViewByUserId("1578412684666");
-        return success(list);
-    }
 }

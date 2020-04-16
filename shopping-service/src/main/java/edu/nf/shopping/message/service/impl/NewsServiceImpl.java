@@ -173,6 +173,9 @@ public class NewsServiceImpl implements NewsService{
     public List<UserInfo> getUserNewsListByUserId(String userId,String customerService) {
         try{
             List<UserInfo> list= newsDao.getUserNewsListByUserId(userId,customerService);
+            for (UserInfo userInfo : list) {
+                System.out.println(userInfo);
+            }
             if("1".equals(customerService)){
                 List<String> keys=commands.keys(webSocketHandler.ASSIGNMENT_CACHE_KEY+userId+":*");
                 for (String key : keys) {

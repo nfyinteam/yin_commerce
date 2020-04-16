@@ -11,4 +11,11 @@
         select usn_id,u_id,type_id from user_setup_news
         where u_id=#{userId}
     </select>
+    <select id="addUserSetUp" parameterType="edu.nf.shopping.message.entity.UserSetUp">
+        REPLACE into user_setup_news(usn_id,type_id,u_id)
+        values(#{usnId},#{typeId},#{userId})
+    </select>
+    <delete id="deleteUserSetUp" parameterType="edu.nf.shopping.message.entity.UserSetUp">
+        DELETE  from user_setup_news where u_id=#{userId} and type_id=#{typeId}
+    </delete>
 </mapper>

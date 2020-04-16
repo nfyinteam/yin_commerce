@@ -94,6 +94,6 @@
             </choose>
             and oi.order_state!='已完成'
             ORDER BY ns.news_time desc
-        ) t GROUP BY t.order_id ORDER BY t.create_time
+        ) t GROUP BY t.order_id ORDER BY t.create_time desc
     </select>
 </mapper>
