@@ -9,6 +9,7 @@ import edu.nf.shopping.goods.service.ImgsInfoService;
 import edu.nf.shopping.goods.service.InsertGoodImgService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -28,15 +29,17 @@ public class InsertGoodImgServiceImpl implements InsertGoodImgService {
     private ImgsInfoService imgsInfoService;
 
     @Override
-    @CacheEvict(value = "goodsCache", key = "imgsInfo-2",beforeInvocation=true)
-    public void addGoodImg(GoodsImgs goodsImgs, MultipartFile file) {
+    @CachePut(value = "goodsCache", key = "imgsInfo-2")
+    public GoodsImgs addGoodImg(GoodsImgs goodsImgs, MultipartFile file) {
         try {
             ImgsInfo imgsInfo = imgsInfoService.addImgsInfo(file, 1);
-            if(goodsImgs.getGood().getGoodsId() != null && goodsImgs.getGood().getGoodsId() != ""){
-                goodsImgs.setImg(imgsInfo);
-                goodsImgs.setImgIndex(0);
-                dao.addGoodsImgs(goodsImgs);
+            if(goodsImgs.getGood().getGoodsId() == null && goodsImgs.getGood().getGoodsId() == ""){
+                throw new GoodsImgException("商品图片不能为空");
             }
+            goodsImgs.setImg(imgsInfo);
+            goodsImgs.setImgIndex(0);
+            dao.addGoodsImgs(goodsImgs);
+            return goodsImgs;
         }catch (Exception e){
             throw new GoodsImgException(e);
         }

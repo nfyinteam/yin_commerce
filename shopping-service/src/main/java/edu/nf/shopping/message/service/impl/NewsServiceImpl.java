@@ -11,6 +11,7 @@ import edu.nf.shopping.message.entity.Receive;
 import edu.nf.shopping.message.exception.MessageException;
 import edu.nf.shopping.message.server.WebSocketHandlerImpl;
 import edu.nf.shopping.message.service.NewsService;
+import edu.nf.shopping.order.dao.OrderDao;
 import edu.nf.shopping.order.entity.OrderInfo;
 import edu.nf.shopping.user.entity.UserInfo;
 import edu.nf.shopping.util.FileNameUtils;
@@ -48,6 +49,9 @@ public class NewsServiceImpl implements NewsService{
     private ReceiveDao receiveDao;
 
     @Autowired
+    private OrderDao orderDao;
+
+    @Autowired
     private RabbitTemplate rabbitTemplate;
 
     @Autowired
@@ -59,7 +63,6 @@ public class NewsServiceImpl implements NewsService{
     private static RedisCommands<String, Object> commands = LettuceUtils.getCommands();
 
     @Override
-    //@Cacheable(value="messageCache" , key = "chat_record:#orderId" ,condition = "#pageStart=0 and #orderId!=null")
     public List<News> listUserNews(Integer pageStart, Integer pageSize, String userId,String authorId, String orderId) {
         try{
             pageStart=pageStart<0?0:pageStart;
@@ -78,8 +81,9 @@ public class NewsServiceImpl implements NewsService{
     }
 
     /**
+     * 添加一条消息记录
      *判断连接记录key是否过期
-     *添加一条消息记录并发送消息
+     *并发送消息
      * @param file
      * @param news
      * @param customerService
@@ -107,7 +111,7 @@ public class NewsServiceImpl implements NewsService{
             }else {
                 news.setImgName("NULL");
             }
-            rabbitTemplate.convertAndSend(RabbitConfig.DIRECT_EXCHANGE_NAME,routerKey,news);
+            rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME,routerKey,news);
             return news;
         }catch (MessageException e){
             throw e;
@@ -117,6 +121,10 @@ public class NewsServiceImpl implements NewsService{
         }
     }
 
+    /**
+     * 发送消息处理
+     * @param news
+     */
     @Override
     public void sendNews(News news){
         try {
@@ -148,6 +156,12 @@ public class NewsServiceImpl implements NewsService{
         }
     }
 
+    /**
+     * 修改消息为已读
+     * @param authorId
+     * @param userId
+     * @param orderId
+     */
     @Override
     public void updateNewsState(String authorId, String userId,String orderId) {
         try{
@@ -158,6 +172,11 @@ public class NewsServiceImpl implements NewsService{
         }
     }
 
+    /**
+     * 查询单个窗口未读消息的数量
+     * @param userId
+     * @return
+     */
     @Override
     public List<News> findSingleNotView(String userId) {
         try{
@@ -169,13 +188,16 @@ public class NewsServiceImpl implements NewsService{
         }
     }
 
+    /**
+     * 查询用户消息列表
+     * @param userId
+     * @param customerService
+     * @return
+     */
     @Override
     public List<UserInfo> getUserNewsListByUserId(String userId,String customerService) {
         try{
             List<UserInfo> list= newsDao.getUserNewsListByUserId(userId,customerService);
-            for (UserInfo userInfo : list) {
-                System.out.println(userInfo);
-            }
             if("1".equals(customerService)){
                 List<String> keys=commands.keys(webSocketHandler.ASSIGNMENT_CACHE_KEY+userId+":*");
                 for (String key : keys) {

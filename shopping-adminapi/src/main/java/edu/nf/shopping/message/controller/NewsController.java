@@ -117,6 +117,9 @@ public class NewsController extends BaseController{
     private ResponseVO getUserNewsList(HttpServletRequest request){
         UserInfo userInfo=(UserInfo) request.getSession().getAttribute("userInfo");
         List<UserInfo> list=newsService.getUserNewsListByUserId(userInfo.getUserId(),"1");
+        for (UserInfo info : list) {
+            System.out.println(info);
+        }
         return success(list);
     }
 }

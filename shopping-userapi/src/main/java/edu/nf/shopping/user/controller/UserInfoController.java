@@ -6,11 +6,9 @@ import edu.nf.shopping.vo.BaseController;
 import edu.nf.shopping.vo.ResponseVO;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 /**
@@ -27,9 +25,10 @@ public class UserInfoController extends BaseController {
     @ApiOperation(value = "用户登录", notes = "用户的登录请求",
             httpMethod = "post")
     @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})
-    public ResponseVO userLogin(String userId,String passWord, HttpSession session) {
-        session.setAttribute("userInfo", service.userLogin(userId,passWord));
-        return success(200,"登录成功！");
+    public ResponseVO userLogin(@RequestParam("userId") String userId, @RequestParam("passWord") String passWord, HttpSession session) {
+        UserInfo userInfo = service.userLogin(userId,passWord);
+        session.setAttribute("userInfo", userInfo);
+        return success(200, userInfo);
     }
 
     @RequestMapping("/get/userInfo")

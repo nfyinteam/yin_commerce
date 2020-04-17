@@ -30,7 +30,7 @@ public class MessageRabbitConfig {
 
     @Bean
     public Binding userChatNewsBinding(@Qualifier("userChatNewsQueue") Queue queue,
-                                 @Qualifier("directExchange") Exchange exchange){
+                                 @Qualifier("exchange") Exchange exchange){
         return BindingBuilder.bind(queue).to(exchange).with(USER_CHAT_NEWS_ROUTER_KEY).noargs();
     }
 
@@ -41,7 +41,7 @@ public class MessageRabbitConfig {
 
     @Bean
     public Binding adminChatNewsBinding(@Qualifier("adminChatNewsQueue") Queue queue,
-                                   @Qualifier("directExchange") Exchange exchange){
+                                   @Qualifier("exchange") Exchange exchange){
         return BindingBuilder.bind(queue).to(exchange).with(ADMIN_CHAT_NEWS_ROUTER_KEY).noargs();
     }
 }

@@ -9,5 +9,5 @@ import org.springframework.web.multipart.MultipartFile;
  */
 public interface InsertGoodImgService {
 
-    void addGoodImg(GoodsImgs goodsImgs, MultipartFile file);
+    GoodsImgs addGoodImg(GoodsImgs goodsImgs, MultipartFile file);
 }

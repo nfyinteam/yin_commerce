@@ -36,10 +36,14 @@ public class RedisConfig {
     public RedisCacheManager redisCacheManager(RedisConnectionFactory redisConnectionFactory) {
         Map<String, RedisCacheConfiguration> map = new HashMap<>(2);
         map.put("commentCache", initRedisCacheConfiguration(1800L));
-        //map.put("chat_record_cache", initRedisCacheConfiguration(1800L));
-        map.put("pageCache", initRedisCacheConfiguration(9000L));
+        map.put("pageCache", initRedisCacheConfiguration(-1L));
         map.put("goodsCache", initRedisCacheConfiguration(1800L));
+        map.put("orderCache", initRedisCacheConfiguration(1800L));
+        map.put("orderListCache", initRedisCacheConfiguration(1800L));
+        map.put("orderDetailsCache", initRedisCacheConfiguration(1800L));
+        map.put("orderDetailsListCache", initRedisCacheConfiguration(1800L));
         map.put("skuInfoCache", initRedisCacheConfiguration(1800L));
+        map.put("skuInfoListCache", initRedisCacheConfiguration(1800L));
         map.put("userInfoCache", initRedisCacheConfiguration(1800L));
         map.put("shopcartInfoCache", initRedisCacheConfiguration(1800L));
         map.put("messageCache", initRedisCacheConfiguration(1800L));

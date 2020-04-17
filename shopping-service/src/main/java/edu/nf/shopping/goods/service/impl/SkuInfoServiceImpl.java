@@ -10,6 +10,7 @@ import edu.nf.shopping.goods.exception.SkuInfoException;
 import edu.nf.shopping.goods.service.SkuInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -56,8 +57,8 @@ public class SkuInfoServiceImpl implements SkuInfoService {
     }
 
     @Override
-    @Cacheable(value = "skuInfoCache", key = "#skuId", condition = "#skuId != null")
-    public List<SkuAllInfo> getSkuAllInfoBySkuId(String[] skuId) {
+    @Cacheable(value = "skuInfoListCache", key = "#userId", condition = "#userId != null")
+    public List<SkuAllInfo> getSkuAllInfoBySkuId(String userId, String[] skuId) {
         try {
             List<SkuAllInfo> list = new ArrayList<>();
             for (String id : skuId){
@@ -81,35 +82,38 @@ public class SkuInfoServiceImpl implements SkuInfoService {
     }
 
     @Override
-    @CacheEvict(value = "skuInfoCache", key = "#skuInfo.skuId",beforeInvocation=true)
-    public void addSkuInfo(SkuInfo skuInfo) {
+    @CacheEvict(value = "skuInfoCache", key = "#skuInfo.skuId", beforeInvocation = true)
+    public SkuInfo addSkuInfo(SkuInfo skuInfo) {
         try {
             skuInfoDao.addSkuInfo(skuInfo);
+            return skuInfo;
         }catch (Exception e){
             throw new SkuInfoException(e);
         }
     }
 
     @Override
-    @CacheEvict(value = "skuInfoCache", key = "#skuInfo.skuId",beforeInvocation=true)
-    public void updateSkuInfo(SkuInfo skuInfo) {
+    @CacheEvict(value = "skuInfoCache", key = "#skuInfo.skuId", beforeInvocation = true)
+    public SkuInfo updateSkuInfo(SkuInfo skuInfo) {
         try {
             SkuInfo sku = skuInfoDao.getSkuInfoBySkuId(skuInfo.getSkuId());
             if(sku == null){
                 throw new SkuInfoException("该sku不存在");
             }
-            System.out.println(skuInfo.getSkuId());
-            System.out.println(skuInfo.getGood().getGoodsName());
             skuInfoDao.updateSkuInfo(skuInfo);
+            return skuInfo;
         }catch (Exception e){
             throw new SkuInfoException(e);
         }
     }
 
     @Override
-    @CacheEvict(value = "skuInfoCache", key = "#skuId",beforeInvocation=true)
+    @CacheEvict(value = "skuInfoCache", key = "#skuId", beforeInvocation=true)
     public void deleteSkuInfo(String skuId) {
         try {
+            if(skuId == null || skuId.equals("")){
+                throw new SkuInfoException("sku编号不能为空");
+            }
             skuInfoDao.deleteSkuInfo(skuId);
         }catch (Exception e){
             throw new SkuInfoException(e);

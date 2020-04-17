@@ -31,5 +31,5 @@ public interface GoodsService {
      * 根据编号查询商品
      * @return
      */
-    GoodsInfo listGoodsById(String id);
+    GoodsInfo getGoodsById(String id);
 }

@@ -22,21 +22,50 @@ public class GoodsServiceImpl implements GoodsService {
 
     @Override
     public List<GoodsInfo> listGoods() {
-        return dao.listGoods();
+        try {
+            List<GoodsInfo> list = dao.listGoods();
+            return list;
+        }catch (Exception e){
+            throw new GoodsException(e);
+        }
     }
 
     @Override
     public List<GoodsInfo> listGoodsByName(String name) {
-        return null;
+        try {
+            List<GoodsInfo> list = dao.listGoodsByName(name);
+            if(list == null || list.size() == 0){
+                throw new GoodsException("没有该商品");
+            }
+            return list;
+        }catch (Exception e){
+            throw new GoodsException(e);
+        }
     }
 
     @Override
     public List<GoodsInfo> listGoodsBySpuId(String spuId) {
-        return null;
+        try {
+            List<GoodsInfo> list = dao.listGoodsBySpuId(spuId);
+            if(list == null || list.size() == 0){
+                throw new GoodsException("该产品没有商品");
+            }
+            return list;
+        }catch (Exception e){
+            throw new GoodsException(e);
+        }
     }
 
     @Override
-    public GoodsInfo listGoodsById(String id) {
-        return null;
+    public GoodsInfo getGoodsById(String id) {
+        try {
+            GoodsInfo goods = dao.getGoodsById(id);
+            if(goods == null){
+                throw new GoodsException("该商品不存在");
+            }
+            return goods;
+        }catch (Exception e){
+            throw new GoodsException(e);
+        }
     }
 }

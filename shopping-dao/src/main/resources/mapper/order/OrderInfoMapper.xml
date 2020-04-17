@@ -84,7 +84,22 @@
         left join staff_state ss on ss.ss_id = si.ss_id
         left join user_face uf on uf.face_id = ui.face_id
         left join city c on c.c_id = oi.address_region
-        where ui.u_id = #{userId} and oi.is_del = 0 and oi.order_state != '确认中'
+        where ui.u_id = #{userId} and oi.is_del = 0
+    </select>
+    <select id="listOrderInfoByAdminId" resultMap="orderMap">
+        select oi.order_id, oi.buy_price, oi.cheap_price, oi.transport_price, oi.create_time,
+        oi.pay_time, oi.deliver_time, oi.deal_time, oi.buy_remark, oi.order_remark, oi.is_del,
+        oi.order_state, si.s_id, st.st_id, ss.ss_id, di.dpment_id, ui.u_id, uf.face_id,
+        uf.face_file, oi.address_name, oi.address_tel, oi.address_user, c.c_id,
+        c.c_name, c.p_id, c.type from order_info oi
+        left join staff_info si on si.s_id = oi.buy_admin
+        left join user_info ui on ui.u_id = oi.buy_user
+        left join staff_type st on st.st_id = si.st_id
+        left join department_info di on di.dpment_id = si.dpment_id
+        left join staff_state ss on ss.ss_id = si.ss_id
+        left join user_face uf on uf.face_id = ui.face_id
+        left join city c on c.c_id = oi.address_region
+        where si.s_id = #{adminId}
     </select>
     <select id="getOrderInfoByOrderId" resultMap="orderMap">
         select oi.order_id, oi.buy_price, oi.cheap_price, oi.transport_price, oi.create_time,
@@ -99,7 +114,7 @@
         left join staff_state ss on ss.ss_id = si.ss_id
         left join user_face uf on uf.face_id = ui.face_id
         left join city c on c.c_id = oi.address_region
-        where oi.order_id = #{orderId} and oi.order_state != '确认中'
+        where oi.order_id = #{orderId}
     </select>
     <insert id="addOrderInfo" parameterType="edu.nf.shopping.order.entity.OrderInfo">
         insert order_info(order_id, buy_price, cheap_price, transport_price, create_time,
@@ -113,7 +128,7 @@
         #{orderInfo.buyRemark}, #{orderInfo.orderRemark}, #{orderInfo.orderState} ,#{orderInfo.isDel})
     </insert>
     <update id="updateOrderInfo" parameterType="edu.nf.shopping.order.entity.OrderInfo">
-        update order_info set buy_price = #{orderInfo.buyPrice}, is_del = #{orderInfo.isDel}
+        update order_info set buy_price = #{orderInfo.buyPrice}, is_del = #{orderInfo.isDel},
         cheap_price = #{orderInfo.cheapPrice}, transport_price = #{orderInfo.transportPrice},
         pay_time = #{orderInfo.payTime}, deliver_time = #{orderInfo.deliverTime},
         deal_time = #{orderInfo.dealTime}, buy_admin = #{orderInfo.buyAdmin.staffId},

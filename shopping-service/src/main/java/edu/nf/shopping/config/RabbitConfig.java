@@ -24,25 +24,40 @@ import java.util.Map;
         CommentRabbitConfig.class, MessageRabbitConfig.class})
 public class RabbitConfig {
 
-    public static final String DIRECT_EXCHANGE_NAME = "direct.exchange";
-
+    public static final String EXCHANGE_NAME = "direct.exchange";
+    public static final String DELAY_EXCHANGE_NAME = "delay.exchange";
     public static final String DEAD_EXCHANGE_NAME = "dead.exchange";
 
     /**
      * 自定义Exchange，设置交换机类型
      */
     @Bean
-    public CustomExchange directExchange() {
+    public CustomExchange exchange() {
         Map<String, Object> params = new HashMap<>();
-        params.put("x-direct-type", "direct.exchange");
-        return new CustomExchange(DIRECT_EXCHANGE_NAME, "direct", true, false, params);
+        params.put("x-direct-type", "direct");
+        return new CustomExchange(EXCHANGE_NAME, "direct", true, false, params);
     }
 
+    /**
+     * 自定义死信交换机
+     * @return
+     */
     @Bean
     public CustomExchange deadExchange() {
         Map<String, Object> params = new HashMap<>();
         params.put(" x-dead-letter-exchange","dlx.exchange");
         return new CustomExchange(DEAD_EXCHANGE_NAME, "direct", true, false, params);
+    }
+
+    /**
+     * 自定义延迟交换机
+     * @return
+     */
+    @Bean
+    public CustomExchange delayExchange() {
+        Map<String, Object> params = new HashMap<>();
+        params.put("x-delayed-type", "direct");
+        return new CustomExchange(DELAY_EXCHANGE_NAME, "x-delayed-message", true, false, params);
     }
 
 

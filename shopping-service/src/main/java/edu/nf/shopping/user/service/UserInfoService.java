@@ -11,5 +11,5 @@ import java.util.List;
 public interface UserInfoService {
     UserInfo getUserInfo(String userId);
     List<UserInfo> listUser();
-    UserInfo userLogin(String userId,String passWord) ;
+    UserInfo userLogin(String userId, String passWord) ;
 }

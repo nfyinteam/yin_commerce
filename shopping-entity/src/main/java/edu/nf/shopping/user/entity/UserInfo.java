@@ -46,6 +46,8 @@ public class UserInfo {
      */
     private String faceId;
 
+    private UserFace face;
+
     /**
      * 是否需要客服
      */

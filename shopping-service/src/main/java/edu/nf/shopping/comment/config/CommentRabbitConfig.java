@@ -59,7 +59,7 @@ public class CommentRabbitConfig {
 
     @Bean
     public Binding praiseBinding(@Qualifier("praiseQueue") Queue queue,
-                                 @Qualifier("directExchange") Exchange exchange){
+                                 @Qualifier("exchange") Exchange exchange){
         return BindingBuilder.bind(queue).to(exchange).with(PRAISE_ROUTER_KEY).noargs();
     }
 
@@ -71,7 +71,7 @@ public class CommentRabbitConfig {
 
     @Bean
     public Binding commentBinding(@Qualifier("commentQueue") Queue queue,
-                                  @Qualifier("directExchange") Exchange exchange){
+                                  @Qualifier("exchange") Exchange exchange){
         return BindingBuilder.bind(queue).to(exchange).with(COMMENT_ROUTER_KEY).noargs();
     }
 

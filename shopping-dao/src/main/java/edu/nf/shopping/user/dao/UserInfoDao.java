@@ -19,9 +19,15 @@ public interface UserInfoDao {
     /**
      * 用户登录
      */
-    UserInfo userLogin(String userId,String passWord);
+    UserInfo userLogin(String userId, String passWord);
     /**
      * 查看个人信息
      */
     UserInfo getUserInfo(String uid);
+
+    /**
+     * 修改用户信息
+     * @param userInfo
+     */
+    void updateUserInfo(UserInfo userInfo);
 }

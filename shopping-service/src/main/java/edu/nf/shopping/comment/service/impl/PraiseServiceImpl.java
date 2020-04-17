@@ -78,7 +78,7 @@ public class PraiseServiceImpl implements PraiseService {
             praise.setReceiveUserId(receiveUserId);
             CorrelationData correlationData = new CorrelationData();
             correlationData.setId(praise.getPraId() + praise.getTime());
-            rabbitTemplate.convertAndSend(RabbitConfig.DIRECT_EXCHANGE_NAME,
+            rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME,
                     CommentRabbitConfig.PRAISE_ROUTER_KEY, praise, correlationData);
         }catch (CommentException e){
             throw e;
@@ -127,9 +127,9 @@ public class PraiseServiceImpl implements PraiseService {
             //清除评论的缓存
             redisTemplate.delete("commentCache::"+praise.getGoodsId());
             //确认签收
-            Long deliveryTag = (Long) headers.get(AmqpHeaders.DELIVERY_TAG);
-            channel.basicAck(deliveryTag, false);
-        }catch (RuntimeException | IOException e){
+//            Long deliveryTag = (Long) headers.get(AmqpHeaders.DELIVERY_TAG);
+//            channel.basicAck(deliveryTag, false);
+        }catch (RuntimeException e){
             e.printStackTrace();
         }
     }

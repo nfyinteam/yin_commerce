@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.nf.shopping.goodsearch.dao.GoodsSearchDao">
+    <resultMap id="goodsMap" type="edu.nf.shopping.search.entity.GoodsInfo">
+        <id property="goodsId" column="goods_id"/>
+        <result property="goodsName" column="goods_name"/>
+        <result property="shelfTime" column="shelf_time"/>
+        <result property="isShelf" column="is_shelf"/>
+        <result property="spuId" column="spu_id"/>
+        <result property="gtId" column="gt_id"/>
+    </resultMap>
+    <resultMap id="goodsSearchMap" type="edu.nf.shopping.search.entity.GoodsSearch">
+        <result property="goodsName" column="goods_name"/>
+        <result property="skuPrice" column="sku_price"/>
+        <result property="imgFile" column="img_file"/>
+    </resultMap>
+
+    <select id="listGoodsSearchByName" resultMap="goodsSearchMap" parameterType="java.lang.String">
+        select g.goods_name,min(s.sku_price),n.img_file from  goods_info g left join sku_info s
+        on s.goods_id = g.goods_id left join goods_imgs i on i.goods_id = g.goods_id left join
+        imgs_info n on i.img_id = n.img_idwhere goods_name like "%"#{name}"%" group by g.goods_name,i.img_id
+    </select>
+
+</mapper>

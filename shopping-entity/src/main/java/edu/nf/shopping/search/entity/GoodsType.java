@@ -1,12 +1,22 @@
 package edu.nf.shopping.search.entity;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
+
 /**
- * @author Achine
- * @date 2020/2/26
+ * @author 彭哥
+ * @date 2020/3/23
  */
+@Document(indexName = "users",type = "_doc")
 public class GoodsType {
+
+    @Id
     private String gtId;
+    @Field(type = FieldType.Text,analyzer = "ik_max_word")
     private String gtName;
+    @Field(type = FieldType.Text,analyzer = "ik_max_word")
     private String pId;
 
     public String getGtId() {

@@ -10,6 +10,7 @@ import edu.nf.shopping.order.entity.OrderInfo;
 import edu.nf.shopping.order.exception.OrderDetailsException;
 import edu.nf.shopping.order.service.OrderDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -35,6 +36,7 @@ public class OrderDetailsServiceImpl implements OrderDetailsService {
      * @return
      */
     @Override
+    @Cacheable(value = "orderDetailsListCache", key = "#orderId", condition = "#orderId != null or #orderId != ''")
     public List<OrderDetails> listOrderDetailsByOrderId(String orderId) {
         try {
             if(orderId == null || orderId == ""){
@@ -57,12 +59,14 @@ public class OrderDetailsServiceImpl implements OrderDetailsService {
      * @return
      */
     @Override
+    @Cacheable(value = "orderDetailsCache", key = "#orderId" + "-" + "#skuId", condition =
+            "(#orderId != null or #orderId != '') and (#skuId != null or #skuId != '')")
     public OrderDetails getOrederDetails(String orderId, String skuId) {
         try {
-            if(orderId == null || orderId == ""){
+            if(orderId == null || orderId.equals("")){
                 throw new OrderDetailsException("订单编号不能为空");
             }
-            if(skuId == null || skuId == ""){
+            if(skuId == null || skuId.equals("")){
                 throw new SkuInfoException("sku编号不能为空");
             }
             OrderInfo orderInfo = orderDao.getOrderInfoByOrderId(orderId);
