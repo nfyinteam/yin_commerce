@@ -1,5 +1,6 @@
 package edu.nf.shopping.message.dao;
 
+import edu.nf.shopping.message.entity.News;
 import edu.nf.shopping.message.entity.Receive;
 
 /**
@@ -15,10 +16,9 @@ public interface ReceiveDao {
     void addReceive(Receive receive);
 
     /**
-     * 根据消息类型修改信息状态
-     * @param receive
+     * 根据消息编号修改状态
      */
-    void updateNewsState(Receive receive);
+    void updateNewsState(String authorId, String userId,String orderId);
 
     /**
      * 根据通知类型修改通知状态

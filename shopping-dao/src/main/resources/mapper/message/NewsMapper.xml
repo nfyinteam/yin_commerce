@@ -7,19 +7,98 @@
         <result property="content" column="news_contents"/>
         <result property="imgName" column="img_name"/>
         <result property="authorId" column="news_author"/>
-        <result property="goodsId" column="goods_id"/>
+        <result property="orderId" column="order_id"/>
         <result property="time" column="news_time"/>
         <result property="notView" column="not_view"/>
     </resultMap>
+    <resultMap id="userMap" type="edu.nf.shopping.user.entity.UserInfo">
+        <result property="userId" column="buy_user"/>
+        <result property="customerServiceId" column="buy_admin"/>
+        <result property="userName" column="userName"/>
+        <result property="faceId" column="userFace"/>
+        <result property="lastContent" column="news_contents"/>
+        <result property="orderId" column="order_id"/>
+        <result property="notView" column="not_view"/>
+        <association property="face" resultMap="userFaceMap"/>
+    </resultMap>
+    <resultMap id="userFaceMap" type="edu.nf.shopping.user.entity.UserFace">
+        <result property="faceId" column="face_id"/>
+        <result property="faceFile" column="userFace"/>
+    </resultMap>
     <select id="listUserNews" resultMap="newsMap">
         select ns.news_id,ns.news_contents,ns.img_name,ns.news_author,
-        ns.goods_id,ns.news_time,nr.receive_uid
+        ns.order_id,ns.news_time,nr.receive_uid
         from news ns INNER JOIN news_receive nr on ns.news_id=nr.ns_id
-        where nr.receive_uid=#{param3}
+        where
+        <choose>
+            <when test="param4==null">
+                ns.order_id=#{param5} and ns.news_author=#{param3}
+                or  nr.receive_uid=#{param3} and ns.order_id=#{param5}
+            </when>
+            <otherwise>
+                ns.order_id='NULL' and ns.news_author=#{param4} and nr.receive_uid=#{param3}
+                or
+                ns.order_id='NULL' and ns.news_author=#{param3} and nr.receive_uid=#{param4}
+            </otherwise>
+        </choose>
+        ORDER BY ns.news_time desc LIMIT #{param1},#{param2}
     </select>
+
     <select id="findNotViewByUserId" resultType="String" parameterType="String">
         select COUNT(1) as not_view
         from news ns INNER JOIN news_receive nr on ns.news_id=nr.ns_id
         where nr.receive_uid=#{userId}  and nr.state='1'
+    </select>
+
+    <insert id="addNews" parameterType="edu.nf.shopping.message.entity.News">
+        insert news(news_id,news_contents,img_name,news_author,order_id,news_time)
+        values(#{newsId},#{content},#{imgName},#{authorId},#{orderId},#{time})
+    </insert>
+
+    <select id="findSingleNotView" parameterType="string" resultMap="newsMap">
+        select COUNT(1) as not_view,nn.order_id,nn.news_author
+        from news_receive nr INNER JOIN news nn on nr.ns_id=nn.news_id where
+        nr.state='1' and nr.receive_uid=#{param1} and nn.order_id='NULL'
+        GROUP BY nn.news_author ORDER BY nn.news_time
+    </select>
+
+    <select id="getUserNewsListByUserId" parameterType="String" resultMap="userMap">
+        select * from(
+            select oi.buy_user,oi.buy_admin,oi.order_id,ns.news_contents,oi.create_time,
+            <choose>
+                <when test="param2!=1">
+                    (select COUNT(1) from news_receive nr
+                    INNER JOIN news nn on nr.ns_id=nn.news_id where
+                    nn.order_id=ns.order_id  and nr.state='1' and nr.receive_uid=oi.buy_user)
+                    as not_view,
+                    (select ui.u_name from user_info ui where ui.u_id=oi.buy_admin)
+                    as userName,
+                    (select uf.face_file from user_face uf where uf.u_id=oi.buy_admin)
+                    as userFace
+                </when>
+                <otherwise>
+                    (select COUNT(1) from news_receive nr
+                    INNER JOIN news nn on nr.ns_id=nn.news_id where
+                    nn.order_id=ns.order_id  and nr.state='1' and nr.receive_uid=oi.buy_admin)
+                    as not_view,
+                    (select ui.u_name from user_info ui where ui.u_id=oi.buy_user)
+                    as userName,
+                    (select uf.face_file from user_face uf where uf.u_id=oi.buy_user)
+                    as userFace
+                </otherwise>
+            </choose>
+            from order_info oi LEFT JOIN news ns on oi.order_id=ns.order_id
+            where
+            <choose>
+                <when test="param2!=1">
+                    oi.buy_user=#{param1}
+                </when>
+                <otherwise>
+                    oi.buy_admin=#{param1}
+                </otherwise>
+            </choose>
+            and oi.order_state!='已完成'
+            ORDER BY ns.news_time desc
+        ) t GROUP BY t.order_id ORDER BY t.create_time desc
     </select>
 </mapper>

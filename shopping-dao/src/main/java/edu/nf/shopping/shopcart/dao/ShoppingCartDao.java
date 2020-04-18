@@ -29,7 +29,7 @@ public interface ShoppingCartDao {
      * 批量删除购物车商品
      * @param scIds
      */
-    void deleteShoppingCartList(@Param("array") List<String> scIds);
+    void deleteShoppingCartList(@Param("array")List<String> scIds);
 
 
     /**
@@ -58,6 +58,6 @@ public interface ShoppingCartDao {
      * @param valueName
      * @return
      */
-    ShopCartGoods findShopCartGoods(String uid, String skuId, String valueName);
+    ShopCartGoods findShopCartGoods(String uid,String skuId,String valueName);
 
 }

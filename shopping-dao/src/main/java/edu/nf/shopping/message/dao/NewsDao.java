@@ -2,6 +2,7 @@ package edu.nf.shopping.message.dao;
 
 import edu.nf.shopping.message.entity.News;
 import edu.nf.shopping.message.entity.Notice;
+import edu.nf.shopping.user.entity.UserInfo;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -14,16 +15,16 @@ public interface NewsDao {
 
     /**
      * 查询用户单个的聊天记录
-     * @param pageNum
+     * @param pageStart
      * @param pageSize
      * @param userId
-     * @param goodsId
+     * @param order
      * @return
      */
-    List<News> listUserNews(Integer pageNum,Integer pageSize, String userId, String goodsId);
+    List<News> listUserNews(Integer pageStart,Integer pageSize, String userId,String authorId, String order);
 
     /**
-     * 查询用户未读消息的数量
+     * 查询用户未读消息的总数量
      * @param userId
      * @return
      */
@@ -35,4 +36,13 @@ public interface NewsDao {
      */
     void addNews(News news);
 
+    /**
+     * 查询用户单个客服未读消息数量
+     */
+    List<News> findSingleNotView(String userId);
+
+    /**
+     * 获取客服列表
+     */
+    List<UserInfo> getUserNewsListByUserId(String userId,String customerService);
 }

@@ -27,7 +27,7 @@ public class OutCargoController  extends BaseController {
     })
     public ResponseVO insertOutCargo(OutCargo outCargo){
         try {
-            service.insertOutCargo(outCargo);
+            //service.insertOutCargo(outCargo);
             return success(200);
         } catch (Exception e) {
             e.printStackTrace();

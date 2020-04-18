@@ -9,16 +9,16 @@ import java.util.Date;
  * @date 2020/3/9
  */
 public class ShoppingCart {
-    private String scId;
+    private Integer scId;
     private SkuRelation relation;
     private String uid;
     private Date joinTime;
 
-    public String getScId() {
+    public Integer getScId() {
         return scId;
     }
 
-    public void setScId(String scId) {
+    public void setScId(Integer scId) {
         this.scId = scId;
     }
 

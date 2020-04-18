@@ -1,18 +1,32 @@
 package edu.nf.shopping.config;
 
-import org.springframework.context.annotation.Bean;
+import edu.nf.shopping.message.server.WebSocketHandlerImpl;
+import edu.nf.shopping.message.server.WebSocketInterceptor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.socket.server.standard.ServerEndpointExporter;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.web.socket.config.annotation.EnableWebSocket;
+import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
+import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
 
 /**
  * @author Bull fighters
  * @date 2020/4/6
  */
 @Configuration
-public class WebSocketConfig {
+@EnableWebSocket
+public class WebSocketConfig implements WebSocketConfigurer {
 
-    /*@Bean
-    public ServerEndpointExporter serverEndpointExporter() {
-        return new ServerEndpointExporter();
-    }*/
+    @Autowired
+    private WebSocketHandlerImpl webSocketHandler;
+
+    @Autowired
+    private WebSocketInterceptor webSocketInterceptor;
+
+    @Override
+    public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
+        //handler是webSocket的核心，配置入口
+        registry.addHandler(webSocketHandler, "/websocket/{customerService}")
+                .setAllowedOrigins("*").addInterceptors(webSocketInterceptor);
+    }
 }

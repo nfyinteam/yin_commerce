@@ -17,6 +17,7 @@ import edu.nf.shopping.message.dao.NoticeDao;
 import edu.nf.shopping.message.dao.ReceiveDao;
 import edu.nf.shopping.message.entity.Notice;
 import edu.nf.shopping.message.entity.Receive;
+import edu.nf.shopping.order.dao.OrderDetailsDao;
 import edu.nf.shopping.util.FileNameUtils;
 import edu.nf.shopping.util.UUIDUtils;
 import edu.nf.shopping.util.UploadAddressUtils;
@@ -60,6 +61,9 @@ public class CommentServiceImpl implements CommentService {
 
     @Autowired
     private ReceiveDao receiveDao;
+
+    @Autowired
+    private OrderDetailsDao orderDetailsDao;
 
     @Autowired
     private RedisTemplate<String,Object> redisTemplate;
@@ -147,7 +151,6 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public void addComment(Comment comment) {
-        System.out.println(comment.toString());
         try{
             if(comment.getReceiveUserId()==null || "".equals(comment.getReceiveUserId())
                     || comment.getBycId()==null || "".equals(comment.getBycId())
@@ -156,10 +159,11 @@ public class CommentServiceImpl implements CommentService {
                 throw new CommentException("数据出错了");
             }
             comment.setComId(UUIDUtils.createUUID());
-            CorrelationData correlationData=new CorrelationData();
-            correlationData.setId(comment.getComId());
+            comment.setTime(new Date());
+//            CorrelationData correlationData=new CorrelationData();
+//            correlationData.setId(comment.getComId());
             rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME,
-                    CommentRabbitConfig.COMMENT_ROUTER_KEY,comment,correlationData);
+                    CommentRabbitConfig.COMMENT_ROUTER_KEY,comment);
         }catch (CommentException e){
             throw e;
         }catch (RuntimeException e){
@@ -204,13 +208,12 @@ public class CommentServiceImpl implements CommentService {
             commentDao.addComment(comment);
             receiveDao.addReceive(receive);
             noticeDao.addNotice(notice);
-            System.out.println(comment.toString());
             //清除接收方的回复消息和评论的缓存
             redisTemplate.delete("messageCache::"+comment.getReceiveUserId()+"-"+notice.getType());
             redisTemplate.delete("commentCache::"+comment.getGoodsId());
             //确认签收
-            channel.basicAck(deliveryTag, false);
-        }catch (RuntimeException | IOException e){
+            //channel.basicAck(deliveryTag, false);
+        }catch (RuntimeException e){
             //拒收消息，丢到死信
             channel.basicReject(deliveryTag, false);
             e.printStackTrace();

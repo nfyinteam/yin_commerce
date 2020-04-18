@@ -57,5 +57,5 @@ public interface ShopCartService {
      * @param valueName
      * @return
      */
-    ShopCartGoods findeShopCartGoods(String uid, String skuId, String valueName);
+    ShopCartGoods findeShopCartGoods(String uid,String skuId,String valueName);
 }

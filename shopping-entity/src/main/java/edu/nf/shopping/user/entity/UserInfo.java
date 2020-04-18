@@ -44,7 +44,25 @@ public class UserInfo {
     /**
      * 用户头像编号
      */
+    private String faceId;
+
     private UserFace face;
 
+    /**
+     * 是否需要客服
+     */
+    private String necessaryCustomerService;
 
+    /**
+     * 是否为客服
+     */
+    private Boolean customerService;
+
+    private String customerServiceId;
+
+    private String orderId;
+
+    private String lastContent;
+
+    private Integer notView;
 }

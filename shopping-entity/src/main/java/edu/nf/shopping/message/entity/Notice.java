@@ -31,5 +31,6 @@ public class Notice {
     private String newMessageNum;
     private String currentContent;
     private String parentContent;
+    private String parentCid;
     private List<UserSetUp> userSetUpList;
 }

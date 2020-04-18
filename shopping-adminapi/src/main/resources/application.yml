@@ -1,11 +1,11 @@
 server:
   # 设置tomcat
-  jetty:
+  tomcat:
     uri-encoding: UTF-8
     max-threads: 1000
     min-spare-threads: 50
   # 指定端口
-  port: 80
+  port: 8081
   # 指定项目的ContextPath路径
   servlet:
     context-path: /adminapi
@@ -24,7 +24,7 @@ spring:
   servlet:
     multipart:
       max-file-size : 10MB
-    max-request-size: 200MB
+      max-request-size: 200MB
   multipart:
     enabled: true
     # 每个文件限制为10M

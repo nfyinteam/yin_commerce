@@ -17,7 +17,7 @@ import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.support.AmqpHeaders;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.messaging.handler.annotation.Headers;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -45,6 +45,9 @@ public class PraiseServiceImpl implements PraiseService {
 
     @Autowired
     private ReceiveDao receiveDao;
+
+    @Autowired
+    private RedisTemplate<String,Object> redisTemplate;
 
     @Autowired
     private RabbitTemplate rabbitTemplate;
@@ -75,7 +78,8 @@ public class PraiseServiceImpl implements PraiseService {
             praise.setReceiveUserId(receiveUserId);
             CorrelationData correlationData = new CorrelationData();
             correlationData.setId(praise.getPraId() + praise.getTime());
-            rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME, "praise.message", praise, correlationData);
+            rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME,
+                    CommentRabbitConfig.PRAISE_ROUTER_KEY, praise, correlationData);
         }catch (CommentException e){
             throw e;
         } catch (RuntimeException e){
@@ -85,26 +89,25 @@ public class PraiseServiceImpl implements PraiseService {
     }
 
     /**
-     点赞消费者：专门处理点赞业务
-     **/
+     * 点赞消息的消费者，负责处理点赞消息
+     * @param praise
+     * @param headers
+     * @param channel
+     */
     @RabbitListener(queues = CommentRabbitConfig.PRAISE_QUEUE)
-    @CacheEvict(value = "commentCache", key = "#praise.goodsId",beforeInvocation=true)
-    public void receiveMessage(Praise praise,
-                               @Headers Map<String, Object> headers,
-                               Channel channel){
+    public void praiseMessage(Praise praise, @Headers Map<String, Object> headers, Channel channel){
         try{
             //判断是否已点过
             if(praiseDao.findPraise(praise.getUserId(),praise.getComId())==null){
-                System.out.println(praise.toString());
                 //点赞通知记录
                 Notice notice = new Notice();
                 notice.setNoticeId(praise.getPraId());
+                notice.setTitle("赞了我的评论");
                 notice.setContent("赞了我的评论");
                 notice.setLink("NULL");
                 notice.setTime(praise.getTime());
                 notice.setType("1");
                 notice.setAuthor(praise.getUserId());
-                notice.setTitle("赞了我的评论");
                 notice.setComId(praise.getComId());
                 //接收者记录
                 Receive receive=new Receive();
@@ -115,19 +118,21 @@ public class PraiseServiceImpl implements PraiseService {
                 praiseDao.addPraise(praise);
                 receiveDao.addReceive(receive);
                 noticeDao.addNotice(notice);
-                //确认签收
-                Long deliveryTag = (Long) headers.get(AmqpHeaders.DELIVERY_TAG);
-                channel.basicAck(deliveryTag, false);
+                //清除接收方的点赞消息缓存
+                redisTemplate.delete("messageCache::"+praise.getReceiveUserId()+"-"+notice.getType());
             }else {
                 praiseDao.deletePraise(praise.getUserId(),praise.getComId());
             }
-        }catch (RuntimeException | IOException e){
+            System.out.println(praise.toString());
+            //清除评论的缓存
+            redisTemplate.delete("commentCache::"+praise.getGoodsId());
+            //确认签收
+//            Long deliveryTag = (Long) headers.get(AmqpHeaders.DELIVERY_TAG);
+//            channel.basicAck(deliveryTag, false);
+        }catch (RuntimeException e){
             e.printStackTrace();
-            throw new CommentException("信息出错了！");
         }
     }
-
-
 
     @Override
     public void deletePraise(String userId, String comId) {

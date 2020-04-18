@@ -8,8 +8,13 @@
         values(#{messageId},#{receiveUserId},#{state})
     </insert>
 
-    <update id="updateNewsState" keyProperty="String">
-
+    <update id="updateNewsState" parameterType="string">
+        update news ns INNER JOIN news_receive nr on ns.news_id=nr.ns_id
+        set nr.state='2'
+        where nr.receive_uid=#{param2} and ns.order_id=#{param3}
+        <if test="param1!=null and param1!='NULL' and param1!=''">
+            and ns.news_author=#{param1}
+        </if>
     </update>
 
     <update id="updateNoticeState" parameterType="String">
@@ -17,4 +22,6 @@
         set nr.state='2'
         where nr.receive_uid=#{param2} and ne.notice_type=#{param1}
     </update>
+
+
 </mapper>

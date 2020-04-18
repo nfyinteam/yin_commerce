@@ -62,11 +62,15 @@ public class OrderInfoServiceImpl implements OrderInfoService {
             }
             OrderInfo orderInfo = orderDao.getOrderInfoByOrderId(orderId);
             orderInfo.setOrderDetails(detailsService.listOrderDetailsByOrderId(orderId));
+            for (OrderDetails orderDetail : orderInfo.getOrderDetails()) {
+                System.out.println(orderDetail.toString());
+            }
             if(orderInfo == null){
                 throw new OrderException("该订单不存在");
             }
             return orderInfo;
         }catch (Exception e){
+            e.printStackTrace();
             throw new OrderException(e);
         }
     }

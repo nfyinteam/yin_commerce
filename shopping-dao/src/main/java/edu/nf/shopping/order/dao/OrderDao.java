@@ -18,6 +18,13 @@ public interface OrderDao {
     List<OrderInfo> listOrderInfo(String userId);
 
     /**
+     * 根据用户编号查询该用户所有订单
+     * @param adminId 用户编号
+     * @return
+     */
+    List<OrderInfo> listOrderInfoByAdminId(String adminId);
+
+    /**
      * 根据订单编号查询订单信息
      * @param orderId
      * @return
