@@ -54,11 +54,6 @@ public class ReportServiceImpl implements ReportService {
     }
 
     @Override
-    public void updateReport(Report report) {
-
-    }
-
-    @Override
     public void deleteReport(Report report) {
 
     }

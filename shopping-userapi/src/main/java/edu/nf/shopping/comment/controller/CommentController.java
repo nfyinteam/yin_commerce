@@ -16,6 +16,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -48,7 +49,8 @@ public class CommentController extends BaseController {
     private ResponseVO<PageInfo<Comment>> listBuyShow(@PathVariable("pageNum") Integer pageNum, @PathVariable("pageSize") Integer pageSize, @PathVariable("replySize") Integer replySize, @PathVariable("goodsId") String goodsId, @PathVariable("refreshTime") String refreshTime, @PathVariable("order") String order, @PathVariable("commentType") String commentType,
                                                       HttpServletRequest request) throws ParseException {
         UserInfo userInfo=(UserInfo) request.getSession().getAttribute("userInfo");
-        PageInfo<Comment> pageInfo=commentService.listBuyShow(pageNum,pageSize,replySize,goodsId,userInfo.getUserId(),sdf.parse(refreshTime),order,commentType);
+        String userId=userInfo!=null?userInfo.getUserId():"";
+        PageInfo<Comment> pageInfo=commentService.listBuyShow(pageNum,pageSize,replySize,goodsId,userId,sdf.parse(refreshTime),order,commentType);
         return success(pageInfo);
     }
 
@@ -64,9 +66,10 @@ public class CommentController extends BaseController {
     })
     @CrossOrigin(origins = "*", methods = {RequestMethod.GET})
     private ResponseVO<PageInfo<Comment>> listComment(@PathVariable("pageNum") Integer pageNum, @PathVariable("pageSize") Integer pageSize, @PathVariable("commentId") String commentId, @PathVariable("refreshTime") String refreshTime, @PathVariable("order") String order,
-                                                      HttpServletRequest request) throws ParseException {
-        UserInfo userInfo=(UserInfo) request.getSession().getAttribute("userInfo");
-        PageInfo<Comment> pageInfo=commentService.listComment(pageNum,pageSize,commentId,userInfo.getUserId(),sdf.parse(refreshTime),order);
+                                                      HttpSession session) throws ParseException {
+        UserInfo userInfo=(UserInfo) session.getAttribute("userInfo");
+        String userId=userInfo!=null?userInfo.getUserId():"";
+        PageInfo<Comment> pageInfo=commentService.listComment(pageNum,pageSize,commentId,userId,sdf.parse(refreshTime),order);
         return success(pageInfo);
     }
 
@@ -98,7 +101,7 @@ public class CommentController extends BaseController {
     @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})
     private ResponseVO deleteComment(String comId, HttpServletRequest request){
         UserInfo userInfo=(UserInfo) request.getSession().getAttribute("userInfo");
-        commentService.updateComment(comId,"2",userInfo.getUserId());
+        commentService.updateCommentState(comId,"2",userInfo.getUserId());
         return success(200,"删除成功");
     }
 

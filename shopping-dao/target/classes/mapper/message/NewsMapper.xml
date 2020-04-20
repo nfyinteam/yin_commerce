@@ -19,6 +19,11 @@
         <result property="lastContent" column="news_contents"/>
         <result property="orderId" column="order_id"/>
         <result property="notView" column="not_view"/>
+        <association property="face" resultMap="userFaceMap"/>
+    </resultMap>
+    <resultMap id="userFaceMap" type="edu.nf.shopping.user.entity.UserFace">
+        <result property="faceId" column="face_id"/>
+        <result property="faceFile" column="userFace"/>
     </resultMap>
     <select id="listUserNews" resultMap="newsMap">
         select ns.news_id,ns.news_contents,ns.img_name,ns.news_author,

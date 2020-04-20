@@ -29,4 +29,5 @@ public class News {
     private String userId;
     private String total;
     private String state;
+    private String userFace;
 }

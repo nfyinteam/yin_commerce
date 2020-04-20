@@ -2,6 +2,7 @@ package edu.nf.shopping.comment.service;
 
 import com.github.pagehelper.PageInfo;
 import edu.nf.shopping.comment.entity.Comment;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -28,6 +29,16 @@ public interface CommentService {
     Comment findComment(String comId,String goodsId,String userId);
 
     /**
+     *查询待审核的买家秀
+     */
+    PageInfo<Comment> listStayToExamineBuyShow(Integer pageNum,Integer pageSize);
+
+    /**
+     *查询被举报的评论
+     */
+    PageInfo<Comment> listReportComment(Integer pageNum,Integer pageSize,String type);
+
+    /**
      * 添加买家秀
     **/
     void addBuyShow(MultipartFile[] files,Comment comment) throws IOException;
@@ -36,10 +47,16 @@ public interface CommentService {
      * 添加评论
      **/
     void addComment(Comment comment);
-    /**
-     *
-     **/
-    void updateComment(String comId,String state,String userId);
 
+    /**
+     *修改评论状态
+     **/
+    void updateCommentState(String comId,String state,String userId);
+
+
+    /**
+     * 删除评论
+     * @param comment
+     */
     void deleteComment(Comment comment);
 }

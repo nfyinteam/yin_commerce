@@ -53,6 +53,11 @@ public class UserInfo {
      */
     private String necessaryCustomerService;
 
+    /**
+     * 是否为客服
+     */
+    private Boolean customerService;
+
     private String customerServiceId;
 
     private String orderId;

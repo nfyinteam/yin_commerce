@@ -12,6 +12,8 @@ import edu.nf.shopping.message.dao.NoticeDao;
 import edu.nf.shopping.message.dao.ReceiveDao;
 import edu.nf.shopping.message.entity.Notice;
 import edu.nf.shopping.message.entity.Receive;
+import edu.nf.shopping.message.exception.MessageException;
+import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -95,7 +97,8 @@ public class PraiseServiceImpl implements PraiseService {
      * @param channel
      */
     @RabbitListener(queues = CommentRabbitConfig.PRAISE_QUEUE)
-    public void praiseMessage(Praise praise, @Headers Map<String, Object> headers, Channel channel){
+    public void praiseMessage(Praise praise, @Headers Map<String, Object> headers, Channel channel) throws IOException {
+        Long deliveryTag = (Long) headers.get(AmqpHeaders.DELIVERY_TAG);
         try{
             //判断是否已点过
             if(praiseDao.findPraise(praise.getUserId(),praise.getComId())==null){
@@ -127,11 +130,24 @@ public class PraiseServiceImpl implements PraiseService {
             //清除评论的缓存
             redisTemplate.delete("commentCache::"+praise.getGoodsId());
             //确认签收
-//            Long deliveryTag = (Long) headers.get(AmqpHeaders.DELIVERY_TAG);
-//            channel.basicAck(deliveryTag, false);
+            channel.basicAck(deliveryTag, false);
         }catch (RuntimeException e){
+            channel.basicReject(deliveryTag, false);
             e.printStackTrace();
+            throw new MessageException(e.getMessage());
         }
+    }
+
+    /**
+     * 接收点赞消息的死信
+     * @param message
+     * @param channel
+     * @throws IOException
+     */
+    @RabbitListener(queues = CommentRabbitConfig.PRAISE_DEAD_QUEUE)
+    public void commentDeadMessage(Message message, Channel channel) throws IOException {
+        System.out.println("收到死信消息：" + new String(message.getBody()));
+        channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
     }
 
     @Override

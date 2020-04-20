@@ -17,6 +17,7 @@ import edu.nf.shopping.message.dao.NoticeDao;
 import edu.nf.shopping.message.dao.ReceiveDao;
 import edu.nf.shopping.message.entity.Notice;
 import edu.nf.shopping.message.entity.Receive;
+import edu.nf.shopping.message.exception.MessageException;
 import edu.nf.shopping.order.dao.OrderDetailsDao;
 import edu.nf.shopping.util.FileNameUtils;
 import edu.nf.shopping.util.UUIDUtils;
@@ -71,19 +72,31 @@ public class CommentServiceImpl implements CommentService {
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
+    /**
+     * 根据条件查询商品的评价
+     * @param pageNum 页码
+     * @param pageSize 条目数
+     * @param replySize 回复评论数量
+     * @param goodsId 商品编号
+     * @param userId 用户编号
+     * @param dataTime 时间
+     * @param order 排序
+     * @param commentType 是否包含图片
+     * @return
+     */
     @Override
     @Cacheable(value = "commentCache", key = "#goodsId" , condition = "#userId==null and #pageNum<=1 and #order=='0' and #commentType=='0'")
     public PageInfo<Comment> listBuyShow(Integer pageNum,Integer pageSize,Integer replySize,String goodsId,String userId,Date dataTime,String order,String commentType) {
         try{
-            List<Comment> byShowList=commentDao.listBuyShow(pageNum,pageSize,goodsId,userId,dataTime,order,commentType);
+            List<Comment> buyShowList=commentDao.listBuyShow(pageNum,pageSize,goodsId,userId,dataTime,order,commentType);
             //查询买家秀的子评论、图片
-            if(byShowList.size()>0){
-                for (Comment comment : byShowList) {
+            if(buyShowList.size()>0){
+                for (Comment comment : buyShowList) {
                     comment.setImgInfoList(imgInfoDao.listImgInfo(comment.getComId()));
                     comment.setCommentList(commentDao.listByComment(0,replySize,comment.getComId(),userId,dataTime,order));
                 }
             }
-            PageInfo<Comment> pageInfo=new PageInfo(byShowList);
+            PageInfo<Comment> pageInfo=new PageInfo(buyShowList);
             return pageInfo;
         }catch (RuntimeException e){
             e.printStackTrace();
@@ -91,11 +104,66 @@ public class CommentServiceImpl implements CommentService {
         }
     }
 
-
+    /**
+     * 根据条件查询商品的评论
+     * @param pageNum 页码
+     * @param pageSize 条目数
+     * @param comId 评论编号
+     * @param userId 用户编号
+     * @param dataTime 时间
+     * @param order 排序
+     * @return
+     */
     @Override
     public PageInfo<Comment> listComment(Integer pageNum, Integer pageSize, String comId,String userId,Date dataTime,String order) {
         try{
             List<Comment> list=commentDao.listByComment(pageNum,pageSize,comId,userId,dataTime,order);
+            PageInfo<Comment> pageInfo=new PageInfo(list);
+            return pageInfo;
+        }catch (RuntimeException e){
+            e.printStackTrace();
+            throw new CommentException("数据库出错");
+        }
+    }
+
+    /**
+     *查询待审核的买家秀
+     */
+    @Override
+    public PageInfo<Comment> listStayToExamineBuyShow(Integer pageNum, Integer pageSize) {
+        try{
+            List<Comment> list=commentDao.listStayToExamineBuyShow(pageNum,pageSize);
+            if(list.size()>0){
+                for (Comment comment : list) {
+                    comment.setImgInfoList(imgInfoDao.listImgInfo(comment.getComId()));
+                }
+            }
+            System.out.println("待审的："+list.size());
+            PageInfo<Comment> pageInfo=new PageInfo(list);
+            return pageInfo;
+        }catch (RuntimeException e){
+            e.printStackTrace();
+            throw new CommentException("数据库出错");
+        }
+    }
+
+    /**
+     * 查询被举报的评论或买家秀
+     * @param pageNum
+     * @param pageSize
+     * @param type 评论类型
+     * @return
+     */
+    @Override
+    public PageInfo<Comment> listReportComment(Integer pageNum, Integer pageSize, String type) {
+        try{
+            List<Comment> list=commentDao.listReportComment(pageNum,pageSize,type);
+            if("1".equals(type) && list.size()>0){
+                for (Comment comment : list) {
+                    comment.setImgInfoList(imgInfoDao.listImgInfo(comment.getComId()));
+                }
+            }
+            System.out.println("举报的："+list.size());
             PageInfo<Comment> pageInfo=new PageInfo(list);
             return pageInfo;
         }catch (RuntimeException e){
@@ -109,6 +177,9 @@ public class CommentServiceImpl implements CommentService {
         return null;
     }
 
+    /**
+     * 添加买家秀
+     **/
     @Override
     public void addBuyShow(MultipartFile[] files,Comment comment) throws IOException{
         try{
@@ -149,6 +220,9 @@ public class CommentServiceImpl implements CommentService {
         }
     }
 
+    /**
+     * 添加评论
+     **/
     @Override
     public void addComment(Comment comment) {
         try{
@@ -160,8 +234,8 @@ public class CommentServiceImpl implements CommentService {
             }
             comment.setComId(UUIDUtils.createUUID());
             comment.setTime(new Date());
-//            CorrelationData correlationData=new CorrelationData();
-//            correlationData.setId(comment.getComId());
+            CorrelationData correlationData=new CorrelationData();
+            correlationData.setId(comment.getComId());
             rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME,
                     CommentRabbitConfig.COMMENT_ROUTER_KEY,comment);
         }catch (CommentException e){
@@ -212,11 +286,12 @@ public class CommentServiceImpl implements CommentService {
             redisTemplate.delete("messageCache::"+comment.getReceiveUserId()+"-"+notice.getType());
             redisTemplate.delete("commentCache::"+comment.getGoodsId());
             //确认签收
-            //channel.basicAck(deliveryTag, false);
+            channel.basicAck(deliveryTag, false);
         }catch (RuntimeException e){
             //拒收消息，丢到死信
             channel.basicReject(deliveryTag, false);
             e.printStackTrace();
+            throw new MessageException(e.getMessage());
         }
     }
 
@@ -232,15 +307,19 @@ public class CommentServiceImpl implements CommentService {
         channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
     }
 
-
+    /**
+     * 用户删除自己的评论
+     * @param comId
+     * @param state
+     * @param userId
+     */
     @Override
-    public void updateComment(String comId,String state,String userId) {
+    public void updateCommentState(String comId, String state, String userId) {
         try{
-            if(comId!=""&&comId!=null){
-                    commentDao.updateComment(comId,state);
-            }else {
+            if("".equals(comId)||comId==null){
                 throw new CommentException("出错了！");
             }
+            commentDao.updateComment(comId,state);
         }catch (CommentException e){
             throw e;
         }catch (RuntimeException e){

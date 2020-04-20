@@ -18,7 +18,7 @@
         VALUES(#{reportId},#{wtbId},#{comId},#{reason},#{time},#{state})
     </insert>
     <update id="updateReport" parameterType="edu.nf.shopping.comment.entity.Report">
-
+        update report set report_state=#{param2} where com_id=#{param1}
     </update>
     <delete id="deleteReport" parameterType="edu.nf.shopping.comment.entity.Report">
 

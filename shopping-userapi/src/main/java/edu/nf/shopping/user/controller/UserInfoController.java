@@ -27,6 +27,7 @@ public class UserInfoController extends BaseController {
     @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})
     public ResponseVO userLogin(@RequestParam("userId") String userId, @RequestParam("passWord") String passWord, HttpSession session) {
         UserInfo userInfo = service.userLogin(userId,passWord);
+        userInfo.setCustomerService(false);
         session.setAttribute("userInfo", userInfo);
         return success(200, userInfo);
     }

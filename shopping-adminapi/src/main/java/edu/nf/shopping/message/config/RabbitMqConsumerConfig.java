@@ -5,6 +5,7 @@ import edu.nf.shopping.message.config.MessageRabbitConfig;
 import edu.nf.shopping.message.entity.News;
 import edu.nf.shopping.message.service.NewsService;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.amqp.support.AmqpHeaders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.handler.annotation.Headers;
@@ -33,5 +34,7 @@ public class RabbitMqConsumerConfig {
     public void userChatMessage(News news, @Headers Map<String, Object> headers, Channel channel) throws IOException {
         System.out.println("admin接收："+news.toString());
         newsService.sendNews(news);
+        Long deliveryTag = (Long) headers.get(AmqpHeaders.DELIVERY_TAG);
+        channel.basicAck(deliveryTag, false);
     }
 }

@@ -29,7 +29,9 @@ public class UserInfoController extends BaseController {
             httpMethod = "post")
     @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})
     public ResponseVO userLogin(String userId,String passWord, HttpSession session) {
-        session.setAttribute("userInfo", service.userLogin(userId,passWord));
+        UserInfo userInfo=service.userLogin(userId,passWord);
+        userInfo.setCustomerService(true);
+        session.setAttribute("userInfo", userInfo);
         return success(200,"登录成功！");
     }
 

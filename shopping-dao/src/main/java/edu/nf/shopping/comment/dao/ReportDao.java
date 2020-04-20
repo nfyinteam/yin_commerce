@@ -9,6 +9,6 @@ import edu.nf.shopping.comment.entity.Report;
 public interface ReportDao {
     Report findReport(String reportId);
     void addReport(Report report);
-    void updateReport(Report report);
+    void updateReport(String comId,String state);
     void deleteReport(Report report);
 }

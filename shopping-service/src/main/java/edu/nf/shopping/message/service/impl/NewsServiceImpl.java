@@ -111,7 +111,9 @@ public class NewsServiceImpl implements NewsService{
             }else {
                 news.setImgName("NULL");
             }
-            rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME,routerKey,news);
+            CorrelationData correlationData=new CorrelationData();
+            correlationData.setId(news.getNewsId());
+            rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME,routerKey,news,correlationData);
             return news;
         }catch (MessageException e){
             throw e;
@@ -189,7 +191,7 @@ public class NewsServiceImpl implements NewsService{
     }
 
     /**
-     * 查询用户消息列表
+     * 查询用户消息列表和订单列表
      * @param userId
      * @param customerService
      * @return
@@ -201,10 +203,13 @@ public class NewsServiceImpl implements NewsService{
             if("1".equals(customerService)){
                 List<String> keys=commands.keys(webSocketHandler.ASSIGNMENT_CACHE_KEY+userId+":*");
                 for (String key : keys) {
-                    UserInfo u=(UserInfo)redisTemplate.opsForValue().get("userInfo_cache:"+key.split(":")[2]);
-                    u.setOrderId("NULL");
-                    u.setLastContent("");
-                    list.add(u);
+                    UserInfo u=(UserInfo)redisTemplate.opsForValue().get("userInfoCache::"+key.split(":")[2]);
+                    System.out.println("uu:"+u);
+                    if(u!=null){
+                        u.setOrderId("NULL");
+                        u.setLastContent("");
+                        list.add(u);
+                    }
                 }
             }
             return list;

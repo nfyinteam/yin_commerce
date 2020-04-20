@@ -74,6 +74,7 @@ public class NewsController extends BaseController{
     private ResponseVO addChatNews(News news, HttpSession session){
         UserInfo userInfo=(UserInfo) session.getAttribute("userInfo");
         news.setAuthorId(userInfo.getUserId());
+        news.setUserFace(userInfo.getFace().getFaceFile());
         News n=newsService.addNews(null,news,news.getReceiveUserId(),userInfo.getUserId(),"admin.chat.news.message");
         return success(n);
     }
@@ -85,6 +86,7 @@ public class NewsController extends BaseController{
     private ResponseVO addChatImageNews(@RequestParam("imageFile") MultipartFile file,News news, HttpSession session){
         UserInfo userInfo=(UserInfo) session.getAttribute("userInfo");
         news.setAuthorId(userInfo.getUserId());
+        news.setUserFace(userInfo.getFace().getFaceFile());
         News n=newsService.addNews(file,news,news.getReceiveUserId(),userInfo.getUserId(),"admin.chat.news.message");
         return success(n);
     }

@@ -14,10 +14,19 @@ import java.util.Date;
 public class Examine {
     private String examineId;
     private String type;
+    /**
+     * 审核员编号
+     */
     private String staffId;
     private String comId;
+    /**
+     * 审核结果
+     */
     private String result;
     @JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date time;
+
+    private String comUserId;
+    private String reason;
 }

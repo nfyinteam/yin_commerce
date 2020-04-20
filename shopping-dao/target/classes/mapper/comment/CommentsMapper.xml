@@ -53,6 +53,7 @@
         </choose>
 
     </select>
+
     <select id="listByComment" resultMap="commentMap" parameterType="String">
         select c.com_id,c.goods_id,c.u_id,c.parent_cid,c.by_cid,c.com_content,
         c.com_time,c.com_state,c.com_grade,u.u_name,uf.face_file,
@@ -79,6 +80,28 @@
                 IF(c.com_time &lt; #{param5}, 0, 1), c.com_time asc
             </otherwise>
         </choose>
+    </select>
+
+    <select id="listStayToExamineBuyShow" resultMap="commentMap">
+         select c.com_id,c.goods_id,c.u_id,c.parent_cid,c.by_cid,c.com_content,
+         c.com_time,c.com_state,c.com_grade
+         from comments c where c.com_state='2' and c.com_grade='1'
+    </select>
+
+    <select id="listReportComment" resultMap="commentMap" parameterType="String">
+        select  distinct(c.com_id),COUNT(1) as num,c.goods_id,c.u_id,c.parent_cid,
+        c.by_cid,c.com_content,c.com_time,c.com_state,c.com_grade
+        from comments c  INNER JOIN report r on c.com_id=r.com_id
+        where r.report_state='1' and
+        <choose>
+            <when test="param3!=1">
+                c.com_grade='1'
+            </when>
+            <otherwise>
+                c.com_grade!='1'
+            </otherwise>
+        </choose>
+        GROUP BY c.com_id ORDER BY num desc
     </select>
 
     <select id="findComment" parameterType="edu.nf.shopping.comment.entity.Comment" resultMap="commentMap">

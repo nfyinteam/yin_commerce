@@ -6,6 +6,7 @@ import edu.nf.shopping.user.exception.UserException;
 import edu.nf.shopping.user.service.UserInfoService;
 import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import javax.security.auth.login.LoginException;
@@ -22,6 +23,7 @@ public class UserInfoServiceImpl implements UserInfoService {
     private UserInfoDao userInfoDao;
 
     @Override
+    @Cacheable(value = "userInfoCache" ,key="#userId")
     public UserInfo getUserInfo(String userId) {
         try{
            UserInfo userInfo = userInfoDao.getUserInfo(userId);
@@ -43,6 +45,7 @@ public class UserInfoServiceImpl implements UserInfoService {
     }
 
     @Override
+    @Cacheable(value = "userInfoCache" ,key="#userId")
     public UserInfo userLogin(String userId,String passWord) {
         try{
             if(userId == null || passWord == null || userId.equals("") || passWord.equals("")){

@@ -21,8 +21,11 @@ spring:
         prefetch: 2
         # 消息签收模式，消息被消费后会回馈一条确认信息给rabbitmq
         # 可以设置为自动或者手动签收，这里设置为手动
-        acknowledge-mode: auto
-        default-requeue-rejected: false
+        acknowledge-mode: manual
+        default-requeue-rejected: true
+        retry:
+          enabled: true
+          max-attempts: 3
       retry:
         enabled: true
         max-attempts: 3

@@ -71,7 +71,6 @@ public class WebSocketHandlerImpl implements WebSocketHandler {
         try {
             UserInfo userInfo = (UserInfo)session.getAttributes().get("userInfo");
             if(userInfo!=null) {
-                //用户才进行分配客服
                 if (socketMap.get(userInfo.getUserId()) == null) {
                     socketMap.put(userInfo.getUserId(), session);
                     //创建虚假客服人员
@@ -84,14 +83,23 @@ public class WebSocketHandlerImpl implements WebSocketHandler {
 //                    redisTemplate.opsForValue().set(CUSTOMER_SERVICE_RECEIPT_NUM_KEY+"1578412683",
 //                            new PersonnelAssignment("1578412683",2));
                 }
-                if("true".equals(userInfo.getNecessaryCustomerService())){
-                    customerServiceAssignment(userInfo.getUserId());
-                }else {
-                    alreadyAssignment=commands.keys(ASSIGNMENT_CACHE_KEY+"*:"+userInfo.getUserId());
-                    if(alreadyAssignment.size()>0){
-                        connectMessage(alreadyAssignment.get(0).split(":")[1],userInfo.getUserId(),"");
+                //用户才进行分配客服
+                if(!userInfo.getCustomerService()){
+                    if("true".equals(userInfo.getNecessaryCustomerService())){
+                        customerServiceAssignment(userInfo.getUserId());
+                    }else {
+                        alreadyAssignment=commands.keys(ASSIGNMENT_CACHE_KEY+"*:"+userInfo.getUserId());
+                        if(alreadyAssignment.size()>0){
+                            connectMessage(alreadyAssignment.get(0).split(":")[1],userInfo.getUserId(),"");
+                        }
                     }
+                }else {//客服则添加在线记录
+                    redisTemplate.opsForValue().set(CUSTOMER_SERVICE_RECEIPT_NUM_KEY+userInfo.getUserId(),
+                            new PersonnelAssignment(userInfo.getUserId(),
+                                    commands.keys(ASSIGNMENT_CACHE_KEY+userInfo.getUserId()+":*").size())
+                            ,50000, TimeUnit.SECONDS);
                 }
+
             }
         }catch (RuntimeException e){
             e.getMessage();

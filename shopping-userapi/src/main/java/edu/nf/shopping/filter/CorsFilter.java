@@ -22,7 +22,7 @@ public class CorsFilter implements Filter {
         //跨域请求
         response.setHeader("Access-Control-Allow-Origin", request.getHeader("Origin"));
         //允许请求方式
-        response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
+        response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE, PATCH");
         //请求包含的字段内容，如有多个可用哪个逗号分隔如下
         response.setHeader("Access-Control-Allow-Headers", "Authorization,Origin, X-Requested-With, Content-Type, Accept,Access-Token");
         //访问控制允许凭据，true为允许
